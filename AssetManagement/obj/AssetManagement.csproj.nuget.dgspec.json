@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj": {}
+    "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj": {
+    "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj",
+        "projectUniqueName": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj",
         "projectName": "AssetManagement",
-        "projectPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj",
-        "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\obj\\",
+        "projectPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj",
+        "packagesPath": "C:\\Users\\oster\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Christian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\oster\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
