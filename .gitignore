@@ -360,3 +360,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.dll
+AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.exe
+AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.pdb
+AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.Views.dll
+AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.Views.pdb
