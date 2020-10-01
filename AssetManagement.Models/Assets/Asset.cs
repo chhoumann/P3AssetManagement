@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AssetManagement.Models
+﻿namespace AssetManagement.Models
 {
     public abstract class Asset
     {
@@ -9,14 +7,18 @@ namespace AssetManagement.Models
 
         public bool IsDisposed { get; private set; }
 
-        public DateTime LastSeen { get; private set; }
+        private AssetHolder currentHolder;
 
-        // public Depot Depot { get; set; } = null;
-        // public Employee Employee { get; set; } = null;
-
-        public virtual void Transfer(AssetHolder assetHolder)
+        public virtual void TransferTo(AssetHolder assetHolder)
         {
-            assetHolder.RecieveAsset(this);
+            // Remove this asset from its current holder, if any
+            if (currentHolder != null)
+            {
+                currentHolder.RemoveAsset(this);
+            }
+
+            // Update the current holder by transferring this asset to the new AssetHolder
+            currentHolder = assetHolder.RecieveAsset(this);
         }
 
         public virtual void Dispose() { }

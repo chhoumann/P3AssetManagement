@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KZVbX4Xog/u6MVOptVfsV3tFH4GUYh73DzG/3/5WUbuaHt49ozGF5X3tSgclR02pY/evAYvPwpQb2qA21TFiqw==",
+  "dgSpecHash": "VRz8oMhJgmxxzneRHxFSXPjvIPgJ+3qFJp1dunK154H1ppn0DEuND8pQyJASoFIOBgJud+HWeMNbateUAxbnUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement.Models\\AssetManagement.Models.csproj",
+  "projectFilePath": "C:\\Users\\Patrick\\Documents\\GitHub\\time-registration-mit\\p3\\AssetManagement.Models\\AssetManagement.Models.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Christian\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Christian\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

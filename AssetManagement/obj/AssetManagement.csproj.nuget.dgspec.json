@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj": {}
+    "C:\\Users\\Patrick\\Documents\\GitHub\\time-registration-mit\\p3\\AssetManagement\\AssetManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj": {
+    "C:\\Users\\Patrick\\Documents\\GitHub\\time-registration-mit\\p3\\AssetManagement\\AssetManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Patrick\\Documents\\GitHub\\time-registration-mit\\p3\\AssetManagement\\AssetManagement.csproj",
         "projectName": "AssetManagement",
-        "projectPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj",
-        "packagesPath": "C:\\Users\\oster\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\obj\\",
+        "projectPath": "C:\\Users\\Patrick\\Documents\\GitHub\\time-registration-mit\\p3\\AssetManagement\\AssetManagement.csproj",
+        "packagesPath": "C:\\Users\\Patrick\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Patrick\\Documents\\GitHub\\time-registration-mit\\p3\\AssetManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\oster\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Patrick\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
