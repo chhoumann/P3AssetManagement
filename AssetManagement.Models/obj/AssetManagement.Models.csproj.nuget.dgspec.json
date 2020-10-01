@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj": {}
+    "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement.Models\\AssetManagement.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj": {
+    "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement.Models\\AssetManagement.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj",
-        "projectName": "AssetManagement",
-        "projectPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement.Models\\AssetManagement.Models.csproj",
+        "projectName": "AssetManagement.Models",
+        "projectPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement.Models\\AssetManagement.Models.csproj",
         "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\obj\\",
+        "outputPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,14 +21,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "netstandard2.0": {
             "projectReferences": {}
           }
         },
@@ -39,7 +39,15 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,14 +58,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }

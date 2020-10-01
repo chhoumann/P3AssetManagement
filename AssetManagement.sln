@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManagement", "AssetManagement\AssetManagement.csproj", "{61C39767-0439-44D7-A789-5C139B35E695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement", "AssetManagement\AssetManagement.csproj", "{61C39767-0439-44D7-A789-5C139B35E695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManagement.Models", "AssetManagement.Models\AssetManagement.Models.csproj", "{1010AC84-0BAE-4F0C-9AB0-2DBC642ADE25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{61C39767-0439-44D7-A789-5C139B35E695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61C39767-0439-44D7-A789-5C139B35E695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61C39767-0439-44D7-A789-5C139B35E695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1010AC84-0BAE-4F0C-9AB0-2DBC642ADE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1010AC84-0BAE-4F0C-9AB0-2DBC642ADE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1010AC84-0BAE-4F0C-9AB0-2DBC642ADE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1010AC84-0BAE-4F0C-9AB0-2DBC642ADE25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

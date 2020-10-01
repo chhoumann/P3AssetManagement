@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\oster\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Christian\\.nuget\\packages\\": {},
+    "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement\\AssetManagement.csproj",
+      "projectUniqueName": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj",
       "projectName": "AssetManagement",
-      "projectPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement\\AssetManagement.csproj",
-      "packagesPath": "C:\\Users\\oster\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement\\obj\\",
+      "projectPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\AssetManagement.csproj",
+      "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Christian\\Source\\Repos\\chhoumann\\p3\\AssetManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\oster\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Christian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
