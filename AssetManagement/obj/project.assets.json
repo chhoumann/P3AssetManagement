@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement\\AssetManagement.csproj",
+      "projectUniqueName": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj",
       "projectName": "AssetManagement",
-      "projectPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement\\AssetManagement.csproj",
+      "projectPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement.csproj",
       "packagesPath": "C:\\Users\\oster\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\AssetManagement\\obj\\",
+      "outputPath": "C:\\Users\\oster\\Documents\\GitHub\\p3\\AssetManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
