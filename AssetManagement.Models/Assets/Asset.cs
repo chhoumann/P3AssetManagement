@@ -1,26 +1,34 @@
 ﻿namespace AssetManagement.Models
 {
+    public enum AssetState { Online, Offline, Disposed }
+
     public abstract class Asset
     {
-        public virtual string Id { get; private set; }
         public virtual string Name { get; private set; }
 
-        public bool IsDisposed { get; private set; }
+        protected AssetState state;
+        public virtual AssetState State 
+        { 
+            get => state;
+            set => state = value;
+        }
 
-        private AssetHolder currentHolder;
+        public AssetHolder CurrentHolder { get; private set; }
 
-        public virtual void TransferTo(AssetHolder assetHolder)
+        public Asset(string name) => Name = name;
+
+        public void TransferTo(AssetHolder assetHolder)
         {
             // Remove this asset from its current holder, if any
-            if (currentHolder != null)
+            if (CurrentHolder != null)
             {
-                currentHolder.RemoveAsset(this);
+                CurrentHolder.RemoveAsset(this);
             }
 
             // Update the current holder by transferring this asset to the new AssetHolder
-            currentHolder = assetHolder.RecieveAsset(this);
+            CurrentHolder = assetHolder.RecieveAsset(this);
         }
 
-        public virtual void Dispose() { }
+        public void Dispose() { }
     }
 }

@@ -5,10 +5,14 @@ namespace AssetManagement.Models
 {
     public abstract class AssetHolder
     {
+        public string Name { get; private set; }
+
+        public AssetHolder(string name) => Name = name;
+
         /// <summary>
         /// The list of assets currently being held by this asset holder.
         /// </summary>
-        public List<Asset> CurrentAssets { get; }
+        public List<Asset> CurrentAssets { get; } = new List<Asset>();
 
         public virtual AssetHolder RecieveAsset(Asset asset)
         {
@@ -31,7 +35,7 @@ namespace AssetManagement.Models
             else
             {
                 // ERROR: The asset provided by the parameter does not exist in the list so we cannot remove it!
-                throw new ArgumentException($"Attempt to remove asset \"{asset.Name}\" with ID {asset.Id} from an asset holder's asset list that did not contain the asset!");
+                throw new ArgumentException($"Attempt to remove asset \"{asset.Name}\" with from an asset holder's asset list that did not contain the asset!");
             }
         }
     }

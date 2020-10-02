@@ -1,13 +1,13 @@
 ﻿@page "/fetchdata"
 
-@using AssetManagement.Data
-@inject WeatherForecastService ForecastService
+@using AssetManagement.Models
+@inject AssetService AssetService
 
-<h1>Weather forecast</h1>
+<h1>Assets</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (assets == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -16,20 +16,18 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Current Holder</th>
+                <th>Asset Name</th>
+                <th>ID</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (Asset asset in assets)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@asset.CurrentHolder.Name</td>
+                    <td>@asset.Name</td>
+                    <td>@(asset is OnlineAsset onlineAsset ? onlineAsset.Id : "—")</td>
                 </tr>
             }
         </tbody>
@@ -37,10 +35,10 @@ else
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private Asset[] assets;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        assets = await AssetService.GetAssetsAsync();
     }
 }

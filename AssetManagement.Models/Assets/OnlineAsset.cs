@@ -2,12 +2,15 @@
 
 namespace AssetManagement.Models
 {
-    public enum OnlineAssetState { Online, Offline }
-
     public sealed class OnlineAsset : Asset
     {
-        public OnlineAssetState State { get; private set; }
-
+        public string Id { get; private set; }
         public DateTime LastSeen { get; private set; }
+
+        public OnlineAsset(string id, string name) : base(name)
+        {
+            Id = id;
+            state = AssetState.Online;
+        }
     }
 }
