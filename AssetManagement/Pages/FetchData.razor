@@ -25,7 +25,7 @@ else
             @foreach (Asset asset in assets)
             {
                 <tr>
-                    <td>@asset.CurrentHolder.Name</td>
+                    <td>@asset.CurrentAssetHolder.Name</td>
                     <td>@asset.Name</td>
                     <td>@(asset is OnlineAsset onlineAsset ? onlineAsset.Id : "—")</td>
                 </tr>

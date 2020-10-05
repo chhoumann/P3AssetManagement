@@ -13,20 +13,21 @@
             set => state = value;
         }
 
-        public AssetHolder CurrentHolder { get; private set; }
+        public AssetHolder CurrentAssetHolder { get; private set; }
 
         public Asset(string name) => Name = name;
 
-        public void TransferTo(AssetHolder assetHolder)
+        public void TransferTo(AssetHolder newAssetHolder)
         {
             // Remove this asset from its current holder, if any
-            if (CurrentHolder != null)
+            if (CurrentAssetHolder != null)
             {
-                CurrentHolder.RemoveAsset(this);
+                CurrentAssetHolder.RemoveAsset(this);
             }
 
             // Update the current holder by transferring this asset to the new AssetHolder
-            CurrentHolder = assetHolder.RecieveAsset(this);
+            newAssetHolder.RecieveAsset(this);
+            CurrentAssetHolder = newAssetHolder;
         }
 
         public void Dispose() { }

@@ -14,7 +14,7 @@ namespace AssetManagement.Models
         /// </summary>
         public List<Asset> CurrentAssets { get; } = new List<Asset>();
 
-        public virtual AssetHolder RecieveAsset(Asset asset)
+        public virtual void RecieveAsset(Asset asset)
         {
             if (CurrentAssets.Contains(asset))
             {
@@ -23,7 +23,6 @@ namespace AssetManagement.Models
             }
 
             CurrentAssets.Add(asset);
-            return this;
         }
 
         public virtual void RemoveAsset(Asset asset)
