@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AssetManagement.Models;
 
 namespace AssetManagement
@@ -9,15 +10,21 @@ namespace AssetManagement
         {
             return Task.Factory.StartNew(() =>
             {
-                OnlineAsset onlineAsset = new OnlineAsset("69420", "Epic Dell Gaming PC");
-                AnalogueAsset analogueAsset = new AnalogueAsset("Very Expensive Headset");
+                Employee anna = new Employee("Anna", "anna@acme.dk");
 
-                Employee employee = new Employee("Ulf", "ulf@acme.dk");
+                List<Asset> assets = new List<Asset>()
+                {
+                    new Asset("69420", "Epic Dell Gaming PC", anna),
+                    new Asset("1234", "Not So Epic Dell Gaming PC", anna),
+                    new Asset("4", "HP PC", anna),
+                };
 
-                onlineAsset.TransferTo(employee);
-                analogueAsset.TransferTo(employee);
+                Employee ulf = new Employee("Ulf", "ulf@acme.dk");
 
-                return new Asset[] { onlineAsset, analogueAsset };
+                assets[0].TransferTo(ulf);
+                assets[1].TransferTo(ulf);
+
+                return assets.ToArray();
             });
         }
     }
