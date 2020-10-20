@@ -11,6 +11,7 @@ namespace NUnitTests
         }
 
         [Test]
+       
         public void TransferTo()
         {
             // Arrange
@@ -41,5 +42,16 @@ namespace NUnitTests
                 "Expected {0}. But got {1}",
                 dellPC.CurrentAssetHolder.Name, depot.Name);
         }
+
+        [TestCase(1, 2, 3, Description = "Testing if 1+2 is 3")]
+        [TestCase(1, 3, 3, Description = "Testing if 1+3 is 3")]
+        public void SumTest(int a, int b, int result)
+        {
+            Asset summingAsset = new Asset(66, "TestingAsset", "1234");
+            int methodReturnValue = summingAsset.Sum(a, b);
+            Assert.AreEqual(result, methodReturnValue);
+        }
     }
+
+   
 }
