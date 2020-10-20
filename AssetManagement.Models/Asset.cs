@@ -19,16 +19,13 @@ namespace AssetManagement.Models
 
         public StateRecord State { get; private set; }
 
-        public Asset(int id, string name, string serialNumber, AssetHolder currentAssetHolder)
+        public Asset(int id, string name, string serialNumber)
         {
             Model = name;
             SerialNumber = serialNumber;
             Id = id;
-            CurrentAssetHolder = currentAssetHolder;
             
             State = new StateRecord(AssetState.Recovered);
-            
-            currentAssetHolder.RecieveAsset(this);
         }
 
         public void TransferTo(AssetHolder newAssetHolder)
