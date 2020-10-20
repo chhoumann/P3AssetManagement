@@ -2,8 +2,6 @@
 
 namespace AssetManagement.Models
 {
-    public enum State { Missing, Recovered }
-
     public class AssetState
     {
         public State State { get; set; }
