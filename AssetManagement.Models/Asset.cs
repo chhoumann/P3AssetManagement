@@ -5,6 +5,8 @@ namespace AssetManagement.Models
 {
     public class Asset
     {
+        public enum State { Missing, Recovered }
+        
         public virtual string Model { get; private set; }
         public int Id { get; private set; }
         public string SerialNumber { get; private set; }
