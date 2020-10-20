@@ -1,6 +1,5 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using AssetManagement.Models;
-
 
 namespace Components
 {
