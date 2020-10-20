@@ -3,19 +3,22 @@ using System.Collections.Generic;
 
 namespace AssetManagement.Models
 {
+    public enum AssetState { Missing, Recovered }
+ 
     public class Asset
     {
-        public enum State { Missing, Recovered }
-        
         public virtual string Model { get; private set; }
         public int Id { get; private set; }
         public string SerialNumber { get; private set; }
+        
         public DateTime LastChanged { get; private set; }
+        
         public AssetHolder CurrentAssetHolder { get; private set; }
         public List<Transaction> Transactions = new List<Transaction>();
 
-        protected AssetState state;
-        public virtual AssetState State 
+        protected StateRecord state;
+
+        public virtual StateRecord State
         { 
             get => state;
             set => state = value;
@@ -25,7 +28,7 @@ namespace AssetManagement.Models
         {
             Model = name;
             Id = id;
-            State = new AssetState(Models.State.Recovered);
+            State = new StateRecord(AssetState.Recovered);
             CurrentAssetHolder = currentAssetHolder;
             SerialNumber = serialNumber;
             currentAssetHolder.RecieveAsset(this);
@@ -45,5 +48,17 @@ namespace AssetManagement.Models
         }
 
         public void Dispose() { }
+
+        public class StateRecord
+        {
+            public AssetState State { get; private set; }
+            public DateTime Date { get; private set; }
+
+            public StateRecord(AssetState state)
+            {
+                State = state;
+                Date = DateTime.Now;
+            }
+        }
     }
 }
