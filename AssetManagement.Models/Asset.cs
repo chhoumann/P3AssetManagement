@@ -5,7 +5,7 @@ namespace AssetManagement.Models
 {
     public enum AssetState { Missing, Recovered }
  
-    public class Asset
+    public sealed class Asset
     {
         public string Model { get; private set; }
         public string SerialNumber { get; private set; }
@@ -15,9 +15,9 @@ namespace AssetManagement.Models
         public DateTime LastChanged { get; private set; }
         
         public AssetHolder CurrentAssetHolder { get; private set; }
-        public List<Transaction> Transactions = new List<Transaction>();
-
         public StateRecord State { get; private set; }
+
+        public List<Transaction> Transactions { get; private set; } = new List<Transaction>();
 
         public Asset(int id, string name, string serialNumber)
         {
