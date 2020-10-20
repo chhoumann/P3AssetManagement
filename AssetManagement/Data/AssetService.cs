@@ -14,9 +14,9 @@ namespace AssetManagement
 
                 List<Asset> assets = new List<Asset>()
                 {
-                    new Asset("69420", "Epic Dell Gaming PC", anna),
-                    new Asset("1234", "Not So Epic Dell Gaming PC", anna),
-                    new Asset("4", "HP PC", anna),
+                    new Asset(69420, "Epic Dell Gaming PC", "SN1", anna),
+                    new Asset(1234, "Not So Epic Dell Gaming PC", "SN1", anna),
+                    new Asset(4, "HP PC", "SN1", anna),
                 };
 
                 Employee ulf = new Employee("Ulf", "ulf@acme.dk");
