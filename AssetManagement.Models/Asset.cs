@@ -7,30 +7,27 @@ namespace AssetManagement.Models
  
     public class Asset
     {
-        public virtual string Model { get; private set; }
-        public int Id { get; private set; }
+        public string Model { get; private set; }
         public string SerialNumber { get; private set; }
+
+        public int Id { get; private set; }
         
         public DateTime LastChanged { get; private set; }
         
         public AssetHolder CurrentAssetHolder { get; private set; }
         public List<Transaction> Transactions = new List<Transaction>();
 
-        protected StateRecord state;
-
-        public virtual StateRecord State
-        { 
-            get => state;
-            set => state = value;
-        }
+        public StateRecord State { get; private set; }
 
         public Asset(int id, string name, string serialNumber, AssetHolder currentAssetHolder)
         {
             Model = name;
-            Id = id;
-            State = new StateRecord(AssetState.Recovered);
-            CurrentAssetHolder = currentAssetHolder;
             SerialNumber = serialNumber;
+            Id = id;
+            CurrentAssetHolder = currentAssetHolder;
+            
+            State = new StateRecord(AssetState.Recovered);
+            
             currentAssetHolder.RecieveAsset(this);
         }
 
