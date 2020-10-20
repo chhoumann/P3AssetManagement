@@ -14,6 +14,5 @@ namespace AssetManagement.Models
             State = state;
             Date = DateTime.Now;
         }
-
     }
 }
