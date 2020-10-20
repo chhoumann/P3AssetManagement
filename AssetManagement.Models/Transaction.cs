@@ -4,12 +4,12 @@ namespace AssetManagement.Models
 {
     public class Transaction
     {
-        public AssetHolder Giver { get; private set; }
-        public AssetHolder Receiver { get; private set; }
-        public Asset Asset { get; private set; }
-        public DateTime Date { get; private set; }
+        public AssetHolder Giver { get; }
+        public AssetHolder Receiver { get; }
+        public IAsset Asset { get; }
+        public DateTime Date { get; }
 
-        public Transaction(AssetHolder giver, AssetHolder receiver, Asset asset)
+        public Transaction(AssetHolder giver, AssetHolder receiver, IAsset asset)
         {
             Giver = giver;
             Receiver = receiver;
