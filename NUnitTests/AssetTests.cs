@@ -14,7 +14,7 @@ namespace NUnitTests
         public void TransferTo()
         {
             // Arrange
-            OnlineAsset dellPC = new OnlineAsset("69420", "Epic Dell Gaming PC");
+            Asset dellPC = new Asset(69420, "Epic Dell Gaming PC", "SN1");
             Employee ulf = new Employee("Ulf", "ulf@acme.dk");
             // Act
             dellPC.TransferTo(ulf);
