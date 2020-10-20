@@ -1,0 +1,49 @@
+﻿@using AssetManagement.Models
+@inject AssetService AssetService
+@namespace Components
+
+@if (assets == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Serienummer</th>
+                <th>ID</th>
+                <th>Ejer</th>
+                <th>Mail</th>
+                <th>Sidst Ændret</th>
+                <th>PC-AD Status</th>
+                <th>State</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Asset asset in assets)
+            {
+                <tr>
+                    <td>@asset.Name</td>
+                    <th>@asset.Id</th>
+                    <td>@asset.CurrentHolder.Name</td>
+                    <td>@(asset.CurrentHolder is Employee employee ? employee.Email : "—")</td>
+                    <td>Awaiting Imp.</td>
+                    <td>Awaiting Imp.</td>
+                    <td>@(asset is OnlineAsset onlineAsset ? onlineAsset.Id : "—")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Asset[] assets;
+
+    protected override async Task OnInitializedAsync()
+    {
+        assets = await AssetService.GetAssetsAsync();
+    }
+}

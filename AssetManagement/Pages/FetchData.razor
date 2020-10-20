@@ -1,44 +1,11 @@
 ﻿@page "/fetchdata"
 
-@using AssetManagement.Models
-@inject AssetService AssetService
+@using Components
 
 <h1>Assets</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
-
-@if (assets == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Current Holder</th>
-                <th>Asset Name</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Asset asset in assets)
-            {
-                <tr>
-                    <td>@asset.CurrentHolder.Name</td>
-                    <td>@asset.Name</td>
-                    <td>@(asset is OnlineAsset onlineAsset ? onlineAsset.Id : "—")</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<AssetTable />
 
 @code {
-    private Asset[] assets;
-
-    protected override async Task OnInitializedAsync()
-    {
-        assets = await AssetService.GetAssetsAsync();
-    }
+    
 }
