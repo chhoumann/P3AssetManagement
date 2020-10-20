@@ -4,8 +4,8 @@ namespace AssetManagement.Models
 {
     public class AssetState
     {
-        public State State { get; set; }
-        public DateTime Date { get; set; }
+        public State State { get; private set; }
+        public DateTime Date { get; private set; }
 
         public AssetState(State state)
         {
