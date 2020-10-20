@@ -27,9 +27,9 @@ namespace AssetManagement.Models
                     new Asset(4, "HP PC", "SN1"),
                 };
 
-                assets[0].TransferTo(ulf);
-                assets[1].TransferTo(ulf);
-                assets[2].TransferTo(anna);
+                TransferOwnership(assets[0], ulf);
+                TransferOwnership(assets[1], ulf);
+                TransferOwnership(assets[2], anna);
 
                 return (IAsset[])assets.ToArray();
             });
