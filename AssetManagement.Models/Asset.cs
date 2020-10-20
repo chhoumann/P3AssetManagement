@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AssetManagement.Models
 {
-    public enum AssetState { Online, Offline, Disposed }
-
     public class Asset
     {
-        public virtual string Name { get; private set; }
-        public string Id { get; private set; }
-        public DateTime LastSeen { get; private set; }
+        public virtual string Model { get; private set; }
+        public int Id { get; private set; }
+        public string SerialNumber { get; private set; }
+        public DateTime LastChanged { get; private set; }
+        public AssetHolder CurrentAssetHolder { get; private set; }
+        public List<Transaction> Transactions = new List<Transaction>();
 
         protected AssetState state;
         public virtual AssetState State 
@@ -17,13 +19,13 @@ namespace AssetManagement.Models
             set => state = value;
         }
 
-        public AssetHolder CurrentAssetHolder { get; private set; }
-
-        public Asset(string id, string name, AssetHolder currentAssetHolder)
+        public Asset(int id, string name, string serialNumber, AssetHolder currentAssetHolder)
         {
-            Name = name;
+            Model = name;
             Id = id;
+            State = new AssetState(Models.State.Recovered);
             CurrentAssetHolder = currentAssetHolder;
+            SerialNumber = serialNumber;
             currentAssetHolder.RecieveAsset(this);
         }
 

@@ -26,24 +26,19 @@ else
             @foreach (Asset asset in assets)
             {
                 <tr>
-                    <td>@asset.Name</td>
-                    <th>@asset.Id</th>
-                    <td>@asset.CurrentHolder.Name</td>
-                    <td>@(asset.CurrentHolder is Employee employee ? employee.Email : "—")</td>
+                    <td>@asset.Model</td>
+                    <td>@asset.SerialNumber</td>
+                    <td>@asset.Id</td>
+                    <td>@asset.CurrentAssetHolder.Name</td>
+                    <td>@(asset.CurrentAssetHolder is Employee employee ? employee.Email : "—")</td>
+                    <td>@asset.LastChanged.ToShortDateString()</td>
                     <td>Awaiting Imp.</td>
-                    <td>Awaiting Imp.</td>
-                    <td>@(asset is OnlineAsset onlineAsset ? onlineAsset.Id : "—")</td>
+                    <td>@asset.State.State</td>
+                    <td>
+                        <button>Detaljer</button>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
-}
-
-@code {
-    private Asset[] assets;
-
-    protected override async Task OnInitializedAsync()
-    {
-        assets = await AssetService.GetAssetsAsync();
-    }
 }
