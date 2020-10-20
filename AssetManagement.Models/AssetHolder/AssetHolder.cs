@@ -7,7 +7,7 @@ namespace AssetManagement.Models
     {
         public string Name { get; private set; }
         public string Department { get; private set; }
-        public List<Asset> AssetLis; // Init here or in ctor?
+        public List<Asset> AssetList; // Init here or in ctor?
         public AssetHolder(string name) => Name = name;
 
         /// <summary>
