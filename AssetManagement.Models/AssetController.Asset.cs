@@ -48,6 +48,9 @@ namespace AssetManagement.Models
                     throw new ArgumentException("Attempt to add an asset to an asset holder's asset list which already contains this asset!", Model);
                 }
 
+                // Record this transfer by adding a new transaction to the list of transactions
+                Transactions.Add(new Transaction(CurrentAssetHolder, newAssetHolder));
+
                 // Update the current holder by transferring this asset to the new AssetHolder
                 newAssetHolder.CurrentAssets.Add(this);
                 CurrentAssetHolder = newAssetHolder;
