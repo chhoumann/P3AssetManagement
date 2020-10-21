@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// Creates a new asset.
+        /// Create a new asset.
         /// </summary>
         public static IAsset MakeAsset(int id, string name, string serialNumber)
         {
@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        /// Updates the PC-ID state of an asset and adds a new record to the asset.
+        /// Update the PC-ID state of an asset and add a new record to the asset.
         /// </summary>
         /// <param name="asset">The asset whose state needs to be updated.</param>
         /// <param name="assetState">The asset's new state.</param>
