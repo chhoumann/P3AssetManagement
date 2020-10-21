@@ -30,7 +30,7 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="asset">The asset whose state needs to be updated.</param>
         /// <param name="assetState">The asset's new state.</param>
-        public static void ChangeAssetState(IAsset asset, AssetState assetState)
+        public static void UpdateAssetState(IAsset asset, AssetState assetState)
         {
             asset.Records.Add(new StateRecord(assetState));
         }
