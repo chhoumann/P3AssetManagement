@@ -15,7 +15,8 @@ namespace NUnitTests
         [TestCase(12347, "HP Officejet Pro 6230 e", "SN1BFE5", "Sofus",  "sofus@acme.dk")]
         [TestCase(12348, "Acer Awesome",            "SN1BFE6", "Bertil", "bertil@acme.dk")]
         [TestCase(12349, "Toshiba Tanker",          "SN1BFE7", "Mads",   "mads@acme.dk")]
-        public void TransferTo(int assetId, string assetName, string assetSerialNumber, string employeeName, string employeeEmail)
+        public void When_NewAsset_Expect_AssetCanBeTransferedToEmployee(int assetId, string assetName, string assetSerialNumber, 
+            string employeeName, string employeeEmail)
         {
             // Arrange
             Asset asset = new Asset(assetId, assetName, assetSerialNumber);
