@@ -71,7 +71,7 @@ namespace AssetManagement.Models
                     if (!CurrentAssetHolder.CurrentAssets.Contains(this))
                     {
                         // ERROR: This asset does not exist in the CurrentAssetHolder's list so we cannot remove it!
-                        throw new ArgumentException($"Attempt to remove asset \"{Model}\" with from an asset holder's asset list that did not contain the asset!");
+                        throw new ArgumentException($"Attempt to remove asset \"{Model}\" from an asset holder's asset list that did not contain the asset!");
                     }
 
                     CurrentAssetHolder.CurrentAssets.Remove(this);
