@@ -9,8 +9,14 @@
         /// <param name="receiver">The receiver of the asset.</param>
         public static void TransferOwnership(IAsset assetToTransfer, AssetHolder receiver)
         {
-            Asset asset = (Asset)assetToTransfer;
-            asset.TransferTo(receiver);
+            if (assetToTransfer is Asset asset)
+            {
+                asset.TransferTo(receiver);
+            }
+            else
+            {
+                throw new System.ArgumentException("IAsset must be of type Asset!");
+            }
         }
 
         /// <summary>
