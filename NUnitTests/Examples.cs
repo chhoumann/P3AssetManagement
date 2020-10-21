@@ -19,10 +19,10 @@ namespace NUnitTests
             string employeeName, string employeeEmail)
         {
             // Arrange
-            Asset asset = new Asset(assetId, assetName, assetSerialNumber);
+            IAsset asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
             Employee employee = new Employee(employeeName, employeeEmail);
             // Act
-            asset.TransferTo(employee);
+            AssetController.TransferOwnership(asset, employee);
             // Assert
             Assert.AreEqual(asset.CurrentAssetHolder, employee,
                 "Expected {0}. But got {1}",
