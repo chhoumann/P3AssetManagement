@@ -2,7 +2,7 @@
 
 namespace AssetManagement.Models
 {
-    public enum AssetState { Missing, Recovered }
+    public enum AssetState { Missing, Online }
 
     public class StateRecord
     {

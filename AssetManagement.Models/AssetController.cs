@@ -60,7 +60,7 @@ namespace AssetManagement.Models
                 SerialNumber = serialNumber;
                 Id = id;
 
-                State = new StateRecord(AssetState.Recovered);
+                State = new StateRecord(AssetState.Online);
             }
 
             public void TransferTo(AssetHolder newAssetHolder)
