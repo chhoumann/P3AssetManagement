@@ -31,6 +31,12 @@ namespace AssetManagement.Models
 
             public void TransferTo(AssetHolder newAssetHolder)
             {
+                if (newAssetHolder.CurrentAssets.Contains(this))
+                {
+                    // ERROR: New holder is somehow already holding this asset!
+                    throw new ArgumentException("Attempt to add an asset to an asset holder's asset list which already contains this asset!", Model);
+                }
+
                 // Remove this asset from its current holder, if any
                 if (CurrentAssetHolder != null)
                 {
@@ -41,12 +47,6 @@ namespace AssetManagement.Models
                     }
 
                     CurrentAssetHolder.CurrentAssets.Remove(this);
-                }
-
-                if (newAssetHolder.CurrentAssets.Contains(this))
-                {
-                    // ERROR: New holder is somehow already holding this asset!
-                    throw new ArgumentException("Attempt to add an asset to an asset holder's asset list which already contains this asset!", Model);
                 }
 
                 // Record this transfer by adding a new transaction to the list of transactions
