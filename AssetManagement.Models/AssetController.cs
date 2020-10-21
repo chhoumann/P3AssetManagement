@@ -1,6 +1,6 @@
 ﻿namespace AssetManagement.Models
 {
-    public static partial class AssetController
+    public sealed partial class AssetController
     {
         /// <summary>
         /// Transfer an asset to a new AssetHolder.

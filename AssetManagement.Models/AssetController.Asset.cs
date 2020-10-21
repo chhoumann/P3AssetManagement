@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AssetManagement.Models
 {
-    public static partial class AssetController
+    public sealed partial class AssetController
     {
         private sealed class Asset : IAsset
         {
