@@ -1,4 +1,6 @@
-﻿namespace AssetManagement.Models
+﻿using System;
+
+namespace AssetManagement.Models
 {
     public sealed partial class AssetController
     {
@@ -15,7 +17,7 @@
             }
             else
             {
-                throw new System.ArgumentException("IAsset must be of type Asset!");
+                throw new ArgumentException("IAsset must be of type Asset!");
             }
         }
 
