@@ -33,7 +33,7 @@ else
                     <td>@(asset.CurrentAssetHolder is Employee employee ? employee.Email : "—")</td>
                     <td>@asset.LastChanged.ToShortDateString()</td>
                     <td>Awaiting Imp.</td>
-                    <td>@asset.State.State</td>
+                    <td>@asset.CurrentState.State</td>
                     <td>
                         <a href="#" target="_blank">Detaljer</a>
                     </td>

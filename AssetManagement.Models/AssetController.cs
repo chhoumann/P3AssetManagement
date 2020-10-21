@@ -28,7 +28,7 @@
         /// <param name="assetState">The asset's new state.</param>
         public static void UpdateAssetState(IAsset asset, AssetState assetState)
         {
-            asset.Records.Add(new StateRecord(assetState));
+            asset.StateRecords.Add(new StateRecord(assetState));
         }
     }
 }

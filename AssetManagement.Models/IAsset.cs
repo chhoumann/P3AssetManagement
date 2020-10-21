@@ -12,8 +12,9 @@ namespace AssetManagement.Models
         DateTime LastChanged { get; }
 
         AssetHolder CurrentAssetHolder { get; }
+        StateRecord CurrentState { get; }
 
-        List<StateRecord> Records { get; }
+        List<StateRecord> StateRecords { get; }
         List<Transaction> Transactions { get; }
     }
 }

@@ -15,8 +15,9 @@ namespace AssetManagement.Models
             public DateTime LastChanged { get; private set; }
 
             public AssetHolder CurrentAssetHolder { get; private set; }
+            public StateRecord CurrentState => StateRecords[StateRecords.Count - 1];
 
-            public List<StateRecord> Records { get; } = new List<StateRecord>();
+            public List<StateRecord> StateRecords { get; } = new List<StateRecord>();
             public List<Transaction> Transactions { get; } = new List<Transaction>();
 
             public Asset(int id, string name, string serialNumber)
@@ -25,7 +26,7 @@ namespace AssetManagement.Models
                 SerialNumber = serialNumber;
                 Id = id;
 
-                Records.Add(new StateRecord(AssetState.Online)); 
+                StateRecords.Add(new StateRecord(AssetState.Online)); 
             }
 
             public void TransferTo(AssetHolder newAssetHolder)
