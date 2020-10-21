@@ -29,6 +29,4 @@ namespace NUnitTests
                 asset.CurrentAssetHolder.Name, employee.Name);
         }
     }
-
-   
 }
