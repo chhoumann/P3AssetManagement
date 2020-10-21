@@ -14,10 +14,10 @@ namespace NUnitTests
         public void TransferTo()
         {
             // Arrange
-            Asset dellPC = new Asset(69420, "Epic Dell Gaming PC", "SN1");
+            IAsset dellPC = AssetController.MakeAsset(69420, "Epic Dell Gaming PC", "SN1");
             Employee ulf = new Employee("Ulf", "ulf@acme.dk");
             // Act
-            dellPC.TransferTo(ulf);
+            AssetController.TransferOwnership(dellPC, ulf);
             // Assert
             Assert.AreEqual(dellPC.CurrentAssetHolder, ulf,
                 "Expected {0}. But got {1}",
@@ -26,7 +26,7 @@ namespace NUnitTests
             // Arrange
             Employee hanne = new Employee("Hanne", "hanne@acme.dk");
             // Act
-            dellPC.TransferTo(hanne);
+            AssetController.TransferOwnership(dellPC, hanne);
             // Assert
             Assert.AreEqual(dellPC.CurrentAssetHolder, hanne,
                 "Expected {0}. But got {1}",
@@ -35,7 +35,7 @@ namespace NUnitTests
             // Arrange
             Depot depot = new Depot();
             // Act
-            dellPC.TransferTo(depot);
+            AssetController.TransferOwnership(dellPC, depot);
             // Assert
             Assert.AreEqual(dellPC.CurrentAssetHolder, depot,
                 "Expected {0}. But got {1}",
