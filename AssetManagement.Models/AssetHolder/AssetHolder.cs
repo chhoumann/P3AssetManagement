@@ -7,15 +7,15 @@ namespace AssetManagement.Models
     {
         public string Name { get; private set; }
         public string Department { get; private set; }
-        public List<Asset> AssetList; // Init here or in ctor?
+        public List<IAsset> AssetList; // Init here or in ctor?
         public AssetHolder(string name) => Name = name;
 
         /// <summary>
         /// The list of assets currently being held by this asset holder.
         /// </summary>
-        public List<Asset> CurrentAssets { get; } = new List<Asset>();
+        public List<IAsset> CurrentAssets { get; } = new List<IAsset>();
 
-        public virtual void RecieveAsset(Asset asset)
+        public virtual void RecieveAsset(IAsset asset)
         {
             if (CurrentAssets.Contains(asset))
             {
@@ -26,7 +26,7 @@ namespace AssetManagement.Models
             CurrentAssets.Add(asset);
         }
 
-        public virtual void RemoveAsset(Asset asset)
+        public virtual void RemoveAsset(IAsset asset)
         {
             if (CurrentAssets.Contains(asset))
             {
