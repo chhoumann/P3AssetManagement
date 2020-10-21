@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using AssetManagement.Models;
 using NUnit.Framework;
 
@@ -5,16 +7,15 @@ namespace NUnitTests
 {
     public class Examples
     {
+        // Allows you to run functions before the test cases are run.
         [SetUp]
         public void Setup()
         {
         }
 
+        // TestCases can be used to test similar behavior without writing many repetitive tests.
         [TestCase(12345, "Epic Dell Gaming PC",     "SN1BFE4", "Ulf",    "ulf@acme.dk")]
-        [TestCase(12346, "Unepic Dell Gaming PC",   "SN1BFE3", "Rolf",   "rolf@acme.dk")]
-        [TestCase(12347, "HP Officejet Pro 6230 e", "SN1BFE5", "Sofus",  "sofus@acme.dk")]
-        [TestCase(12348, "Acer Awesome",            "SN1BFE6", "Bertil", "bertil@acme.dk")]
-        [TestCase(12349, "Toshiba Tanker",          "SN1BFE7", "Mads",   "mads@acme.dk")]
+        
         public void When_NewAsset_Expect_AssetCanBeTransferedToEmployee(int assetId, string assetName, string assetSerialNumber, 
             string employeeName, string employeeEmail)
         {
@@ -27,6 +28,21 @@ namespace NUnitTests
             Assert.AreEqual(asset.CurrentAssetHolder, employee,
                 "Expected {0}. But got {1}",
                 asset.CurrentAssetHolder.Name, employee.Name);
+        }
+
+        // Testing if transfering ownership to the currentholder throws an error
+        [Test]
+        public void TransferOwnership_WhenTransferingAssetToTheHolderWhoAlreadyHasIt_ShouldThrowException()
+        {
+            // Arrange
+            IAsset asset = AssetController.MakeAsset(1234, "Testing computer", "abc123");
+            Employee employee = new Employee("Bjarne", "Bjarne@testingCompany.com");
+            AssetController.TransferOwnership(asset, employee);
+            
+            // Act
+            
+            // Assert
+            Assert.Throws<ArgumentException>(() => AssetController.TransferOwnership(asset, employee));
         }
     }
 }

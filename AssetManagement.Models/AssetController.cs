@@ -6,6 +6,11 @@ namespace AssetManagement.Models
 {
     public static class AssetController
     {
+        public static void ThrowError()
+        {
+            throw new ArgumentException("IT FUCKED UP");
+        }
+
         public static void TransferOwnership(IAsset assetToTransfer, AssetHolder receiver)
         {
             Asset asset = (Asset)assetToTransfer;
@@ -65,6 +70,13 @@ namespace AssetManagement.Models
 
             public void TransferTo(AssetHolder newAssetHolder)
             {
+
+                if (newAssetHolder.CurrentAssets.Contains(this))
+                {
+                    // ERROR: New holder is somehow already holding this asset!
+                    throw new ArgumentException("Attempt to add an asset to an asset holder's asset list which already contains this asset!", Model);
+                }
+
                 // Remove this asset from its current holder, if any
                 if (CurrentAssetHolder != null)
                 {
@@ -77,11 +89,7 @@ namespace AssetManagement.Models
                     CurrentAssetHolder.CurrentAssets.Remove(this);
                 }
 
-                if (newAssetHolder.CurrentAssets.Contains(this))
-                {
-                    // ERROR: New holder is somehow already holding this asset!
-                    throw new ArgumentException("Attempt to add an asset to an asset holder's asset list which already contains this asset!", Model);
-                }
+                
 
                 // Update the current holder by transferring this asset to the new AssetHolder
                 newAssetHolder.CurrentAssets.Add(this);
