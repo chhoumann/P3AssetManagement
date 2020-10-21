@@ -5,12 +5,7 @@ using System.Threading.Tasks;
 namespace AssetManagement.Models
 {
     public static class AssetController
-    {
-        public static void ThrowError()
-        {
-            throw new ArgumentException("IT FUCKED UP");
-        }
-
+    {        
         public static void TransferOwnership(IAsset assetToTransfer, AssetHolder receiver)
         {
             Asset asset = (Asset)assetToTransfer;
