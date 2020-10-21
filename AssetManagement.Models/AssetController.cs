@@ -12,6 +12,11 @@ namespace AssetManagement.Models
             asset.TransferTo(receiver);
         }
 
+        public static IAsset MakeAsset(int id, string name, string serialNumber)
+        {
+            return new Asset(id, name, serialNumber);
+        }
+
         // Temporary, I hope. Early mockdata function, pls remove when proper mockdata is done
         public static Task<IAsset[]> GetAssetsAsync()
         {
