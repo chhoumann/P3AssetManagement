@@ -22,12 +22,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
-    - name: Publish with dotnet
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages-from-actions
-        FOLDER: build/wwwroot
-        SINGLE_COMMIT: true
+      run: dotnet test --no-restore --verbosity quiet
