@@ -368,3 +368,7 @@ AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.Views.dll
 AssetManagement/bin/Debug/netcoreapp3.1/AssetManagement.Views.pdb
 AssetManagement/dbconfig.json
 AssetManagement/appsettings.json
+
+# Documentation files (which get built automatically anyways)
+AssetManagement.*.xml
+AssetManagement.xml
