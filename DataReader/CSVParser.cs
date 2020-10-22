@@ -6,6 +6,11 @@ namespace DataReader
 {
     class CSVParser
     {
+        /// <summary>
+        /// Creates a list of AAFData objects from a semicolon seperated AAF csv-file. 
+        /// </summary>
+        /// <param name="path">The path to the csv file.</param>
+        /// <returns>A list of AAFData objects</returns>
         public List<AAFData> LoadAAFDataFromCSV(string path)
         {
             List<AAFData> data = new List<AAFData>();
@@ -22,7 +27,7 @@ namespace DataReader
             
             
             // First line is skipped, as it includes headers and has no actual data.
-            string headerLine = sr.ReadLine();
+            sr.ReadLine();
 
             // Reads all lines in csv, and saves them in an AAFData list.
             string currentLine;
@@ -34,6 +39,11 @@ namespace DataReader
             return data;
         }
 
+        /// <summary>
+        /// Creates an AAFData object from a row of the csv-file
+        /// </summary>
+        /// <param name="csvLine">The row from the csv-file</param>
+        /// <returns>An AAFData object</returns>
         private AAFData AAFDataFromCSVString(string csvLine)
         {
             string[] csvFields = csvLine.Split(';');
@@ -46,9 +56,9 @@ namespace DataReader
                     csvFields[3],
                     csvFields[4],
                     csvFields[5],
-                    Int32.Parse(csvFields[6]),
-                    Int32.Parse(csvFields[7]),
-                    Int32.Parse(csvFields[8]),
+                    int.Parse(csvFields[6]),
+                    int.Parse(csvFields[7]),
+                    int.Parse(csvFields[8]),
                     csvFields[9],
                     csvFields[10],
                     DateTime.Parse(csvFields[11]),
