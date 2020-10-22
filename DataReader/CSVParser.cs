@@ -7,10 +7,10 @@ namespace DataReader
     public sealed class CSVParser
     {
         /// <summary>
-        /// Creates a list of AAFData objects from a semicolon seperated AAF csv-file. 
+        /// Creates a list of AAFData structs from a semicolon seperated AAF csv-file. 
         /// </summary>
         /// <param name="path">The path to the csv file.</param>
-        /// <returns>A list of AAFData objects</returns>
+        /// <returns>A list of AAFData structs</returns>
         public List<AAFData> LoadAAFDataFromCSV(string path)
         {
             List<AAFData> data = new List<AAFData>();
@@ -41,10 +41,10 @@ namespace DataReader
         }
 
         /// <summary>
-        /// Creates an AAFData object from a row of the csv-file
+        /// Creates an AAFData struct from a row of the csv-file
         /// </summary>
         /// <param name="csvLine">The row from the csv-file</param>
-        /// <returns>An AAFData object</returns>
+        /// <returns>An AAFData struct</returns>
         private AAFData AAFDataFromCSVString(string csvLine)
         {
             string[] csvFields = csvLine.Split(';');
