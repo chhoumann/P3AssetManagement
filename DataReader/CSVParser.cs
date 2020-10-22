@@ -15,6 +15,7 @@ namespace DataReader
         {
             List<AAFData> data = new List<AAFData>();
             StreamReader sr;
+            
             try
             {
                 sr = new StreamReader(path);
@@ -47,6 +48,7 @@ namespace DataReader
         private AAFData AAFDataFromCSVString(string csvLine)
         {
             string[] csvFields = csvLine.Split(';');
+
             try
             {
                 // Parses the string-array to an AAFData object
@@ -65,7 +67,7 @@ namespace DataReader
                     csvFields[12],
                     csvFields[13],
                     csvFields[14]
-                    );
+                );
 
                 return parsedData;
             }
