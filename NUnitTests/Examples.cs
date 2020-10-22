@@ -30,7 +30,7 @@ namespace NUnitTests
                 asset.CurrentAssetHolder.Name, employee.Name);
         }
 
-        // Testing if transfering ownership to the currentholder throws an error
+        // Testing if transfering ownership to the currentholder throws an exception
         [Test]
         public void TransferOwnership_WhenTransferingAssetToTheHolderWhoAlreadyHasIt_ShouldThrowException()
         {
