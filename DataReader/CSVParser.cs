@@ -4,7 +4,7 @@ using System.IO;
 
 namespace DataReader
 {
-    class CSVParser
+    public sealed class CSVParser
     {
         /// <summary>
         /// Creates a list of AAFData objects from a semicolon seperated AAF csv-file. 

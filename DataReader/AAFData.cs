@@ -2,7 +2,7 @@
 
 namespace DataReader
 {
-    class AAFData
+    public struct AAFData
     {
         public DateTime Timestamp { get; }
         public string PcNavn { get; }
