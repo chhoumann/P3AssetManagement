@@ -4,39 +4,39 @@ namespace DataReader
 {
     class AAFData
     {
-        public DateTime Timestamp { get; private set; }
-        public string Pcnavn { get; private set; }
-        public string Primaerbruger { get; private set; }
-        public string Navn { get; private set; }
-        public string Afdeling { get; private set; }
-        public string Operativsystem { get; private set; }
-        public int CPU { get; private set; }
-        public int RAM { get; private set; }
-        public int HDD { get; private set; }
-        public string Servicepack { get; private set; }
-        public string Serienummer { get; private set; }
-        public DateTime Fakturadato { get; private set; }
-        public string Gateway { get; private set; }
-        public string Model { get; private set; }
-        public string Pctype { get; private set; }
+        public DateTime Timestamp { get; }
+        public string PcNavn { get; }
+        public string PrimaerBruger { get; }
+        public string Navn { get; }
+        public string Afdeling { get; }
+        public string OperativSystem { get; }
+        public int CPU { get; }
+        public int RAM { get; }
+        public int HDD { get; }
+        public string ServicePack { get; }
+        public string SerieNummer { get; }
+        public DateTime FakturaDato { get; }
+        public string Gateway { get; }
+        public string Model { get; }
+        public string PcType { get; }
 
-        public AAFData(DateTime timestamp, string pcnavn, string primaerbruger, string navn, string afdeling, string operativsystem, int cPU, int rAM, int hDD, string servicepack, string serienummer, DateTime fakturadato, string gateway, string model, string pctype)
+        public AAFData(DateTime timestamp, string pcnavn, string primaerbruger, string navn, string afdeling, string operativsystem, int cpu, int ram, int hdd, string servicepack, string serienummer, DateTime fakturadato, string gateway, string model, string pctype)
         {
             Timestamp = timestamp;
-            Pcnavn = pcnavn;
-            Primaerbruger = primaerbruger;
+            PcNavn = pcnavn;
+            PrimaerBruger = primaerbruger;
             Navn = navn;
             Afdeling = afdeling;
-            Operativsystem = operativsystem;
-            CPU = cPU;
-            RAM = rAM;
-            HDD = hDD;
-            Servicepack = servicepack;
-            Serienummer = serienummer;
-            Fakturadato = fakturadato;
+            OperativSystem = operativsystem;
+            CPU = cpu;
+            RAM = ram;
+            HDD = hdd;
+            ServicePack = servicepack;
+            SerieNummer = serienummer;
+            FakturaDato = fakturadato;
             Gateway = gateway;
             Model = model;
-            Pctype = pctype;
+            PcType = pctype;
         }
     }
 }
