@@ -52,7 +52,8 @@ namespace DataReader
             try
             {
                 // Parses the string-array to an AAFData object
-                AAFData parsedData = new AAFData(DateTime.Parse(csvFields[0]),
+                AAFData parsedData = new AAFData(
+                    DateTime.Parse(csvFields[0]),
                     csvFields[1],
                     csvFields[2],
                     csvFields[3],
