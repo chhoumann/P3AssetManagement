@@ -1,62 +1,84 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿#define EXECUTESAVE
+#define EXECUTEQUERYALL
+#define EXECUTEQUERYSINGLE
+#define DELETESINGLE
+
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 using AssetManagement.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    public class AssetContext : DbContext
+    public sealed class SqlDataAccess 
     {
-        public DbSet<IAsset> Assets { get; set; }  
-    }
-
-    public class SqlDataAccess 
-    {
-        private readonly IConfiguration config;
-
-        public string ConnectionStringName { get; } = "p3db";
-
-        public SqlDataAccess(IConfiguration config)
+        public void SampleDatabaseOperations()
         {
-            this.config = config;
-        } 
-
-        public void Test()
-        {
-            string connectionString = config.GetConnectionString(ConnectionStringName);
-
-            using (var db = new AssetContext())
+#if EXECUTESAVE
+            /* EXAMPLE: Save to database */
+            using (AssetContext db = new AssetContext())
             {
-                // Create a new blog and save it
-                IAsset asset = AssetController.MakeAsset(69, "Gamer", "69");
+                // Create a new asset and save it to the database
+                IAsset asset = AssetController.MakeAsset(100, "Gamer", "100");
+                AssetData assetData = new AssetData(asset);
 
-                Console.WriteLine(asset);
+                Console.WriteLine(asset.LastChanged);
+
+                Console.WriteLine(assetData);
                 Console.WriteLine("----------------------");
-                Console.WriteLine(db.Assets);
+                Console.WriteLine(db.AssetData);
 
-                db.Assets.Add(asset);
+                db.AssetData.Add(assetData);
                 Console.WriteLine("Calling SaveChanges.");
                 db.SaveChanges();
                 Console.WriteLine("SaveChanges completed.");
+            }
+#endif
+#if EXECUTEQUERYALL
+            /* EXAMPLE: Get all elements in database */
+            using (AssetContext db = new AssetContext())
+            {
+                // Query for all assets
+                Console.WriteLine("Executing query.");
 
-                // Query for all blogs ordered by name
-                /*Console.WriteLine("Executing query.");
-                var blogs = (from b in db.Assets
-                             orderby b.Name
-                             select b).ToList();
+                List<AssetData> assets = db.AssetData.ToList();
 
                 // Write all blogs out to Console
                 Console.WriteLine("Query completed with following results:");
-                foreach (var blog in blogs)
+
+                foreach (var asset in assets)
                 {
-                    Console.WriteLine(" " + blog.Name);
-                }*/
+                    Console.WriteLine(" " + asset.Id);
+                }
             }
+#endif
+#if EXECUTEQUERYSINGLE
+            /* EXAMPLE: Get single element in database */
+            using (AssetContext db = new AssetContext())
+            {
+                Console.WriteLine("Executing query.");
+
+                // Query for single asset with Id 100
+                var asset = db.AssetData.Single(b => b.Id == 100);
+
+                Console.WriteLine("Query completed with following results:");
+                Console.WriteLine(asset);
+            }
+#endif
+#if DELETESINGLE
+            /* EXAMPLE: Delete single element in database */
+            using (AssetContext db = new AssetContext())
+            {
+                Console.WriteLine("Executing query.");
+
+                // Query for single asset with Id 100
+                var asset = db.AssetData.Single(b => b.Id == 100);
+                db.Remove(asset);
+                db.SaveChanges();
+
+                Console.WriteLine("Asset removed.");
+            }
+#endif
         }
     }
 }
