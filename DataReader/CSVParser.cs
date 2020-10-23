@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AssetManagement.DataReader
+namespace DataReader
 {
     public sealed class CSVParser
     {
