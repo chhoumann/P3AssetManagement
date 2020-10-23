@@ -6,9 +6,9 @@ namespace AssetManagement.DataAccessLibrary
 {
     public sealed class AssetContext : DbContext
     {
-        private readonly string connectionStringKey = "p3db";
-
         public DbSet<AssetData> AssetData { get; set; }
+
+        private readonly string connectionStringKey = "p3db";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
