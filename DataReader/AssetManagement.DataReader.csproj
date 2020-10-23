@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
+    <AssemblyName>DataReader</AssemblyName>
+    <RootNamespace>DataReader</RootNamespace>
   </PropertyGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataReader
+namespace AssetManagement.DataReader
 {
     public struct AAFData
     {
