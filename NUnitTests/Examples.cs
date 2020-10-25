@@ -43,9 +43,9 @@ namespace NUnitTests
             Employee employee = new Employee("Bjarne", "Bjarne@testingCompany.com");
             AssetController.TransferOwnership(asset, employee);
             // Act
-            TestDelegate shouldThrow = () => AssetController.TransferOwnership(asset, employee)
+            TestDelegate transferOwnershipToCurrentOwner = () => AssetController.TransferOwnership(asset, employee);
             // Assert 
-            Assert.Throws<ArgumentException>(shouldThrow);
+            Assert.Throws<ArgumentException>(transferOwnershipToCurrentOwner);
         }
     }
 }
