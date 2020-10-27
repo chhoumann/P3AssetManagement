@@ -3,7 +3,17 @@ using AssetManagement.Models;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    public sealed class AssetData
+    public interface IAssetData
+    {
+        string Model { get; }
+        string SerialNumber { get; }
+
+        int Id { get; }
+
+        DateTime LastChanged { get; }
+    }
+
+    public sealed class AssetData : IAssetData
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 
         public string Model { get; set; }
@@ -13,10 +23,6 @@ namespace AssetManagement.DataAccessLibrary
         public int Id { get; set; }
 
         public DateTime LastChanged { get; set; }
-
-        //public List<StateRecord> StateRecords { get; }
-
-        //public List<Transaction> Transactions { get; }
 
         public AssetData(IAsset asset)
         {
