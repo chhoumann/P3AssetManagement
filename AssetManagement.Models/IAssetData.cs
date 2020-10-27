@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AssetManagement.Models
 {
-    public interface IAsset
+    public interface IAssetData 
     {
         string Model { get; }
         string SerialNumber { get; }
@@ -12,9 +12,7 @@ namespace AssetManagement.Models
         DateTime LastChanged { get; }
 
         AssetHolder CurrentAssetHolder { get; }
-        StateRecord CurrentState { get; }
-
-        List<StateRecord> StateRecords { get; }
-        List<Transaction> Transactions { get; }
+        AssetRecord LastAssetRecord { get; }
+        List<AssetRecord> AssetRecords { get; }
     }
 }

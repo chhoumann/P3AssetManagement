@@ -5,7 +5,7 @@ namespace Components
 {
     public partial class AssetTable
     {
-        private IAsset[] assets;
+        private IAssetData[] assets;
 
         protected override async Task OnInitializedAsync()
         {

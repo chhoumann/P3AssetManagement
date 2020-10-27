@@ -20,7 +20,7 @@ namespace NUnitTests
             string employeeName, string employeeEmail)
         {
             // Arrange
-            IAsset asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
+            IAssetData asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
             Employee employee = new Employee(employeeName, employeeEmail);
             // Act
             AssetController.TransferOwnership(asset, employee);
@@ -35,7 +35,7 @@ namespace NUnitTests
         public void TransferOwnership_WhenTransferingAssetToTheHolderWhoAlreadyHasIt_ShouldThrowException()
         {
             // Arrange
-            IAsset asset = AssetController.MakeAsset(1234, "Testing computer", "abc123");
+            IAssetData asset = AssetController.MakeAsset(1234, "Testing computer", "abc123");
             Employee employee = new Employee("Bjarne", "Bjarne@testingCompany.com");
             AssetController.TransferOwnership(asset, employee);
             
