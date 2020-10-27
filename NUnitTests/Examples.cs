@@ -3,7 +3,7 @@ using System.Threading;
 using AssetManagement.Models;
 using NUnit.Framework;
 
-namespace NUnitTests
+namespace AssetManagement.NUnitTests
 {
     public class Examples
     {
