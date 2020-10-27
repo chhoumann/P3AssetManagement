@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.Models", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.NUnitTests", "NUnitTests\AssetManagement.NUnitTests.csproj", "{441451DD-074D-4192-BD8B-E1534E9526C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataReader", "DataReader\DataReader.csproj", "{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.DataReader", "DataReader\AssetManagement.DataReader.csproj", "{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
