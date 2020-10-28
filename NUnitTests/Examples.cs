@@ -1,7 +1,6 @@
-using System;
-using System.Threading;
 using AssetManagement.Models;
 using NUnit.Framework;
+using System;
 
 /* Method Naming Conventions. Should be sepparated by '_':
  * - The name of the method being tested.
@@ -20,8 +19,8 @@ namespace AssetManagement.NUnitTests
         }
 
         // TestCases can be used to test similar behavior without writing many repetitive tests.
-        [TestCase(12345, "Epic Dell Gaming PC",     "SN1BFE4", "Ulf",    "ulf@acme.dk")]
-        public void TransferOwnership_AssetTransfer_AssetOwnershipTransfered(int assetId, string assetName, string assetSerialNumber, 
+        [TestCase(12345, "Epic Dell Gaming PC", "SN1BFE4", "Ulf", "ulf@acme.dk")]
+        public void TransferOwnership_AssetTransfer_AssetOwnershipTransfered(int assetId, string assetName, string assetSerialNumber,
             string employeeName, string employeeEmail)
         {
             // Arrange
