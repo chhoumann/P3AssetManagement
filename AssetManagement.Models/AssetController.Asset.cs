@@ -14,11 +14,11 @@ namespace AssetManagement.Models
 
             public DateTime LastChanged { get; private set; }
 
-            public AssetHolder CurrentAssetHolder { get; private set; }
-            public StateRecord CurrentState => StateRecords[StateRecords.Count - 1];
+            public AssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
+            public AssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
 
-            public List<StateRecord> StateRecords { get; } = new List<StateRecord>();
-            public List<Transaction> Transactions { get; } = new List<Transaction>();
+
+            public List<AssetRecord> AssetRecords { get; } = new List<AssetRecord>();
 
             public Asset(int id, string name, string serialNumber)
             {
@@ -26,35 +26,14 @@ namespace AssetManagement.Models
                 SerialNumber = serialNumber;
                 Id = id;
 
-                StateRecords.Add(new StateRecord(AssetState.Online)); 
+                // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
+                AssetRecords.Add(new AssetRecord(AssetState.Online, null));
             }
 
             public void TransferTo(AssetHolder newAssetHolder)
             {
-                if (newAssetHolder.CurrentAssets.Contains(this))
-                {
-                    // ERROR: New holder is somehow already holding this asset!
-                    throw new ArgumentException("Attempt to add an asset to an asset holder's asset list which already contains this asset!", Model);
-                }
-
-                // Remove this asset from its current holder, if any
-                if (CurrentAssetHolder != null)
-                {
-                    if (!CurrentAssetHolder.CurrentAssets.Contains(this))
-                    {
-                        // ERROR: This asset does not exist in the CurrentAssetHolder's list so we cannot remove it!
-                        throw new ArgumentException($"Attempt to remove asset \"{Model}\" from an asset holder's asset list that did not contain the asset!");
-                    }
-
-                    CurrentAssetHolder.CurrentAssets.Remove(this);
-                }
-
                 // Record this transfer by adding a new transaction to the list of transactions
-                Transactions.Add(new Transaction(CurrentAssetHolder, newAssetHolder));
-
-                // Update the current holder by transferring this asset to the new AssetHolder
-                newAssetHolder.CurrentAssets.Add(this);
-                CurrentAssetHolder = newAssetHolder;
+                AssetRecords.Add(new AssetRecord(LastAssetRecord.State, newAssetHolder));
             }
 
             public void Dispose() { }

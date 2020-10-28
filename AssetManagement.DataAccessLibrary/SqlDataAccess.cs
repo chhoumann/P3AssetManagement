@@ -3,14 +3,14 @@
 #define EXECUTEQUERYSINGLE
 #define DELETESINGLE
 
-using System;
 using AssetManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    public sealed class SqlDataAccess 
+    public sealed class SqlDataAccess
     {
         public void SampleDatabaseOperations()
         {

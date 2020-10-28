@@ -4,14 +4,16 @@ namespace AssetManagement.Models
 {
     public enum AssetState { Missing, Online }
 
-    public class StateRecord
+    public class AssetRecord
     {
-        public AssetState State { get; }
+        public AssetHolder Holder { get; }
         public DateTime Date { get; }
+        public AssetState State { get; }
 
-        public StateRecord(AssetState state)
+        public AssetRecord(AssetState state, AssetHolder holder)
         {
             State = state;
+            Holder = holder;
             Date = DateTime.Now;
         }
     }
