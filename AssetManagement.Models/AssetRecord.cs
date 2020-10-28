@@ -6,14 +6,14 @@ namespace AssetManagement.Models
 
     public class AssetRecord
     {
-        public AssetHolder CurrentHolder { get; }
+        public AssetHolder Holder { get; }
         public DateTime Date { get; }
         public AssetState State { get; }
 
-        public AssetRecord(AssetState state, AssetHolder currentHolder)
+        public AssetRecord(AssetState state, AssetHolder holder)
         {
             State = state;
-            CurrentHolder = currentHolder;
+            Holder = holder;
             Date = DateTime.Now;
         }
     }

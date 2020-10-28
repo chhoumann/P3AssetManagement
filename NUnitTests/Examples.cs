@@ -1,6 +1,5 @@
 using AssetManagement.Models;
 using NUnit.Framework;
-using System;
 
 /* Method Naming Conventions. Should be sepparated by '_':
  * - The name of the method being tested.
@@ -24,28 +23,14 @@ namespace AssetManagement.NUnitTests
             string employeeName, string employeeEmail)
         {
             // Arrange
-            IAssetData asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
+            IAsset asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
             Employee employee = new Employee(employeeName, employeeEmail);
             // Act
             AssetController.TransferOwnership(asset, employee);
             // Assert
             Assert.AreEqual(asset.CurrentAssetHolder, employee,
                 "Expected {0}. But got {1}",
-                asset.CurrentAssetHolder.Name, employee.Name);
-        }
-
-        // Testing if transfering ownership to the currentholder throws an exception
-        [Test]
-        public void TransferOwnership_TransferToCurrentHolder_ThrowException()
-        {
-            // Arrange
-            IAssetData asset = AssetController.MakeAsset(1234, "Testing computer", "abc123");
-            Employee employee = new Employee("Bjarne", "Bjarne@testingCompany.com");
-            AssetController.TransferOwnership(asset, employee);
-            // Act
-            TestDelegate transferOwnershipToCurrentOwner = () => AssetController.TransferOwnership(asset, employee);
-            // Assert 
-            Assert.Throws<ArgumentException>(transferOwnershipToCurrentOwner);
+                asset.CurrentAssetHolder, employee.Name);
         }
     }
 }

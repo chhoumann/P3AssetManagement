@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AssetManagement.Models
 {
-    public interface IAssetData 
+    public interface IAsset 
     {
         string Model { get; }
         string SerialNumber { get; }

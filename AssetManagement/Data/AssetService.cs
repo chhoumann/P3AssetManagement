@@ -6,14 +6,14 @@ namespace AssetManagement
 {
     public class AssetService
     {
-        public Task<IAssetData[]> GetAssetsAsync()
+        public Task<IAsset[]> GetAssetsAsync()
         {
             return Task.Factory.StartNew(() =>
             {
                 Employee anna = new Employee("Anna", "anna@acme.dk");
                 Employee ulf = new Employee("Ulf", "ulf@acme.dk");
 
-                IAssetData[] assets = new IAssetData[]
+                IAsset[] assets = new IAsset[]
                 {
                     AssetController.MakeAsset(69420, "Epic Dell Gaming PC", "SN1"),
                     AssetController.MakeAsset(1234, "Not So Epic Dell Gaming PC", "SN1"),

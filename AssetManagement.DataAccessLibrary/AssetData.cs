@@ -1,18 +1,10 @@
-﻿using System;
+﻿using AssetManagement.Models;
+using System;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    public interface IAssetData
-    {
-        string Model { get; }
-        string SerialNumber { get; }
-
-        int Id { get; }
-
-        DateTime LastChanged { get; }
-    }
-
-    public sealed class AssetData : IAssetData
+    // Should implement an interface later
+    public sealed class AssetData
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 
         public string Model { get; set; }
@@ -23,7 +15,7 @@ namespace AssetManagement.DataAccessLibrary
 
         public DateTime LastChanged { get; set; }
 
-        public AssetData(IAssetData asset)
+        public AssetData(IAsset asset)
         {
             Model = asset.Model;
             SerialNumber = asset.SerialNumber;

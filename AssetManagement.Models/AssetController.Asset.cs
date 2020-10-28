@@ -5,7 +5,7 @@ namespace AssetManagement.Models
 {
     public sealed partial class AssetController
     {
-        private sealed class Asset : IAssetData
+        private sealed class Asset : IAsset
         {
             public string Model { get; }
             public string SerialNumber { get; }
@@ -14,18 +14,20 @@ namespace AssetManagement.Models
 
             public DateTime LastChanged { get; private set; }
 
-            public AssetHolder CurrentAssetHolder => LastAssetRecord.CurrentHolder;
             public AssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
+            public AssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
+
 
             public List<AssetRecord> AssetRecords { get; } = new List<AssetRecord>();
-            
+
             public Asset(int id, string name, string serialNumber)
             {
                 Model = name;
                 SerialNumber = serialNumber;
                 Id = id;
 
-                AssetRecords.Add(new AssetRecord(AssetState.Online, CurrentAssetHolder)); 
+                // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
+                AssetRecords.Add(new AssetRecord(AssetState.Online, null));
             }
 
             public void TransferTo(AssetHolder newAssetHolder)
