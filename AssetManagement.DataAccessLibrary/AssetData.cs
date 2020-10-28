@@ -1,5 +1,4 @@
 ﻿using System;
-using AssetManagement.Models;
 
 namespace AssetManagement.DataAccessLibrary
 {
@@ -24,7 +23,7 @@ namespace AssetManagement.DataAccessLibrary
 
         public DateTime LastChanged { get; set; }
 
-        public AssetData(IAsset asset)
+        public AssetData(IAssetData asset)
         {
             Model = asset.Model;
             SerialNumber = asset.SerialNumber;

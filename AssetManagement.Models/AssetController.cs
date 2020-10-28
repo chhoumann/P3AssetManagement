@@ -9,7 +9,7 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="assetToTransfer">The asset to transfer.</param>
         /// <param name="receiver">The receiver of the asset.</param>
-        public static void TransferOwnership(IAsset assetToTransfer, AssetHolder receiver)
+        public static void TransferOwnership(IAssetData assetToTransfer, AssetHolder receiver)
         {
             if (assetToTransfer is Asset asset)
             {
@@ -24,7 +24,7 @@ namespace AssetManagement.Models
         /// <summary>
         /// Create a new asset.
         /// </summary>
-        public static IAsset MakeAsset(int id, string name, string serialNumber)
+        public static IAssetData MakeAsset(int id, string name, string serialNumber)
         {
             return new Asset(id, name, serialNumber);
         }
@@ -34,9 +34,9 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="asset">The asset whose state needs to be updated.</param>
         /// <param name="assetState">The asset's new state.</param>
-        public static void UpdateAssetState(IAsset asset, AssetState assetState)
+        public static void UpdateAssetState(IAssetData asset, AssetState assetState)
         {
-            asset.StateRecords.Add(new StateRecord(assetState));
+            asset.AssetRecords.Add(new AssetRecord(assetState, asset.CurrentAssetHolder));
         }
     }
 }
