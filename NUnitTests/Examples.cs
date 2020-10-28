@@ -8,7 +8,8 @@ using NUnit.Framework;
  * - The scenario under which it's being tested.
  * - The expected behavior when the scenario is invoked.
  */
-namespace NUnitTests
+namespace AssetManagement.NUnitTests
+
 {
     public class Examples
     {
