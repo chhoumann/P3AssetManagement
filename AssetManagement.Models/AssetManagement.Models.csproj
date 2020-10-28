@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <UserSecretsId>94d4592d-722d-4d3b-a698-26efe5473371</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\GitRepos\p3\AssetManagement.Models\AssetManagement.Models.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

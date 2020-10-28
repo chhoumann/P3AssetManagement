@@ -25,18 +25,5 @@ namespace AssetManagement.Models
 
             CurrentAssets.Add(asset);
         }
-
-        public virtual void RemoveAsset(IAsset asset)
-        {
-            if (CurrentAssets.Contains(asset))
-            {
-                CurrentAssets.Remove(asset);
-            }
-            else
-            {
-                // ERROR: The asset provided by the parameter does not exist in the list so we cannot remove it!
-                throw new ArgumentException($"Attempt to remove asset \"{asset.Model}\" with from an asset holder's asset list that did not contain the asset!");
-            }
-        }
     }
 }

@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement", "AssetMan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.Models", "AssetManagement.Models\AssetManagement.Models.csproj", "{1010AC84-0BAE-4F0C-9AB0-2DBC642ADE25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{441451DD-074D-4192-BD8B-E1534E9526C5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataReader", "DataReader\DataReader.csproj", "{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.NUnitTests", "NUnitTests\AssetManagement.NUnitTests.csproj", "{441451DD-074D-4192-BD8B-E1534E9526C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManagement.DataAccessLibrary", "AssetManagement.DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj", "{16981CB0-C324-431F-A0A0-2BC0DB35A0A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.DataReader", "DataReader\AssetManagement.DataReader.csproj", "{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
