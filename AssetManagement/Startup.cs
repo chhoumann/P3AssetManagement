@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace AssetManagement
 {
@@ -25,6 +26,10 @@ namespace AssetManagement
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Temporary SQL data access example - commented out due to connection string not being part of appsettings.json
+            // DataAccessLibrary.SqlDataAccess sqlDataAccessor = new DataAccessLibrary.SqlDataAccess();
+            // sqlDataAccessor.SampleDatabaseOperations(); 
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<AssetService>();
