@@ -3,6 +3,9 @@ using AssetManagement.Core;
 
 namespace AssetManagement.Models
 {
+    /// <summary>
+    /// A timestamped record for an asset's current state and holder.
+    /// </summary>
     public class AssetRecord : IAssetRecord
     {
         public IAssetHolder Holder { get; }
