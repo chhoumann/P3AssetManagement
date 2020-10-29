@@ -1,4 +1,4 @@
-﻿using AssetManagement.Models;
+﻿using AssetManagement.Core;
 using System;
 
 namespace AssetManagement.DataAccessLibrary

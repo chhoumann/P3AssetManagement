@@ -1,7 +1,9 @@
-﻿namespace AssetManagement.Models
+﻿using AssetManagement.Core;
+
+namespace AssetManagement.Models
 {
-    public sealed class Depot : AssetHolder
+    public sealed class Depot : IAssetHolder
     {
-        public Depot() : base("Depot") { }
+        public string Label => "Depot";
     }
 }

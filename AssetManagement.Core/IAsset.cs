@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AssetManagement.Models
+namespace AssetManagement.Core
 {
     public interface IAsset 
     {
@@ -11,8 +11,8 @@ namespace AssetManagement.Models
 
         DateTime LastChanged { get; }
 
-        AssetHolder CurrentAssetHolder { get; }
-        AssetRecord LastAssetRecord { get; }
-        List<AssetRecord> AssetRecords { get; }
+        IAssetHolder CurrentAssetHolder { get; }
+        IAssetRecord LastAssetRecord { get; }
+        List<IAssetRecord> AssetRecords { get; }
     }
 }

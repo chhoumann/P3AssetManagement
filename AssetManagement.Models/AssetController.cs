@@ -1,4 +1,5 @@
 ﻿using System;
+using AssetManagement.Core;
 
 namespace AssetManagement.Models
 {
@@ -9,7 +10,7 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="assetToTransfer">The asset to transfer.</param>
         /// <param name="receiver">The receiver of the asset.</param>
-        public static void TransferOwnership(IAsset assetToTransfer, AssetHolder receiver)
+        public static void TransferOwnership(IAsset assetToTransfer, IAssetHolder receiver)
         {
             if (assetToTransfer is Asset asset)
             {

@@ -9,4 +9,8 @@
     <DocumentationFile>C:\GitRepos\p3\AssetManagement.Models\AssetManagement.Models.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AssetManagement.Core\AssetManagement.Core.csproj" />
+  </ItemGroup>
+
 </Project>

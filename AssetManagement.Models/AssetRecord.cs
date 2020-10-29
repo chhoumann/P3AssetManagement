@@ -1,16 +1,15 @@
 ﻿using System;
+using AssetManagement.Core;
 
 namespace AssetManagement.Models
 {
-    public enum AssetState { Missing, Online }
-
-    public class AssetRecord
+    public class AssetRecord : IAssetRecord
     {
-        public AssetHolder Holder { get; }
+        public IAssetHolder Holder { get; }
         public DateTime Date { get; }
         public AssetState State { get; }
 
-        public AssetRecord(AssetState state, AssetHolder holder)
+        public AssetRecord(AssetState state, IAssetHolder holder)
         {
             State = state;
             Holder = holder;
