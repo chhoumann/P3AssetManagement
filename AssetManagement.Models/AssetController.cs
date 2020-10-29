@@ -26,8 +26,12 @@ namespace AssetManagement.Models
         }
 
         /// <summary>
-        /// Create a new asset.
+        /// Creates a new asset and returns it as an IAsset interface.
         /// </summary>
+        /// <param name="id">The asset id.</param>
+        /// <param name="name">The name of the asset.</param>
+        /// <param name="serialNumber">The asset's serial number</param>
+        /// <returns></returns>
         public static IAsset MakeAsset(int id, string name, string serialNumber)
         {
             return new Asset(id, name, serialNumber);
