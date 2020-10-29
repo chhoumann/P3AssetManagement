@@ -3,6 +3,9 @@ using AssetManagement.Core;
 
 namespace AssetManagement.Models
 {
+    /// <summary>
+    /// Factory controller responsible for creating assets, transfering assets and updating asset states.
+    /// </summary>
     public sealed partial class AssetController
     {
         /// <summary>

@@ -6,6 +6,9 @@ namespace AssetManagement.Models
 {
     public sealed partial class AssetController
     {
+        /// <summary>
+        /// The private, core implementation of IAsset which is only visible to AssetController.
+        /// </summary>
         private sealed class Asset : IAsset
         {
             public string Model { get; }
@@ -30,6 +33,10 @@ namespace AssetManagement.Models
                 AssetRecords.Add(new AssetRecord(AssetState.Online, null));
             }
 
+            /// <summary>
+            /// Transfer the asset to a new asset holder.
+            /// </summary>
+            /// <param name="newAssetHolder">The asset holder to transfer to.</param>
             public void TransferTo(IAssetHolder newAssetHolder)
             {
                 // Record this transfer by adding a new transaction to the list of transactions

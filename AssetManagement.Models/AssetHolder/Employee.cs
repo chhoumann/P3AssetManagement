@@ -3,7 +3,7 @@
 namespace AssetManagement.Models
 {
     /// <summary>
-    /// An employee of type IEmployee which derrives IAssetHolder
+    /// An employee of type IEmployee which derrives IAssetHolder.
     /// </summary>
     public sealed class Employee : IEmployee
     {
