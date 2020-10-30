@@ -7,6 +7,11 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\GitRepos\p3\AssetManagement.Models\AssetManagement.Models.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AssetManagement.Core\AssetManagement.Core.csproj" />
+  </ItemGroup>
 
 </Project>

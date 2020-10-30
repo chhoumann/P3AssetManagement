@@ -1,6 +1,6 @@
 using AssetManagement.Models;
+using AssetManagement.Core;
 using NUnit.Framework;
-
 /* Method Naming Conventions. Should be sepparated by '_':
  * - The name of the method being tested.
  * - The scenario under which it's being tested.
@@ -18,19 +18,19 @@ namespace AssetManagement.NUnitTests
         }
 
         // TestCases can be used to test similar behavior without writing many repetitive tests.
-        [TestCase(12345, "Epic Dell Gaming PC", "SN1BFE4", "Ulf", "ulf@acme.dk")]
+        [TestCase(12345, "Epic Dell Gaming PC", "SN1BFE4", "Ulf", "ulf@acme.dk", "AAF")]
         public void TransferOwnership_AssetTransfer_AssetOwnershipTransfered(int assetId, string assetName, string assetSerialNumber,
-            string employeeName, string employeeEmail)
+            string employeeName, string employeeEmail, string department)
         {
             // Arrange
             IAsset asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
-            Employee employee = new Employee(employeeName, employeeEmail);
+            Employee employee = new Employee(employeeName, employeeEmail, department);
             // Act
             AssetController.TransferOwnership(asset, employee);
             // Assert
             Assert.AreEqual(asset.CurrentAssetHolder, employee,
                 "Expected {0}. But got {1}",
-                asset.CurrentAssetHolder, employee.Name);
+                asset.CurrentAssetHolder, employee.Label);
         }
     }
 }

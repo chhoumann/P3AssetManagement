@@ -1,4 +1,4 @@
-﻿@using AssetManagement.Models
+﻿@using AssetManagement.Core
 @inject AssetService AssetService
 @namespace Components
 
@@ -15,7 +15,7 @@ else
                 <th>Serienummer</th>
                 <th>ID</th>
                 <th>Ejer</th>
-                <th>Mail</th>
+                <th>Brugernavn</th>
                 <th>Sidst Ændret</th>
                 <th>PC-AD Status</th>
                 <th>State</th>
@@ -29,8 +29,8 @@ else
                     <td>@asset.Model</td>
                     <td>@asset.SerialNumber</td>
                     <td>@asset.Id</td>
-                    <td>@asset.CurrentAssetHolder.Name</td>
-                    <td>@(asset.CurrentAssetHolder is Employee employee ? employee.Email : "—")</td>
+                    <td>@asset.CurrentAssetHolder.Label</td>
+                    <td>@(asset.CurrentAssetHolder is IEmployee ? ((IEmployee)asset.CurrentAssetHolder).Username : "-")</td>
                     <td>@asset.LastChanged.ToShortDateString()</td>
                     <td>Awaiting Imp.</td>
                     <td>@asset.LastAssetRecord.State</td>

@@ -1,7 +1,12 @@
-﻿namespace AssetManagement.Models
+﻿using AssetManagement.Core;
+
+namespace AssetManagement.Models
 {
-    public sealed class Depot : AssetHolder
+    /// <summary>
+    /// A type of IAssetHolder which functions as a simple container for IAssets.
+    /// </summary>
+    public sealed class Depot : IAssetHolder
     {
-        public Depot() : base("Depot") { }
+        public string Label => "Depot";
     }
 }

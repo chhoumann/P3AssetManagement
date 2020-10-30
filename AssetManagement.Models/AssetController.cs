@@ -1,7 +1,11 @@
 ﻿using System;
+using AssetManagement.Core;
 
 namespace AssetManagement.Models
 {
+    /// <summary>
+    /// Factory controller responsible for creating assets, transfering assets and updating asset states.
+    /// </summary>
     public sealed partial class AssetController
     {
         /// <summary>
@@ -9,7 +13,7 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="assetToTransfer">The asset to transfer.</param>
         /// <param name="receiver">The receiver of the asset.</param>
-        public static void TransferOwnership(IAsset assetToTransfer, AssetHolder receiver)
+        public static void TransferOwnership(IAsset assetToTransfer, IAssetHolder receiver)
         {
             if (assetToTransfer is Asset asset)
             {
@@ -22,8 +26,12 @@ namespace AssetManagement.Models
         }
 
         /// <summary>
-        /// Create a new asset.
+        /// Creates a new asset and returns it as an IAsset interface.
         /// </summary>
+        /// <param name="id">The asset id.</param>
+        /// <param name="name">The name of the asset.</param>
+        /// <param name="serialNumber">The asset's serial number</param>
+        /// <returns></returns>
         public static IAsset MakeAsset(int id, string name, string serialNumber)
         {
             return new Asset(id, name, serialNumber);

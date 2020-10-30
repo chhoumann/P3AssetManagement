@@ -1,9 +1,23 @@
-﻿namespace AssetManagement.Models
+﻿using AssetManagement.Core;
+
+namespace AssetManagement.Models
 {
-    public sealed class Employee : AssetHolder
+    /// <summary>
+    /// An employee of type IEmployee which derrives IAssetHolder.
+    /// </summary>
+    public sealed class Employee : IEmployee
     {
-        public string Email { get; private set; }
-        public int Id { get; private set; }
-        public Employee(string name, string email) : base(name) => Email = email;
+        public string Username { get; }
+
+        public string Department { get; }
+
+        public string Label { get; }
+
+        public Employee(string name, string username, string department)
+        {
+            Label = name;
+            Username = username;
+            Department = department;
+        }
     }
 }

@@ -4,6 +4,7 @@
 #define DELETESINGLE
 
 using AssetManagement.Models;
+using AssetManagement.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
