@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.DataAccessL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.DataReader", "DataReader\AssetManagement.DataReader.csproj", "{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetManagement.Core", "AssetManagement.Core\AssetManagement.Core.csproj", "{0ADE50E1-40E9-4C79-8BAB-0024762641D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.Core", "AssetManagement.Core\AssetManagement.Core.csproj", "{0ADE50E1-40E9-4C79-8BAB-0024762641D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

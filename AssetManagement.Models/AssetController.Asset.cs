@@ -1,6 +1,6 @@
-﻿using System;
+﻿using AssetManagement.Core;
+using System;
 using System.Collections.Generic;
-using AssetManagement.Core;
 
 namespace AssetManagement.Models
 {

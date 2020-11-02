@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AssetManagement.DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj" />
     <ProjectReference Include="..\AssetManagement.Models\AssetManagement.Models.csproj" />
   </ItemGroup>
