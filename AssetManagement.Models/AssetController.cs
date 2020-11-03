@@ -1,5 +1,5 @@
-﻿using System;
-using AssetManagement.Core;
+﻿using AssetManagement.Core;
+using System;
 
 namespace AssetManagement.Models
 {
