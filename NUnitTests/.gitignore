@@ -9,7 +9,7 @@
 ![Bb]in/[Dd]ebug/
 
 [Bb]in/[Dd]ebug/*
-![Bb]in/[Dd]ebug/netcoreapp3.1/
+![Bb]in/[Dd]ebug/**/
 
-[Bb]in/[Dd]ebug/netcoreapp3.1/*
-![Bb]in/[Dd]ebug/netcoreapp3.1/test-files/
+[Bb]in/[Dd]ebug/**/*
+![Bb]in/[Dd]ebug/**/test-files/
