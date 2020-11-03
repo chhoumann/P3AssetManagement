@@ -6,7 +6,7 @@ using System.IO;
 
 namespace AssetManagement.DataReader
 {
-    public delegate IAssetRecord CsvLineParser(string fileName, string[] fields, int expectedFieldsAmount, char sepparator);
+    public delegate IAssetRecord CsvLineParser(string fileName, string[] fields);
 
 
     public sealed class CsvLoader
@@ -24,6 +24,7 @@ namespace AssetManagement.DataReader
             List<IAssetRecord> data = new List<IAssetRecord>();
             StreamReader sr = new StreamReader(path);
             string fileName = Path.GetFileName(path);
+            //lineCount only for error
             int lineCount = 1;
 
             // First line is skipped, as it includes headers and has no actual data.
@@ -46,7 +47,7 @@ namespace AssetManagement.DataReader
                                                     $"Parsing failed.");
                     }
 
-                    data.Add(parseFunc(fileName, fields, expectedFieldsAmount, sepparator));
+                    data.Add(parseFunc(fileName, fields));
                     lineCount++;
                 }
             } while (currentLine != null);

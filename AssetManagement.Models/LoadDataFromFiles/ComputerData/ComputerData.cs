@@ -9,6 +9,7 @@ namespace AssetManagement.Models
         public DateTime Date { get; }
         public IAssetHolder Holder { get; }
         public AssetState State { get; }
+        // IAlienData
         public string FileName { get; }
         // Other
         public string PcName { get; }

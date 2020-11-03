@@ -30,12 +30,10 @@ namespace AssetManagement.NUnitTests
         {
             // Arrange
             ComputerDataLineParser computerDataLineParser = new ComputerDataLineParser();
-            CsvLineParser parseFunc = computerDataLineParser.Parse();
+            CsvLineParser parseFunc = computerDataLineParser.GetParseFunc();
             string[] fields = csvRow.Split(Sepparator);
             // Act
-            TestDelegate parseData = () => parseFunc(
-                FileName, fields, ExpectedAmountOfFieldsInCsvLine, Sepparator
-            );
+            TestDelegate parseData = () => parseFunc(FileName, fields);
             // Assert
             Assert.DoesNotThrow(parseData);
         }
@@ -58,10 +56,9 @@ namespace AssetManagement.NUnitTests
             string csvRowWithCorruptDate = corruptDate + mockData;
             string[] fieldsWithCorruptDate = csvRowWithCorruptDate.Split(Sepparator);
             ComputerDataLineParser computerDataLineParser = new ComputerDataLineParser();
-            CsvLineParser parseFunc = computerDataLineParser.Parse();
+            CsvLineParser parseFunc = computerDataLineParser.GetParseFunc();
             // Act
-            TestDelegate parseData = () => parseFunc(
-                FileName, fieldsWithCorruptDate, ExpectedAmountOfFieldsInCsvLine, Sepparator);
+            TestDelegate parseData = () => parseFunc(FileName, fieldsWithCorruptDate);
             // Assert
             Assert.Throws<FormatException>(parseData);
         }

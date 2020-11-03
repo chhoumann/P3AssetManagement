@@ -16,6 +16,6 @@ namespace AssetManagement.DataReader
         /// Should parse the Line property to an IAssetRecord according to the provided parserFunc
         /// </summary>
         /// <returns>Returns an IAssetRecord, which is an interface, that is useful throughout the rest of the program</returns>
-        CsvLineParser Parse();
+        CsvLineParser GetParseFunc();
     }
 }

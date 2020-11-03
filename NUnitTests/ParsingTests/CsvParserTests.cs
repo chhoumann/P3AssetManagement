@@ -27,7 +27,7 @@ namespace AssetManagement.NUnitTests
             CsvLoader loader = new CsvLoader();
             // TestDirectory is this dir: p3\NUnitTests\bin\Debug\netcoreapp3.1
             FilePath = Path.Combine(TestContext.CurrentContext.TestDirectory, "test-files", "CompuerDataExample.csv");
-            CsvLineParser skipParser = (string originFileName, string[] fields, int expectedFieldsAmount, char sepparator) =>
+            CsvLineParser skipParser = (string originFileName, string[] fields) =>
             {
                 // This is where the parsing should've happened
                 IAssetRecord assetRecord = Substitute.For<IAssetRecord>();

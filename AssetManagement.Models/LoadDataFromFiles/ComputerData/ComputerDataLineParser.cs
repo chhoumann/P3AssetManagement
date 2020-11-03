@@ -9,9 +9,9 @@ namespace AssetManagement.Models
     {
         public CultureInfo CultureInfo { get; } = new CultureInfo("fr-FR");
 
-        public CsvLineParser Parse()
+        public CsvLineParser GetParseFunc()
         {
-            return (string originFileName, string[] fields, int expectedFieldsAmount, char sepparator) =>
+            return (string originFileName, string[] fields) =>
             {
                 // Parses the string-array to a ComputerData object
                 // Be aware that the DateTime.Parse() could throw FormatException() if the data given is not valid
