@@ -1,3 +1,8 @@
+# This .gitignore ignores the folowing directory,
+# which is a directory consisting of files which the tests depend on:
+# Path: ./bin/Debug/netcoreapp3.1/test-files
+# Source of information: https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder
+
 ![Bb]in/
 
 [Bb]in/*
