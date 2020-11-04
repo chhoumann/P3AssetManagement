@@ -1,0 +1,58 @@
+﻿@using AssetManagement.Core
+@inject AssetService AssetService
+@namespace Components
+
+@if (pageAssets == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Serienummer</th>
+                <th>ID</th>
+                <th>Ejer</th>
+                <th>Brugernavn</th>
+                <th>Sidst Ændret</th>
+                <th>PC-AD Status</th>
+                <th>State</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (IAsset asset in pageAssets)
+            {
+                <tr>
+                    <td>@asset.Model</td>
+                    <td>@asset.SerialNumber</td>
+                    <td>@asset.Id</td>
+                    <td>@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</td>
+                    <td>@(asset.CurrentAssetHolder is IEmployee ? ((IEmployee)asset.CurrentAssetHolder).Username : "-")</td>
+                    <td>@asset.LastChanged.ToShortDateString()</td>
+                    <td>Awaiting Imp.</td>
+                    <td>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
+                    <td>
+                        <a href="#" target="_blank">Detaljer</a>
+                    </td>
+                    <td>
+                        <button class="btn" style="background-color:transparent">
+                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                             </svg>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <button disabled=@(navigator.PageIndex == 0) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Left)">Previous</button>
+        <button disabled=@(navigator.PageIndex == navigator.MaxPages - 1) type="button" class="btn btn-secondary"  @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Right)">Next</button>
+        <p>@(navigator.PageIndex + 1) / @navigator.MaxPages</p>
+    </div>
+}

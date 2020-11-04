@@ -23,9 +23,9 @@ namespace AssetManagement.Models
 
             public List<IAssetRecord> AssetRecords { get; } = new List<IAssetRecord>();
 
-            public Asset(int id, string name, string serialNumber)
+            public Asset(int id, string model, string serialNumber)
             {
-                Model = name;
+                Model = model;
                 SerialNumber = serialNumber;
                 Id = id;
 

@@ -1,85 +1,105 @@
-﻿#define EXECUTESAVE
-#define EXECUTEQUERYALL
-#define EXECUTEQUERYSINGLE
-#define DELETESINGLE
-
-using AssetManagement.Models;
-using AssetManagement.Core;
+﻿using AssetManagement.Core;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace AssetManagement.DataAccessLibrary
 {
     public sealed class SqlDataAccess
     {
-        public void SampleDatabaseOperations()
+        private AssetContext Db { get; set; }
+
+        public SqlDataAccess(AssetContext db) => Db = db;
+
+        /// <summary>
+        /// Adds a new asset to the database.
+        /// </summary>
+        /// <param name="asset">IAsset to add to database</param>
+        /// <returns>nothing</returns>
+        public async Task Create(IAsset asset)
         {
-#if EXECUTESAVE
-            /* EXAMPLE: Save to database */
-            using (AssetContext db = new AssetContext())
+            Console.WriteLine($"Executing Create query for ID {asset.Id}.");
+
+            AssetData assetData = new AssetData(asset);
+
+            await Db.AssetData.AddAsync(assetData);
+            await Db.SaveChangesAsync();
+
+            Console.WriteLine("Successfully created Asset:");
+            Console.WriteLine(assetData);
+        }
+
+        /// <summary>
+        /// Reads and returns a single asset from the database.
+        /// </summary>
+        /// <param name="id">ID for asset we're looking for</param>
+        /// <returns>an IAsset, and throws exception if it's not found.</returns>
+        public async Task<IAsset> ReadSingle(int id)
+        {
+            Console.WriteLine($"Executing ReadSingle query for ID {id}.");
+            
+            AssetData asset = await Db.AssetData.SingleAsync(item => item.Id == id);
+
+            Console.WriteLine("Query completed with following results:");
+            Console.WriteLine(asset);
+
+            return asset.ToIAsset();
+        }
+
+        /// <summary>
+        /// Reads all assets from database and returns them
+        /// </summary>
+        /// <returns>IAsset array of all assets in database</returns>
+        public async Task<IAsset[]> ReadAll()
+        {
+            Console.WriteLine("Executing ReadAll query.");
+
+            List<AssetData> assets = await Db.AssetData.ToListAsync();
+            IAsset[] result = new IAsset[assets.Count];
+
+            Console.WriteLine("Query completed.");
+
+            for (int i = 0; i < assets.Count; i++)
             {
-                // Create a new asset and save it to the database
-                IAsset asset = AssetController.MakeAsset(100, "Gamer", "100");
-                AssetData assetData = new AssetData(asset);
-
-                Console.WriteLine(asset.LastChanged);
-
-                Console.WriteLine(assetData);
-                Console.WriteLine("----------------------");
-                Console.WriteLine(db.AssetData);
-
-                db.AssetData.Add(assetData);
-                Console.WriteLine("Calling SaveChanges.");
-                db.SaveChanges();
-                Console.WriteLine("SaveChanges completed.");
+                result[i] = assets[i].ToIAsset();
             }
-#endif
-#if EXECUTEQUERYALL
-            /* EXAMPLE: Get all elements in database */
-            using (AssetContext db = new AssetContext())
-            {
-                // Query for all assets
-                Console.WriteLine("Executing query.");
 
-                List<AssetData> assets = db.AssetData.ToList();
+            return result;
+        }
 
-                // Write all blogs out to Console
-                Console.WriteLine("Query completed with following results:");
+        /// <summary>
+        /// Updates a given asset to the asset passed in.
+        /// </summary>
+        /// <param name="asset"></param>
+        /// <returns>Nothing</returns>
+        public async Task Update(IAsset asset)
+        {
+            Console.WriteLine($"Executing Update query for ID {asset.Id}.");
 
-                foreach (var asset in assets)
-                {
-                    Console.WriteLine(" " + asset.Id);
-                }
-            }
-#endif
-#if EXECUTEQUERYSINGLE
-            /* EXAMPLE: Get single element in database */
-            using (AssetContext db = new AssetContext())
-            {
-                Console.WriteLine("Executing query.");
+            Db.Update(new AssetData(asset));
+            
+            await Db.SaveChangesAsync();
 
-                // Query for single asset with Id 100
-                var asset = db.AssetData.Single(b => b.Id == 100);
+            Console.WriteLine("Asset successfully updated.");
+        }
 
-                Console.WriteLine("Query completed with following results:");
-                Console.WriteLine(asset);
-            }
-#endif
-#if DELETESINGLE
-            /* EXAMPLE: Delete single element in database */
-            using (AssetContext db = new AssetContext())
-            {
-                Console.WriteLine("Executing query.");
+        /// <summary>
+        /// Deletes passed in asset.
+        /// </summary>
+        /// <param name="asset">asset to delete</param>
+        /// <returns></returns>
+        public async Task Delete(IAsset asset)
+        {
+            Console.WriteLine($"Executing DeleteSingle query for ID {asset.Id}.");
 
-                // Query for single asset with Id 100
-                var asset = db.AssetData.Single(b => b.Id == 100);
-                db.Remove(asset);
-                db.SaveChanges();
+            AssetData dbItem = await Db.AssetData.SingleAsync(item => item.Id == asset.Id);
 
-                Console.WriteLine("Asset removed.");
-            }
-#endif
+            Db.Remove(dbItem);
+
+            await Db.SaveChangesAsync();
+
+            Console.WriteLine("Asset successfully removed.");
         }
     }
 }

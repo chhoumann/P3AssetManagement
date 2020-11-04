@@ -22,8 +22,12 @@ namespace AssetManagement.DataAccessLibrary
             Id = asset.Id;
             LastChanged = asset.LastChanged;
         }
-
         public AssetData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
+
+        public IAsset ToIAsset()
+        {
+            return Models.AssetController.MakeAsset(Id, Model, SerialNumber);
+        }
 
         public override string ToString()
         {
