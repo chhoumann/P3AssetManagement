@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\AssetManagement.Core.csproj" />
+    <ProjectReference Include="..\DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj" />
+    <ProjectReference Include="..\Models\AssetManagement.Models.csproj" />
+  </ItemGroup>
+
+</Project>

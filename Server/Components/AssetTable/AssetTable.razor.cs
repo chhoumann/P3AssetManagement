@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using AssetManagement.Core;
 
-namespace Components
+namespace AssetManagement.Server.Components
 {
     public partial class AssetTable
     {

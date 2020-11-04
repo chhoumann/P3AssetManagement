@@ -1,7 +1,7 @@
 ﻿using AssetManagement.Core;
 using System;
 
-namespace Components
+namespace AssetManagement.Server.Components
 {
     public partial class AssetTable
     {

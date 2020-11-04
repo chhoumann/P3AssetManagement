@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
 
-namespace AssetManagement
+namespace AssetManagement.Server
 {
     public class Startup
     {

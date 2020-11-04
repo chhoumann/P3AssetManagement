@@ -2,7 +2,7 @@
 using AssetManagement.DataAccessLibrary;
 using AssetManagement.Core;
 
-namespace AssetManagement
+namespace AssetManagement.Server
 {
     public class AssetService
     {
