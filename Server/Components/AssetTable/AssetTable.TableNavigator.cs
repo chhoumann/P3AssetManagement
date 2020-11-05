@@ -5,10 +5,10 @@ namespace AssetManagement.Server.Components
 {
     public partial class AssetTable
     {
-        private class TableNavigator
+        private sealed class TableNavigator
         {
             public int PageIndex { get; private set; } = 0;
-            public int MaxPages { get; private set; } = 0;
+            public int NumPages { get; private set; } = 0;
 
             /// <summary>
             /// Event that fires when the page changes.
@@ -24,8 +24,8 @@ namespace AssetManagement.Server.Components
             /// <param name="pageAssets">Output array with sliced assets of size AssetsPerPage.</param>
             public TableNavigator(IAsset[] assets, out IAsset[] pageAssets)
             {
-                pageAssets = GetPage(assets);
                 CalculateMaxPages(assets.Length);
+                pageAssets = GetPage(assets);
             }
 
             /// <summary>
@@ -35,17 +35,17 @@ namespace AssetManagement.Server.Components
             /// <param name="navigationDirection">The direction to navigate - left or right.</param>
             public void ChangePage(IAsset[] assets, HorizontalDirection navigationDirection)
             {
-                int direction = (int) navigationDirection;
-                int numPages = CalculateMaxPages(assets.Length);
+                int direction = (int)navigationDirection;
                 int requestedPageIndex = PageIndex + direction;
-
-                if (requestedPageIndex >= numPages || requestedPageIndex < 0) return;
+                
+                if (requestedPageIndex >= NumPages || requestedPageIndex < 0) return;
 
                 PageIndex += direction;
                 OnPageChanged?.Invoke(GetPage(assets));
             }
 
-            private int CalculateMaxPages(int assetCount) => MaxPages = assetCount / AssetsPerPage;
+            // Should be hooked up to an event when the server asset database is updated
+            private void CalculateMaxPages(int assetCount) => NumPages = assetCount / AssetsPerPage;
 
             /// <summary>
             /// Slices asset array into a size of AssetsPerPage and returns them as an IAsset array.
