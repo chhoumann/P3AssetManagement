@@ -3,7 +3,7 @@ using System;
 
 namespace AssetManagement.Models
 {
-    public class ComputerData : IAssetRecord, IAlienData
+    public class ComputerData : IAssetRecord
     {
         // IAssetRecord
         public DateTime Date { get; }

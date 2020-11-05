@@ -7,6 +7,7 @@ namespace AssetManagement.Core
     /// </summary>
     public interface IAssetRecord
     {
+        string FileName { get; }
         DateTime Date { get; }
         IAssetHolder Holder { get; }
         AssetState State { get; }
