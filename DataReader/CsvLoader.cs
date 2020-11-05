@@ -28,11 +28,14 @@ namespace AssetManagement.DataReader
             int lineCount = 1;
 
             // First line is skipped, as it includes headers and has no actual data.
-            sr.ReadLine();
+            string currentLine = sr.ReadLine();
+            if (string.IsNullOrEmpty(currentLine))
+            {
+                throw new ArgumentException($"The file at >{path}< was empty.");
+            }
             lineCount++;
 
             // Reads all lines in csv, and saves them in an AAFData list.
-            string currentLine;
             do
             {
                 currentLine = sr.ReadLine();
