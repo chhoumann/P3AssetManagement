@@ -103,7 +103,7 @@ namespace AssetManagement.DataAccessLibrary
             /// </summary>
             /// <param name="asset">asset to delete</param>
             /// <returns></returns>
-            public async Task Delete(IAsset asset)
+            public async Task DeleteIAsset(IAsset asset)
             {
                 Console.WriteLine($"Executing DeleteSingle query for ID {asset.Id}.");
 
