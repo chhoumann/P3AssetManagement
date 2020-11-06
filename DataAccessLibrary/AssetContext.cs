@@ -7,6 +7,7 @@ namespace AssetManagement.DataAccessLibrary
     public sealed class AssetContext : DbContext
     {
         public DbSet<AssetData> AssetData { get; set; }
+        public DbSet<AssetRecordData> AssetRecordData { get; set; }
 
         private readonly string connectionStringKey = "p3db";
 
