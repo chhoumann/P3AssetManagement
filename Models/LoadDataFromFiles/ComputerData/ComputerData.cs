@@ -12,7 +12,7 @@ namespace AssetManagement.Models
         // IAlienData
         public string FileName { get; }
         // Other
-        public string PcName { get; }
+        public string AssetId { get; }
         public string OperatingSystem { get; }
         public string Manufacturer { get; }
         public string Model1 { get; }
@@ -29,7 +29,7 @@ namespace AssetManagement.Models
             Holder = new Employee(name, username, department);
             State = AssetState.Online;
             // Other
-            PcName = pcName;
+            AssetId = pcName;
             OperatingSystem = operatingSystem;
             Manufacturer = manufacturer;
             Model1 = model1;

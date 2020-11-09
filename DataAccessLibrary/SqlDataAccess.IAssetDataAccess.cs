@@ -25,7 +25,7 @@ namespace AssetManagement.DataAccessLibrary
             /// <returns>nothing</returns>
             public async Task CreateIAsset(IAsset asset)
             {
-                Console.WriteLine($"Executing Create query for ID {asset.Id}.");
+                Console.WriteLine($"Executing Create query for ID {asset.DbId}.");
 
                 AssetData assetData = new AssetData(asset);
 
@@ -81,7 +81,7 @@ namespace AssetManagement.DataAccessLibrary
             /// <returns>Nothing</returns>
             public async Task UpdateIAsset(IAsset asset)
             {
-                Console.WriteLine($"Executing Update query for ID {asset.Id}.");
+                Console.WriteLine($"Executing Update query for ID {asset.DbId}.");
 
                 Db.Update(new AssetData(asset));
 
@@ -97,9 +97,9 @@ namespace AssetManagement.DataAccessLibrary
             /// <returns></returns>
             public async Task DeleteIAsset(IAsset asset)
             {
-                Console.WriteLine($"Executing DeleteSingle query for ID {asset.Id}.");
+                Console.WriteLine($"Executing DeleteSingle query for ID {asset.DbId}.");
 
-                AssetData dbItem = await Db.AssetData.SingleAsync(item => item.Id == asset.Id);
+                AssetData dbItem = await Db.AssetData.SingleAsync(item => item.Id == asset.DbId);
 
                 Db.Remove(dbItem);
 

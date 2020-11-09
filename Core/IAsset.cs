@@ -7,7 +7,8 @@ namespace AssetManagement.Core
     {
         string Model { get; }
         string SerialNumber { get; }
-        int Id { get; }
+        string AssetId { get; }
+        int DbId { get; }
 
         DateTime LastChanged { get; }
 
