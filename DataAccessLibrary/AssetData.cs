@@ -19,7 +19,7 @@ namespace AssetManagement.DataAccessLibrary
         {
             Model = asset.Model;
             SerialNumber = asset.SerialNumber;
-            Id = asset.Id;
+            Id = asset.DbId;
             LastChanged = asset.LastChanged;
         }
         public AssetData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
