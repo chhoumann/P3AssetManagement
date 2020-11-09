@@ -5,20 +5,22 @@ namespace AssetManagement.Models
 {
     public class ComputerData : IAssetRecord
     {
-        // IAssetRecord
+        #region IAssetRecord properties
+        public string FileName { get; }
+        public string AssetId { get; }
         public DateTime Date { get; }
         public IAssetHolder Holder { get; }
         public AssetState State { get; }
-        // IAlienData
-        public string FileName { get; }
-        // Other
-        public string AssetId { get; }
+        #endregion IAssetRecord
+
+        #region Other properties
         public string OperatingSystem { get; }
         public string Manufacturer { get; }
         public string Model1 { get; }
         public string Model2 { get; }
         public string SerialNumber { get; }
         public string PcadStatus { get; }
+        #endregion
 
         public ComputerData(string originFileName, DateTime timestamp, string username, string name, string department, string pcName, string operatingSystem,
                        string manufacturer, string model1, string model2, string serialNumber, string pcadStatus)
