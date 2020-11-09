@@ -16,27 +16,29 @@ namespace AssetManagement.Models
         /// <summary>
         /// Use this constructor if the new asset record isn't invoked by a file
         /// </summary>
+        /// <param name="date">The date when the AssetRecord was created</param>
         /// <param name="state">Can be online or missing</param>
         /// <param name="holder">The holder of the asset at the time of the record</param>
-        public AssetRecord(AssetState state, IAssetHolder holder)
+        public AssetRecord(DateTime date, AssetState state, IAssetHolder holder)
         {
+            Date = date;
             State = state;
             Holder = holder;
-            Date = DateTime.Now;
         }
-        
+
         /// <summary>
         /// Use this constructor if the new asset record isn't invoked by a file
         /// </summary>
+        /// <param name="date">The date when the AssetRecord was created</param>
         /// <param name="state">Can be online or missing</param>
         /// <param name="holder">The holder of the asset at the time of the record</param>
         /// <param name="fileName">The file name of the file where the record comes from</param>
-        public AssetRecord(string fileName, AssetState state, IAssetHolder holder)
+        public AssetRecord(DateTime date, AssetState state, IAssetHolder holder, string fileName)
         {
-            FileName = fileName;
+            Date = date;
             State = state;
             Holder = holder;
-            Date = DateTime.Now;
+            FileName = fileName;
         }
     }
 }
