@@ -24,7 +24,7 @@ namespace AssetManagement.Models
             /// </summary>
             public int DbId { get; }
 
-            public DateTime LastChanged { get; private set; }
+            public DateTime LastChanged => LastAssetRecord.Date;
 
             public IAssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
             public IAssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
