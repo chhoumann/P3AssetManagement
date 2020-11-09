@@ -1,9 +1,8 @@
-﻿using AssetManagement.Core;
-using AssetManagement.DataReader;
-using System;
+﻿using System;
 using System.Globalization;
+using AssetManagement.DataReader;
 
-namespace AssetManagement.Models
+namespace AssetManagement.Models.LoadDataFromFiles.ComputerData
 {
     public class ComputerDataLineParser : ICsvLineParser
     {
@@ -11,12 +10,12 @@ namespace AssetManagement.Models
 
         public CsvLineParser GetParseFunc()
         {
-            return (string originFileName, string[] fields) =>
+            return (string fileName, string[] fields) =>
             {
                 // Parses the string-array to a ComputerData object
                 // Be aware that the DateTime.Parse() could throw FormatException() if the data given is not valid
                 ComputerData parsedData = new ComputerData(
-                    originFileName,
+                    fileName,
                     DateTime.Parse(fields[0], CultureInfo),
                     fields[1],
                     fields[2],

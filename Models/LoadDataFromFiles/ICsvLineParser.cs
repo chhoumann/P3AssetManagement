@@ -1,8 +1,7 @@
-﻿using AssetManagement.Core;
-using System;
-using System.Globalization;
+﻿using System.Globalization;
+using AssetManagement.DataReader;
 
-namespace AssetManagement.DataReader
+namespace AssetManagement.Models.LoadDataFromFiles
 {
     /// <summary>
     /// This interface defines how a line-parser class should look.
