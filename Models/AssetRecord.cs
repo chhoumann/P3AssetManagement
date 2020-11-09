@@ -15,6 +15,8 @@ namespace AssetManagement.Models
 
         /// <summary>
         /// Create a new AssetRecord where the date defaults to DateTime.now.
+        /// Use this constructor if the new asset record isn't invoked by a file,
+        /// And the Date of the record should be set to the current time
         /// </summary>
         /// <param name="state">The PCID state of the asset.</param>
         /// <param name="holder">The holder of the asset at the time of the record.</param>
@@ -27,7 +29,8 @@ namespace AssetManagement.Models
 
         /// <summary>
         /// Create a new AssetRecord with a specific date.
-        /// Use this constructor if the new asset record isn't invoked by a file.
+        /// Use this constructor if the new asset record isn't invoked by a file,
+        /// and you want to specify the time yourself.
         /// </summary>
         /// <param name="state">The PCID state of the asset.</param>
         /// <param name="holder">The holder of the asset at the time of the record.</param>
