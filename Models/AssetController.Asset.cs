@@ -30,7 +30,7 @@ namespace AssetManagement.Models
                 Id = id;
 
                 // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
-                AssetRecords.Add(new AssetRecord(DateTime.Now, AssetState.Online, null));
+                AssetRecords.Add(new AssetRecord(DateTime.Now, AssetState.Null, null));
             }
 
             /// <summary>
