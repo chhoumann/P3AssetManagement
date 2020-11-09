@@ -11,7 +11,7 @@ namespace AssetManagement.Models
         public DateTime Date { get; }
         public IAssetHolder Holder { get; }
         public AssetState State { get; }
-        #endregion IAssetRecord
+        #endregion
 
         #region Other properties
         public string OperatingSystem { get; }
