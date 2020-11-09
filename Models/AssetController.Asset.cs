@@ -30,7 +30,7 @@ namespace AssetManagement.Models
                 Id = id;
 
                 // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
-                AssetRecords.Add(new AssetRecord(AssetState.Online, null));
+                AssetRecords.Add(new AssetRecord(DateTime.Now, AssetState.Null, null));
             }
 
             /// <summary>
@@ -40,7 +40,7 @@ namespace AssetManagement.Models
             public void TransferTo(IAssetHolder newAssetHolder)
             {
                 // Record this transfer by adding a new transaction to the list of transactions
-                AssetRecords.Add(new AssetRecord(LastAssetRecord.State, newAssetHolder));
+                AssetRecords.Add(new AssetRecord(DateTime.Now, LastAssetRecord.State, newAssetHolder));
             }
 
             public void Dispose() { }

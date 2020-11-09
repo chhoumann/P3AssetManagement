@@ -15,14 +15,7 @@ namespace AssetManagement.Models
         /// <param name="receiver">The receiver of the asset.</param>
         public static void TransferOwnership(IAsset assetToTransfer, IAssetHolder receiver)
         {
-            if (assetToTransfer is Asset asset)
-            {
-                asset.TransferTo(receiver);
-            }
-            else
-            {
-                throw new ArgumentException("IAsset must be of type Asset!");
-            }
+            assetToTransfer.TransferTo(receiver);
         }
 
         /// <summary>
@@ -44,7 +37,7 @@ namespace AssetManagement.Models
         /// <param name="assetState">The asset's new state.</param>
         public static void UpdateAssetState(IAsset asset, AssetState assetState)
         {
-            asset.AssetRecords.Add(new AssetRecord(assetState, asset.CurrentAssetHolder));
+            asset.AssetRecords.Add(new AssetRecord(DateTime.Now, assetState, asset.CurrentAssetHolder));
         }
     }
 }
