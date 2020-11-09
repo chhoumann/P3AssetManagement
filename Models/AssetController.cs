@@ -1,5 +1,4 @@
 ﻿using AssetManagement.Core;
-using System;
 
 namespace AssetManagement.Models
 {
@@ -37,7 +36,7 @@ namespace AssetManagement.Models
         /// <param name="assetState">The asset's new state.</param>
         public static void UpdateAssetState(IAsset asset, AssetState assetState)
         {
-            asset.AssetRecords.Add(new AssetRecord(DateTime.Now, assetState, asset.CurrentAssetHolder));
+            asset.AssetRecords.Add(new AssetRecord(assetState, asset.CurrentAssetHolder));
         }
     }
 }
