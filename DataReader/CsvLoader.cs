@@ -24,7 +24,7 @@ namespace AssetManagement.DataReader
             List<IAssetRecord> data = new List<IAssetRecord>();
             StreamReader sr = new StreamReader(path);
             string fileName = Path.GetFileName(path);
-            //lineCount only for error
+            //lineCount only for error handling purposes
             int lineCount = 1;
 
             // First line is skipped, as it includes headers and has no actual data.
