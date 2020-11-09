@@ -14,12 +14,25 @@ namespace AssetManagement.Models
         public AssetState State { get; }
 
         /// <summary>
-        /// Use this constructor if the new asset record isn't invoked by a file
+        /// Create a new AssetRecord where the date defaults to DateTime.now.
         /// </summary>
-        /// <param name="date">The date when the AssetRecord was created</param>
-        /// <param name="state">Can be online or missing</param>
-        /// <param name="holder">The holder of the asset at the time of the record</param>
-        public AssetRecord(DateTime date, AssetState state, IAssetHolder holder)
+        /// <param name="state">The PCID state of the asset.</param>
+        /// <param name="holder">The holder of the asset at the time of the record.</param>
+        public AssetRecord(AssetState state, IAssetHolder holder)
+        {
+            State = state;
+            Holder = holder;
+            Date = DateTime.Now;
+        }
+
+        /// <summary>
+        /// Create a new AssetRecord with a specific date.
+        /// Use this constructor if the new asset record isn't invoked by a file.
+        /// </summary>
+        /// <param name="state">The PCID state of the asset.</param>
+        /// <param name="holder">The holder of the asset at the time of the record.</param>
+        /// <param name="date">The date when the AssetRecord was created.</param>
+        public AssetRecord(AssetState state, IAssetHolder holder, DateTime date)
         {
             Date = date;
             State = state;
@@ -27,7 +40,7 @@ namespace AssetManagement.Models
         }
 
         /// <summary>
-        /// Use this constructor if the new asset record isn't invoked by a file
+        /// Use this constructor if the new asset record is invoked by a file.
         /// </summary>
         /// <param name="date">The date when the AssetRecord was created</param>
         /// <param name="state">Can be online or missing</param>
