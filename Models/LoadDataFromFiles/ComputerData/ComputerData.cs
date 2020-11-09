@@ -1,7 +1,7 @@
 ﻿using AssetManagement.Core;
 using System;
 
-namespace AssetManagement.Models
+namespace AssetManagement.Models.LoadDataFromFiles.ComputerData
 {
     public class ComputerData : IAssetRecord
     {
