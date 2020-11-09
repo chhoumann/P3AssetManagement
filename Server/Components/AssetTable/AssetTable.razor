@@ -31,7 +31,7 @@ else
                     <td>@asset.SerialNumber</td>
                     <td>@asset.DbId</td>
                     <td>@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</td>
-                    <td>@(asset.CurrentAssetHolder is IEmployee ? ((IEmployee)asset.CurrentAssetHolder).Username : "-")</td>
+                    <td>@(asset.CurrentAssetHolder.Username != null ? asset.CurrentAssetHolder.Username : "-")</td>
                     <td>@asset.LastChanged.ToShortDateString()</td>
                     <td>Awaiting Imp.</td>
                     <td>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>

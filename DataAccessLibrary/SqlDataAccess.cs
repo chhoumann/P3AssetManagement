@@ -8,12 +8,13 @@ namespace AssetManagement.DataAccessLibrary
 {
     public sealed partial class SqlDataAccess
     {
-
         public IAssetDataAccess AssetDataAccess { get; }
+        public IAssetRecordDataAccess AssetRecordDataAccess { get; }
 
         public SqlDataAccess(AssetContext db)
         {
             AssetDataAccess = new IAssetDataAccess(db);
+            AssetRecordDataAccess = new IAssetRecordDataAccess(db);
         }
     }
 }

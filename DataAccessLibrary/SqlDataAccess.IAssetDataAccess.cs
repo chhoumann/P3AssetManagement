@@ -8,15 +8,11 @@ namespace AssetManagement.DataAccessLibrary
 {
     public sealed partial class SqlDataAccess
     {
-
         public class IAssetDataAccess
         {
             private AssetContext Db { get; set; }
 
-            public IAssetDataAccess(AssetContext db)
-            {
-                Db = db;
-            }
+            public IAssetDataAccess(AssetContext db) => Db = db;
 
             /// <summary>
             /// Adds a new asset to the database.

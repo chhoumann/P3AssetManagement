@@ -26,7 +26,7 @@ namespace AssetManagement.Models
             // IAssetRecord
             FileName = originFileName;
             Date = timestamp;
-            Holder = new Employee(name, username, department);
+            Holder = new AssetHolder(name, username, department);
             State = AssetState.Online;
             // Other
             AssetId = pcName;

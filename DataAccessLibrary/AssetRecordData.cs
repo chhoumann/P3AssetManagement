@@ -10,29 +10,36 @@ namespace AssetManagement.DataAccessLibrary
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 
         public string FileName { get; set; }
-        public DateTime Date { get; set; }
         public string AssetId { get; set; }
-        public IAssetHolder Holder { get; set; }
+        public DateTime Date { get; set; }
         public AssetState State { get; set; }
+        public string AssetHolderLabel { get; set; }
+        public string AssetHolderUsername { get; set; }
+        public string AssetHolderDepartment { get; set; }
 
         public AssetRecordData(IAssetRecord assetRecord)
         {
             FileName = assetRecord.FileName;
             AssetId = assetRecord.AssetId;
             Date = assetRecord.Date;
-            Holder = assetRecord.Holder;
             State = assetRecord.State;
+            AssetHolderLabel = assetRecord.Holder.Label;
+            AssetHolderUsername = assetRecord.Holder.Username;
+            AssetHolderDepartment = assetRecord.Holder.Department;
         }
+
         public AssetRecordData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
 
         public IAssetRecord ToIAssetRecord()
         {
-            return new AssetRecord(FileName, State, Holder, Date);
+            AssetHolder holder = new AssetHolder(AssetHolderLabel, AssetHolderUsername, AssetHolderDepartment);
+
+            return new AssetRecord(State, holder, AssetId, FileName, Date);
         }
 
         public override string ToString()
         {
-            return $"Filename = {FileName}, State = {State}, Holder = {Holder}, Date = {Date}";
+            return $"Filename = {FileName}, State = {State}, Holder = {AssetHolderUsername}, Date = {Date}";
         }
     }
 }

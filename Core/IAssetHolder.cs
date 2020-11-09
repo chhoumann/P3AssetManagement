@@ -8,6 +8,8 @@
         /// <summary>
         /// Corresponds to name for an employee or the display label for the cage or depot
         /// </summary>
-        string Label { get; } 
+        string Label { get; }
+        string Username { get; }
+        string Department { get; }
     }
 }

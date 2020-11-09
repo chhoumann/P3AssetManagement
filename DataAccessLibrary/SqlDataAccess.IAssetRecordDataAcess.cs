@@ -12,11 +12,7 @@ namespace AssetManagement.DataAccessLibrary
         {
             private AssetContext Db { get; set; }
 
-            // TODO: New context
-            public IAssetRecordDataAccess(AssetContext db)
-            {
-                Db = db;
-            }
+            public IAssetRecordDataAccess(AssetContext db) => Db = db;
 
             /// <summary>
             /// Adds a new asset to the database.
@@ -25,14 +21,14 @@ namespace AssetManagement.DataAccessLibrary
             /// <returns>nothing</returns>
             public async Task CreateIAssetRecord(IAssetRecord assetRecord)
             {
-                Console.WriteLine($"Executing Create query for ID {1}");
+                Console.WriteLine($"Executing Create query for ID {assetRecord.AssetId}");
 
                 AssetRecordData assetRecordData = new AssetRecordData(assetRecord);
 
                 await Db.AssetRecordData.AddAsync(assetRecordData);
                 await Db.SaveChangesAsync();
 
-                Console.WriteLine("Successfully created Asset:");
+                Console.WriteLine("Successfully created Asset Record:");
                 Console.WriteLine(assetRecordData);
             }
 
@@ -41,34 +37,34 @@ namespace AssetManagement.DataAccessLibrary
             /// </summary>
             /// <param name="id">ID for asset we're looking for</param>
             /// <returns>an IAsset, and throws exception if it's not found.</returns>
-            public async Task<IAssetRecord> ReadSingleIAsset(int id)
+            public async Task<IAssetRecord> ReadSingleIAssetRecord(string assetId)
             {
-                Console.WriteLine($"Executing ReadSingle query for ID {id}.");
+                Console.WriteLine($"Executing ReadSingle query for ID {assetId}.");
 
-                AssetData asset = await Db.AssetData.SingleAsync(item => item.Id == id);
+                AssetRecordData assetRecord = await Db.AssetRecordData.SingleAsync(item => item.AssetId == assetId);
 
                 Console.WriteLine("Query completed with following results:");
-                Console.WriteLine(asset);
+                Console.WriteLine(assetRecord);
 
-                return asset.ToIAsset();
+                return assetRecord.ToIAssetRecord();
             }
 
             /// <summary>
             /// Reads all assets from database and returns them
             /// </summary>
             /// <returns>IAsset array of all assets in database</returns>
-            public async Task<IAsset[]> ReadAllIAsset()
+            public async Task<IAssetRecord[]> ReadAllIAssetRecords()
             {
                 Console.WriteLine("Executing ReadAll query.");
 
-                List<AssetData> assets = await Db.AssetData.ToListAsync();
-                IAsset[] result = new IAsset[assets.Count];
+                List<AssetRecordData> assetRecords = await Db.AssetRecordData.ToListAsync();
+                IAssetRecord[] result = new IAssetRecord[assetRecords.Count];
 
                 Console.WriteLine("Query completed.");
 
-                for (int i = 0; i < assets.Count; i++)
+                for (int i = 0; i < assetRecords.Count; i++)
                 {
-                    result[i] = assets[i].ToIAsset();
+                    result[i] = assetRecords[i].ToIAssetRecord();
                 }
 
                 return result;
@@ -77,35 +73,35 @@ namespace AssetManagement.DataAccessLibrary
             /// <summary>
             /// Updates a given asset to the asset passed in.
             /// </summary>
-            /// <param name="asset"></param>
+            /// <param name="assetRecord"></param>
             /// <returns>Nothing</returns>
-            public async Task UpdateIAsset(IAsset asset)
+            public async Task UpdateIAssetRecord(IAssetRecord assetRecord)
             {
-                Console.WriteLine($"Executing Update query for ID {asset.Id}.");
+                Console.WriteLine($"Executing Update query for ID {assetRecord.AssetId}.");
 
-                Db.Update(new AssetData(asset));
+                Db.Update(new AssetRecordData(assetRecord));
 
                 await Db.SaveChangesAsync();
 
-                Console.WriteLine("Asset successfully updated.");
+                Console.WriteLine("Asset record successfully updated.");
             }
 
             /// <summary>
             /// Deletes passed in asset.
             /// </summary>
-            /// <param name="asset">asset to delete</param>
+            /// <param name="assetRecord">Asset record to delete</param>
             /// <returns></returns>
-            public async Task DeleteIAsset(IAsset asset)
+            public async Task DeleteIAssetRecord(IAssetRecord assetRecord)
             {
-                Console.WriteLine($"Executing DeleteSingle query for ID {asset.Id}.");
+                Console.WriteLine($"Executing DeleteSingle query for ID {assetRecord.AssetId}.");
 
-                AssetData dbItem = await Db.AssetData.SingleAsync(item => item.Id == asset.Id);
+                AssetRecordData dbItem = await Db.AssetRecordData.SingleAsync(item => item.AssetId == assetRecord.AssetId);
 
                 Db.Remove(dbItem);
 
                 await Db.SaveChangesAsync();
 
-                Console.WriteLine("Asset successfully removed.");
+                Console.WriteLine("Asset record successfully removed.");
             }
         }
     }
