@@ -29,7 +29,7 @@ else
                 <tr>
                     <td>@asset.Model</td>
                     <td>@asset.SerialNumber</td>
-                    <td>@asset.Id</td>
+                    <td>@asset.DbId</td>
                     <td>@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</td>
                     <td>@(asset.CurrentAssetHolder is IEmployee ? ((IEmployee)asset.CurrentAssetHolder).Username : "-")</td>
                     <td>@asset.LastChanged.ToShortDateString()</td>

@@ -1,5 +1,6 @@
-using AssetManagement.Models;
 using AssetManagement.Core;
+using AssetManagement.Models;
+using NSubstitute;
 using NUnit.Framework;
 /* Method Naming Conventions. Should be sepparated by '_':
  * - The name of the method being tested.
@@ -7,9 +8,8 @@ using NUnit.Framework;
  * - The expected behavior when the scenario is invoked.
  */
 namespace AssetManagement.NUnitTests
-
 {
-    public class Examples
+    public sealed class Examples
     {
         // Allows you to run functions before the test cases are run.
         [SetUp]
@@ -17,20 +17,19 @@ namespace AssetManagement.NUnitTests
         {
         }
 
-        // TestCases can be used to test similar behavior without writing many repetitive tests.
-        [TestCase(12345, "Epic Dell Gaming PC", "SN1BFE4", "Ulf", "ulf@acme.dk", "AAF")]
-        public void TransferOwnership_AssetTransfer_AssetOwnershipTransfered(int assetId, string assetName, string assetSerialNumber,
-            string employeeName, string employeeEmail, string department)
+        // [TestCase()] // TestCases can be used to test similar behavior without writing many repetitive tests.
+        [Test]
+        public void TransferOwnership_AssetTransferOfAssetWithoutOwner_OwnershipTranferredSuccessfully()
         {
             // Arrange
-            IAsset asset = AssetController.MakeAsset(assetId, assetName, assetSerialNumber);
-            Employee employee = new Employee(employeeName, employeeEmail, department);
+            IAsset asset = AssetController.MakeAsset(1234, "Cool Model", "SN123");
+            IEmployee employee = Substitute.For<IEmployee>();
             // Act
             AssetController.TransferOwnership(asset, employee);
             // Assert
             Assert.AreEqual(asset.CurrentAssetHolder, employee,
-                "Expected {0}. But got {1}",
-                asset.CurrentAssetHolder, employee.Label);
+                $"Expected {asset.CurrentAssetHolder}. But got {employee.Username}"
+            );
         }
     }
 }
