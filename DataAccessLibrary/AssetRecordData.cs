@@ -9,6 +9,7 @@ namespace AssetManagement.DataAccessLibrary
     public class AssetRecordData
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 
+        public int Id { get; set; }
         public string FileName { get; set; }
         public string AssetId { get; set; }
         public DateTime Date { get; set; }

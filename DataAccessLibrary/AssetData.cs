@@ -13,15 +13,13 @@ namespace AssetManagement.DataAccessLibrary
 
         public int Id { get; set; }
 
-        public DateTime LastChanged { get; set; }
-
         public AssetData(IAsset asset)
         {
             Model = asset.Model;
             SerialNumber = asset.SerialNumber;
             Id = asset.DbId;
-            LastChanged = asset.LastChanged;
         }
+ 
         public AssetData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
 
         public IAsset ToIAsset()
@@ -31,7 +29,7 @@ namespace AssetManagement.DataAccessLibrary
 
         public override string ToString()
         {
-            return $"Id = {Id}, SerialNumber = {SerialNumber}, Model = {Model}, LastChanged = {LastChanged}";
+            return $"Id = {Id}, SerialNumber = {SerialNumber}, Model = {Model}";
         }
     }
 }

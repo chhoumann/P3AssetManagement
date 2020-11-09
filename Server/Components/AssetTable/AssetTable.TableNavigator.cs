@@ -1,5 +1,6 @@
 ﻿using AssetManagement.Core;
 using System;
+using System.Collections.Generic;
 
 namespace AssetManagement.Server.Components
 {
@@ -54,14 +55,17 @@ namespace AssetManagement.Server.Components
             /// <returns>Array of assets given the current page.</returns>
             private IAsset[] GetPage(IAsset[] assets)
             {
-                IAsset[] pageAssets = new IAsset[AssetsPerPage];
+                List<IAsset> pageAssets = new List<IAsset>();
 
-                for (int i = 0; i < pageAssets.Length; i++)
+                int start = PageIndex * AssetsPerPage;
+                int end = Math.Clamp(start + AssetsPerPage, 0, assets.Length);
+
+                for (int i = start; i < end; i++)
                 {
-                    pageAssets[i] = assets[PageIndex * AssetsPerPage + i];
+                    pageAssets.Add(assets[i]);
                 }
 
-                return pageAssets;
+                return pageAssets.ToArray();
             }
         }
     }
