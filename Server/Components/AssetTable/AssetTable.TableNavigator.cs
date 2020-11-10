@@ -9,12 +9,14 @@ namespace AssetManagement.Server.Components
         private sealed class TableNavigator
         {
             public int PageIndex { get; private set; } = 0;
-            public int NumPages { get; private set; } = 0;
+            public int NumPages => assetCount / AssetsPerPage + 1;
 
             /// <summary>
             /// Event that fires when the page changes.
             /// </summary>
             public event Action<IAsset[]> OnPageChanged;
+
+            private readonly int assetCount;
 
             private const int AssetsPerPage = 10;
 
@@ -25,8 +27,8 @@ namespace AssetManagement.Server.Components
             /// <param name="pageAssets">Output array with sliced assets of size AssetsPerPage.</param>
             public TableNavigator(IAsset[] assets, out IAsset[] pageAssets)
             {
-                CalculateMaxPages(assets.Length);
                 pageAssets = GetPage(assets);
+                assetCount = assets.Length;
             }
 
             /// <summary>
@@ -44,9 +46,6 @@ namespace AssetManagement.Server.Components
                 PageIndex += direction;
                 OnPageChanged?.Invoke(GetPage(assets));
             }
-
-            // Should be hooked up to an event when the server asset database is updated
-            private void CalculateMaxPages(int assetCount) => NumPages = assetCount / AssetsPerPage;
 
             /// <summary>
             /// Slices asset array into a size of AssetsPerPage and returns them as an IAsset array.
