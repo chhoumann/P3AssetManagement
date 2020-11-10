@@ -2,14 +2,15 @@
 @page "/AssetDetails/{AssetId:int}"
 @inject AssetService AssetService 
 @using AssetManagement.Core
+@using AssetManagement.Server.Components
 
-@if (Asset == null)
+@if (asset == null)
 {
     <h1>Loading</h1>
 }
 else
 {
-    <h1 class="text-center mb-3">Details for asset @Asset.Model</h1>
+    <h1 class="text-center mb-3">Details for asset @asset.Model</h1>
     <div class="container text-center">
         <div class="row">
             <div class="col-sm">
@@ -20,25 +21,25 @@ else
                         <tr>
                             <td scope="row">Nuværende Ejer</td>
                             <td>
-                                <text placeholder="EJER" disabled>@Asset.Model</text>
+                                <text placeholder="EJER" disabled>@asset.Model</text>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row">Nuværende Status</td>
                             <td>
-                                <text placeholder="STATUS" disabled>@Asset.LastAssetRecord.State</text>
+                                <text placeholder="STATUS" disabled>@asset.LastAssetRecord.State</text>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row">Serienummer</td>
                             <td>
-                                <text placeholder="S/N" disabled>@Asset.SerialNumber</text>
+                                <text placeholder="S/N" disabled>@asset.SerialNumber</text>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row">Sidst Ændret</td>
                             <td>
-                                <text placeholder="DATO" disabled>@Asset.LastChanged</text>
+                                <text placeholder="DATO" disabled>@asset.LastChanged</text>
                             </td>
                         </tr>
                         </tbody>
@@ -50,25 +51,28 @@ else
                 <div>
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th>State</th>
-                            <th>Date</th>
-                            <th>Filename</th>
-                            <th>Holder</th>
-                        </tr>
+                            <tr>
+                                <th>State</th>
+                                <th>Date</th>
+                                <th>Filename</th>
+                                <th>Holder</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach (var assetStateRecord in @Asset.AssetRecords)
-                        {
-                            <tr>
-                                <td>@assetStateRecord.State</td>
-                                <td>@assetStateRecord.Date</td>
-                                <td>@assetStateRecord.FileName</td>
-                                <td>@assetStateRecord.Holder</td>
-                            </tr>
-                        }
+                            @foreach (var assetRecord in pageAssetRecords)
+                            {
+                                <tr>
+                                    <td>@assetRecord.State</td>
+                                    <td>@assetRecord.Date</td>
+                                    <td>@assetRecord.FileName</td>
+                                    <td>@(assetRecord.Holder != null ? assetRecord.Holder.Label : "-")</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
+                    <button disabled=@(navigator.PageIndex == 0) class="btn" @onclick="() => navigator.ChangePage(assetRecords, HorizontalDirection.Left)">Previous</button>
+                    <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) class="btn" @onclick="() => navigator.ChangePage(assetRecords, HorizontalDirection.Right)">Next</button>
+                    <p>@(navigator.PageIndex + 1) / @navigator.NumPages</p>
                 </div>
             </div>
         </div>
