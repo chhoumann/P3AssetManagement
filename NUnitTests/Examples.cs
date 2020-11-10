@@ -19,16 +19,16 @@ namespace AssetManagement.NUnitTests
 
         // [TestCase()] // TestCases can be used to test similar behavior without writing many repetitive tests.
         [Test]
-        public void TransferOwnership_AssetTransferOfAssetWithoutOwner_OwnershipTranferredSuccessfully()
+        public void TransferOwnership_AssetTransferOfAssetWithoutHolder_OwnershipTranferredSuccessfully()
         {
             // Arrange
             IAsset asset = AssetController.MakeAsset(1234, "Cool Model", "SN123");
-            IEmployee employee = Substitute.For<IEmployee>();
+            IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
             // Act
-            AssetController.TransferOwnership(asset, employee);
+            AssetController.TransferOwnership(asset, assetHolder);
             // Assert
-            Assert.AreEqual(asset.CurrentAssetHolder, employee,
-                $"Expected {asset.CurrentAssetHolder}. But got {employee.Username}"
+            Assert.AreEqual(asset.CurrentAssetHolder, assetHolder,
+                $"Expected {asset.CurrentAssetHolder}. But got {assetHolder.Username}"
             );
         }
     }
