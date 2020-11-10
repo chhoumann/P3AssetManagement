@@ -17,7 +17,7 @@ namespace AssetManagement.DataAccessLibrary
             /// <summary>
             /// Adds a new asset record to the database.
             /// </summary>
-            /// <param name="asset">IAssetRecord to add to database.</param>
+            /// <param name="assetRecord">IAssetRecord to add to database.</param>
             public async Task CreateIAssetRecord(IAssetRecord assetRecord)
             {
                 Console.WriteLine($"Executing Create query for ID {assetRecord.AssetId}");
@@ -34,7 +34,7 @@ namespace AssetManagement.DataAccessLibrary
             /// <summary>
             /// Reads and returns a single asset record from the database.
             /// </summary>
-            /// <param name="id">ID for asset record we're looking for</param>
+            /// <param name="assetId">ID for asset record we're looking for</param>
             /// <returns>An IAssetRecord, and throws exception if it's not found.</returns>
             public async Task<IAssetRecord> ReadSingleIAssetRecord(string assetId)
             {

@@ -22,12 +22,12 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="state">The PCID state of the asset.</param>
         /// <param name="holder">The holder of the asset at the time of the record.</param>
-        /// <param name="id">The PCID asset ID.</param>
-        public AssetRecord(AssetState state, IAssetHolder holder, string id)
+        /// <param name="assetId">The PCID asset ID.</param>
+        public AssetRecord(AssetState state, IAssetHolder holder, string assetId)
         {
             State = state;
             Holder = holder;
-            AssetId = id;
+            AssetId = assetId;
 
             Date = DateTime.Now;
         }
@@ -37,15 +37,15 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="state">Can be online or missing</param>
         /// <param name="holder">The holder of the asset at the time of the record</param>
-        /// <param name="id">The PCID asset ID.</param>
+        /// <param name="assetId">The PCID asset ID.</param>
         /// <param name="fileName">The file name of the file where the record comes from</param>
         /// <param name="date">The date when the AssetRecord was created</param>
-        public AssetRecord(AssetState state, IAssetHolder holder, string id, string fileName, DateTime date)
+        public AssetRecord(AssetState state, IAssetHolder holder, string assetId, string fileName, DateTime date)
         {
             Date = date;
             State = state;
             Holder = holder;
-            AssetId = id;
+            AssetId = assetId;
             FileName = fileName;
         }
     }
