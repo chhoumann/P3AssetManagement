@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\AssetManagement.Core.csproj" />
-    <ProjectReference Include="..\DataReader\AssetManagement.DataReader.csproj" />
   </ItemGroup>
 
 </Project>
