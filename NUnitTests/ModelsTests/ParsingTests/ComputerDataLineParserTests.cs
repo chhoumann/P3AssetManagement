@@ -1,13 +1,12 @@
-﻿using AssetManagement.Core;
-using AssetManagement.DataReader;
-using AssetManagement.Models;
+﻿using AssetManagement.DataReader;
+using AssetManagement.Models.LoadDataFromFiles.ComputerData;
 using NUnit.Framework;
 using System;
 using System.Linq;
 
-namespace AssetManagement.NUnitTests
+namespace AssetManagement.NUnitTests.ModelsTests.ParsingTests
 {
-    class ComputerDataLineParserTests
+    public class ComputerDataLineParserTests
     {
         public int ExpectedAmountOfFieldsInCsvLine { get; private set; }
         public char Sepparator { get; private set; }
