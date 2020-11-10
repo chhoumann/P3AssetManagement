@@ -8,8 +8,8 @@ namespace AssetManagement.Server
     {
         private readonly SqlDataAccess dataAccess = new SqlDataAccess(new AssetContext());
         
-        public async Task<IAsset[]> GetAssetsAsync() => await dataAccess.ReadAll();
+        public async Task<IAsset[]> GetAssetsAsync() => await dataAccess.AssetDataAccess.ReadAllIAsset();
 
-        public async Task DeleteAsset(IAsset asset) => await dataAccess.Delete(asset);
+        public async Task DeleteAsset(IAsset asset) => await dataAccess.AssetDataAccess.DeleteIAsset(asset);
     }
 }
