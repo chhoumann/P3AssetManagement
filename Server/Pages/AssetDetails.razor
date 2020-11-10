@@ -1,6 +1,8 @@
 ﻿@page "/AssetDetails"
 @page "/AssetDetails/{AssetId:int}"
 @inject AssetService AssetService 
+@using BlazorVirtualScrolling
+@using AssetManagement.Core
 
 @if (Asset == null)
 {
@@ -47,7 +49,27 @@ else
             <div class="col-sm">
                 <h1>Historik</h1>
                 <div>
-
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Date</th>
+                            <th>Filename</th>
+                            <th>Holder</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var assetStateRecord in @Asset.AssetRecords)
+                        {
+                            <tr>
+                                <td>@assetStateRecord.State</td>
+                                <td>@assetStateRecord.Date</td>
+                                <td>@assetStateRecord.FileName</td>
+                                <td>@assetStateRecord.Holder</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

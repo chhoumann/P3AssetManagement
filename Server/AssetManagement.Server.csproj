@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BlazorVirtualScrolling" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Core\AssetManagement.Core.csproj" />
     <ProjectReference Include="..\DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj" />
     <ProjectReference Include="..\Models\AssetManagement.Models.csproj" />

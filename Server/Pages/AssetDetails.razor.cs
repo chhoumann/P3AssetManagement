@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AssetManagement.Core;
 using Microsoft.AspNetCore.Components;
 
@@ -12,6 +13,7 @@ namespace AssetManagement.Server.Pages
         protected override async Task OnInitializedAsync()
         {
             Asset = await AssetService.GetSingleAssetAsync(AssetId);
+
         }
     }
 }
