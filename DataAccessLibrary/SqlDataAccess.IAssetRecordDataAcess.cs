@@ -15,10 +15,9 @@ namespace AssetManagement.DataAccessLibrary
             public IAssetRecordDataAccess(AssetContext db) => Db = db;
 
             /// <summary>
-            /// Adds a new asset to the database.
+            /// Adds a new asset record to the database.
             /// </summary>
-            /// <param name="asset">IAsset to add to database</param>
-            /// <returns>nothing</returns>
+            /// <param name="asset">IAssetRecord to add to database.</param>
             public async Task CreateIAssetRecord(IAssetRecord assetRecord)
             {
                 Console.WriteLine($"Executing Create query for ID {assetRecord.AssetId}");
@@ -33,10 +32,10 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             /// <summary>
-            /// Reads and returns a single asset from the database.
+            /// Reads and returns a single asset record from the database.
             /// </summary>
-            /// <param name="id">ID for asset we're looking for</param>
-            /// <returns>an IAsset, and throws exception if it's not found.</returns>
+            /// <param name="id">ID for asset record we're looking for</param>
+            /// <returns>An IAssetRecord, and throws exception if it's not found.</returns>
             public async Task<IAssetRecord> ReadSingleIAssetRecord(string assetId)
             {
                 Console.WriteLine($"Executing ReadSingle query for ID {assetId}.");
@@ -50,9 +49,9 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             /// <summary>
-            /// Reads all assets from database and returns them
+            /// Reads all assets records from database and returns them
             /// </summary>
-            /// <returns>IAsset array of all assets in database</returns>
+            /// <returns>Array of all assets records in database</returns>
             public async Task<IAssetRecord[]> ReadAllIAssetRecords()
             {
                 Console.WriteLine("Executing ReadAll query.");
@@ -71,10 +70,9 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             /// <summary>
-            /// Updates a given asset to the asset passed in.
+            /// Updates a given asset record to the asset record passed in.
             /// </summary>
             /// <param name="assetRecord"></param>
-            /// <returns>Nothing</returns>
             public async Task UpdateIAssetRecord(IAssetRecord assetRecord)
             {
                 Console.WriteLine($"Executing Update query for ID {assetRecord.AssetId}.");
@@ -87,10 +85,9 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             /// <summary>
-            /// Deletes passed in asset.
+            /// Deletes passed in asset record.
             /// </summary>
             /// <param name="assetRecord">Asset record to delete</param>
-            /// <returns></returns>
             public async Task DeleteIAssetRecord(IAssetRecord assetRecord)
             {
                 Console.WriteLine($"Executing DeleteSingle query for ID {assetRecord.AssetId}.");
