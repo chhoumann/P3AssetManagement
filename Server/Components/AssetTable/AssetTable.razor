@@ -1,5 +1,7 @@
 ﻿@using AssetManagement.Core
+@inject NavigationManager NavigationManager
 @inject AssetService AssetService
+@inject IJSRuntime JSRuntime 
 @namespace AssetManagement.Server.Components
 
 @if (pageAssets == null)
@@ -36,7 +38,9 @@ else
                     <td>Awaiting Imp.</td>
                     <td>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
                     <td>
-                        <a href="#" target="_blank">Detaljer</a>
+                        <NavLink class="nav-link" @onclick="() => NavigateToDetails(asset)" target="_blank" Match="NavLinkMatch.All">
+                            🕵️‍♂️ Detaljer
+                        </NavLink>
                     </td>
                     <td>
                         <button class="btn" style="background-color:transparent">

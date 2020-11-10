@@ -19,6 +19,16 @@ namespace AssetManagement.Server.Components
         }
 
         /// <summary>
+        /// Opens the details page for an asset in a new page.
+        /// </summary>
+        /// <param name="asset">IAsset to open details for</param>
+        public async Task NavigateToDetails(IAsset asset)
+        {
+            string url = $"{NavigationManager.BaseUri}/AssetDetails/{asset.DbId}";
+            await JSRuntime.InvokeAsync<object>("open", new object[]{url, "_blank" });
+        }
+
+        /// <summary>
         /// Deletes single asset entitiy.
         /// </summary>
         /// <param name="asset">List of all assets</param>
