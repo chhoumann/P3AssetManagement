@@ -28,6 +28,7 @@ namespace AssetManagement.Server.Components
         /// </summary>
         /// <param name="items">Input array with all items.</param>
         /// <param name="pageItems">Output array with sliced items of size itemsPerPage.</param>
+        /// <param name="itemsPerPage">The number of items to display on a single page.</param>
         public PageNavigator(T[] items, out T[] pageItems, int itemsPerPage)
         {
             this.itemsPerPage = itemsPerPage;
