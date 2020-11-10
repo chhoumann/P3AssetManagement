@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace AssetManagement.NUnitTests
+namespace AssetManagement.NUnitTests.DataReaderTests
 {
-    class CsvLoaderTests
+    public class CsvLoaderTests
     {
         public string TestFilesDir { get; private set; }
         public int ExpectedFieldsAmount { get; private set; }
