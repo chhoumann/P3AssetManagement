@@ -7,14 +7,16 @@ namespace AssetManagement.Server.Components
     {
         private IAsset[] assets;
         private IAsset[] pageAssets;
-        
-        private TableNavigator navigator;
+
+        private const int AssetsPerPage = 10;
+
+        private PageNavigator<IAsset> navigator;
 
         protected override async Task OnInitializedAsync()
         {
             await GetAssetAsync();
             
-            navigator = new TableNavigator(assets, out pageAssets);
+            navigator = new PageNavigator<IAsset>(assets, out pageAssets, AssetsPerPage);
             navigator.OnPageChanged += GetPageAssets;
         }
 
