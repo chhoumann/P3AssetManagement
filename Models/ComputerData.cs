@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace AssetManagement.Models.LoadDataFromFiles.ComputerData
+namespace AssetManagement.Models
 {
     public class ComputerData
     {
-        public string FileName { get; }
+        public string FilePath { get; }
         public string PcName { get; }
         public DateTime Timestamp { get; }
         public string Holder { get; }
@@ -17,10 +17,17 @@ namespace AssetManagement.Models.LoadDataFromFiles.ComputerData
         public string SerialNumber { get; }
         public string PcadStatus { get; }
 
-        public ComputerData(string fileName, string csvLine)
+        /// <summary>
+        /// This constructor can construct this object from a line of csv data,
+        /// which is provided by PC-ID.
+        /// </summary>
+        /// <param name="filePath">The file path to where the csvLine originates from.</param>
+        /// <param name="sepparator">The char which sepparates the fields in the csvLine. This is usually ',' or ';'.</param>
+        /// <param name="csvLine">A string of fields sepparated by the sepparator parameter.</param>
+        public ComputerData(string filePath, char sepparator, string csvLine)
         {
-            string[] fields = csvLine.Split(';');
-            FileName = fileName;
+            string[] fields = csvLine.Split(sepparator);
+            FilePath = filePath;
             Timestamp = Convert.ToDateTime(fields[0]);
             Username = fields[1];
             Holder = fields[2];

@@ -1,5 +1,4 @@
 ﻿using AssetManagement.Core;
-using AssetManagement.Models.LoadDataFromFiles.ComputerData;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,13 +42,12 @@ namespace AssetManagement.Models
             asset.AssetRecords.Add(new AssetRecord(assetState, asset.CurrentAssetHolder, asset.AssetId));
         }
 
-        public void GetComputerData()
+        public static List<ComputerData> GetComputerDataFromFile(string filePath, char sepparator)
         {
-            string fileName = "2020-10-07-PCID.csv";
-            List<ComputerData> data = File
-                .ReadAllLines(Path.Combine("AlienData", fileName)) // This path is invalid.
+            return File
+                .ReadAllLines(filePath)
                 .Skip(1)
-                .Select(x => new ComputerData(fileName, x))
+                .Select(x => new ComputerData(filePath, sepparator, x))
                 .ToList();
         }
     }
