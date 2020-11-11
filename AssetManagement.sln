@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.NUnitTests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.DataAccessLibrary", "DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj", "{16981CB0-C324-431F-A0A0-2BC0DB35A0A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.DataReader", "DataReader\AssetManagement.DataReader.csproj", "{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetManagement.Core", "Core\AssetManagement.Core.csproj", "{0ADE50E1-40E9-4C79-8BAB-0024762641D1}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{16981CB0-C324-431F-A0A0-2BC0DB35A0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16981CB0-C324-431F-A0A0-2BC0DB35A0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16981CB0-C324-431F-A0A0-2BC0DB35A0A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B0F3945-2DB6-4F98-A7D5-3CA1449C8E92}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0ADE50E1-40E9-4C79-8BAB-0024762641D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0ADE50E1-40E9-4C79-8BAB-0024762641D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ADE50E1-40E9-4C79-8BAB-0024762641D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
