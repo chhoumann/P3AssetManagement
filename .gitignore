@@ -374,3 +374,4 @@ AssetManagement/appsettings.json
 # Documentation files (which get built automatically anyways)
 AssetManagement.*.xml
 AssetManagement.xml
+/AssetManagement.v3.ncrunchsolution
