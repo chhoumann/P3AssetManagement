@@ -26,7 +26,7 @@ namespace AssetManagement.Server.Components
         /// <param name="asset">IAsset to open details for</param>
         public async Task NavigateToDetails(IAsset asset)
         {
-            string url = $"{NavigationManager.BaseUri}/AssetDetails/{asset.DbId}";
+            string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.DbId}";
             await JSRuntime.InvokeAsync<object>("open", new object[]{url, "_blank" });
         }
 
