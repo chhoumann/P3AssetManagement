@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace AssetManagement.Models
 {
@@ -23,12 +24,13 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="filePath">The file path to where the csvLine originates from.</param>
         /// <param name="sepparator">The char which sepparates the fields in the csvLine. This is usually ',' or ';'.</param>
+        /// <param name="cultureInfo">Tells the method how to parse the Timestamp</param>
         /// <param name="csvLine">A string of fields sepparated by the sepparator parameter.</param>
-        public ComputerData(string filePath, char sepparator, string csvLine)
+        public ComputerData(string filePath, char sepparator, CultureInfo cultureInfo, string csvLine)
         {
             string[] fields = csvLine.Split(sepparator);
             FilePath = filePath;
-            Timestamp = Convert.ToDateTime(fields[0]);
+            Timestamp = Convert.ToDateTime(fields[0], cultureInfo);
             Username = fields[1];
             Holder = fields[2];
             Department = fields[3];

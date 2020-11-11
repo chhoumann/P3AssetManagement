@@ -1,5 +1,6 @@
 ﻿using AssetManagement.Core;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -47,7 +48,7 @@ namespace AssetManagement.Models
             return File
                 .ReadAllLines(filePath)
                 .Skip(1)
-                .Select(x => new ComputerData(filePath, sepparator, x))
+                .Select(x => new ComputerData(filePath, sepparator, new CultureInfo("fr-FR"), x))
                 .ToList();
         }
     }
