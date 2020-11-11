@@ -1,4 +1,8 @@
 ﻿using AssetManagement.Core;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace AssetManagement.Models
 {
@@ -37,6 +41,15 @@ namespace AssetManagement.Models
         public static void UpdateAssetState(IAsset asset, AssetState assetState)
         {
             asset.AssetRecords.Add(new AssetRecord(assetState, asset.CurrentAssetHolder, asset.AssetId));
+        }
+
+        public static List<ComputerData> GetComputerDataFromFile(string filePath, char sepparator)
+        {
+            return File
+                .ReadAllLines(filePath)
+                .Skip(1)
+                .Select(x => new ComputerData(filePath, sepparator, new CultureInfo("fr-FR"), x))
+                .ToList();
         }
     }
 }
