@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Models\AssetManagement.Models.csproj" />
+    <ProjectReference Include="..\DataReader\AssetManagement.DataReader.csproj" />
+    <ProjectReference Include="..\Server\AssetManagement.Server.csproj" />
   </ItemGroup>
 
 </Project>

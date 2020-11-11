@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using AssetManagement.Core;
+using AssetManagement.Server.Shared;
 
 namespace AssetManagement.Server.Components
 {

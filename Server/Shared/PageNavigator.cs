@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
 
-namespace AssetManagement.Server.Components
+namespace AssetManagement.Server.Shared
 {
     public sealed class PageNavigator<T>
     {
         /// <summary>
         /// The current page index number starting at 0.
         /// </summary>
-        public int PageIndex { get; private set; } = 0;
+        public int PageIndex { get; private set; }
 
         /// <summary>
         /// The total number of pages.
         /// </summary>
-        public int NumPages => itemCount / itemsPerPage + 1;
+        public int NumPages => (int)Math.Ceiling((float)itemCount / itemsPerPage);
 
         /// <summary>
         /// Event that fires when the page changes.
@@ -41,15 +41,29 @@ namespace AssetManagement.Server.Components
         /// </summary>
         /// <param name="items">The array of all items.</param>
         /// <param name="navigationDirection">The direction to navigate - left or right.</param>
-        public void ChangePage(T[] items, HorizontalDirection navigationDirection)
+        /// <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
+        public bool ChangePage(T[] items, HorizontalDirection navigationDirection)
         {
-            int direction = (int)navigationDirection;
-            int requestedPageIndex = PageIndex + direction;
+            return SetPage(items, PageIndex + (int)navigationDirection);
+        }
 
-            if (requestedPageIndex >= NumPages || requestedPageIndex < 0) return;
+        /// <summary>
+        /// Set the current page index to a specific value. Invokes the OnPageChanged event.
+        /// </summary>
+        /// <param name="items">The array of all items.</param>
+        /// <param name="pageIndex">The page index to move to. Gets clamped between 0 and the number of pages.</param>
+        /// <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
+        public bool SetPage(T[] items, int pageIndex)
+        {
+            bool isInBounds = pageIndex >= 0 && pageIndex < NumPages;
 
-            PageIndex += direction;
-            OnPageChanged?.Invoke(GetPage(items));
+            if (isInBounds)
+            {
+                PageIndex = Math.Clamp(pageIndex, 0, NumPages - 1);
+                OnPageChanged?.Invoke(GetPage(items));
+            }
+
+            return isInBounds;
         }
 
         /// <summary>
