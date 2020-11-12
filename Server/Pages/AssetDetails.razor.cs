@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AssetManagement.Core;
-using AssetManagement.Models;
-using AssetManagement.Server.Components;
+﻿using System.Threading.Tasks;
+using AssetManagement.Models.Asset;
+using AssetManagement.Models.AssetRecord;
+using AssetManagement.Server.Shared;
 using Microsoft.AspNetCore.Components;
 
 namespace AssetManagement.Server.Pages

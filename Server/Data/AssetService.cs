@@ -10,7 +10,7 @@ namespace AssetManagement.Server
 
         public async Task<IAsset> GetSingleAssetAsync(int dbId)
         {
-            return await dataAccess.AssetDataAccess.ReadSingleIAsset(dbId);
+            return await dataAccess.Asset.ReadSingleIAsset(dbId);
         }
 
         public async Task<IAsset[]> GetAssetsAsync() => await dataAccess.Asset.ReadAllIAsset();
