@@ -1,18 +1,18 @@
-﻿using AssetManagement.Core;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AssetManagement.Models.AssetRecord;
 
 namespace AssetManagement.DataAccessLibrary
 {
     public sealed partial class SqlDataAccess
     {
-        public class IAssetRecordDataAccess
+        public sealed class AssetRecordDataAccess
         {
             private AssetContext Db { get; set; }
 
-            public IAssetRecordDataAccess(AssetContext db) => Db = db;
+            public AssetRecordDataAccess(AssetContext db) => Db = db;
 
             /// <summary>
             /// Adds a new asset record to the database.

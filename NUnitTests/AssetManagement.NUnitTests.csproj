@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Core\AssetManagement.Core.csproj" />
     <ProjectReference Include="..\Models\AssetManagement.Models.csproj" />
     <ProjectReference Include="..\Server\AssetManagement.Server.csproj" />
   </ItemGroup>

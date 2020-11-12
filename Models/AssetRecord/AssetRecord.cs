@@ -1,7 +1,7 @@
-﻿using AssetManagement.Core;
-using System;
+﻿using System;
+using AssetManagement.Models.AssetHolder;
 
-namespace AssetManagement.Models
+namespace AssetManagement.Models.AssetRecord
 {
     /// <summary>
     /// A timestamped record for an asset's current state and holder.
