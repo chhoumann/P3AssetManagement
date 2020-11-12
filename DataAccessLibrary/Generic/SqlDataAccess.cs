@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 
 namespace AssetManagement.DataAccessLibrary.Generic
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class SqlDataAccess<T> : ISqlDataAccess<T> where T : class
     {
         public DbContext context;
         public DbSet<T> table;
 
-        public GenericRepository(DbContext context)
+        public SqlDataAccess(DbContext context)
         {
             this.context = context;
             table = context.Set<T>();

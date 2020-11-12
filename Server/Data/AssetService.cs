@@ -8,7 +8,7 @@ namespace AssetManagement.Server
 {
     public class AssetService
     {
-        private readonly GenericRepository<AssetData> genericDataAccess = new GenericRepository<AssetData>(new AssetContext());
+        private readonly SqlDataAccess<AssetData> genericDataAccess = new SqlDataAccess<AssetData>(new AssetContext());
 
         public async Task<IAsset[]> GetAssetsAsync()
         {

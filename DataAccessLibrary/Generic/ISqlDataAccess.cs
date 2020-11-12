@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace AssetManagement.DataAccessLibrary.Generic
 {
-    public interface IGenericRepository<T> where T : class
+    public interface ISqlDataAccess<T> where T : class
     {
         Task<IEnumerable<T>> GetAll();
         Task<T> GetById(object id);
