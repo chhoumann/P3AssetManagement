@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
 using AssetManagement.DataAccessLibrary;
 using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
@@ -8,21 +9,23 @@ namespace AssetManagement.Server
 {
     public class AssetService
     {
-        private readonly SqlDataAccess<AssetData> dataAccess = new SqlDataAccess<AssetData>(new AssetContext());
+        private readonly SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext());
 
+        /// <summary>
+        /// Gets all assets in database
+        /// </summary>
+        /// <returns>An array of all Assets in database</returns>
         public async Task<Asset[]> GetAssetsAsync()
         {
-            IEnumerable<AssetData> assetDatas = await dataAccess.GetAll();
-            List<Asset> assets = new List<Asset>();
-
-            // TODO:
-            // Should also get the asset records for the asset and set up the asset model to contain its asset records.
-            foreach (AssetData assetData in assetDatas)
-            {
-                assets.Add(new Asset(assetData.Id, assetData.Model, assetData.SerialNumber));
-            }
-
+            IEnumerable<Asset> assets = await assetDataAccess.GetAll();
             return assets.ToArray();
         }
+
+        /// <summary>
+        /// Gets details about single Asset.
+        /// </summary>
+        /// <param name="assetId">Asset ID to look for.</param>
+        /// <returns>Asset object</returns>
+        public async Task<Asset> GetSingleAssetAsync(int assetId) => await assetDataAccess.GetById(assetId);
     }
 }

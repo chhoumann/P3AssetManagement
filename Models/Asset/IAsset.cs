@@ -10,6 +10,6 @@ namespace AssetManagement.Models.Asset
         string Model { get; }
         string SerialNumber { get; }
         string AssetId { get; }
-        int DbId { get; }
+        int Id { get; }
     }
 }

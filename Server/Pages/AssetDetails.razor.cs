@@ -10,7 +10,7 @@ namespace AssetManagement.Server.Pages
     {
         [Parameter] public int AssetId { get; set; }
 
-        private IAsset asset { get; set; }
+        private Asset asset { get; set; }
         private IAssetRecord[] assetRecords;
         private IAssetRecord[] pageAssetRecords;
 

@@ -31,5 +31,15 @@ namespace AssetManagement.Server.Components
         /// </summary>
         /// <param name="pageAssets">Sliced array of assets representing a page.</param>
         private void GetPageAssets(Asset[] pageAssets) => this.pageAssets = pageAssets;
+
+        /// <summary>
+        /// Opens the details page for an asset in a new page.
+        /// </summary>
+        /// <param name="asset">IAsset to open details for</param>
+        public async Task NavigateToDetails(IAsset asset)
+        {
+            string url = $"{NavigationManager.BaseUri}/AssetDetails/{asset.Id}";
+            await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
+        }
     }
 }

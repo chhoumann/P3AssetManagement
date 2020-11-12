@@ -18,7 +18,7 @@ namespace AssetManagement.Models.Asset
         /// <summary>
         /// The internal asset database ID. 
         /// </summary>
-        public int DbId { get; private set; }
+        public int Id { get; private set; }
 
         public DateTime LastChanged => LastAssetRecord.Date;
 
@@ -32,7 +32,7 @@ namespace AssetManagement.Models.Asset
         {
             Model = model;
             SerialNumber = serialNumber;
-            DbId = id;
+            Id = id;
         
             // TODO: EVENT
             // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
