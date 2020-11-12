@@ -7,7 +7,12 @@ namespace AssetManagement.Server
     public class AssetService
     {
         private readonly SqlDataAccess dataAccess = new SqlDataAccess(new AssetContext());
-        
+
+        public async Task<IAsset> GetSingleAssetAsync(int dbId)
+        {
+            return await dataAccess.Asset.ReadSingleIAsset(dbId);
+        }
+
         public async Task<IAsset[]> GetAssetsAsync() => await dataAccess.Asset.ReadAllIAsset();
 
         public async Task DeleteAsset(IAsset asset) => await dataAccess.Asset.DeleteIAsset(asset);

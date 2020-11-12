@@ -16,9 +16,19 @@ namespace AssetManagement.Server.Components
         protected override async Task OnInitializedAsync()
         {
             await GetAssetAsync();
-            
+
             navigator = new PageNavigator<IAsset>(assets, out pageAssets, AssetsPerPage);
             navigator.OnPageChanged += GetPageAssets;
+        }
+
+        /// <summary>
+        /// Opens the details page for an asset in a new page.
+        /// </summary>
+        /// <param name="asset">IAsset to open details for</param>
+        public async Task NavigateToDetails(IAsset asset)
+        {
+            string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.DbId}";
+            await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
         }
 
         /// <summary>
@@ -30,7 +40,7 @@ namespace AssetManagement.Server.Components
             await AssetService.DeleteAsset(asset);
             await GetAssetAsync();
         }
-        
+
         /// <summary>
         /// Gets all assets from database.
         /// </summary>
