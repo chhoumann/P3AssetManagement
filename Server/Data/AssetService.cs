@@ -8,11 +8,11 @@ namespace AssetManagement.Server
 {
     public class AssetService
     {
-        private readonly SqlDataAccess<AssetData> genericDataAccess = new SqlDataAccess<AssetData>(new AssetContext());
+        private readonly SqlDataAccess<AssetData> dataAccess = new SqlDataAccess<AssetData>(new AssetContext());
 
         public async Task<Asset[]> GetAssetsAsync()
         {
-            IEnumerable<AssetData> assetDatas = await genericDataAccess.GetAll();
+            IEnumerable<AssetData> assetDatas = await dataAccess.GetAll();
             List<Asset> assets = new List<Asset>();
 
             // TODO:
