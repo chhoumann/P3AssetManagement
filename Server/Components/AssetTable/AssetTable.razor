@@ -1,6 +1,8 @@
+@inject NavigationManager NavigationManager
 @using AssetManagement.Models.Asset
 @using AssetManagement.Server.Shared;
 @inject AssetService AssetService
+@inject IJSRuntime JSRuntime
 @namespace AssetManagement.Server.Components
 
 @if (pageAssets == null)
@@ -37,7 +39,9 @@ else
                     <td>Awaiting Imp.</td>
                     <td>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
                     <td>
-                        <a href="#" target="_blank">Detaljer</a>
+                        <NavLink class="nav-link" @onclick="() => NavigateToDetails(asset)" Match="NavLinkMatch.All">
+                            <p class="detailsLink">🕵️‍♂️ Detaljer</p>
+                        </NavLink>
                     </td>
                     <td>
                         <button class="btn" style="background-color:transparent">
@@ -53,7 +57,19 @@ else
 
     <div>
         <button disabled=@(navigator.PageIndex == 0) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Left)">Previous</button>
-        <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" class="btn btn-secondary"  @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Right)">Next</button>
+        <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Right)">Next</button>
         <p>@(navigator.PageIndex + 1) / @navigator.NumPages</p>
     </div>
 }
+
+<style>
+    .detailsLink {
+        color:blue;
+    }
+    .detailsLink:hover{
+        color:lightblue;
+        cursor:pointer;
+        text-decoration:underline;
+    }
+
+</style>

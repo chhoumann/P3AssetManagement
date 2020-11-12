@@ -1,4 +1,5 @@
-﻿using AssetManagement.Server.Shared;
+﻿using AssetManagement.Server.Components;
+using AssetManagement.Server.Shared;
 using NUnit.Framework;
 
 namespace AssetManagement.NUnitTests.PageNavigatorTest
