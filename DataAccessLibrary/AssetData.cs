@@ -1,10 +1,7 @@
-﻿using AssetManagement.DataAccessLibrary.Generic;
-using AssetManagement.Models.Asset;
-using AssetController = AssetManagement.Models;
+﻿using AssetManagement.Models.Asset;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    // Should implement an interface later
     public sealed class AssetData : IAsset 
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 

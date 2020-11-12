@@ -10,7 +10,7 @@ namespace AssetManagement.Server
     {
         private readonly SqlDataAccess<AssetData> genericDataAccess = new SqlDataAccess<AssetData>(new AssetContext());
 
-        public async Task<IAsset[]> GetAssetsAsync()
+        public async Task<Asset[]> GetAssetsAsync()
         {
             IEnumerable<AssetData> assetDatas = await genericDataAccess.GetAll();
             List<Asset> assets = new List<Asset>();
