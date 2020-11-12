@@ -39,7 +39,7 @@ else
                     <td>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
                     <td>
                         <NavLink class="nav-link" @onclick="() => NavigateToDetails(asset)" Match="NavLinkMatch.All">
-                            🕵️‍♂️ Detaljer
+                            <p class="detailsLink">🕵️‍♂️ Detaljer</p>
                         </NavLink>
                     </td>
                     <td>
@@ -60,3 +60,15 @@ else
         <p>@(navigator.PageIndex + 1) / @navigator.NumPages</p>
     </div>
 }
+
+<style>
+    .detailsLink {
+        color:blue;
+    }
+    .detailsLink:hover{
+        color:lightblue;
+        cursor:pointer;
+        text-decoration:underline;
+    }
+
+</style>
