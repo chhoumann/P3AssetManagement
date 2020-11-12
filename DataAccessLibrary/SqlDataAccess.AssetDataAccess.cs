@@ -1,18 +1,18 @@
-﻿using AssetManagement.Core;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AssetManagement.Models.Asset;
 
 namespace AssetManagement.DataAccessLibrary
 {
     public sealed partial class SqlDataAccess
     {
-        public class IAssetDataAccess
+        public sealed class AssetDataAccess
         {
             private AssetContext Db { get; set; }
 
-            public IAssetDataAccess(AssetContext db) => Db = db;
+            public AssetDataAccess(AssetContext db) => Db = db;
 
             /// <summary>
             /// Adds a new asset to the database.
@@ -66,7 +66,7 @@ namespace AssetManagement.DataAccessLibrary
                 {
                     result[i] = assets[i].ToIAsset();
                 }
-
+                
                 return result;
             }
 

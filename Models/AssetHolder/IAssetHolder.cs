@@ -1,4 +1,4 @@
-﻿namespace AssetManagement.Core
+﻿namespace AssetManagement.Models.AssetHolder
 {
     /// <summary>
     /// General interface for all types of asset holders.

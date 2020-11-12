@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace AssetManagement.Models
+namespace AssetManagement.Models.DataModels
 {
     public class ComputerData
     {

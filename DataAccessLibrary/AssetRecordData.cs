@@ -1,8 +1,6 @@
-﻿using AssetManagement.Core;
-using System;
-using AssetManagement.Models;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using AssetManagement.Models.AssetHolder;
+using AssetManagement.Models.AssetRecord;
 
 namespace AssetManagement.DataAccessLibrary
 {

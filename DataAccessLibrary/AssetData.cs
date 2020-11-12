@@ -1,5 +1,5 @@
-﻿using AssetManagement.Core;
-using System;
+﻿using AssetManagement.Models.Asset;
+using AssetController = AssetManagement.Models;
 
 namespace AssetManagement.DataAccessLibrary
 {
@@ -24,7 +24,7 @@ namespace AssetManagement.DataAccessLibrary
 
         public IAsset ToIAsset()
         {
-            return Models.AssetController.MakeAsset(Id, Model, SerialNumber);
+            return (IAsset)new Asset(Id, Model, SerialNumber);
         }
 
         public override string ToString()

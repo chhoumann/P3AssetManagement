@@ -1,6 +1,4 @@
-﻿using AssetManagement.Core;
-
-namespace AssetManagement.Models
+﻿namespace AssetManagement.Models.AssetHolder
 {
     public sealed class AssetHolder : IAssetHolder
     {

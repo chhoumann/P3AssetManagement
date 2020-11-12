@@ -1,4 +1,4 @@
-﻿namespace AssetManagement.Core
+﻿namespace AssetManagement.Models.AssetRecord
 {
     /// <summary>
     /// An asset's possible states.

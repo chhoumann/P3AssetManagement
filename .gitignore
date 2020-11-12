@@ -14,6 +14,12 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# MacOS generated files
+.DS_store
+
+# Rider generated files
+*.idea
+
 # Mono auto generated files
 mono_crash.*
 

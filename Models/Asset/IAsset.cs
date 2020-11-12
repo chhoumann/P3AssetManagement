@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using AssetManagement.Models.AssetHolder;
+using AssetManagement.Models.AssetRecord;
 
-namespace AssetManagement.Core
+namespace AssetManagement.Models.Asset
 {
     public interface IAsset
     {

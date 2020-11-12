@@ -1,6 +1,7 @@
 ﻿using System;
+using AssetManagement.Models.AssetHolder;
 
-namespace AssetManagement.Core
+namespace AssetManagement.Models.AssetRecord
 {
     /// <summary>
     /// Interface for a timestamped record for an asset's current state and holder.
