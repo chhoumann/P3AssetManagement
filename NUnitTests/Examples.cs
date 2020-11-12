@@ -1,4 +1,3 @@
-using AssetManagement.Core;
 using AssetManagement.Models.Asset;
 using AssetManagement.Models.AssetHolder;
 using NSubstitute;

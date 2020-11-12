@@ -22,14 +22,8 @@ namespace AssetManagement.DataAccessLibrary
  
         public AssetData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
 
-        public IAsset ToIAsset()
-        {
-            return (IAsset)new Asset(Id, Model, SerialNumber);
-        }
+        public IAsset ToIAsset() => new Asset(Id, Model, SerialNumber);
 
-        public override string ToString()
-        {
-            return $"Id = {Id}, SerialNumber = {SerialNumber}, Model = {Model}";
-        }
+        public override string ToString() => $"Id = {Id}, SerialNumber = {SerialNumber}, Model = {Model}";
     }
 }
