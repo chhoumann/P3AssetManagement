@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using AssetManagement.DataAccessLibrary;
 using AssetManagement.DataAccessLibrary.Generic;
