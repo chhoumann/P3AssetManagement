@@ -1,10 +1,11 @@
-﻿using AssetManagement.Models.Asset;
+﻿using AssetManagement.DataAccessLibrary.Generic;
+using AssetManagement.Models.Asset;
 using AssetController = AssetManagement.Models;
 
 namespace AssetManagement.DataAccessLibrary
 {
     // Should implement an interface later
-    public sealed class AssetData
+    public sealed class AssetData : IAsset 
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 
         public string Model { get; set; }
@@ -12,6 +13,10 @@ namespace AssetManagement.DataAccessLibrary
         public string SerialNumber { get; set; }
 
         public int Id { get; set; }
+
+        public string AssetId => throw new System.NotImplementedException();
+
+        public int DbId => Id;
 
         public AssetData(IAsset asset)
         {
@@ -21,11 +26,6 @@ namespace AssetManagement.DataAccessLibrary
         }
  
         public AssetData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
-
-        public IAsset ToIAsset()
-        {
-            return (IAsset)new Asset(Id, Model, SerialNumber);
-        }
 
         public override string ToString()
         {

@@ -20,16 +20,6 @@ namespace AssetManagement.Server.Components
             navigator = new PageNavigator<IAsset>(assets, out pageAssets, AssetsPerPage);
             navigator.OnPageChanged += GetPageAssets;
         }
-
-        /// <summary>
-        /// Deletes single asset entitiy.
-        /// </summary>
-        /// <param name="asset">List of all assets</param>
-        private async Task DeleteAsset(IAsset asset)
-        {
-            await AssetService.DeleteAsset(asset);
-            await GetAssetAsync();
-        }
         
         /// <summary>
         /// Gets all assets from database.
