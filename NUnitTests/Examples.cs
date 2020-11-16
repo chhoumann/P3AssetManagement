@@ -23,7 +23,7 @@ namespace AssetManagement.NUnitTests
         public void AssetTransferTo_AssetTransferOfAssetWithoutHolder_OwnershipTransferredSuccessfully()
         {
             // Arrange
-            IAsset asset = new Asset(1234, "Cool Model", "SN123");
+            Asset asset = new Asset(1234, "Cool Model", "SN123");
             IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
             // Act
             asset.TransferTo(assetHolder);

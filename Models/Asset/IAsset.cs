@@ -10,14 +10,6 @@ namespace AssetManagement.Models.Asset
         string Model { get; }
         string SerialNumber { get; }
         string AssetId { get; }
-        int DbId { get; }
-
-        DateTime LastChanged { get; }
-
-        IAssetHolder CurrentAssetHolder { get; }
-        IAssetRecord LastAssetRecord { get; }
-        List<IAssetRecord> AssetRecords { get; }
-
-        void TransferTo(IAssetHolder receiver);
+        int Id { get; }
     }
 }
