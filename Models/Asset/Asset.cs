@@ -20,6 +20,8 @@ namespace AssetManagement.Models.Asset
         /// </summary>
         public int Id { get; private set; }
 
+        public AssetOwnershipManager Transfer { get; }
+
         public DateTime LastChanged => LastAssetRecord.Date;
 
         public IAssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
@@ -28,28 +30,20 @@ namespace AssetManagement.Models.Asset
 
         public List<IAssetRecord> AssetRecords { get; } = new List<IAssetRecord>();
 
-        public Asset(int id, string model, string serialNumber)
+        public Asset()
         {
-            Model = model;
-            SerialNumber = serialNumber;
-            Id = id;
-        
+            Transfer = new AssetOwnershipManager(this);
+
             // TODO: EVENT
             // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
             AssetRecords.Add(new AssetRecord.AssetRecord(AssetState.Null, null, AssetId));
         }
 
-        /// <summary>
-        /// Transfer the asset to a new asset holder.
-        /// </summary>
-        /// <param name="newAssetHolder">The asset holder to transfer to.</param>
-        public void TransferTo(IAssetHolder newAssetHolder)
+        public Asset(int id, string model, string serialNumber) : this()
         {
-            // TODO:
-            //  Transfer to new owner
-            //  Invoke event (AssetRecord change)
-
-            AssetRecords.Add(new AssetRecord.AssetRecord(LastAssetRecord.State, newAssetHolder, AssetId));
+            Model = model;
+            SerialNumber = serialNumber;
+            Id = id;
         }
     }
 }

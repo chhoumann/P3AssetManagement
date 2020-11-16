@@ -26,7 +26,7 @@ namespace AssetManagement.NUnitTests
             Asset asset = new Asset(1234, "Cool Model", "SN123");
             IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
             // Act
-            asset.TransferTo(assetHolder);
+            asset.Transfer.ToUser(assetHolder);
             // Assert
             Assert.AreEqual(asset.CurrentAssetHolder, assetHolder,
                 $"Expected {asset.CurrentAssetHolder}. But got {assetHolder.Username}"

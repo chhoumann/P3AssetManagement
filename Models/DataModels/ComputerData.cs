@@ -23,12 +23,12 @@ namespace AssetManagement.Models.DataModels
         /// which is provided by PC-ID.
         /// </summary>
         /// <param name="filePath">The file path to where the csvLine originates from.</param>
-        /// <param name="sepparator">The char which sepparates the fields in the csvLine. This is usually ',' or ';'.</param>
+        /// <param name="separator">The char which separates the fields in the csvLine. This is usually ',' or ';'.</param>
         /// <param name="cultureInfo">Tells the method how to parse the Timestamp</param>
-        /// <param name="csvLine">A string of fields sepparated by the sepparator parameter.</param>
-        public ComputerData(string filePath, char sepparator, CultureInfo cultureInfo, string csvLine)
+        /// <param name="csvLine">A string of fields separated by the separator parameter.</param>
+        public ComputerData(string filePath, char separator, CultureInfo cultureInfo, string csvLine)
         {
-            string[] fields = csvLine.Split(sepparator);
+            string[] fields = csvLine.Split(separator);
             FilePath = filePath;
             Timestamp = Convert.ToDateTime(fields[0], cultureInfo);
             Username = fields[1];

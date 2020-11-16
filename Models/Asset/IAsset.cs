@@ -11,5 +11,13 @@ namespace AssetManagement.Models.Asset
         string SerialNumber { get; }
         string AssetId { get; }
         int Id { get; }
+
+        DateTime LastChanged { get; }
+
+        IAssetHolder CurrentAssetHolder { get; }
+        IAssetRecord LastAssetRecord { get; }
+        List<IAssetRecord> AssetRecords { get; }
+
+        AssetOwnershipManager Transfer { get; }
     }
 }
