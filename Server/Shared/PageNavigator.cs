@@ -42,10 +42,7 @@ namespace AssetManagement.Server.Shared
         /// <param name="items">The array of all items.</param>
         /// <param name="navigationDirection">The direction to navigate - left or right.</param>
         /// <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
-        public bool ChangePage(T[] items, HorizontalDirection navigationDirection)
-        {
-            return SetPage(items, PageIndex + (int)navigationDirection);
-        }
+        public bool ChangePage(T[] items, HorizontalDirection navigationDirection) => SetPage(items, PageIndex + (int)navigationDirection);
 
         /// <summary>
         /// Set the current page index to a specific value. Invokes the OnPageChanged event.

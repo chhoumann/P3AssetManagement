@@ -36,9 +36,6 @@ namespace AssetManagement.DataAccessLibrary
             return new AssetRecord(State, holder, AssetId, FileName, Date);
         }
 
-        public override string ToString()
-        {
-            return $"Filename = {FileName}, State = {State}, Holder = {AssetHolderUsername}, Date = {Date}";
-        }
+        public override string ToString() => $"Filename = {FileName}, State = {State}, Holder = {AssetHolderUsername}, Date = {Date}";
     }
 }

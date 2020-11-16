@@ -43,9 +43,6 @@ namespace AssetManagement.Models.DataModels
             PcadStatus = fields[10];
         }
 
-        public override string ToString()
-        {
-            return $"{Timestamp}: Holder: {Holder}, PcName: {PcName}";
-        }
+        public override string ToString() => $"{Timestamp}: Holder: {Holder}, PcName: {PcName}";
     }
 }
