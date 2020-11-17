@@ -30,6 +30,11 @@ namespace AssetManagement.DataAccessLibrary.Generic
             await table.AddAsync(obj);
         }
 
+        public async Task InsertRange(IEnumerable<T> entities)
+        {
+            await table.AddRangeAsync(entities);
+        }
+
         public void Update(T obj)
         {
             table.Update(obj);
