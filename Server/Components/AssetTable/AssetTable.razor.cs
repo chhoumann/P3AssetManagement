@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using AssetManagement.Models.Asset;
 using AssetManagement.Server.Shared;
@@ -15,16 +16,28 @@ namespace AssetManagement.Server.Components
 
         protected override async Task OnInitializedAsync()
         {
-            await GetAssetAsync();
+            await GetAssetsAsync();
             
             navigator = new PageNavigator<Asset>(assets, out pageAssets, AssetsPerPage);
-            navigator.OnPageChanged += GetPageAssets;
+            navigator.PageChanged += GetPageAssets;
+            AssetService.AssetUpdated += OnAssetUpdated;
         }
-        
+
         /// <summary>
         /// Gets all assets from database.
         /// </summary>
-        private async Task GetAssetAsync() => assets = await AssetService.GetAssetsAsync();
+        private async Task GetAssetsAsync() => assets = await AssetService.GetAssetsAsync();
+
+        /// <summary>
+        /// Callback for AssetUpdate event that occurs in AssetService.
+        /// Updates table with new data - live reloading.
+        /// </summary>
+        private async void OnAssetUpdated()
+        {
+            await GetAssetsAsync();
+            navigator.OnItemsUpdated(assets);
+            await InvokeAsync(StateHasChanged);
+        }
 
         /// <summary>
         /// Callback function fired when the page is changed. Updates the pageAssets array.
@@ -36,7 +49,7 @@ namespace AssetManagement.Server.Components
         /// Opens the details page for an asset in a new page.
         /// </summary>
         /// <param name="asset">IAsset to open details for</param>
-        public async Task NavigateToDetails(IAsset asset)
+        private async Task NavigateToDetails(IAsset asset)
         {
             string url = $"{NavigationManager.BaseUri}/AssetDetails/{asset.Id}";
             await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });

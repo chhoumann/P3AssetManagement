@@ -11,6 +11,7 @@
 }
 else
 {
+<button class="btn" @onclick="() => AssetService.CreateNewAsset()">Add (test)</button>
     <table class="table">
         <thead>
             <tr>
@@ -56,8 +57,8 @@ else
     </table>
 
     <div>
-        <button disabled=@(navigator.PageIndex == 0) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Left)">Previous</button>
-        <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(assets, HorizontalDirection.Right)">Next</button>
+        <button disabled=@(navigator.PageIndex == 0) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</button>
+        <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(HorizontalDirection.Right)">Next</button>
         <p>@(navigator.PageIndex + 1) / @navigator.NumPages</p>
     </div>
 }

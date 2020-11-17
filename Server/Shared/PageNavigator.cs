@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Shared
 {
@@ -13,14 +14,22 @@ namespace AssetManagement.Server.Shared
         /// <summary>
         /// The total number of pages.
         /// </summary>
-        public int NumPages => (int)Math.Ceiling((float)itemCount / itemsPerPage);
+        public int NumPages
+        {
+            get
+            {
+                int numPages = (int)Math.Ceiling((float)items.Length / itemsPerPage);
+
+                return Math.Clamp(numPages, 1, int.MaxValue);
+            }
+        }
 
         /// <summary>
         /// Event that fires when the page changes.
         /// </summary>
-        public event Action<T[]> OnPageChanged;
+        public event Action<T[]> PageChanged;
 
-        private readonly int itemCount;
+        private T[] items;
         private readonly int itemsPerPage;
 
         /// <summary>
@@ -32,43 +41,48 @@ namespace AssetManagement.Server.Shared
         public PageNavigator(T[] items, out T[] pageItems, int itemsPerPage)
         {
             this.itemsPerPage = itemsPerPage;
-            pageItems = GetPage(items);
-            itemCount = items.Length;
+            this.items = items;
+            pageItems = GetPageItems();
         }
 
         /// <summary>
-        /// Changes the shown items depending on which direction is chosen and invokes the event OnPageChanged.
+        /// Changes the shown items depending on which direction is chosen and invokes the event PageChanged.
         /// </summary>
-        /// <param name="items">The array of all items.</param>
         /// <param name="navigationDirection">The direction to navigate - left or right.</param>
         /// <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
-        public bool ChangePage(T[] items, HorizontalDirection navigationDirection) => SetPage(items, PageIndex + (int)navigationDirection);
+        public bool ChangePage(HorizontalDirection navigationDirection) => SetPage(PageIndex + (int)navigationDirection);
 
-        /// <summary>
-        /// Set the current page index to a specific value. Invokes the OnPageChanged event.
-        /// </summary>
-        /// <param name="items">The array of all items.</param>
-        /// <param name="pageIndex">The page index to move to. Gets clamped between 0 and the number of pages.</param>
-        /// <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
-        public bool SetPage(T[] items, int pageIndex)
+        public void OnItemsUpdated(T[] items)
         {
-            bool isInBounds = pageIndex >= 0 && pageIndex < NumPages;
+            this.items = items;
+            SetPage(PageIndex);
+        }
+        
+        /// <summary>
+        /// Set the current page index to a specific value. Invokes the PageChanged event.
+        /// </summary>
+        /// <param name="requestedPageIndex">The page index to move to. Gets clamped between 0 and the number of pages.</param>
+        /// <returns>True if the page was updated, false if it wasn't.</returns>
+        public bool SetPage(int requestedPageIndex)
+        {
+            int oldPageIndex = PageIndex;
 
-            if (isInBounds)
+            PageIndex = Math.Clamp(requestedPageIndex, 0, NumPages - 1);
+
+            if (oldPageIndex != PageIndex)
             {
-                PageIndex = Math.Clamp(pageIndex, 0, NumPages - 1);
-                OnPageChanged?.Invoke(GetPage(items));
+                PageChanged?.Invoke(GetPageItems());
+                return true;
             }
 
-            return isInBounds;
+            return false;
         }
 
         /// <summary>
         /// Slices items into a size of itemsPerPage and returns them as an item array.
         /// </summary>
-        /// <param name="items">Array of all the items in the system.</param>
         /// <returns>Array of items given the current page.</returns>
-        private T[] GetPage(T[] items)
+        private T[] GetPageItems()
         {
             List<T> pageItems = new List<T>();
 

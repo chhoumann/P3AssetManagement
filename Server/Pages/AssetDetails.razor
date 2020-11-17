@@ -1,7 +1,9 @@
 ﻿@page "/AssetDetails"
 @page "/AssetDetails/{AssetId:int}"
-@inject AssetService AssetService 
+@inject AssetService AssetService
+@inject IJSRuntime JSRuntime
 @using AssetManagement.Core
+@using AssetManagement.Models.AssetRecord
 @using AssetManagement.Server.Components
 
 @if (asset == null)
@@ -18,42 +20,42 @@ else
                 <div>
                     <table class="table">
                         <tbody>
-                        <tr>
-                            <td scope="row">Nuværende Ejer</td>
-                            <td>
-                                <text placeholder="EJER" disabled>@asset.Model</text>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">Nuværende Status</td>
-                            <td>
-                                <text placeholder="STATUS" disabled>@asset.LastAssetRecord.State</text>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">Serienummer</td>
-                            <td>
-                                <text placeholder="S/N" disabled>@asset.SerialNumber</text>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">Sidst Ændret</td>
-                            <td>
-                                <text placeholder="DATO" disabled>@asset.LastChanged</text>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td scope="row">Nuværende Ejer</td>
+                                <td>
+                                    <text placeholder="EJER" disabled>@asset.Model</text>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Nuværende Status</td>
+                                <td>
+                                    <text placeholder="STATUS" disabled>@asset.LastAssetRecord.State</text>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Serienummer</td>
+                                <td>
+                                    <text placeholder="S/N" disabled>@asset.SerialNumber</text>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Sidst Ændret</td>
+                                <td>
+                                    <text placeholder="DATO" disabled>@asset.LastChanged</text>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="container my-2">
                         <div class="row">
                             <button class="btn btn-success col mb-2">Overfør til depot</button>
                             <div class="w-100"></div>
-                            <button class="btn btn-danger col mr-2">Slet</button>
+                            <button class="btn btn-danger col mr-2" @onclick="() => DeleteAsset()">Slet</button>
                             <button class="btn btn-warning col ml-2">Send til bortskaffelse</button>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="col-sm">
@@ -69,7 +71,7 @@ else
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var assetRecord in pageAssetRecords)
+                            @foreach (IAssetRecord assetRecord in pageAssetRecords)
                             {
                                 <tr>
                                     <td>@assetRecord.State</td>
@@ -80,8 +82,8 @@ else
                             }
                         </tbody>
                     </table>
-                    <button disabled=@(navigator.PageIndex == 0) class="btn" @onclick="() => navigator.ChangePage(assetRecords, HorizontalDirection.Left)">Previous</button>
-                    <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) class="btn" @onclick="() => navigator.ChangePage(assetRecords, HorizontalDirection.Right)">Next</button>
+                    <button disabled=@(navigator.PageIndex == 0) class="btn" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</button>
+                    <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) class="btn" @onclick="() => navigator.ChangePage(HorizontalDirection.Right)">Next</button>
                     <p>@(navigator.PageIndex + 1) / @navigator.NumPages</p>
                 </div>
             </div>

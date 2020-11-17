@@ -10,7 +10,7 @@ namespace AssetManagement.Server.Pages
     {
         [Parameter] public int AssetId { get; set; }
 
-        private Asset asset { get; set; }
+        private Asset asset;
         private IAssetRecord[] assetRecords;
         private IAssetRecord[] pageAssetRecords;
 
@@ -25,12 +25,18 @@ namespace AssetManagement.Server.Pages
             assetRecords = asset.AssetRecords.ToArray();
 
             navigator = new PageNavigator<IAssetRecord>(assetRecords, out pageAssetRecords, AssetsPerPage);
-            navigator.OnPageChanged += GetAssetRecords;
+            navigator.PageChanged += GetAssetRecords;
         }
 
         private void GetAssetRecords(IAssetRecord[] pageAssetRecords)
         {
             this.pageAssetRecords = pageAssetRecords;
+        }
+
+        private async Task DeleteAsset()
+        {
+            await AssetService.DeleteAsset(asset.Id);
+            await JSRuntime.InvokeAsync<object>("close", new object[] { });
         }
     }
 }

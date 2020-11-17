@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using AssetManagement.Models.AssetHolder;
 using AssetManagement.Models.AssetRecord;
@@ -44,6 +44,7 @@ namespace AssetManagement.Models.Asset
             Model = model;
             SerialNumber = serialNumber;
             Id = id;
+            AssetId = id.ToString(); // TODO: Fix -- do we use AssetId or Id? Or Both.
         }
     }
 }
