@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj" />
     <ProjectReference Include="..\Models\AssetManagement.Models.csproj" />
   </ItemGroup>
 

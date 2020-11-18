@@ -2,7 +2,7 @@
 using AssetManagement.Models.AssetHolder;
 using AssetManagement.Models.AssetRecord;
 
-namespace AssetManagement.DataAccessLibrary
+namespace AssetManagement.DataAccessLibrary.DataModels
 {
     public class AssetRecordData
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using AssetManagement.Core;
-using AssetManagement.Models.DataModels;
+using AssetManagement.DataAccessLibrary.DataModels;
 
 namespace AssetManagement.NUnitTests
 {
