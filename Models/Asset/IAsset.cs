@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using AssetManagement.Models.AssetHolder;
 using AssetManagement.Models.AssetRecord;
@@ -18,6 +18,6 @@ namespace AssetManagement.Models.Asset
         IAssetRecord LastAssetRecord { get; }
         List<IAssetRecord> AssetRecords { get; }
 
-        AssetOwnershipManager Transfer { get; }
+        AssetOwnershipHandler Transfer { get; }
     }
 }

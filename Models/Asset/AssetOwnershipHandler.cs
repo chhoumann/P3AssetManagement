@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 using AssetManagement.Models.AssetHolder;
 
 namespace AssetManagement.Models.Asset
 {
-    public sealed class AssetOwnershipManager
+    public sealed class AssetOwnershipHandler
     {
         private readonly Asset asset;
 
-        public AssetOwnershipManager(Asset asset)
+        public AssetOwnershipHandler(Asset asset)
         {
             this.asset = asset;
         }

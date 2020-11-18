@@ -20,7 +20,7 @@ namespace AssetManagement.Models.Asset
         /// </summary>
         public int Id { get; private set; }
 
-        public AssetOwnershipManager Transfer { get; }
+        public AssetOwnershipHandler Transfer { get; }
 
         public DateTime LastChanged => LastAssetRecord.Date;
 
@@ -32,7 +32,7 @@ namespace AssetManagement.Models.Asset
 
         public Asset()
         {
-            Transfer = new AssetOwnershipManager(this);
+            Transfer = new AssetOwnershipHandler(this);
 
             // TODO: EVENT
             // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
