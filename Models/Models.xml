@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AssetManagement.Models</name>
+    </assembly>
+    <members>
+        <member name="T:AssetManagement.Models.AssetHolder.IAssetHolder">
+            <summary>
+            General interface for all types of asset holders.
+            </summary>
+        </member>
+        <member name="P:AssetManagement.Models.AssetHolder.IAssetHolder.Label">
+            <summary>
+            Corresponds to name for an employee or the display label for the cage or depot
+            </summary>
+        </member>
+        <member name="T:AssetManagement.Models.AssetRecord.AssetRecord">
+            <summary>
+            A timestamped record for an asset's current state and holder.
+            </summary>
+        </member>
+        <member name="M:AssetManagement.Models.AssetRecord.AssetRecord.#ctor(AssetManagement.Models.AssetRecord.AssetState,AssetManagement.Models.AssetHolder.IAssetHolder,System.String)">
+            <summary>
+            Create a new AssetRecord where the date defaults to DateTime.now.
+            Use this constructor if the new asset record isn't invoked by a file,
+            And the Timestamp of the record should be set to the current time
+            </summary>
+            <param name="state">The PCID state of the asset.</param>
+            <param name="holder">The holder of the asset at the time of the record.</param>
+            <param name="assetId">The PCID asset ID.</param>
+        </member>
+        <member name="M:AssetManagement.Models.AssetRecord.AssetRecord.#ctor(AssetManagement.Models.AssetRecord.AssetState,AssetManagement.Models.AssetHolder.IAssetHolder,System.String,System.DateTime)">
+            <summary>
+            Use this constructor if the new asset record is indeed invoked by an external recource.
+            </summary>
+            <param name="state">Can be online or missing</param>
+            <param name="holder">The holder of the asset at the time of the record</param>
+            <param name="assetId">The PCID asset ID.</param>
+            <param name="date">The date when the AssetRecord was created</param>
+        </member>
+        <member name="T:AssetManagement.Models.AssetRecord.AssetState">
+            <summary>
+            An asset's possible states.
+            </summary>
+        </member>
+        <member name="T:AssetManagement.Models.AssetRecord.IAssetRecord">
+            <summary>
+            Interface for a timestamped record for an asset's current state and holder.
+            </summary>
+        </member>
+        <member name="P:AssetManagement.Models.Asset.Asset.AssetId">
+            <summary>
+            The asset's ID provided by the file from AAF.
+            </summary>
+        </member>
+        <member name="P:AssetManagement.Models.Asset.Asset.Id">
+            <summary>
+            The internal asset database ID. 
+            </summary>
+        </member>
+        <member name="E:AssetManagement.Models.Asset.AssetOwnershipHandler.AssetStatusChanged">
+            <summary>
+            An event which can be triggered when the status of an asset is updated somehow
+            </summary>
+        </member>
+        <member name="M:AssetManagement.Models.Asset.AssetOwnershipHandler.TransferTo(AssetManagement.Models.AssetHolder.IAssetHolder)">
+            <summary>
+            Transfer the asset to a new asset holder.
+            </summary>
+            <param name="newAssetHolder">The asset holder to transfer to.</param>
+        </member>
+    </members>
+</doc>

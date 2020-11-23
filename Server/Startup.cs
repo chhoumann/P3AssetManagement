@@ -1,3 +1,7 @@
+using AssetManagement.Core;
+using AssetManagement.DataAccessLibrary.DataModels;
+using AssetManagement.DataAccessLibrary.DbContexts;
+using AssetManagement.DataAccessLibrary.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +16,8 @@ namespace AssetManagement.Server
         {
             Configuration = configuration;
             Core.AssetController.StartWatchingAlienData();
+            ISqlDataAccess<AssetRecordData> assetRecordDbAccess = new SqlDataAccess<AssetRecordData>(new AssetRecordContext());
+            new AssetRecordManager(assetRecordDbAccess).StartWatchingForAssetStatusChange();
         }
 
         public IConfiguration Configuration { get; }

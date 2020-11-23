@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
 using AssetManagement.Models.AssetHolder;
 using AssetManagement.Models.AssetRecord;
+using System;
+using System.Collections.Generic;
 
 namespace AssetManagement.Models.Asset
 {
@@ -22,7 +22,7 @@ namespace AssetManagement.Models.Asset
 
         public AssetOwnershipHandler Transfer { get; }
 
-        public DateTime LastChanged => LastAssetRecord.Date;
+        public DateTime LastChanged => LastAssetRecord.Timestamp;
 
         public IAssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
 
@@ -30,13 +30,12 @@ namespace AssetManagement.Models.Asset
 
         public List<IAssetRecord> AssetRecords { get; } = new List<IAssetRecord>();
 
-        public Asset()
+        private Asset()
         {
             Transfer = new AssetOwnershipHandler(this);
 
-            // TODO: EVENT
             // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
-            AssetRecords.Add(new AssetRecord.AssetRecord(AssetState.Null, null, AssetId));
+            Transfer.ToUser(null);
         }
 
         public Asset(int id, string model, string serialNumber) : this()

@@ -1,3 +1,6 @@
+using AssetManagement.Core;
+using AssetManagement.DataAccessLibrary.DataModels;
+using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
 using AssetManagement.Models.AssetHolder;
 using NSubstitute;
@@ -25,12 +28,13 @@ namespace AssetManagement.NUnitTests
             // Arrange
             Asset asset = new Asset(1234, "Cool Model", "SN123");
             IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
+            new AssetRecordManager(Substitute.For<ISqlDataAccess<AssetRecordData>>()).StartWatchingForAssetStatusChange();
+            
             // Act
             asset.Transfer.ToUser(assetHolder);
+            
             // Assert
-            Assert.AreEqual(asset.CurrentAssetHolder, assetHolder,
-                $"Expected {asset.CurrentAssetHolder}. But got {assetHolder.Username}"
-            );
+            Assert.AreEqual(assetHolder, asset.CurrentAssetHolder);
         }
     }
 }

@@ -65,7 +65,7 @@ else
                         <thead>
                             <tr>
                                 <th>State</th>
-                                <th>Date</th>
+                                <th>Timestamp</th>
                                 <th>Filename</th>
                                 <th>Holder</th>
                             </tr>
@@ -75,8 +75,7 @@ else
                             {
                                 <tr>
                                     <td>@assetRecord.State</td>
-                                    <td>@assetRecord.Date</td>
-                                    <td>@assetRecord.FileName</td>
+                                    <td>@assetRecord.Timestamp</td>
                                     <td>@(assetRecord.Holder != null ? assetRecord.Holder.Label : "-")</td>
                                 </tr>
                             }

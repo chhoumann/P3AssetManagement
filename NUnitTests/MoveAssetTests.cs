@@ -1,7 +1,5 @@
-﻿using AssetManagement.Core;
 using AssetManagement.Models.Asset;
 using AssetManagement.Models.AssetHolder;
-using NSubstitute;
 using NUnit.Framework;
 
 namespace AssetManagement.NUnitTests
@@ -19,9 +17,7 @@ namespace AssetManagement.NUnitTests
             asset.Transfer.ToDepot();
             
             // Assert
-            Assert.AreEqual(asset.CurrentAssetHolder, StaticAssetHolders.Depot,
-                $"Expected {asset.CurrentAssetHolder}. But got {StaticAssetHolders.Depot.Label}"
-            );
+            Assert.AreEqual(StaticAssetHolders.Depot, asset.CurrentAssetHolder);
         }
 
         [Test]
@@ -29,13 +25,12 @@ namespace AssetManagement.NUnitTests
         {
             // Arrange
             Asset asset = new Asset(1, "M1", "Apple");
-
+            
             // Act
             asset.Transfer.ToCage();
-
+            
             // Assert
-            Assert.AreEqual(asset.CurrentAssetHolder, StaticAssetHolders.Cage, 
-                $"Expected {asset.CurrentAssetHolder}. But got {StaticAssetHolders.Cage.Label}");
+            Assert.AreEqual(StaticAssetHolders.Cage, asset.CurrentAssetHolder);
         }
     }
 }

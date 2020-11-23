@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using AssetManagement.Models.AssetHolder;
 
 namespace AssetManagement.Models.AssetRecord
@@ -8,9 +8,8 @@ namespace AssetManagement.Models.AssetRecord
     /// </summary>
     public interface IAssetRecord
     {
-        string FileName { get; }
         string AssetId { get; }
-        DateTime Date { get; }
+        DateTime Timestamp { get; }
         IAssetHolder Holder { get; }
         AssetState State { get; }
     }

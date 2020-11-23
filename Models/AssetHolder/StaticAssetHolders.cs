@@ -1,4 +1,4 @@
-﻿namespace AssetManagement.Models.AssetHolder
+namespace AssetManagement.Models.AssetHolder
 {
     public static class StaticAssetHolders
     {

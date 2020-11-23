@@ -1,6 +1,6 @@
-﻿using System;
 using AssetManagement.Models.AssetHolder;
 using AssetManagement.Models.AssetRecord;
+using System;
 
 namespace AssetManagement.DataAccessLibrary.DataModels
 {
@@ -8,7 +8,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels
     {
         // Properties must be both get and set for EntityFrameworkCore to create the object 
         public int Id { get; set; }
-        public string FileName { get; set; }
         public string AssetId { get; set; }
         public DateTime Date { get; set; }
         public AssetState State { get; set; }
@@ -18,13 +17,19 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         public AssetRecordData(IAssetRecord assetRecord)
         {
-            FileName = assetRecord.FileName;
             AssetId = assetRecord.AssetId;
-            Date = assetRecord.Date;
+            Date = assetRecord.Timestamp;
             State = assetRecord.State;
-            AssetHolderLabel = assetRecord.Holder.Label;
-            AssetHolderUsername = assetRecord.Holder.Username;
-            AssetHolderDepartment = assetRecord.Holder.Department;
+            if (assetRecord.Holder == null)
+            {
+                AssetHolderLabel = AssetHolderUsername = AssetHolderDepartment = null;                   
+            }
+            else
+            {
+                AssetHolderLabel = assetRecord.Holder.Label;
+                AssetHolderUsername = assetRecord.Holder.Username;
+                AssetHolderDepartment = assetRecord.Holder.Department;    
+            }
         }
 
         public AssetRecordData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 
@@ -33,9 +38,9 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         {
             AssetHolder holder = new AssetHolder(AssetHolderLabel, AssetHolderUsername, AssetHolderDepartment);
 
-            return new AssetRecord(State, holder, AssetId, FileName, Date);
+            return new AssetRecord(State, holder, AssetId, Date);
         }
 
-        public override string ToString() => $"Filename = {FileName}, State = {State}, Holder = {AssetHolderUsername}, Date = {Date}";
+        public override string ToString() => $"State = {State}, Holder = {AssetHolderUsername}, Timestamp = {Date}";
     }
 }
