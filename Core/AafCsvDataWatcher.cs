@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using AssetManagement.Core.DataLoadStrategy;
 using AssetManagement.DataAccessLibrary.DbContexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.Generic;
@@ -38,7 +39,8 @@ namespace AssetManagement.Core
         private async void OnChanged(object eventSource, FileSystemEventArgs e)
         {
             string filePath = e.FullPath;
-            List<ComputerData> computerData = AssetController.GetComputerDataFromFile(filePath, ';');
+            AssetLoadCsvContext<ComputerData> assetLoadCsvContext = new AssetLoadCsvContext<ComputerData>(new ComputerDataCsvStrategy(';'));
+            List<ComputerData> computerData = assetLoadCsvContext.LoadData(filePath);
 
             await SaveComputerDataToDb(computerData);
         }
