@@ -1,7 +1,10 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using AssetManagement.Models.Asset;
 using AssetManagement.Server.Shared;
+using MatBlazor;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace AssetManagement.Server.Components
 {
@@ -10,9 +13,25 @@ namespace AssetManagement.Server.Components
         private Asset[] assets;
         private Asset[] pageAssets;
 
-        private const int AssetsPerPage = 10;
+        private const int AssetsPerPage = 9;
 
         private PageNavigator<Asset> navigator;
+        private bool showModelColumn = true;
+        private bool showSerialNumberColumn = true;
+        private bool showIdColumn = true;
+        private bool showOwnerColumn = true;
+        private bool showUsernameColumn = true;
+        private bool showLastChangedColumn = true;
+        private bool showPcAdStatusColumn = true;
+        private bool showStateColumn = true;
+        
+        private ForwardRef buttonForwardRef = new ForwardRef();
+        private BaseMatMenu Menu;
+    
+        private void FilterMenuShow(MouseEventArgs e)
+        {
+            Menu.OpenAsync();
+        }
 
         protected override async Task OnInitializedAsync()
         {
@@ -35,7 +54,7 @@ namespace AssetManagement.Server.Components
         private async void OnAssetUpdated()
         {
             await GetAssetsAsync();
-            navigator.OnItemsUpdated(assets);
+            pageAssets = navigator.OnItemsUpdated(assets);
             await InvokeAsync(StateHasChanged);
         }
 

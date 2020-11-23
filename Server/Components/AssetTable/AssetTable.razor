@@ -4,66 +4,74 @@
 @inject AssetService AssetService
 @inject IJSRuntime JSRuntime
 @namespace AssetManagement.Server.Components
+@using Microsoft.AspNetCore.Components;
 
 @if (pageAssets == null)
 {
-    <p><em>Loading...</em></p>
+    <LoadingBar />
 }
 else
 {
-<button class="btn" @onclick="() => AssetService.CreateNewAsset()">Add (test)</button>
-    <table class="table">
+    <MatButton Label="Vis Kolonner..." OnClick="FilterMenuShow" RefBack="@buttonForwardRef"></MatButton>
+    <MatMenu @ref="Menu" TargetForwardRef="@buttonForwardRef" Class="w-auto p-2 pr-3 mt-5" Style="align-items: center">
+        <MatCheckbox Class="menuItem" @bind-Value="@showModelColumn">Model</MatCheckbox>
+        <MatCheckbox Class="menuItem" @bind-Value="@showSerialNumberColumn">Serienummer</MatCheckbox>
+        <MatCheckbox Class="menuItem" @bind-Value="@showIdColumn">ID</MatCheckbox>
+        <MatCheckbox Class="menuItem" @bind-Value="@showOwnerColumn" Label="">Ejer</MatCheckbox>
+        <MatCheckbox Class="menuItem" @bind-Value="@showUsernameColumn">Brugernavn</MatCheckbox>
+        <MatCheckbox Class="menuItem" @bind-Value="@showLastChangedColumn">Sidst Ændret</MatCheckbox>
+        <MatCheckbox Class="menuItem" @bind-Value="@showPcAdStatusColumn">PC-AD Status</MatCheckbox>
+    </MatMenu>
+    
+    <button class="btn" @onclick="() => AssetService.CreateNewAsset()">Add (test)</button>
+    <table class="table text-center">
         <thead>
-            <tr>
-                <th>Model</th>
-                <th>Serienummer</th>
-                <th>ID</th>
-                <th>Ejer</th>
-                <th>Brugernavn</th>
-                <th>Sidst Ændret</th>
-                <th>PC-AD Status</th>
-                <th>State</th>
-                <th>Data</th>
-                <th></th>
-            </tr>
+        <tr>
+            <th class="@(showModelColumn ? "" : "d-none")">Model</th>
+            <th class="@(showSerialNumberColumn ? "" : "d-none")">Serienummer</th>
+            <th class="@(showIdColumn ? "" : "d-none")">ID</th>
+            <th class="@(showOwnerColumn ? "" : "d-none")">Ejer</th>
+            <th class="@(showUsernameColumn ? "" : "d-none")">Brugernavn</th>
+            <th class="@(showLastChangedColumn ? "" : "d-none")">Sidst Ændret</th>
+            <th class="@(showPcAdStatusColumn ? "" : "d-none")">PC-AD Status</th>
+            <th class="@(showStateColumn ? "" : "d-none")">State</th>
+            <th>Data</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (Asset asset in pageAssets)
-            {
-                <tr>
-                    <td>@asset.Model</td>
-                    <td>@asset.SerialNumber</td>
-                    <td>@asset.Id</td>
-                    <td>@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</td>
-                    <td>@(asset.CurrentAssetHolder != null && asset.CurrentAssetHolder.Username != null ? asset.CurrentAssetHolder.Username : "-")</td>
-                    <td>@asset.LastChanged.ToShortDateString()</td>
-                    <td>Awaiting Imp.</td>
-                    <td>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
-                    <td>
-                        <NavLink class="nav-link" @onclick="() => NavigateToDetails(asset)" Match="NavLinkMatch.All">
-                            <p class="detailsLink">🕵️‍♂️ Detaljer</p>
-                        </NavLink>
-                    </td>
-                </tr>
-            }
+        @foreach (Asset asset in pageAssets)
+        {
+            <tr>
+                <td class="@(showModelColumn ? "" : "d-none")">@asset.Model</td>
+                <td class="@(showSerialNumberColumn ? "" : "d-none")">@asset.SerialNumber</td>
+                <td class="@(showIdColumn ? "" : "d-none")">@asset.Id</td>
+                <td class="@(showOwnerColumn ? "" : "d-none")">@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</td>
+                <td class="@(showUsernameColumn ? "" : "d-none")">@(asset.CurrentAssetHolder != null && asset.CurrentAssetHolder.Username != null ? asset.CurrentAssetHolder.Username : "-")</td>
+                <td class="@(showLastChangedColumn ? "" : "d-none")">@asset.LastChanged.ToShortDateString()</td>
+                <td class="@(showPcAdStatusColumn ? "" : "d-none")">Awaiting Imp.</td>
+                <td class="@(showStateColumn ? "" : "d-none")">@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
+                <td>
+                    <MatButton @onclick=" () => NavigateToDetails(asset)" Match="NavLinkMatch.All">
+                        🕵️‍♂️ Detaljer
+                    </MatButton>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
-
-    <div>
-        <button disabled=@(navigator.PageIndex == 0) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</button>
-        <button disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" class="btn btn-secondary" @onclick="() => navigator.ChangePage(HorizontalDirection.Right)">Next</button>
-        <p>@(navigator.PageIndex + 1) / @navigator.NumPages</p>
+    
+    <div class="container fixed-bottom pb-4 align-bottom">
+        <div class="row justify-content-center">
+            <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == 0) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</MatButton>
+            <p class="col-4 w-50 text-center text-lg-center">@(navigator.PageIndex + 1) / @navigator.NumPages</p>
+            <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Right)">Next</MatButton>
+        </div>
     </div>
 }
 
 <style>
-    .detailsLink {
-        color:blue;
+    .menuItem {
+        align-items: flex-end;
+        font-size: medium; 
     }
-    .detailsLink:hover{
-        color:lightblue;
-        cursor:pointer;
-        text-decoration:underline;
-    }
-
 </style>

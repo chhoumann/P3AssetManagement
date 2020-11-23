@@ -1,15 +1,48 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
+<div class="hideOnDetailsPage">
+    <MatAppBarContainer>
+        <MatAppBar Style="z-index: 100;" Class="mat" Fixed="true">
+            <MatAppBarRow>
+                <MatAppBarSection>
+                    <MatIconButton OnClick="ButtonClicked" Icon="menu"></MatIconButton>
+                    <MatAppBarTitle>AssetManagement</MatAppBarTitle>
+                </MatAppBarSection>
+            </MatAppBarRow>
+        </MatAppBar>
+    </MatAppBarContainer>
 </div>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-    </div>
+<div>
+    <MatDrawerContainer Style="width: 100vw; height: 100vh;">
+        
+        <MatHidden Breakpoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
+            <ChildContent>
+                <MatDrawer @bind-Opened="@navDrawerOpened" Mode="@MatDrawerMode.Modal">
+                    <MatAppBarAdjust></MatAppBarAdjust>
+                </MatDrawer>
+            </ChildContent>
+            <ElseContent>
+                <MatDrawer @bind-Opened="@navDrawerOpened" Mode="@MatDrawerMode.Dismissible" Class="border-right">
+                    <MatAppBarAdjust></MatAppBarAdjust>
+                    <MatList Class="container">
+                        <MatListItem>
+                            <div class="ml-3 row">
+                                <MatIcon Class="mr-2" Icon="home"></MatIcon>
+                                <p style="font-size: large">Home</p>
+                            </div>
+                        </MatListItem>
+                    </MatList>
+                </MatDrawer>
+            </ElseContent>
+        </MatHidden>
 
-    <div class="content px-4">
-        @Body
-    </div>
+        <MatDrawerContent>
+            <MatAppBarAdjust></MatAppBarAdjust>
+            <div class="mx-5">
+                @Body
+            </div>
+        </MatDrawerContent>
+
+    </MatDrawerContainer>
 </div>

@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Models\AssetManagement.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MatBlazor" Version="2.8.0" />
+  </ItemGroup>
+
 </Project>

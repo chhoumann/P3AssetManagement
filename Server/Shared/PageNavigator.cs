@@ -52,10 +52,18 @@ namespace AssetManagement.Server.Shared
         /// <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
         public bool ChangePage(HorizontalDirection navigationDirection) => SetPage(PageIndex + (int)navigationDirection);
 
-        public void OnItemsUpdated(T[] items)
+        /// <summary>
+        /// Updates current page and returns current page items.
+        /// Should be called if the current page is updated.
+        /// </summary>
+        /// <param name="items">Array of all items.</param>
+        /// <returns>Array of current page items.</returns>
+        public T[] OnItemsUpdated(T[] items)
         {
             this.items = items;
             SetPage(PageIndex);
+
+            return GetPageItems();
         }
         
         /// <summary>

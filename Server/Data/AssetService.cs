@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using AssetManagement.DataAccessLibrary.DbContexts;
 using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
@@ -22,7 +23,7 @@ namespace AssetManagement.Server
         /// </summary>
         /// <returns>An array of all Assets in database</returns>
         public async Task<Asset[]> GetAssetsAsync()
-        {
+        { 
             SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext());
             IEnumerable<Asset> assets = await assetDataAccess.GetAll();
 

@@ -1,3 +1,5 @@
+using System.Net.Http;
+using MatBlazor;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DbContexts;
@@ -33,6 +35,8 @@ namespace AssetManagement.Server
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<AssetService>();
+            services.AddMatBlazor();
+            services.AddScoped<HttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
