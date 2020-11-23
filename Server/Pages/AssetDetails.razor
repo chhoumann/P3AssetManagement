@@ -2,6 +2,7 @@
 @page "/AssetDetails/{AssetId:int}"
 @inject AssetService AssetService
 @inject IJSRuntime JSRuntime
+@using AssetManagement.Models.Asset
 @inject IMatDialogService MatDialogService
 
 @if (asset == null)
@@ -10,8 +11,8 @@
 }
 else
 {
-    <h1 class="text-center mb-3">Details for asset @asset.Model</h1>
-    <div class="container-fluid text-center">
+    <h1 class="text-center mb-3">Details for asset @asset.AssetId</h1>
+    <div class="container text-center">
         <div class="row">
             <div class="col-sm">
                 <h1>Detaljer</h1>
@@ -21,7 +22,7 @@ else
                             <tr>
                                 <td scope="row">Nuværende Ejer</td>
                                 <td>
-                                    <text placeholder="EJER" disabled>@asset.Model</text>
+                                    <text placeholder="EJER" disabled>@asset.AssetId</text>
                                 </td>
                             </tr>
                             <tr>
@@ -33,7 +34,7 @@ else
                             <tr>
                                 <td scope="row">Serienummer</td>
                                 <td>
-                                    <text placeholder="S/N" disabled>@asset.SerialNumber</text>
+                                    <text placeholder="S/N" disabled>@(asset is ComputerAsset computerAsset ? computerAsset.SerialNumber : "-")</text>
                                 </td>
                             </tr>
                             <tr class="border-bottom">

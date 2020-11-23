@@ -67,7 +67,7 @@ namespace AssetManagement.Server
         public async Task CreateNewAsset()
         {
             SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext());
-            Asset asset = new Asset(idTracker += 10, $"Computer {idTracker / 10}", $"SN0931{idTracker}");
+            Asset asset = new ComputerAsset(idTracker += 10, $"Computer {idTracker / 10}", $"SN0931{idTracker}");
             await assetDataAccess.Insert(asset);
             await assetDataAccess.Save();
             

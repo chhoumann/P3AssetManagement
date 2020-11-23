@@ -7,8 +7,6 @@ namespace AssetManagement.Models.Asset
 {
     public interface IAsset
     {
-        string Model { get; }
-        string SerialNumber { get; }
         string AssetId { get; }
         int Id { get; }
 

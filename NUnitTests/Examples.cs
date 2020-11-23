@@ -23,10 +23,10 @@ namespace AssetManagement.NUnitTests
 
         // [TestCase()] // TestCases can be used to test similar behavior without writing many repetitive tests.
         [Test]
-        public void AssetTransferTo_AssetTransferOfAssetWithoutHolder_OwnershipTransferredSuccessfully()
+        public void ComputerTransferTo_AssetTransferOfAssetWithoutHolder_OwnershipTransferredSuccessfully()
         {
             // Arrange
-            Asset asset = new Asset(1234, "Cool Model", "SN123");
+            Asset asset = new ComputerAsset("PC1234",1234, "Cool Model", "SN123");
             IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
             new AssetRecordManager(Substitute.For<ISqlDataAccess<AssetRecordData>>()).StartWatchingForAssetStatusChange();
             

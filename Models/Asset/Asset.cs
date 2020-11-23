@@ -5,11 +5,8 @@ using System.Collections.Generic;
 
 namespace AssetManagement.Models.Asset
 {
-    public class Asset : IAsset
+    public abstract class Asset : IAsset
     {
-        public string Model { get; private set; }
-        public string SerialNumber { get; private set; }
-
         /// <summary>
         /// The asset's ID provided by the file from AAF.
         /// </summary>
@@ -38,12 +35,13 @@ namespace AssetManagement.Models.Asset
             Transfer.ToUser(null);
         }
 
-        public Asset(int id, string model, string serialNumber) : this()
+        public Asset(int id) : this() => Id = id;
+        
+        public Asset(string assetId, int id) : this()
         {
-            Model = model;
-            SerialNumber = serialNumber;
+            AssetId = assetId;
             Id = id;
-            AssetId = id.ToString(); // TODO: Fix -- do we use AssetId or Id? Or Both.
+
         }
     }
 }

@@ -8,10 +8,10 @@ namespace AssetManagement.NUnitTests
     public sealed class MoveAssetTests
     {
         [Test]
-        public void MoveAssetToDepot_MoveAsset_SuccessfullyMoveAsset()
+        public void MoveComputerToDepot_MoveAsset_SuccessfullyMoveAsset()
         {
             // Arrange
-            Asset asset = new Asset(1, "M1", "Apple");
+            Asset asset = new ComputerAsset(1, "M1", "Apple");
             
             // Act
             asset.Transfer.ToDepot();
@@ -21,11 +21,11 @@ namespace AssetManagement.NUnitTests
         }
 
         [Test]
-        public void MoveAssetToCage_MoveAsset_SuccessfullyMoveAsset()
+        public void MoveComputerToCage_MoveAsset_SuccessfullyMoveAsset()
         {
             // Arrange
-            Asset asset = new Asset(1, "M1", "Apple");
-            
+            Asset asset = new ComputerAsset(1, "M1", "Apple");
+
             // Act
             asset.Transfer.ToCage();
             

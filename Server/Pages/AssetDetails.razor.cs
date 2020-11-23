@@ -11,7 +11,7 @@ namespace AssetManagement.Server.Pages
     {
         [Parameter] public int AssetId { get; set; }
 
-        private Asset asset;
+        private IAsset asset;
         private IAssetRecord[] assetRecords;
         private IAssetRecord[] pageAssetRecords;
 
@@ -47,7 +47,7 @@ namespace AssetManagement.Server.Pages
 
         private async Task DeleteAssetPrompt()
         {
-            string result = await MatDialogService.AskAsync($"Er du sikker på, at du vil slette {asset.Model}?", dialogOptions);
+            string result = await MatDialogService.AskAsync($"Er du sikker på, at du vil slette {asset.AssetId}?", dialogOptions);
             
             if (DidUserClickConfirm(result))
             {
@@ -57,7 +57,7 @@ namespace AssetManagement.Server.Pages
 
         private async Task MoveAssetToDepotPrompt()
         {
-            string result = await MatDialogService.AskAsync($"Er du sikker på, at du vil flytte {asset.Model} til depotet?", dialogOptions);
+            string result = await MatDialogService.AskAsync($"Er du sikker på, at du vil flytte {asset.AssetId} til depotet?", dialogOptions);
             
             if (DidUserClickConfirm(result))
             {
@@ -67,7 +67,7 @@ namespace AssetManagement.Server.Pages
 
         private async Task MoveAssetToCagePrompt()
         {
-            string result = await MatDialogService.AskAsync($"Er du sikker på, at du vil sende {asset.Model} til bortskaffelse?", dialogOptions);
+            string result = await MatDialogService.AskAsync($"Er du sikker på, at du vil sende {asset.AssetId} til bortskaffelse?", dialogOptions);
             
             if (DidUserClickConfirm(result))
             {

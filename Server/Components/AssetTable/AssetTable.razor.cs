@@ -10,12 +10,13 @@ namespace AssetManagement.Server.Components
 {
     public partial class AssetTable
     {
-        private Asset[] assets;
-        private Asset[] pageAssets;
+        private IAsset[] assets;
+        private IAsset[] pageAssets;
 
         private const int AssetsPerPage = 9;
 
-        private PageNavigator<Asset> navigator;
+        private PageNavigator<IAsset> navigator;
+      
         private bool showModelColumn = true;
         private bool showSerialNumberColumn = true;
         private bool showIdColumn = true;
@@ -37,7 +38,7 @@ namespace AssetManagement.Server.Components
         {
             await GetAssetsAsync();
             
-            navigator = new PageNavigator<Asset>(assets, out pageAssets, AssetsPerPage);
+            navigator = new PageNavigator<IAsset>(assets, out pageAssets, AssetsPerPage);
             navigator.PageChanged += GetPageAssets;
             AssetService.AssetUpdated += OnAssetUpdated;
         }
@@ -62,7 +63,7 @@ namespace AssetManagement.Server.Components
         /// Callback function fired when the page is changed. Updates the pageAssets array.
         /// </summary>
         /// <param name="pageAssets">Sliced array of assets representing a page.</param>
-        private void GetPageAssets(Asset[] pageAssets) => this.pageAssets = pageAssets;
+        private void GetPageAssets(IAsset[] pageAssets) => this.pageAssets = pageAssets;
 
         /// <summary>
         /// Opens the details page for an asset in a new page.
