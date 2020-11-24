@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Shared
 {
-    public sealed class PageNavigator<T>
+    public sealed class PageNavigator<T> : IPageNavigator<T>
     {
         /// <summary>
         /// The current page index number starting at 0.

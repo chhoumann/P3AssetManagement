@@ -15,7 +15,7 @@ namespace AssetManagement.Server.Pages
         private IAssetRecord[] assetRecords;
         private IAssetRecord[] pageAssetRecords;
 
-        private PageNavigator<IAssetRecord> navigator;
+        private IPageNavigator<IAssetRecord> navigator;
 
         private const int AssetRecordsPerPage = 10;
 

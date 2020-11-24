@@ -15,7 +15,7 @@ namespace AssetManagement.Server.Components
 
         private const int AssetsPerPage = 9;
 
-        private PageNavigator<IAsset> navigator;
+        private IPageNavigator<IAsset> navigator;
       
         private bool showModelColumn = true;
         private bool showSerialNumberColumn = true;
