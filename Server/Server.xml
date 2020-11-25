@@ -15,7 +15,7 @@
             Updates table with new data - live reloading.
             </summary>
         </member>
-        <member name="M:AssetManagement.Server.Components.AssetTable.GetPageAssets(AssetManagement.Models.Asset.Asset[])">
+        <member name="M:AssetManagement.Server.Components.AssetTable.GetPageAssets(AssetManagement.Models.Asset.IAsset[])">
             <summary>
             Callback function fired when the page is changed. Updates the pageAssets array.
             </summary>
@@ -76,6 +76,14 @@
             </summary>
             <param name="navigationDirection">The direction to navigate - left or right.</param>
             <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
+        </member>
+        <member name="M:AssetManagement.Server.Shared.PageNavigator`1.OnItemsUpdated(`0[])">
+            <summary>
+            Updates current page and returns current page items.
+            Should be called if the current page is updated.
+            </summary>
+            <param name="items">Array of all items.</param>
+            <returns>Array of current page items.</returns>
         </member>
         <member name="M:AssetManagement.Server.Shared.PageNavigator`1.SetPage(System.Int32)">
             <summary>

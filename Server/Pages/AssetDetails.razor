@@ -3,6 +3,7 @@
 @inject AssetService AssetService
 @inject IJSRuntime JSRuntime
 @using AssetManagement.Models.Asset
+@using AssetManagement.Server.Components <!-- This is required though. Don't listen to what it says -->
 @inject IMatDialogService MatDialogService
 
 @if (asset == null)
@@ -45,7 +46,7 @@ else
                             </tr>
                         </tbody>
                     </table>
-                    
+
                     <div class="container my-2">
                         <div class="row">
                             <MatButton Class="col mb-2" Style="background-color: dodgerblue" Raised="true" Icon="archive" @onclick="() => MoveAssetToDepotPrompt()">Overfør til depot</MatButton>
@@ -63,17 +64,17 @@ else
                 <div class="border border-light p-4 rounded">
                     <table class="table">
                         <thead>
-                            <th style="text-align: center;">State</th>
-                            <th style="text-align: center;">Date</th>
-                            <th style="text-align: center;">Holder</th>
+                        <th style="text-align: center;">State</th>
+                        <th style="text-align: center;">Date</th>
+                        <th style="text-align: center;">Holder</th>
                         </thead>
                         <tbody>
                             @foreach (var record in assetRecords)
                             {
                                 <tr>
-                                  <td>@record.State</td>
-                                  <td>@(record.Timestamp.Date.ToString("d"))</td>
-                                  <td>@(record.Holder != null ? record.Holder.Label : "-")</td>
+                                    <td>@record.State</td>
+                                    <td>@(record.Timestamp.Date.ToString("d"))</td>
+                                    <td>@(record.Holder != null ? record.Holder.Label : "-")</td>
                                 </tr>
                             }
                         </tbody>
@@ -87,7 +88,7 @@ else
     </div>
 }
 <style>
-    .border-light{
+    .border-light {
         border: 5px solid #f7f7f9 !important;
     }
 </style>

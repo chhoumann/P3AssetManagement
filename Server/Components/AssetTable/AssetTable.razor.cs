@@ -1,10 +1,8 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using AssetManagement.Models.Asset;
 using AssetManagement.Server.Shared;
 using MatBlazor;
 using Microsoft.AspNetCore.Components.Web;
+using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Components
 {
@@ -25,10 +23,10 @@ namespace AssetManagement.Server.Components
         private bool showLastChangedColumn = true;
         private bool showPcAdStatusColumn = true;
         private bool showStateColumn = true;
-        
+
         private ForwardRef buttonForwardRef = new ForwardRef();
         private BaseMatMenu Menu;
-    
+
         private void FilterMenuShow(MouseEventArgs e)
         {
             Menu.OpenAsync();
@@ -37,7 +35,7 @@ namespace AssetManagement.Server.Components
         protected override async Task OnInitializedAsync()
         {
             await GetAssetsAsync();
-            
+
             navigator = new PageNavigator<IAsset>(assets, out pageAssets, AssetsPerPage);
             navigator.PageChanged += GetPageAssets;
             AssetService.AssetUpdated += OnAssetUpdated;

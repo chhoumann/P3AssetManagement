@@ -17,19 +17,23 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         public AssetRecordData(IAssetRecord assetRecord)
         {
+            if (assetRecord == null)
+            {
+                throw new ArgumentNullException(nameof(assetRecord));
+            }
+                
             AssetId = assetRecord.AssetId;
             Date = assetRecord.Timestamp;
             State = assetRecord.State;
+
             if (assetRecord.Holder == null)
             {
-                AssetHolderLabel = AssetHolderUsername = AssetHolderDepartment = null;                   
+                throw new ArgumentNullException(nameof(assetRecord.Holder));
             }
-            else
-            {
-                AssetHolderLabel = assetRecord.Holder.Label;
-                AssetHolderUsername = assetRecord.Holder.Username;
-                AssetHolderDepartment = assetRecord.Holder.Department;    
-            }
+            
+            AssetHolderLabel = assetRecord.Holder.Label;
+            AssetHolderUsername = assetRecord.Holder.Username;
+            AssetHolderDepartment = assetRecord.Holder.Department;
         }
 
         public AssetRecordData() { } // Empty constructor necessary for EntityFrameworkCore to create the object 

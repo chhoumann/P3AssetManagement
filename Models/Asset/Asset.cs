@@ -19,9 +19,9 @@ namespace AssetManagement.Models.Asset
 
         public AssetOwnershipHandler Transfer { get; }
 
-        public DateTime LastChanged => LastAssetRecord.Timestamp;
-
         public IAssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
+
+        public DateTime LastChanged => LastAssetRecord.Timestamp;
 
         public IAssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
 
@@ -31,17 +31,17 @@ namespace AssetManagement.Models.Asset
         {
             Transfer = new AssetOwnershipHandler(this);
 
-            // The initial holder of an asset is null because we need an initial AssetRecord for an Asset
-            Transfer.ToUser(null);
+            // The initial holder of an asset is the depot,
+            // to make properties: LastAssetRecord, LastChanged and CurrentAssetHolder needs a record
+            Transfer.ToDepot();
         }
 
-        public Asset(int id) : this() => Id = id;
-        
-        public Asset(string assetId, int id) : this()
+        protected Asset(int id) : this() => Id = id;
+
+        protected Asset(string assetId, int id) : this()
         {
             AssetId = assetId;
             Id = id;
-
         }
     }
 }
