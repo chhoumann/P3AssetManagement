@@ -1,20 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary.DataModels;
-using AssetManagement.DataAccessLibrary.DbContexts;
 using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
 using AssetManagement.Models.AssetHolder;
 using AssetManagement.Models.AssetRecord;
+using System.Threading.Tasks;
 
 namespace AssetManagement.Core
 {
     // TODO: Should auto-update for assets when something happens to an asset (state changed / ownership, etc)
     public class AssetRecordManager
     {
-        private ISqlDataAccess<AssetRecordData> dataAccess;
+        private ISqlDataAccess<AssetRecordData> DataAccess { get; }
 
-        public AssetRecordManager(ISqlDataAccess<AssetRecordData> dataAccess) => this.dataAccess = dataAccess;
+        public AssetRecordManager(ISqlDataAccess<AssetRecordData> dataAccess) => DataAccess = dataAccess;
 
         /// <summary>
         /// A method which subscribes to a status change in any asset.
@@ -34,7 +32,9 @@ namespace AssetManagement.Core
         {
             AssetRecord record = new AssetRecord(state, newAssetHolder, asset.AssetId);
             asset.AssetRecords.Add(record);
-            
+
+            // TODO: This line is what's making the entire program crash.
+            // It seems as if it's trying to add 'null' entities to the database - which it obviously doesn't like.
             await AddRecordToDatabase(record);
         }
 
@@ -45,9 +45,11 @@ namespace AssetManagement.Core
         /// <returns>Task</returns>
         private async Task AddRecordToDatabase(AssetRecord record)
         {
+            if (string.IsNullOrEmpty(record.AssetId)) return;
             AssetRecordData assetRecordData = new AssetRecordData(record);
-            await dataAccess.Insert(assetRecordData);
-            await dataAccess.Save();
+
+            await DataAccess.Insert(assetRecordData);
+            await DataAccess.Save();
         }
     }
 }

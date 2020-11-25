@@ -17,7 +17,7 @@ namespace AssetManagement.Server
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            Core.AssetController.StartWatchingAlienData();
+            AssetController.StartWatchingAlienData();
             ISqlDataAccess<AssetRecordData> assetRecordDbAccess = new SqlDataAccess<AssetRecordData>(new AssetRecordContext());
             new AssetRecordManager(assetRecordDbAccess).StartWatchingForAssetStatusChange();
         }

@@ -1,5 +1,5 @@
 @page "/AssetDetails"
-@page "/AssetDetails/{AssetId:int}"
+@page "/AssetDetails/{AssetId:guid}"
 @inject AssetService AssetService
 @inject IJSRuntime JSRuntime
 @using AssetManagement.Models.Asset
@@ -12,7 +12,7 @@
 }
 else
 {
-    <h1 class="text-center mb-3">Details for asset @asset.AssetId</h1>
+    <h1 class="text-center my-3">Detaljer for @(asset.AssetId)</h1>
     <div class="container text-center">
         <div class="row">
             <div class="col-sm">
@@ -23,7 +23,7 @@ else
                             <tr>
                                 <td scope="row">Nuværende Ejer</td>
                                 <td>
-                                    <text placeholder="EJER" disabled>@asset.AssetId</text>
+                                    <text placeholder="EJER" disabled>@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</text>
                                 </td>
                             </tr>
                             <tr>

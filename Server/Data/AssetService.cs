@@ -2,7 +2,9 @@ using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading;
+using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DbContexts;
 using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
@@ -22,34 +24,14 @@ namespace AssetManagement.Server
         /// Gets all assets in database
         /// </summary>
         /// <returns>An array of all Assets in database</returns>
-        public async Task<Asset[]> GetAssetsAsync()
+        public async Task<ComputerAsset[]> GetAssetsAsync()
         { 
-            SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext());
-            IEnumerable<Asset> assets = await assetDataAccess.GetAll();
+            SqlDataAccess<ComputerAsset> assetDataAccess = new SqlDataAccess<ComputerAsset>(new AssetContext());
+            IEnumerable<ComputerAsset> assets = await assetDataAccess.GetAll();
 
-            idTracker = GetNextId(assets);
+            // idTracker = GetNextId(assets);
             
             return assets.ToArray();
-        }
-
-        /// <summary>
-        /// Gets the next possible asset ID.
-        /// </summary>
-        /// <param name="assets"></param>
-        /// <returns>The next possible ID for an asset.</returns>
-        private int GetNextId(IEnumerable<Asset> assets)
-        {
-            int next = 0;
-            
-            foreach (Asset asset in assets)
-            {
-                if (asset.Id > next)
-                {
-                    next = asset.Id + 1;
-                }
-            }
-
-            return next;
         }
 
         /// <summary>
@@ -57,26 +39,27 @@ namespace AssetManagement.Server
         /// </summary>
         /// <param name="assetId">Asset ID to look for.</param>
         /// <returns>Asset object</returns>
-        public async Task<Asset> GetSingleAssetAsync(int assetId)
+        public async Task<ComputerAsset> GetSingleAssetAsync(string assetId)
         {
-            SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext()); 
-            
+            SqlDataAccess<ComputerAsset> assetDataAccess = new SqlDataAccess<ComputerAsset>(new AssetContext());
+
             return await assetDataAccess.GetById(assetId);
         }
         
         public async Task CreateNewAsset()
         {
-            SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext());
-            Asset asset = new ComputerAsset(idTracker += 10, $"Computer {idTracker / 10}", $"SN0931{idTracker}");
+            SqlDataAccess<ComputerAsset> assetDataAccess = new SqlDataAccess<ComputerAsset>(new AssetContext());
+            ComputerAsset asset = new ComputerAsset($"Computer {idTracker++}", $"SN0931{idTracker}") { AssetId = "TEST_ID"};
+            
             await assetDataAccess.Insert(asset);
             await assetDataAccess.Save();
             
             AssetUpdated?.Invoke();
         }
 
-        public async Task DeleteAsset(int id)
+        public async Task DeleteAsset(string id)
         {
-            SqlDataAccess<Asset> assetDataAccess = new SqlDataAccess<Asset>(new AssetContext());
+            SqlDataAccess<ComputerAsset> assetDataAccess = new SqlDataAccess<ComputerAsset>(new AssetContext());
             await assetDataAccess.Delete(id);
             await assetDataAccess.Save();
             

@@ -5,6 +5,6 @@ namespace AssetManagement.DataAccessLibrary.DbContexts
 {
     public sealed class AssetContext : P3DbContext
     {
-        public DbSet<Asset> AssetData { get; set; }
+        public DbSet<ComputerAsset> AssetData { get; set; }
     }
 }

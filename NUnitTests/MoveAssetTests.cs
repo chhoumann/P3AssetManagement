@@ -11,11 +11,11 @@ namespace AssetManagement.NUnitTests
         public void MoveComputerToDepot_MoveAsset_SuccessfullyMoveAsset()
         {
             // Arrange
-            Asset asset = new ComputerAsset(1, "M1", "Apple");
-            
+            Asset asset = new ComputerAsset("ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
+
             // Act
             asset.Transfer.ToDepot();
-            
+
             // Assert
             Assert.AreEqual(StaticAssetHolders.Depot, asset.CurrentAssetHolder);
         }
@@ -24,11 +24,11 @@ namespace AssetManagement.NUnitTests
         public void MoveComputerToCage_MoveAsset_SuccessfullyMoveAsset()
         {
             // Arrange
-            Asset asset = new ComputerAsset(1, "M1", "Apple");
+            Asset asset = new ComputerAsset("ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
 
             // Act
             asset.Transfer.ToCage();
-            
+
             // Assert
             Assert.AreEqual(StaticAssetHolders.Cage, asset.CurrentAssetHolder);
         }

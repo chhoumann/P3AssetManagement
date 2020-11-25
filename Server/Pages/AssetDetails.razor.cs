@@ -9,7 +9,7 @@ namespace AssetManagement.Server.Pages
 {
     public sealed partial class AssetDetails
     {
-        [Parameter] public int AssetId { get; set; }
+        [Parameter] public Guid AssetId { get; set; }
 
         private IAsset asset;
         private IAssetRecord[] assetRecords;
@@ -26,7 +26,7 @@ namespace AssetManagement.Server.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            asset = await AssetService.GetSingleAssetAsync(AssetId);
+            asset = await AssetService.GetSingleAssetAsync(AssetId.ToString());
 
             assetRecords = asset.AssetRecords.ToArray();
 

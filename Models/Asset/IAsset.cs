@@ -8,7 +8,7 @@ namespace AssetManagement.Models.Asset
     public interface IAsset
     {
         string AssetId { get; }
-        int Id { get; }
+        string Id { get; }
 
         DateTime LastChanged { get; }
 

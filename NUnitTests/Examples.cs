@@ -26,13 +26,13 @@ namespace AssetManagement.NUnitTests
         public void ComputerTransferTo_AssetTransferOfAssetWithoutHolder_OwnershipTransferredSuccessfully()
         {
             // Arrange
-            Asset asset = new ComputerAsset("PC1234",1234, "Cool Model", "SN123");
+            Asset asset = new ComputerAsset("ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
             IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
             new AssetRecordManager(Substitute.For<ISqlDataAccess<AssetRecordData>>()).StartWatchingForAssetStatusChange();
-            
+
             // Act
             asset.Transfer.ToUser(assetHolder);
-            
+
             // Assert
             Assert.AreEqual(assetHolder, asset.CurrentAssetHolder);
         }

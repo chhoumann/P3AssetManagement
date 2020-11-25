@@ -44,9 +44,9 @@ else
             <tr>
                 <td class="@(showModelColumn ? "" : "d-none")">@(asset is ComputerAsset computerAsset1? computerAsset1.Model : "-")</td>
                 <td class="@(showSerialNumberColumn ? "" : "d-none")">@(asset is ComputerAsset computerAsset2 ? computerAsset2.SerialNumber : "-")</td>
-                <td class="@(showIdColumn ? "" : "d-none")">@asset.Id</td>
-                <td class="@(showOwnerColumn ? "" : "d-none")">@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</td>
-                <td class="@(showUsernameColumn ? "" : "d-none")">@(asset.CurrentAssetHolder != null && asset.CurrentAssetHolder.Username != null ? asset.CurrentAssetHolder.Username : "-")</td>
+                <td class="@(showIdColumn ? "" : "d-none")">@(asset.AssetId ?? "-")</td>
+                <td class="@(showOwnerColumn ? "" : "d-none")">@(asset.CurrentAssetHolder?.Label ?? "-")</td>
+                <td class="@(showUsernameColumn ? "" : "d-none")">@(asset.CurrentAssetHolder?.Username ?? "-")</td>
                 <td class="@(showLastChangedColumn ? "" : "d-none")">@asset.LastChanged.ToShortDateString()</td>
                 <td class="@(showPcAdStatusColumn ? "" : "d-none")">Awaiting Imp.</td>
                 <td class="@(showStateColumn ? "" : "d-none")">@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>

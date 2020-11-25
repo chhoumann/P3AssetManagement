@@ -33,14 +33,7 @@
             </summary>
             <returns>An array of all Assets in database</returns>
         </member>
-        <member name="M:AssetManagement.Server.AssetService.GetNextId(System.Collections.Generic.IEnumerable{AssetManagement.Models.Asset.Asset})">
-            <summary>
-            Gets the next possible asset ID.
-            </summary>
-            <param name="assets"></param>
-            <returns>The next possible ID for an asset.</returns>
-        </member>
-        <member name="M:AssetManagement.Server.AssetService.GetSingleAssetAsync(System.Int32)">
+        <member name="M:AssetManagement.Server.AssetService.GetSingleAssetAsync(System.String)">
             <summary>
             Gets details about single Asset.
             </summary>
