@@ -1,3 +1,4 @@
+using System;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
@@ -12,30 +13,33 @@ namespace AssetManagement.Core
     {
         private ISqlDataAccess<AssetRecordData> DataAccess { get; }
 
+        /* TODO: Remove this constructor and replace it with something that is decoupled from DB,
+           some kind of abstraction over DB access */
         public AssetRecordManager(ISqlDataAccess<AssetRecordData> dataAccess) => DataAccess = dataAccess;
 
+        public AssetRecordManager() { }
+        
         /// <summary>
         /// A method which subscribes to a status change in any asset.
         /// </summary>
         public AssetRecordManager StartWatchingForAssetStatusChange()
         {
-            AssetOwnershipHandler.AssetStatusChanged += StatusChanged;
+            Asset.AssetChanged += StatusChanged;
             return this;
         }
 
         /// <summary>
-        /// A delegate function, which is excecuted every time a status is changed in an asset.
+        /// A delegate function, which is executed every time a status is changed in an asset.
         /// </summary>
         /// <param name="asset">The asset in question.</param>
         /// <param name="state">The new state.</param>
-        private async void StatusChanged(Asset asset, IAssetHolder newAssetHolder, AssetState state)
+        private void StatusChanged(Asset asset, IAssetHolder assetHolder, AssetState state)
         {
-            AssetRecord record = new AssetRecord(state, newAssetHolder, asset.AssetId);
+            AssetRecord record = new AssetRecord(state, assetHolder, asset.AssetId);
             asset.AssetRecords.Add(record);
-
-            // TODO: This line is what's making the entire program crash.
-            // It seems as if it's trying to add 'null' entities to the database - which it obviously doesn't like.
-            await AddRecordToDatabase(record);
+            
+            // TODO: Save to database
+            //await AddRecordToDatabase(record);
         }
 
         /// <summary>

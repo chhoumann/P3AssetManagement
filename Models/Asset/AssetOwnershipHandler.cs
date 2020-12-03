@@ -6,11 +6,8 @@ namespace AssetManagement.Models.Asset
 {
     public sealed class AssetOwnershipHandler
     {
-        /// <summary>
-        /// An event which can be triggered when the status of an asset is updated somehow
-        /// </summary>
-        public static event Action<Asset, IAssetHolder, AssetState> AssetStatusChanged;
-
+        public event Action<Asset, IAssetHolder, AssetState> AssetOwnershipChanged;
+        
         private readonly Asset asset;
 
         public AssetOwnershipHandler(Asset asset) => this.asset = asset;
@@ -21,7 +18,7 @@ namespace AssetManagement.Models.Asset
         /// <param name="newAssetHolder">The asset holder to transfer to.</param>
         private void TransferTo(IAssetHolder newAssetHolder)
         {
-            AssetStatusChanged?.Invoke(asset, newAssetHolder, AssetState.Online);
+            AssetOwnershipChanged?.Invoke(asset, newAssetHolder, AssetState.Online);
         }
 
         public void ToDepot() => TransferTo(StaticAssetHolders.Depot);

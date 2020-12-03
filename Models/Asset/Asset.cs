@@ -1,13 +1,19 @@
-using AssetManagement.Models.AssetHolder;
-using AssetManagement.Models.AssetRecord;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using AssetManagement.Models.AssetHolder;
+using AssetManagement.Models.AssetRecord;
 
 namespace AssetManagement.Models.Asset
 {
     public abstract class Asset : IAsset
     {
+        /// <summary>
+        /// An event which can be triggered when the status of an asset is updated somehow
+        /// </summary>
+        public static event Action<Asset, IAssetHolder, AssetState> AssetChanged;
+
         /// <summary>
         /// The asset's ID provided by the file from AAF.
         /// </summary>
@@ -21,23 +27,29 @@ namespace AssetManagement.Models.Asset
 
         public AssetOwnershipHandler Transfer { get; }
 
-        public IAssetRecord LastAssetRecord => AssetRecords[AssetRecords.Count - 1];
+        public IAssetRecord LastAssetRecord => (AssetRecords.Count > 0 ? AssetRecords.Last() : null);
 
         public DateTime LastChanged => LastAssetRecord.Timestamp;
 
-        public IAssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
+        public IAssetHolder CurrentAssetHolder => LastAssetRecord?.Holder;
 
         public List<IAssetRecord> AssetRecords { get; } = new List<IAssetRecord>();
 
-        public Asset()
+        protected Asset()
         {
             Transfer = new AssetOwnershipHandler(this);
-
-            // The initial holder of an asset is the depot,
-            // to make properties: LastAssetRecord, LastChanged and CurrentAssetHolder needs a record
-            Transfer.ToDepot();
+            Transfer.AssetOwnershipChanged += (asset, holder, assetState) =>
+            {
+                AssetChanged?.Invoke(asset, holder, assetState);
+            };
         }
 
-        public Asset(string assetId) : this() => AssetId = assetId;
+        protected Asset(IAssetHolder assetHolder, string assetId) : this()
+        {
+            AssetId = assetId;
+            Transfer.ToUser(assetHolder);
+        }
+
+        public void SetState(AssetState state) => AssetChanged?.Invoke(this, CurrentAssetHolder, state);
     }
 }

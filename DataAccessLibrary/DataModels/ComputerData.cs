@@ -2,6 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using AssetManagement.Models.Asset;
+using AssetManagement.Models.AssetHolder;
 
 namespace AssetManagement.DataAccessLibrary.DataModels
 {
@@ -34,7 +36,8 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         {
             string[] fields = csvLine.Split(separator);
             FileName = fileName;
-            Timestamp = Convert.ToDateTime(fields[0], cultureInfo);
+            //TODO: See notion task - fix datetime conversion.
+            Timestamp = DateTime.Now; //Convert.ToDateTime(fields[0], cultureInfo);
             Username = fields[1];
             Holder = fields[2];
             Department = fields[3];
@@ -50,5 +53,12 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public ComputerData() { }
 
         public override string ToString() => $"{Timestamp}: Holder: {Holder}, PcName: {PcName}";
+        
+        public static explicit operator ComputerAsset(ComputerData computerData)
+        {
+            AssetHolder holder = new AssetHolder(computerData.Holder, computerData.Username, computerData.Department);
+                                
+            return new ComputerAsset(holder, computerData.PcName, computerData.Model1, computerData.SerialNumber);
+        }
     }
 }

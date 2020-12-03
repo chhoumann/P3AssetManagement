@@ -1,19 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AssetManagement.Core.DataLoadStrategy;
+using AssetManagement.Core.Exceptions;
 using AssetManagement.DataAccessLibrary.DbContexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.Generic;
+using AssetManagement.Models.Asset;
+using AssetManagement.Models.AssetHolder;
 
 namespace AssetManagement.Core
 {
     public sealed class AafCsvDataWatcher
     {
+        public event Action<List<ComputerAsset>> FileRead;
+
         private readonly string path;
-        
+
         public AafCsvDataWatcher(string path) => this.path = path;
+
 
         /// <summary>
         /// Start watching for new CSV files at the path the class was initialized with.
@@ -27,7 +34,7 @@ namespace AssetManagement.Core
                 Filter = "*.csv"
             };
 
-            watcher.Created += OnChanged;
+            watcher.Created += OnNewFile;
             watcher.Error += OnError;
 
             watcher.EnableRaisingEvents = true;
@@ -36,37 +43,50 @@ namespace AssetManagement.Core
         /// <summary>
         /// Fired when a new CSV file is created.
         /// </summary>
-        private async void OnChanged(object eventSource, FileSystemEventArgs e)
+        private void OnNewFile(object eventSource, FileSystemEventArgs e)
         {
             string filePath = e.FullPath;
-            AssetLoadCsvContext<ComputerData> assetLoadCsvContext = new AssetLoadCsvContext<ComputerData>(new ComputerDataCsvStrategy(';'));
-            List<ComputerData> computerData = assetLoadCsvContext.LoadData(filePath);
 
-            await SaveComputerDataToDb(computerData);
+            List<ComputerAsset> computerAssets = ReadNewDataFile(filePath)
+                .Select(computerData => (ComputerAsset) computerData)
+                .ToList();
+
+            FileRead?.Invoke(computerAssets);
+        }
+
+        /// <summary>
+        /// Reads new data file.
+        /// </summary>
+        /// <param name="filePath">Path to file.</param>
+        /// <returns>IEnumerable of read data.</returns>
+        private IEnumerable<ComputerData> ReadNewDataFile(string filePath)
+        {
+            return new CsvLoader(';', filePath).ReadData();
         }
 
         /// <summary>
         /// Fired when the FileSystemWatcher errors.
         /// </summary>
+        // TODO: CATCH THIS PLEASE & Do some error handling / logging
         private void OnError(object sender, ErrorEventArgs e)
         {
             throw e.GetException();
         }
-        
+
         /// <summary>
         /// Save a list of ComputerData to the database.
         /// </summary>
         /// <param name="computerData">The data to save.</param>
         /// <returns>An awaitable task.</returns>
-        private async Task SaveComputerDataToDb(List<ComputerData> computerData)
+        private async Task SaveComputerDataToDb(IEnumerable<ComputerData> computerData)
         {
-            Console.WriteLine("New alien data recieved, saving to DB...");
-            
+            Console.WriteLine("New alien data received, saving to DB...");
+
             SqlDataAccess<ComputerData> computerDataAccess = new SqlDataAccess<ComputerData>(new ComputerDataContext());
 
             await computerDataAccess.InsertRange(computerData);
             await computerDataAccess.Save();
-            
+
             Console.WriteLine("Saved new file to DB.");
         }
     }

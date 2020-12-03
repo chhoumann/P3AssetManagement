@@ -23,13 +23,13 @@ else
                             <tr>
                                 <td scope="row">Nuværende Ejer</td>
                                 <td>
-                                    <text placeholder="EJER" disabled>@(asset.CurrentAssetHolder != null ? asset.CurrentAssetHolder.Label : "-")</text>
+                                    <text placeholder="EJER" disabled>@(asset.LastAssetRecord != null ? asset.CurrentAssetHolder.Label : "-")</text>
                                 </td>
                             </tr>
                             <tr>
                                 <td scope="row">Nuværende Status</td>
                                 <td>
-                                    <text placeholder="STATUS" disabled>@asset.LastAssetRecord.State</text>
+                                    <text placeholder="STATUS" disabled>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</text>
                                 </td>
                             </tr>
                             <tr>
@@ -41,7 +41,7 @@ else
                             <tr class="border-bottom">
                                 <td scope="row">Sidst Ændret</td>
                                 <td>
-                                    <text placeholder="DATO" disabled>@asset.LastChanged</text>
+                                    <text placeholder="DATO" disabled>@(asset.LastAssetRecord != null ? asset.LastChanged.ToLongDateString() : "-")</text>
                                 </td>
                             </tr>
                         </tbody>

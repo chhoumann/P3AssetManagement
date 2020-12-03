@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Net.Http;
 using MatBlazor;
 using AssetManagement.Core;
@@ -10,16 +12,22 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AssetManagement.Server
+namespace AssetManagement.Server    
 {
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            AssetController.StartWatchingAlienData();
+
+            AssetController assetController = new AssetController().StartWatchingAlienData();
+            
             ISqlDataAccess<AssetRecordData> assetRecordDbAccess = new SqlDataAccess<AssetRecordData>(new AssetRecordContext());
+            
             new AssetRecordManager(assetRecordDbAccess).StartWatchingForAssetStatusChange();
+
+            Console.WriteLine("Ready...");
+
         }
 
         public IConfiguration Configuration { get; }

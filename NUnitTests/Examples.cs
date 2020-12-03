@@ -3,6 +3,7 @@ using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.Generic;
 using AssetManagement.Models.Asset;
 using AssetManagement.Models.AssetHolder;
+using AssetManagement.Models.AssetRecord;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -26,8 +27,8 @@ namespace AssetManagement.NUnitTests
         public void ComputerTransferTo_AssetTransferOfAssetWithoutHolder_OwnershipTransferredSuccessfully()
         {
             // Arrange
-            Asset asset = new ComputerAsset("ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
             IAssetHolder assetHolder = Substitute.For<IAssetHolder>();
+            Asset asset = new ComputerAsset(null, "ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
             new AssetRecordManager(Substitute.For<ISqlDataAccess<AssetRecordData>>()).StartWatchingForAssetStatusChange();
 
             // Act

@@ -45,5 +45,7 @@ namespace AssetManagement.Models.AssetRecord
             Holder = holder;
             AssetId = assetId;
         }
+
+        public override string ToString() => $"{nameof(AssetId)}: {AssetId}, {nameof(Holder)}: {Holder}, {nameof(Timestamp)}: {Timestamp}, {nameof(State)}: {State}";
     }
 }

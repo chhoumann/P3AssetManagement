@@ -48,8 +48,9 @@ namespace AssetManagement.Server
         
         public async Task CreateNewAsset()
         {
+            // TODO: Delete this because it is just temporary for testing
             SqlDataAccess<ComputerAsset> assetDataAccess = new SqlDataAccess<ComputerAsset>(new AssetContext());
-            ComputerAsset asset = new ComputerAsset($"Computer {idTracker++}", $"SN0931{idTracker}") { AssetId = "TEST_ID"};
+            ComputerAsset asset = new ComputerAsset($"Computer {idTracker++}", $"SN0931{idTracker}", "TEST_ID");
             
             await assetDataAccess.Insert(asset);
             await assetDataAccess.Save();

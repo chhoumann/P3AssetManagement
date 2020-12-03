@@ -11,7 +11,7 @@ namespace AssetManagement.NUnitTests
         public void MoveComputerToDepot_MoveAsset_SuccessfullyMoveAsset()
         {
             // Arrange
-            Asset asset = new ComputerAsset("ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
+            Asset asset = new ComputerAsset(null, "ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
 
             // Act
             asset.Transfer.ToDepot();
@@ -24,7 +24,7 @@ namespace AssetManagement.NUnitTests
         public void MoveComputerToCage_MoveAsset_SuccessfullyMoveAsset()
         {
             // Arrange
-            Asset asset = new ComputerAsset("ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
+            Asset asset = new ComputerAsset(null, "ASSET_ID", "MODEL_NAME", "SERIAL_NUMBER");
 
             // Act
             asset.Transfer.ToCage();
