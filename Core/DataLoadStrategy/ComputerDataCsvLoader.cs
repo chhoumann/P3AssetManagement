@@ -8,30 +8,25 @@ using AssetManagement.DataAccessLibrary.DataModels;
 
 namespace AssetManagement.Core.DataLoadStrategy
 {
-    public sealed class CsvLoader : CsvLoaderBase<ComputerData>
+    public sealed class ComputerDataCsvLoader : CsvLoaderBase<ComputerData>
     {
         private const int FileReadTimeoutInterval = 100;
 
         protected override uint MaxFileReadAttempts => 50;
 
         /// <param name="separator">Separator used to separate CSV lines.</param>
-        /// <param name="filePath">File path for CSV file.</param>
-        public CsvLoader(char separator, string filePath)
-        {
-            FilePath = filePath;
-            Separator = separator;
-        }
+        public ComputerDataCsvLoader(char separator) => Separator = separator;
 
         /// <summary>
         /// Reads data from CSV data file.
         /// </summary>
         /// <returns>An enumerable of the read data.</returns>
         /// <exception cref="FileNotReadException">File could not be read.</exception>
-        public override IEnumerable<ComputerData> ReadData()
+        public override IEnumerable<ComputerData> ReadData(string filePath)
         {
             uint numReadAttempts = 0;
 
-            while (numReadAttempts++ < MaxFileReadAttempts && !IsFileReady())
+            while (numReadAttempts++ < MaxFileReadAttempts && !IsFileReady(filePath))
             {
                 Thread.Sleep(FileReadTimeoutInterval);
             }
@@ -39,13 +34,13 @@ namespace AssetManagement.Core.DataLoadStrategy
             if (numReadAttempts >= MaxFileReadAttempts)
             {
                 // TODO: The caller of this method should catch this exception 
-                throw new FileNotReadException($"CSV file could not be read at path {FilePath}!");
+                throw new FileNotReadException($"CSV file could not be read at path {filePath}!");
             }
             
             return File
-                .ReadAllLines(FilePath)
+                .ReadAllLines(filePath)
                 .Skip(1)
-                .Select(csvLine => new ComputerData(FilePath, Separator, new CultureInfo("fr-FR"), csvLine));
+                .Select(csvLine => new ComputerData(filePath, Separator, new CultureInfo("fr-FR"), csvLine));
         }
     }
 }

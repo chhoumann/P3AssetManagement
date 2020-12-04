@@ -9,17 +9,16 @@ namespace AssetManagement.Core.DataLoadStrategy
         protected abstract uint MaxFileReadAttempts { get; }
         
         protected char Separator;
-        protected string FilePath;
 
         /// <summary>
         /// Checks if a file is locked and cannot be read from.
         /// </summary>
         /// <returns>True if the file can be read, false if it is locked.</returns>
-        protected bool IsFileReady()
+        protected bool IsFileReady(string filePath)
         {
             try
             {
-                using (FileStream inputStream = File.Open(FilePath, FileMode.Open, FileAccess.Read, FileShare.None))
+                using (FileStream inputStream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.None))
                 {
                     return inputStream.Length > 0;
                 }
@@ -30,6 +29,6 @@ namespace AssetManagement.Core.DataLoadStrategy
             }
         }
 
-        public abstract IEnumerable<T> ReadData();
+        public abstract IEnumerable<T> ReadData(string filePath);
     }
 }

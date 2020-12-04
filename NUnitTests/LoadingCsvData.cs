@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using AssetManagement.Core;
 using AssetManagement.Core.DataLoadStrategy;
 using AssetManagement.DataAccessLibrary.DataModels;
 
@@ -19,7 +18,7 @@ namespace AssetManagement.NUnitTests
             const char separator = ';';
             
             // Act
-            List<ComputerData> data = new CsvLoader(separator, filePath).ReadData().ToList();
+            List<ComputerData> data = new ComputerDataCsvLoader(separator).ReadData(filePath).ToList();
             
             // Assert
             Assert.IsNotNull(data);
