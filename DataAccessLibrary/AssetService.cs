@@ -5,7 +5,7 @@ using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using System;
 using System.Linq;
 
-namespace AssetManagement.Server
+namespace AssetManagement.DataAccessLibrary
 {
     public abstract class AssetService<TAsset, TAssetRecord, TDbContext>
         where TAsset : IAsset
@@ -19,10 +19,12 @@ namespace AssetManagement.Server
             InsertDepotAndCageToDb();
         }
 
+        public abstract event Action AssetUpdated;
+
         protected abstract void OnAssetUpdated();
 
-        public abstract event Action AssetUpdated;
         protected abstract TDbContext Db { get; }
+
         public string DepotUsername { get; } = "depot";
         public string CageUsername { get; } = "cage";
 
@@ -50,7 +52,6 @@ namespace AssetManagement.Server
 
             Db.SaveChanges();
         }
-
 
         protected AssetHolder GetAssetHolderByUsername(string username) =>
             Db.AssetHolders.Single(x => x.Username == username);

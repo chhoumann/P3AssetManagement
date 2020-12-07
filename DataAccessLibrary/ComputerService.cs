@@ -2,7 +2,6 @@ using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
-using AssetManagement.Server;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
