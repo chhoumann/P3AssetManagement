@@ -1,14 +1,12 @@
+@using AssetManagement.DataAccessLibrary.DataModels
 @inject NavigationManager NavigationManager
-@using AssetManagement.Models.Asset
-@using AssetManagement.Server.Shared;
-@inject AssetService AssetService
+@inject ComputerService ComputerService
 @inject IJSRuntime JSRuntime
 @namespace AssetManagement.Server.Components
-@using Microsoft.AspNetCore.Components;
 
 @if (pageAssets == null)
 {
-    <LoadingBar />
+    <LoadingBar/>
 }
 else
 {
@@ -22,9 +20,9 @@ else
         <MatCheckbox Class="menuItem" @bind-Value="@showLastChangedColumn">Sidst Ændret</MatCheckbox>
         <MatCheckbox Class="menuItem" @bind-Value="@showPcAdStatusColumn">PC-AD Status</MatCheckbox>
     </MatMenu>
-    
-    // TODO: Remove CreateNewAsset
-    <button class="btn" @onclick="() => AssetService.CreateNewAsset()">Add (test)</button>
+
+    // TODO: Remove CreateNewAsset - make this work
+    @*<button class="btn" @onclick="() => AssetService.CreateNewAsset()">Add (test)</button>*@
     <table class="table text-center">
         <thead>
         <tr>
@@ -40,19 +38,19 @@ else
         </tr>
         </thead>
         <tbody>
-        @foreach (Asset asset in pageAssets)
+        @foreach (Computer computer in pageAssets)
         {
             <tr>
-                <td class="@(showModelColumn ? "" : "d-none")">@(asset is ComputerAsset computerAsset1? computerAsset1.Model : "-")</td>
-                <td class="@(showSerialNumberColumn ? "" : "d-none")">@(asset is ComputerAsset computerAsset2 ? computerAsset2.SerialNumber : "-")</td>
-                <td class="@(showIdColumn ? "" : "d-none")">@(asset.AssetId ?? "-")</td>
-                <td class="@(showOwnerColumn ? "" : "d-none")">@(asset.LastAssetRecord != null ? asset.CurrentAssetHolder.Label : "-")</td>
-                <td class="@(showUsernameColumn ? "" : "d-none")">@(asset.LastAssetRecord != null ? asset.CurrentAssetHolder.Username : "-")</td>
-                <td class="@(showLastChangedColumn ? "" : "d-none")">@(asset.LastAssetRecord != null ? asset.LastChanged.ToLongDateString() : "-")</td>
+                <td class="@(showModelColumn ? "" : "d-none")">@(computer.Model)</td>
+                <td class="@(showSerialNumberColumn ? "" : "d-none")">@(computer.SerialNumber)</td>
+                <td class="@(showIdColumn ? "" : "d-none")">@(computer.PcName)</td>
+                <td class="@(showOwnerColumn ? "" : "d-none")">@(computer.CurrentAssetHolder)</td>
+                <td class="@(showUsernameColumn ? "" : "d-none")">@(computer.CurrentAssetHolder.Username)</td>
+                <td class="@(showLastChangedColumn ? "" : "d-none")">@computer.LastChanged</td>
                 <td class="@(showPcAdStatusColumn ? "" : "d-none")">Awaiting Imp.</td>
-                <td class="@(showStateColumn ? "" : "d-none")">@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</td>
+                <td class="@(showStateColumn ? "" : "d-none")">@(computer.CurrentState)</td>
                 <td>
-                    <MatButton @onclick=" () => NavigateToDetails(asset)" Match="NavLinkMatch.All">
+                    <MatButton @onclick="() => NavigateToDetails(computer)" Match="NavLinkMatch.All">
                         🕵️‍♂️ Detaljer
                     </MatButton>
                 </td>
@@ -60,7 +58,7 @@ else
         }
         </tbody>
     </table>
-    
+
     <div class="container fixed-bottom pb-4 align-bottom">
         <div class="row justify-content-center">
             <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == 0) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</MatButton>
@@ -73,6 +71,6 @@ else
 <style>
     .menuItem {
         align-items: flex-end;
-        font-size: medium; 
+        font-size: medium;
     }
 </style>

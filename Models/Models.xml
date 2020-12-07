@@ -4,70 +4,104 @@
         <name>AssetManagement.Models</name>
     </assembly>
     <members>
-        <member name="T:AssetManagement.Models.AssetHolder.IAssetHolder">
+        <member name="M:AssetManagement.Models.AafComputerCsvFileWatcher.OnNewFile(System.Object,System.IO.FileSystemEventArgs)">
             <summary>
-            General interface for all types of asset holders.
+            Fired when a new CSV file is created.
             </summary>
         </member>
-        <member name="P:AssetManagement.Models.AssetHolder.IAssetHolder.Label">
+        <member name="M:AssetManagement.Models.AafComputerCsvFileWatcher.ReadNewDataFile(System.String)">
             <summary>
-            Corresponds to name for an employee or the display label for the cage or depot
+            Reads new data file.
+            </summary>
+            <param name="filePath">Path to file.</param>
+            <returns>IEnumerable of read data.</returns>
+        </member>
+        <member name="M:AssetManagement.Models.AafComputerCsvFileWatcher.OnError(System.Object,System.IO.ErrorEventArgs)">
+            <summary>
+            Fired when the FileSystemWatcher errors.
             </summary>
         </member>
-        <member name="T:AssetManagement.Models.AssetRecord.AssetRecord">
+        <member name="T:AssetManagement.Models.AafFileWatcherBase`2">
             <summary>
-            A timestamped record for an asset's current state and holder.
+            Watches directory for new files and reacts when a new file is found.
+            </summary>
+            <typeparam name="TLoad">Type to load data as.</typeparam>
+            <typeparam name="TReturn">Type to return data as.</typeparam>
+        </member>
+        <member name="M:AssetManagement.Models.AafFileWatcherBase`2.#ctor(System.String,System.String,AssetManagement.Models.DataLoadStrategy.IAssetLoadStrategy{`0})">
+            <summary>
+            Constructor for AafFileWatcherBase. Sets necessary fields.
+            </summary>
+            <param name="directoryPath">Path to directory.</param>
+            <param name="fileTypeFilter">File type to filter for in folder.</param>
+            <param name="loadStrategy">Strategy for loading the specific file type.</param>
+        </member>
+        <member name="M:AssetManagement.Models.AafFileWatcherBase`2.StartWatching">
+            <summary>
+            Start watching for new CSV files at the path the class was initialized with.
             </summary>
         </member>
-        <member name="M:AssetManagement.Models.AssetRecord.AssetRecord.#ctor(AssetManagement.Models.AssetRecord.AssetState,AssetManagement.Models.AssetHolder.IAssetHolder,System.String)">
+        <member name="M:AssetManagement.Models.AafFileWatcherBase`2.OnNewFile(System.Object,System.IO.FileSystemEventArgs)">
             <summary>
-            Create a new AssetRecord where the date defaults to DateTime.now.
-            Use this constructor if the new asset record isn't invoked by a file,
-            And the Timestamp of the record should be set to the current time
-            </summary>
-            <param name="state">The PCID state of the asset.</param>
-            <param name="holder">The holder of the asset at the time of the record.</param>
-            <param name="assetId">The PCID asset ID.</param>
-        </member>
-        <member name="M:AssetManagement.Models.AssetRecord.AssetRecord.#ctor(AssetManagement.Models.AssetRecord.AssetState,AssetManagement.Models.AssetHolder.IAssetHolder,System.String,System.DateTime)">
-            <summary>
-            Use this constructor if the new asset record is indeed invoked by an external recource.
-            </summary>
-            <param name="state">Can be online or missing</param>
-            <param name="holder">The holder of the asset at the time of the record</param>
-            <param name="assetId">The PCID asset ID.</param>
-            <param name="date">The date when the AssetRecord was created</param>
-        </member>
-        <member name="T:AssetManagement.Models.AssetRecord.AssetState">
-            <summary>
-            An asset's possible states.
+            Fired when a new file is created.
             </summary>
         </member>
-        <member name="T:AssetManagement.Models.AssetRecord.IAssetRecord">
+        <member name="M:AssetManagement.Models.AafFileWatcherBase`2.ReadNewDataFile(System.String)">
             <summary>
-            Interface for a timestamped record for an asset's current state and holder.
+            Reads new data file.
+            </summary>
+            <param name="filePath">Path to directory.</param>
+            <returns>IEnumerable of read data.</returns>
+        </member>
+        <member name="M:AssetManagement.Models.AafFileWatcherBase`2.OnError(System.Object,System.IO.ErrorEventArgs)">
+            <summary>
+            Fired when the FileSystemWatcher errors.
             </summary>
         </member>
-        <member name="P:AssetManagement.Models.Asset.Asset.AssetId">
+        <member name="M:AssetManagement.Models.AssetComparer`1.GetIntersectingAssets(System.Collections.Generic.IEnumerable{`0})">
             <summary>
-            The asset's ID provided by the file from AAF.
+            Gets the intersecting assets between the current assets and the assets from the list.
             </summary>
+            <param name="assetsFromList">The assets to compare to the current assets.</param>
+            <returns>The intersecting assets between the current assets and the assets from the list.</returns>
         </member>
-        <member name="P:AssetManagement.Models.Asset.Asset.Id">
+        <member name="M:AssetManagement.Models.AssetComparer`1.UpdateAssetStates(System.Collections.Generic.IEnumerable{`0})">
             <summary>
-            The internal asset database ID. 
+            Updates the state of the assets' states to missing if they are no longer on the list.
             </summary>
+            <param name="intersectingAssets">The intersecting assets between the current assets and the assets from the list.</param>
         </member>
-        <member name="E:AssetManagement.Models.Asset.AssetOwnershipHandler.AssetStatusChanged">
+        <member name="M:AssetManagement.Models.AssetComparer`1.UpdateAssetHolders(System.Collections.Generic.IEnumerable{`0})">
             <summary>
-            An event which can be triggered when the status of an asset is updated somehow
+            Updates the asset holders of the assets that have changed holder.
             </summary>
+            <param name="intersectingAssets">The intersecting assets between the current assets and the assets from the list.</param>
         </member>
-        <member name="M:AssetManagement.Models.Asset.AssetOwnershipHandler.TransferTo(AssetManagement.Models.AssetHolder.IAssetHolder)">
+        <member name="M:AssetManagement.Core.DataLoadStrategy.ComputerDataCsvLoader.#ctor(System.Char)">
+            <param name="separator">Separator used to separate CSV lines.</param>
+        </member>
+        <member name="M:AssetManagement.Core.DataLoadStrategy.ComputerDataCsvLoader.ReadData(System.String)">
             <summary>
-            Transfer the asset to a new asset holder.
+            Reads data from CSV data file.
             </summary>
-            <param name="newAssetHolder">The asset holder to transfer to.</param>
+            <returns>An enumerable of the read data.</returns>
+            <exception cref="T:AssetManagement.Core.Exceptions.FileNotReadException">File could not be read.</exception>
+        </member>
+        <member name="M:AssetManagement.Core.DataLoadStrategy.CsvLoaderBase`1.IsFileReady(System.String)">
+            <summary>
+            Checks if a file is locked and cannot be read from.
+            </summary>
+            <returns>True if the file can be read, false if it is locked.</returns>
+        </member>
+        <member name="M:AssetManagement.DataAccessLibrary.DataModels.ComputerData.#ctor(System.String,System.Char,System.Globalization.CultureInfo,System.String)">
+            <summary>
+            This constructor can construct this object from a line of csv data,
+            which is provided by PC-ID.
+            </summary>
+            <param name="fileName">The name of the file.</param>
+            <param name="separator">The char which separates the fields in the csvLine. This is usually ',' or ';'.</param>
+            <param name="cultureInfo">Tells the method how to parse the Timestamp</param>
+            <param name="csvLine">A string of fields separated by the separator parameter.</param>
         </member>
     </members>
 </doc>

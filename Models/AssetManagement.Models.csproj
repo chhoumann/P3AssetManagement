@@ -14,4 +14,9 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\AssetManagement.Core.csproj" />
+    <ProjectReference Include="..\DataAccessLibrary\AssetManagement.DataAccessLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,18 +1,14 @@
 using System;
-using System.Linq;
 using System.Net.Http;
+using AssetManagement.Models;
 using MatBlazor;
-using AssetManagement.Core;
-using AssetManagement.DataAccessLibrary.DataModels;
-using AssetManagement.DataAccessLibrary.DbContexts;
-using AssetManagement.DataAccessLibrary.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AssetManagement.Server    
+namespace AssetManagement.Server
 {
     public class Startup
     {
@@ -21,13 +17,8 @@ namespace AssetManagement.Server
             Configuration = configuration;
 
             AssetController assetController = new AssetController().StartWatchingAlienData();
-            
-            ISqlDataAccess<AssetRecordData> assetRecordDbAccess = new SqlDataAccess<AssetRecordData>(new AssetRecordContext());
-            
-            new AssetRecordManager(assetRecordDbAccess).StartWatchingForAssetStatusChange();
 
             Console.WriteLine("Ready...");
-
         }
 
         public IConfiguration Configuration { get; }
@@ -36,13 +27,15 @@ namespace AssetManagement.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Temporary SQL data access example - commented out due to connection string not being part of appsettings.json
-            // DataAccessLibrary.SqlDataAccess sqlDataAccessor = new DataAccessLibrary.SqlDataAccess();
-            // sqlDataAccessor.SampleDatabaseOperations(); 
+            // TODO: Make this work instead of the current implementation of the context files
+            //services.AddDbContext<ComputerContext>(options =>
+            //{
+            //    options.UseSqlServer(Configuration.GetConnectionString("P3EFCoreDB"));
+            //});
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<AssetService>();
+            services.AddSingleton<ComputerService>();
             services.AddMatBlazor();
             services.AddScoped<HttpClient>();
         }

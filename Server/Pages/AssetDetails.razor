@@ -1,14 +1,14 @@
 @page "/AssetDetails"
-@page "/AssetDetails/{AssetId:guid}"
-@inject AssetService AssetService
+@page "/AssetDetails/{AssetDbId:guid}"
+@using AssetManagement.DataAccessLibrary.DataModels.Interfaces
+@inject ComputerService ComputerService
 @inject IJSRuntime JSRuntime
-@using AssetManagement.Models.Asset
-@using AssetManagement.Server.Components <!-- This is required though. Don't listen to what it says -->
+<!-- This is required though. Don't listen to what it says -->
 @inject IMatDialogService MatDialogService
 
 @if (asset == null)
 {
-    <LoadingBar />
+    <LoadingBar/>
 }
 else
 {
@@ -20,40 +20,40 @@ else
                 <div class="border border-light p-4 rounded">
                     <table class="table table-hover">
                         <tbody>
-                            <tr>
-                                <td scope="row">Nuværende Ejer</td>
-                                <td>
-                                    <text placeholder="EJER" disabled>@(asset.LastAssetRecord != null ? asset.CurrentAssetHolder.Label : "-")</text>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row">Nuværende Status</td>
-                                <td>
-                                    <text placeholder="STATUS" disabled>@(asset.LastAssetRecord != null ? asset.LastAssetRecord.State.ToString() : "-")</text>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td scope="row">Serienummer</td>
-                                <td>
-                                    <text placeholder="S/N" disabled>@(asset is ComputerAsset computerAsset ? computerAsset.SerialNumber : "-")</text>
-                                </td>
-                            </tr>
-                            <tr class="border-bottom">
-                                <td scope="row">Sidst Ændret</td>
-                                <td>
-                                    <text placeholder="DATO" disabled>@(asset.LastAssetRecord != null ? asset.LastChanged.ToLongDateString() : "-")</text>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td scope="row">Nuværende Ejer</td>
+                            <td>
+                                <text placeholder="EJER" disabled>@(asset.CurrentAssetHolder)</text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Nuværende Status</td>
+                            <td>
+                                <text placeholder="STATUS" disabled>@asset.CurrentState</text>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Serienummer</td>
+                            <td>
+                                <text placeholder="S/N" disabled>@(asset.SerialNumber)</text>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td scope="row">Sidst Ændret</td>
+                            <td>
+                                <text placeholder="DATO" disabled>@(asset.LastAssetRecord != null ? asset.LastChanged.ToLongDateString() : "-")</text>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
 
                     <div class="container my-2">
                         <div class="row">
-                            <MatButton Class="col mb-2" Style="background-color: dodgerblue" Raised="true" Icon="archive" @onclick="() => MoveAssetToDepotPrompt()">Overfør til depot</MatButton>
+                            <MatButton Class="col mb-2" Style="background-color: dodgerblue" Raised="true" Icon="archive" @onclick="MoveAssetToDepotPrompt">Overfør til depot</MatButton>
                         </div>
                         <div class="row">
-                            <MatButton Class="col mr-2" Style="background-color: red" Raised="true" Icon="delete_forever" @onclick="() => DeleteAssetPrompt()">Slet</MatButton>
-                            <MatButton Class="col ml-2" Style="background-color: orange" Raised="true" Icon="gavel" @onclick="() => MoveAssetToCagePrompt()">Send til bortskaffelse</MatButton>
+                            <MatButton Class="col mr-2" Style="background-color: red" Raised="true" Icon="delete_forever" @onclick="DeleteAssetPrompt">Slet</MatButton>
+                            <MatButton Class="col ml-2" Style="background-color: orange" Raised="true" Icon="gavel" @onclick="MoveAssetToCagePrompt">Send til bortskaffelse</MatButton>
                         </div>
                     </div>
 
@@ -69,14 +69,14 @@ else
                         <th style="text-align: center;">Holder</th>
                         </thead>
                         <tbody>
-                            @foreach (var record in assetRecords)
-                            {
-                                <tr>
-                                    <td>@record.State</td>
-                                    <td>@(record.Timestamp.Date.ToString("d"))</td>
-                                    <td>@(record.Holder != null ? record.Holder.Label : "-")</td>
-                                </tr>
-                            }
+                        @foreach (IAssetRecord record in assetRecords)
+                        {
+                            <tr>
+                                <td>@record.State</td>
+                                <td>@(record.Timestamp)</td>
+                                <td>@(record.Holder != null ? record.Holder.Name : "-")</td>
+                            </tr>
+                        }
                         </tbody>
                     </table>
                     <button disabled=@(navigator.PageIndex == 0) class="btn" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</button>

@@ -1,4 +1,8 @@
 ﻿namespace AssetManagement.Server.Shared
 {
-    public enum HorizontalDirection { Left = -1, Right = 1}
+    public enum HorizontalDirection
+    {
+        Left = -1,
+        Right = 1
+    }
 }

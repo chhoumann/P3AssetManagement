@@ -4,41 +4,23 @@
         <name>AssetManagement.Server</name>
     </assembly>
     <members>
-        <member name="M:AssetManagement.Server.Components.AssetTable.GetAssetsAsync">
-            <summary>
-            Gets all assets from database.
-            </summary>
-        </member>
         <member name="M:AssetManagement.Server.Components.AssetTable.OnAssetUpdated">
             <summary>
             Callback for AssetUpdate event that occurs in AssetService.
             Updates table with new data - live reloading.
             </summary>
         </member>
-        <member name="M:AssetManagement.Server.Components.AssetTable.GetPageAssets(AssetManagement.Models.Asset.IAsset[])">
+        <member name="M:AssetManagement.Server.Components.AssetTable.GetPageAssets(AssetManagement.DataAccessLibrary.DataModels.Computer[])">
             <summary>
             Callback function fired when the page is changed. Updates the pageAssets array.
             </summary>
             <param name="pageAssets">Sliced array of assets representing a page.</param>
         </member>
-        <member name="M:AssetManagement.Server.Components.AssetTable.NavigateToDetails(AssetManagement.Models.Asset.IAsset)">
+        <member name="M:AssetManagement.Server.Components.AssetTable.NavigateToDetails(AssetManagement.DataAccessLibrary.DataModels.Computer)">
             <summary>
             Opens the details page for an asset in a new page.
             </summary>
             <param name="asset">IAsset to open details for</param>
-        </member>
-        <member name="M:AssetManagement.Server.AssetService.GetAssetsAsync">
-            <summary>
-            Gets all assets in database
-            </summary>
-            <returns>An array of all Assets in database</returns>
-        </member>
-        <member name="M:AssetManagement.Server.AssetService.GetSingleAssetAsync(System.String)">
-            <summary>
-            Gets details about single Asset.
-            </summary>
-            <param name="assetId">Asset ID to look for.</param>
-            <returns>Asset object</returns>
         </member>
         <member name="P:AssetManagement.Server.Shared.PageNavigator`1.PageIndex">
             <summary>

@@ -1,5 +1,4 @@
-﻿using AssetManagement.Server.Components;
-using AssetManagement.Server.Shared;
+﻿using AssetManagement.Server.Shared;
 using NUnit.Framework;
 
 namespace AssetManagement.NUnitTests.PageNavigatorTest
@@ -12,7 +11,8 @@ namespace AssetManagement.NUnitTests.PageNavigatorTest
         [TestCase(9, 10, 1)]
         [TestCase(15, 5, 3)]
         [TestCase(0, 1, 1)]
-        public void NumPages_CanCalculateNumPagesFromItemsArray_EqualsExpectedAmountOfPages(int itemCount, int itemsPerPage, int expectedNumPages)
+        public void NumPages_CanCalculateNumPagesFromItemsArray_EqualsExpectedAmountOfPages(int itemCount,
+            int itemsPerPage, int expectedNumPages)
         {
             // Arrange
             int[] items = CreateIntArray(itemCount);
@@ -23,12 +23,13 @@ namespace AssetManagement.NUnitTests.PageNavigatorTest
             // Assert
             Assert.AreEqual(expectedNumPages, pageNavigator.NumPages);
         }
-        
+
         [TestCase(0, 1, 1, false)]
         [TestCase(50, 10, 3, true)]
         [TestCase(50, 10, -4, false)]
         [TestCase(50, 10, 90, true)]
-        public void SetPage_CanClampPageIndex_ReturnsPageChanged(int itemCount, int itemsPerPage, int pageIndex, bool expectPageChanged)
+        public void SetPage_CanClampPageIndex_ReturnsPageChanged(int itemCount, int itemsPerPage, int pageIndex,
+            bool expectPageChanged)
         {
             // Arrange
             int[] items = CreateIntArray(itemCount);
@@ -40,19 +41,20 @@ namespace AssetManagement.NUnitTests.PageNavigatorTest
             // Assert
             Assert.AreEqual(expectPageChanged, isPageChanged);
         }
-        
+
         [TestCase(10, 5, 0, HorizontalDirection.Right, 1)]
         [TestCase(10, 5, 0, HorizontalDirection.Left, 0)]
         [TestCase(30, 5, 1, HorizontalDirection.Right, 2)]
         [TestCase(0, 1, 1, HorizontalDirection.Left, 0)]
         [TestCase(50, 10, 2, HorizontalDirection.Right, 3)]
         [TestCase(17, 5, 2, HorizontalDirection.Left, 1)]
-        public void PageIndex_CanCorrectlyUpdatePageIndex_ChangePageMethodUpdatesPageIndex(int itemCount, int itemsPerPage, int startPageIndex,
+        public void PageIndex_CanCorrectlyUpdatePageIndex_ChangePageMethodUpdatesPageIndex(int itemCount,
+            int itemsPerPage, int startPageIndex,
             HorizontalDirection direction, int expectedPageIndex)
         {
             // Arrange
             int[] items = CreateIntArray(itemCount);
-            
+
             // Act
             PageNavigator<int> pageNavigator = new PageNavigator<int>(items, out pageItems, itemsPerPage);
             pageNavigator.SetPage(startPageIndex);
@@ -61,23 +63,24 @@ namespace AssetManagement.NUnitTests.PageNavigatorTest
             // Assert
             Assert.AreEqual(expectedPageIndex, pageNavigator.PageIndex);
         }
-        
-        [TestCase(17, 5,  2, HorizontalDirection.Right, new[] { 15, 16 })]
-        [TestCase(17, 5,  2, HorizontalDirection.Left, new[] { 5, 6, 7, 8, 9 })]
-        [TestCase(17, 10, 0, HorizontalDirection.Left, new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
-        [TestCase(0, 5,0, HorizontalDirection.Right, new int[0])]
-        public void PageItems_CanCreatePageItemArray_PageItemArrayContainsCorrectElements(int itemCount, int itemsPerPage, int startPageIndex,
+
+        [TestCase(17, 5, 2, HorizontalDirection.Right, new[] {15, 16})]
+        [TestCase(17, 5, 2, HorizontalDirection.Left, new[] {5, 6, 7, 8, 9})]
+        [TestCase(17, 10, 0, HorizontalDirection.Left, new[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9})]
+        [TestCase(0, 5, 0, HorizontalDirection.Right, new int[0])]
+        public void PageItems_CanCreatePageItemArray_PageItemArrayContainsCorrectElements(int itemCount,
+            int itemsPerPage, int startPageIndex,
             HorizontalDirection direction, int[] expectedIntArray)
         {
             // Arrange
             int[] items = CreateIntArray(itemCount);
-            
+
             // Act
             PageNavigator<int> pageNavigator = new PageNavigator<int>(items, out pageItems, itemsPerPage);
             pageNavigator.PageChanged += PageChanged;
             pageNavigator.SetPage(startPageIndex);
-            pageNavigator.ChangePage(direction);  
-            
+            pageNavigator.ChangePage(direction);
+
             // Assert
             CollectionAssert.AreEqual(expectedIntArray, pageItems);
         }
@@ -88,7 +91,7 @@ namespace AssetManagement.NUnitTests.PageNavigatorTest
         {
             // Create an array of integers to test with
             int[] items = new int[itemCount];
-            
+
             for (int i = 0; i < itemCount; i++)
             {
                 items[i] = i;
