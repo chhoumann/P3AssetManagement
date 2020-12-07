@@ -1,9 +1,10 @@
-using System.Collections.Generic;
+using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using AssetManagement.Models;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace AssetManagement.NUnitTests.AssetComparerTests
 {
@@ -22,12 +23,12 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
 
             rec.Holder = ah;
             asset1.ComputerRecords.Add(rec);
-            asset1.PcName = "pc1";
             asset2.ComputerRecords.Add(rec);
+            asset1.PcName = "pc1";
             asset2.PcName = "pc2";
 
-            List<IAsset> currentAssets = new List<IAsset> {asset1};
-            List<IAsset> assetsFromList = new List<IAsset> {asset1, asset2};
+            List<IAsset> currentAssets = new List<IAsset> { asset1 };
+            List<IAsset> assetsFromList = new List<IAsset> { asset1, asset2 };
 
             AssetComparer<IAsset> assetComparer = new AssetComparer<IAsset>(currentAssets);
 
@@ -40,23 +41,23 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
             Assert.That(numNewAssets, Is.EqualTo(1));
         }
 
-        /*[Test]
-        public void OnNewData_AssetMissingInList_AssetIsOffline()
+        [Test]
+        public void OnNewData_AssetMissingInList_AssetIsMissing()
         {
             // Arrange
-            var ah = Substitute.For<AssetHolder>();
-            var rec = Substitute.For<ComputerRecord>();
+            AssetHolder ah = Substitute.For<AssetHolder>();
+            ComputerRecord rec = Substitute.For<ComputerRecord>();
             Computer asset1 = Substitute.For<Computer>();
             Computer asset2 = Substitute.For<Computer>();
 
             rec.Holder = ah;
             asset1.ComputerRecords.Add(rec);
-            asset1.PcName = "pc1";
             asset2.ComputerRecords.Add(rec);
+            asset1.PcName = "pc1";
             asset2.PcName = "pc2";
 
-            List<Computer> currentAssets = new List<Computer> {asset1, asset2};
-            List<Computer> assetsFromList = new List<Computer> {asset1};
+            List<Computer> currentAssets = new List<Computer> { asset1, asset2 };
+            List<Computer> assetsFromList = new List<Computer> { asset1 };
 
             AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
 
@@ -64,52 +65,64 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
             assetComparer.OnNewData(assetsFromList);
 
             // Assert
-            Assert.That(asset2.LastAssetRecord.State, ChangeStateTo.EqualTo(AssetState.Missing));
-        }*/
+            Assert.AreEqual(asset2.CurrentState, AssetState.Missing);
+        }
 
-        //[Test]
-        //public void OnNewData_AssetReappearsInList_AssetIsOnline()
-        //{
-        //    // Arrange
-        //    new AssetRecordManager().StartWatchingForAssetStatusChange();
+        [Test]
+        public void OnNewData_AssetReappearsInList_AssetIsOnline()
+        {
+            // Arrange
+            AssetHolder ah = Substitute.For<AssetHolder>();
+            ComputerRecord rec = Substitute.For<ComputerRecord>();
+            Computer asset1 = Substitute.For<Computer>();
+            Computer asset2 = Substitute.For<Computer>();
 
-        //    Computer asset1 = Substitute.For<Computer>();
-        //    Computer asset2 = Substitute.For<Computer>();
+            rec.Holder = ah;
+            asset1.ComputerRecords.Add(rec);
+            asset2.ComputerRecords.Add(rec);
+            asset1.PcName = "pc1";
+            asset2.PcName = "pc2";
 
-        //    asset1.SetState(AssetState.Online);
-        //    asset2.SetState(AssetState.Missing);
+            asset1.ChangeStateTo.Online();
+            asset2.ChangeStateTo.Missing();
 
-        //    List<Computer> currentAssets = new List<Computer> {asset1, asset2};
-        //    List<Computer> assetsFromList = new List<Computer> {asset1, asset2};
+            List<Computer> currentAssets = new List<Computer> { asset1, asset2 };
+            List<Computer> assetsFromList = new List<Computer> { asset1, asset2 };
 
-        //    AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
+            AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
 
-        //    // Act
-        //    assetComparer.OnNewData(assetsFromList);
+            // Act
+            assetComparer.OnNewData(assetsFromList);
 
-        //    // Assert
-        //    Assert.That(asset2.LastAssetRecord.State, ChangeStateTo.EqualTo(AssetState.Online));
-        //}
+            // Assert
+            Assert.AreEqual(asset2.CurrentState, AssetState.Online);
+        }
 
-        //[Test]
-        //public void OnNewData_NewAssetInList_AssetIsOnline()
-        //{
-        //    // Arrange
-        //    new AssetRecordManager().StartWatchingForAssetStatusChange();
+        [Test]
+        public void OnNewData_NewAssetInList_AssetIsOnline()
+        {
+            // Arrange
+            AssetHolder ah = Substitute.For<AssetHolder>();
+            ComputerRecord rec = Substitute.For<ComputerRecord>();
+            Computer asset1 = Substitute.For<Computer>();
+            Computer asset2 = Substitute.For<Computer>();
 
-        //    Computer asset1 = Substitute.For<Computer>();
-        //    Computer asset2 = Substitute.For<Computer>();
+            rec.Holder = ah;
+            asset1.ComputerRecords.Add(rec);
+            asset2.ComputerRecords.Add(rec);
+            asset1.PcName = "pc1";
+            asset2.PcName = "pc2";
 
-        //    List<Computer> currentAssets = new List<Computer> {asset1};
-        //    List<Computer> assetsFromList = new List<Computer> {asset1, asset2};
+            List<Computer> currentAssets = new List<Computer> { asset1 };
+            List<Computer> assetsFromList = new List<Computer> { asset1, asset2 };
 
-        //    AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
+            AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
 
-        //    // Act
-        //    assetComparer.OnNewData(assetsFromList);
+            // Act
+            assetComparer.OnNewData(assetsFromList);
 
-        //    // Assert
-        //    Assert.That(asset2.LastAssetRecord.State, ChangeStateTo.EqualTo(AssetState.Online));
-        //}
+            // Assert
+            Assert.AreEqual(asset2.CurrentState, AssetState.Online);
+        }
     }
 }
