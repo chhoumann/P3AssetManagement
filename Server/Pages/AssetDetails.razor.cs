@@ -58,7 +58,7 @@ namespace AssetManagement.Server.Pages
 
             if (UserClickedConfirm(result))
             {
-                asset.Transfer.ToDepot();
+                asset.TransferTo.ToDepot();
             }
         }
 
@@ -70,7 +70,7 @@ namespace AssetManagement.Server.Pages
 
             if (UserClickedConfirm(result))
             {
-                asset.Transfer.ToCage();
+                asset.TransferTo.ToCage();
             }
         }
 

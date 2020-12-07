@@ -6,70 +6,70 @@
     <members>
         <member name="M:AssetManagement.Server.Components.AssetTable.OnAssetUpdated">
             <summary>
-            Callback for AssetUpdate event that occurs in AssetService.
-            Updates table with new data - live reloading.
+                Callback for AssetUpdate event that occurs in AssetService.
+                Updates table with new data - live reloading.
             </summary>
         </member>
         <member name="M:AssetManagement.Server.Components.AssetTable.GetPageAssets(AssetManagement.DataAccessLibrary.DataModels.Computer[])">
             <summary>
-            Callback function fired when the page is changed. Updates the pageAssets array.
+                Callback function fired when the page is changed. Updates the pageAssets array.
             </summary>
             <param name="pageAssets">Sliced array of assets representing a page.</param>
         </member>
         <member name="M:AssetManagement.Server.Components.AssetTable.NavigateToDetails(AssetManagement.DataAccessLibrary.DataModels.Computer)">
             <summary>
-            Opens the details page for an asset in a new page.
+                Opens the details page for an asset in a new page.
             </summary>
             <param name="asset">IAsset to open details for</param>
         </member>
-        <member name="P:AssetManagement.Server.Shared.PageNavigator`1.PageIndex">
-            <summary>
-            The current page index number starting at 0.
-            </summary>
-        </member>
-        <member name="P:AssetManagement.Server.Shared.PageNavigator`1.NumPages">
-            <summary>
-            The total number of pages.
-            </summary>
-        </member>
-        <member name="E:AssetManagement.Server.Shared.PageNavigator`1.PageChanged">
-            <summary>
-            Event that fires when the page changes.
-            </summary>
-        </member>
         <member name="M:AssetManagement.Server.Shared.PageNavigator`1.#ctor(`0[],`0[]@,System.Int32)">
             <summary>
-            Constructor to initialize TableNavigator which outputs pageItems.
+                Constructor to initialize TableNavigator which outputs pageItems.
             </summary>
             <param name="items">Input array with all items.</param>
             <param name="pageItems">Output array with sliced items of size itemsPerPage.</param>
             <param name="itemsPerPage">The number of items to display on a single page.</param>
         </member>
+        <member name="P:AssetManagement.Server.Shared.PageNavigator`1.PageIndex">
+            <summary>
+                The current page index number starting at 0.
+            </summary>
+        </member>
+        <member name="P:AssetManagement.Server.Shared.PageNavigator`1.NumPages">
+            <summary>
+                The total number of pages.
+            </summary>
+        </member>
+        <member name="E:AssetManagement.Server.Shared.PageNavigator`1.PageChanged">
+            <summary>
+                Event that fires when the page changes.
+            </summary>
+        </member>
         <member name="M:AssetManagement.Server.Shared.PageNavigator`1.ChangePage(AssetManagement.Server.Shared.HorizontalDirection)">
             <summary>
-            Changes the shown items depending on which direction is chosen and invokes the event PageChanged.
+                Changes the shown items depending on which direction is chosen and invokes the event PageChanged.
             </summary>
             <param name="navigationDirection">The direction to navigate - left or right.</param>
             <returns>True if the requested page index was inside the bounds, false if it was clamped.</returns>
         </member>
         <member name="M:AssetManagement.Server.Shared.PageNavigator`1.OnItemsUpdated(`0[])">
             <summary>
-            Updates current page and returns current page items.
-            Should be called if the current page is updated.
+                Updates current page and returns current page items.
+                Should be called if the current page is updated.
             </summary>
             <param name="items">Array of all items.</param>
             <returns>Array of current page items.</returns>
         </member>
         <member name="M:AssetManagement.Server.Shared.PageNavigator`1.SetPage(System.Int32)">
             <summary>
-            Set the current page index to a specific value. Invokes the PageChanged event.
+                Set the current page index to a specific value. Invokes the PageChanged event.
             </summary>
             <param name="requestedPageIndex">The page index to move to. Gets clamped between 0 and the number of pages.</param>
             <returns>True if the page was updated, false if it wasn't.</returns>
         </member>
         <member name="M:AssetManagement.Server.Shared.PageNavigator`1.GetPageItems">
             <summary>
-            Slices items into a size of itemsPerPage and returns them as an item array.
+                Slices items into a size of itemsPerPage and returns them as an item array.
             </summary>
             <returns>Array of items given the current page.</returns>
         </member>

@@ -64,7 +64,7 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
             assetComparer.OnNewData(assetsFromList);
 
             // Assert
-            Assert.That(asset2.LastAssetRecord.State, Is.EqualTo(AssetState.Missing));
+            Assert.That(asset2.LastAssetRecord.State, ChangeStateTo.EqualTo(AssetState.Missing));
         }*/
 
         //[Test]
@@ -88,7 +88,7 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
         //    assetComparer.OnNewData(assetsFromList);
 
         //    // Assert
-        //    Assert.That(asset2.LastAssetRecord.State, Is.EqualTo(AssetState.Online));
+        //    Assert.That(asset2.LastAssetRecord.State, ChangeStateTo.EqualTo(AssetState.Online));
         //}
 
         //[Test]
@@ -109,7 +109,7 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
         //    assetComparer.OnNewData(assetsFromList);
 
         //    // Assert
-        //    Assert.That(asset2.LastAssetRecord.State, Is.EqualTo(AssetState.Online));
+        //    Assert.That(asset2.LastAssetRecord.State, ChangeStateTo.EqualTo(AssetState.Online));
         //}
     }
 }

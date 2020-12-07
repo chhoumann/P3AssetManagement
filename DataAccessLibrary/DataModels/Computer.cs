@@ -1,11 +1,11 @@
+using AssetManagement.Core;
+using AssetManagement.DataAccessLibrary.DataModels.Handlers;
+using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using AssetManagement.Core;
-using AssetManagement.DataAccessLibrary.DataModels.Handlers;
-using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.DataAccessLibrary.DataModels
 {
@@ -29,9 +29,9 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public AssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
         public DateTime LastChanged => LastAssetRecord.Timestamp;
         public AssetState CurrentState => LastAssetRecord.State;
-        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
+        public AssetOwnershipHandler TransferTo => new AssetOwnershipHandler(this);
 
-        public AssetStateHandler Is => new AssetStateHandler(this);
+        public AssetStateHandler ChangeStateTo => new AssetStateHandler(this);
 
         #region EF Core Stuff
 
