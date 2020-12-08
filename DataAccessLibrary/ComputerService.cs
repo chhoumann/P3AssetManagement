@@ -22,7 +22,7 @@ namespace AssetManagement.DataAccessLibrary
         }
 
         /// <summary>
-        /// Signals that an computer has been updated in the database.
+        /// Signals that a computer has been updated in the database.
         /// </summary>
         public override event Action AssetUpdated;
 
@@ -31,7 +31,7 @@ namespace AssetManagement.DataAccessLibrary
         public static ComputerService Instance { get; private set; }
 
         /// <summary>
-        /// This method is invoked by a property change in an computer,
+        /// This method is invoked by a property change in a computer,
         /// which saves the changes to the database and invokes the AssetUpdated event.
         /// </summary>
         protected override void OnAssetUpdated()
@@ -78,7 +78,7 @@ namespace AssetManagement.DataAccessLibrary
         }
 
         /// <summary>
-        /// Gets an computer by the computer's ID.
+        /// Gets an computer from the database by the computer's ID.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>The computer with the given ID.</returns>

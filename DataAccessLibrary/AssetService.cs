@@ -80,7 +80,7 @@ namespace AssetManagement.DataAccessLibrary
         public abstract TAsset[] GetAssets();
 
         /// <summary>
-        /// Gets an asset by the asset's ID.
+        /// Gets an asset from the database by the asset's ID.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>The asset with the given ID.</returns>
