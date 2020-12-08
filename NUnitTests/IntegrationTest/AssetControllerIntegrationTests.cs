@@ -82,10 +82,10 @@ namespace AssetManagement.NUnitTests.IntegrationTests
             List<IAsset> currentAssets = new List<IAsset> { new Computer() {PcName = "PC1"} };
             List<IAsset> assetsFromCsvList = new List<IAsset> { new Computer() {PcName = "PC1"} };
             
-            AssetComparer<IAsset> assetComparer = new AssetComparer<IAsset>(currentAssets);
-            
             assetsFromCsvList[0].Transfer.ToUser(assetHolder1);
             currentAssets[0].Transfer.ToUser(assetHolder1);
+            
+            AssetComparer<IAsset> assetComparer = new AssetComparer<IAsset>(currentAssets);
 
             // Act
             assetsFromCsvList[0].Transfer.ToUser(assetHolder2);
@@ -95,25 +95,25 @@ namespace AssetManagement.NUnitTests.IntegrationTests
             // Assert
             Assert.That(currentAssets[0].LastAssetRecord.Holder, Is.EqualTo(assetHolder2));
         }
-
-        [Test]
-        public void Method()
-        {
-            // Arrange
-            AafComputerCsvFileWatcher fileWatcher = new AafComputerCsvFileWatcher(filePathToBFolder, new ComputerCsvLoader(';'));
-            AssetController<Computer, MockComputerService> assetController = new AssetController<Computer, MockComputerService>()
-                .StartWatchingAlienData(fileWatcher);
-            
-            // Act
-            
-            if (File.Exists(filePathToB))
-            {
-                File.Delete(filePathToB);
-            }
-            File.Copy(filePathFromA,filePathToB);
-            
-            // Assert
-            
-        }
+        //
+        // [Test]
+        // public void Method()
+        // {
+        //     // Arrange
+        //     AafComputerCsvFileWatcher fileWatcher = new AafComputerCsvFileWatcher(filePathToBFolder, new ComputerCsvLoader(';'));
+        //     AssetController<Computer, MockComputerService> assetController = new AssetController<Computer, MockComputerService>()
+        //         .StartWatchingAlienData(fileWatcher);
+        //     
+        //     // Act
+        //     
+        //     if (File.Exists(filePathToB))
+        //     {
+        //         File.Delete(filePathToB);
+        //     }
+        //     File.Copy(filePathFromA,filePathToB);
+        //     
+        //     // Assert
+        //     Assert.IsTrue(true); // TODO - Finish this
+        // }
     }
 }

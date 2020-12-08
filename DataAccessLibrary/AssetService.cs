@@ -20,7 +20,7 @@ namespace AssetManagement.DataAccessLibrary
     {
         protected AssetService()
         {
-            AssetOwnershipHandler.AssetOwnerShipChanged += OnAssetUpdated;
+            AssetOwnershipHandler.AssetOwnershipChanged += OnAssetUpdated;
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertDepotAndCageToDb();
         }

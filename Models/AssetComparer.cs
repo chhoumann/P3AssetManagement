@@ -81,8 +81,7 @@ namespace AssetManagement.Models
             {
                 T currentAsset = currentAssets.Find(oldAsset => oldAsset.AssetId == newAsset.AssetId);
 
-                if (currentAsset.CurrentHolder == null ||
-                    !currentAsset.CurrentHolder.Equals(newAsset.CurrentHolder))
+                if (!currentAsset.CurrentHolder.Equals(newAsset.CurrentHolder))
                 {
                     currentAsset.Transfer.ToUser(newAsset.CurrentHolder);
                 }
