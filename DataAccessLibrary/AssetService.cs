@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
@@ -31,6 +32,7 @@ namespace AssetManagement.Server
         public abstract TAsset[] GetAssets();
         public abstract TAsset GetAssetById(string id);
         public abstract void AddAsset(IAsset asset);
+        public abstract void AddAssets(IEnumerable<IAsset> assets);
         public abstract void DeleteAsset(IAsset asset);
 
         protected abstract void CreateNewAssetRecord(IAsset asset, string assetHolderUsername, DateTime timestamp,
