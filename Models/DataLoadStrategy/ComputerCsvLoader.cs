@@ -10,7 +10,7 @@ using AssetManagement.DataAccessLibrary.DataModels;
 
 namespace AssetManagement.Models.DataLoadStrategy
 {
-    class ComputerCsvLoader : CsvLoaderBase<Computer>
+    public class ComputerCsvLoader : CsvLoaderBase<Computer>
     {
         protected override uint MaxFileReadAttempts => 50;
         private const int FileReadTimeoutInterval = 100;

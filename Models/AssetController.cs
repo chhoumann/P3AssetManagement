@@ -3,44 +3,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using AssetManagement.Core.DataLoadStrategy;
+using AssetManagement.DataAccessLibrary;
 using AssetManagement.DataAccessLibrary.DataModels;
+using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using AssetManagement.Models.DataLoadStrategy;
-using AssetManagement.Server;
 
 namespace AssetManagement.Models
 {
-    // TODO: Make this generic
-    public sealed class AssetController
+    public sealed class AssetController<TAsset, TAssetService> 
+        where TAsset : IAsset
+        where TAssetService : IAssetService<TAsset>, new()
     {
         private readonly string filePath = Directory.GetParent(Environment.CurrentDirectory) + @"/AAFData";
 
-        public AssetController StartWatchingAlienData()
+        public AssetController<TAsset, TAssetService> StartWatchingAlienData(AafFileWatcherBase<TAsset, TAsset> assetFileWatcher)
         {
-            new AafComputerCsvFileWatcher(filePath, new ComputerCsvLoader(';'))
-                .StartWatching()
-                .FileRead += OnNewData;
+            assetFileWatcher.StartWatching().FileRead += OnNewData;
 
             return this;
         }
 
-        private void OnNewData(IEnumerable<Computer> assetsInList)
+        private void OnNewData(IEnumerable<TAsset> assetsInList)
         {
-            ComputerService computerService = new ComputerService();
-            List<Computer> currentAssets = computerService.GetAssets().ToList();
+            TAssetService assetService = new TAssetService();
+            List<TAsset> currentAssets = assetService.GetAssets().ToList();
 
             Console.WriteLine(currentAssets.Count);
             
-            AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
+            AssetComparer<TAsset> assetComparer = new AssetComparer<TAsset>(currentAssets);
 
             assetComparer.NewAssetsFound += OnNewAssetsFound;
             assetComparer.OnNewData(assetsInList);
         }
 
-        private void OnNewAssetsFound(List<Computer> addedAssets)
+        private void OnNewAssetsFound(List<TAsset> addedAssets)
         {
-            // TODO: Connect to DB and add the new assets
-            ComputerService computerService = new ComputerService();
-            computerService.AddAssets(addedAssets);
+            TAssetService assetService = new TAssetService();
+            assetService.AddAssets(addedAssets);
         }
     }
 }

@@ -3,12 +3,12 @@ using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    public abstract class AssetService<TAsset, TAssetRecord, TDbContext>
-        where TAsset : IAsset
+    public abstract class AssetService<TAsset, TAssetRecord, TDbContext> : IAssetService<TAsset> where TAsset : IAsset
         where TAssetRecord : IAssetRecord
         where TDbContext : AssetContext
     {
@@ -35,9 +35,9 @@ namespace AssetManagement.DataAccessLibrary
 
         public abstract TAsset[] GetAssets();
         public abstract TAsset GetAssetById(string id);
-        public abstract void AddAsset(IAsset asset);
-        public abstract void AddAssets(IEnumerable<IAsset> assets);
-        public abstract void DeleteAsset(IAsset asset);
+        public abstract void AddAsset(TAsset asset);
+        public abstract void AddAssets(IEnumerable<TAsset> assets);
+        public abstract void DeleteAsset(TAsset asset);
 
         private void InsertDepotAndCageToDb()
         {

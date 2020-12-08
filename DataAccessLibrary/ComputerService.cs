@@ -63,51 +63,30 @@ namespace AssetManagement.DataAccessLibrary
 
         public override Computer GetAssetById(string id) => Db.Computers.Find(id);
 
-        public override void DeleteAsset(IAsset asset)
+        public override void DeleteAsset(Computer asset)
         {
-            if (asset is Computer computer)
-            {
-                Db.Remove(computer);
-                Db.SaveChanges();
-                AssetUpdated?.Invoke();
-            }
+            Db.Remove(asset);
+            Db.SaveChanges();
+            AssetUpdated?.Invoke(); 
         }
 
-        public override void AddAsset(IAsset asset)
+        public override void AddAsset(Computer asset)
         {
-            if (asset is Computer computer)
+            if (asset.AssetRecords.Count == 0)
             {
-                if (computer.AssetRecords.Count == 0)
-                {
-                    computer.ComputerRecords.Add(InitialRecord(computer));
-                }
-
-                Db.Add(computer);
-                Db.SaveChanges();
-                AssetUpdated?.Invoke();
-            }
-        }
-
-        public override void AddAssets(IEnumerable<IAsset> assets)
-        {
-            int id = 0;
-            Console.WriteLine("Do we not get here");
-            foreach (IAsset asset in assets)
-            {
-                if (asset is Computer computer)
-                {
-                    Console.WriteLine("Yeetin in computer " + ++id);
-                    if (asset.AssetRecords.Count == 0)
-                    {
-                        computer.ComputerRecords.Add(InitialRecord(computer));
-                    }
-
-                    Db.Add(computer);
-                }
+                asset.ComputerRecords.Add(InitialRecord(asset));
             }
 
+            Db.Add(asset);
             Db.SaveChanges();
             AssetUpdated?.Invoke();
+        }
+
+        public override void AddAssets(IEnumerable<Computer> assets)
+        {
+            Db.AddRange(assets);
+            Db.SaveChanges();
+            AssetUpdated?.Invoke(); 
         }
     }
 }
