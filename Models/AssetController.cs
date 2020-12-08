@@ -21,7 +21,7 @@ namespace AssetManagement.Models
             return this;
         }
 
-        private void OnNewData(List<Computer> assetsInList)
+        private void OnNewData(IEnumerable<Computer> assetsInList)
         {
             AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(assets);
 

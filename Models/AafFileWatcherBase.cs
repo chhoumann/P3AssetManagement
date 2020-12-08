@@ -8,13 +8,13 @@ namespace AssetManagement.Models
     /// <summary>
     ///     Watches directory for new files and reacts when a new file is found.
     /// </summary>
-    /// <typeparam name="TLoad">Type to load data as.</typeparam>
-    /// <typeparam name="TReturn">Type to return data as.</typeparam>
-    public abstract class AafFileWatcherBase<TLoad, TReturn>
+    /// <typeparam name="TIn">Type to load data as.</typeparam>
+    /// <typeparam name="TOut">Type to return data as.</typeparam>
+    public abstract class AafFileWatcherBase<TIn, TOut>
     {
         private readonly string directoryPath;
         private readonly string fileTypeFilter;
-        protected IAssetLoadStrategy<TLoad> LoadStrategy;
+        protected IAssetLoadStrategy<TOut> LoadStrategy;
 
         /// <summary>
         ///     Constructor for AafFileWatcherBase. Sets necessary fields.
@@ -23,19 +23,19 @@ namespace AssetManagement.Models
         /// <param name="fileTypeFilter">File type to filter for in folder.</param>
         /// <param name="loadStrategy">Strategy for loading the specific file type.</param>
         protected AafFileWatcherBase(string directoryPath, string fileTypeFilter,
-            IAssetLoadStrategy<TLoad> loadStrategy)
+            IAssetLoadStrategy<TOut> loadStrategy)
         {
             this.directoryPath = directoryPath;
             this.fileTypeFilter = fileTypeFilter;
             LoadStrategy = loadStrategy;
         }
 
-        public abstract event Action<List<TReturn>> FileRead;
+        public abstract event Action<IEnumerable<TOut>> FileRead;
 
         /// <summary>
         ///     Start watching for new CSV files at the path the class was initialized with.
         /// </summary>
-        public AafFileWatcherBase<TLoad, TReturn> StartWatching()
+        public AafFileWatcherBase<TIn, TOut> StartWatching()
         {
             FileSystemWatcher watcher = new FileSystemWatcher
             {
@@ -62,7 +62,7 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="filePath">Path to directory.</param>
         /// <returns>IEnumerable of read data.</returns>
-        private protected abstract IEnumerable<TLoad> ReadNewDataFile(string filePath);
+        private protected abstract IEnumerable<TOut> ReadNewDataFile(string filePath);
 
         /// <summary>
         ///     Fired when the FileSystemWatcher errors.

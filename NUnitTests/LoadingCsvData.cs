@@ -18,7 +18,7 @@ namespace AssetManagement.NUnitTests
             const char separator = ';';
 
             // Act
-            List<ComputerData> data = new ComputerDataCsvLoader(separator).ReadData(filePath).ToList();
+            List<Computer> data = new ComputerDataCsvLoader(separator).ReadData(filePath).ToList();
 
             // Assert
             Assert.IsNotNull(data);

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Models.DataLoadStrategy;
 
@@ -8,12 +9,12 @@ namespace AssetManagement.Models
 {
     public sealed class AafComputerCsvFileWatcher : AafFileWatcherBase<ComputerData, Computer>
     {
-        public AafComputerCsvFileWatcher(string directoryPath, IAssetLoadStrategy<ComputerData> loadStrategy)
+        public AafComputerCsvFileWatcher(string directoryPath, IAssetLoadStrategy<Computer> loadStrategy)
             : base(directoryPath, "*.csv", loadStrategy)
         {
         }
 
-        public override event Action<List<Computer>> FileRead;
+        public override event Action<IEnumerable<Computer>> FileRead;
 
         /// <summary>
         ///     Fired when a new CSV file is created.
@@ -22,7 +23,7 @@ namespace AssetManagement.Models
         {
             string filePath = e.FullPath;
 
-            List<Computer> computerAssets = (List<Computer>) ReadNewDataFile(filePath);
+            IEnumerable<Computer> computerAssets = ReadNewDataFile(filePath);
 
             FileRead?.Invoke(computerAssets);
         }
@@ -32,8 +33,10 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="filePath">Path to file.</param>
         /// <returns>IEnumerable of read data.</returns>
-        private protected override IEnumerable<ComputerData> ReadNewDataFile(string filePath) =>
-            LoadStrategy.ReadData(filePath);
+        private protected override IEnumerable<Computer> ReadNewDataFile(string filePath)
+        {
+            return LoadStrategy.ReadData(filePath);
+        }
 
         /// <summary>
         ///     Fired when the FileSystemWatcher errors.

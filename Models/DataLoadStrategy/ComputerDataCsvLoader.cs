@@ -8,7 +8,7 @@ using AssetManagement.DataAccessLibrary.DataModels;
 
 namespace AssetManagement.Core.DataLoadStrategy
 {
-    public sealed class ComputerDataCsvLoader : CsvLoaderBase<ComputerData>
+    public sealed class ComputerDataCsvLoader : CsvLoaderBase<Computer>
     {
         private const int FileReadTimeoutInterval = 100;
 
@@ -22,7 +22,7 @@ namespace AssetManagement.Core.DataLoadStrategy
         /// </summary>
         /// <returns>An enumerable of the read data.</returns>
         /// <exception cref="FileNotReadException">File could not be read.</exception>
-        public override IEnumerable<ComputerData> ReadData(string filePath)
+        public override IEnumerable<Computer> ReadData(string filePath)
         {
             uint numReadAttempts = 0;
 
@@ -40,7 +40,19 @@ namespace AssetManagement.Core.DataLoadStrategy
             return File
                 .ReadAllLines(filePath)
                 .Skip(1)
-                .Select(csvLine => new ComputerData(filePath, Separator, new CultureInfo("fr-FR"), csvLine));
+                .Select(csvLine =>
+                {
+                    ComputerData computerData = new ComputerData(filePath, Separator, new CultureInfo("fr-FR"), csvLine);
+                    string model = string.Join(" ", new {computerData.Model1, computerData.Model2});
+                    
+                    return new Computer(
+                        computerData.PcName, 
+                        computerData.OperatingSystem, 
+                        computerData.Manufacturer, 
+                        model,
+                        computerData.SerialNumber
+                        );
+                });
         }
     }
 }
