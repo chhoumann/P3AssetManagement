@@ -90,13 +90,13 @@ namespace AssetManagement.DataAccessLibrary
         /// Adds a new asset to the database.
         /// </summary>
         /// <param name="asset">The asset to be added</param>
-        public abstract void AddAsset(TAsset asset);
+        public abstract void AddAsset(IAsset asset);
 
         /// <summary>
         /// Deletes an asset from the database.
         /// </summary>
         /// <param name="asset">The asset to be deleted.</param>
-        public abstract void DeleteAsset(TAsset asset);
+        public abstract void DeleteAsset(IAsset asset);
         #endregion
     }
 }

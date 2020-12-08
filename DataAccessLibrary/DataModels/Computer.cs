@@ -44,13 +44,13 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         [Required] public string PcName { get; set; }
 
-        public string OperatingSystem { get; set; }
-        public string Manufacturer { get; set; }
-        public string Model { get; set; }
+        public string OperatingSystem { get; private set; }
+        public string Manufacturer { get; private set; }
+        public string Model { get; private set; }
 
-        [Required] public string SerialNumber { get; set; }
+        [Required] public string SerialNumber { get; private set; }
 
-        public List<ComputerRecord> ComputerRecords { get; set; } = new List<ComputerRecord>();
+        public List<ComputerRecord> ComputerRecords { get; private set; } = new List<ComputerRecord>();
 
         #endregion
     }

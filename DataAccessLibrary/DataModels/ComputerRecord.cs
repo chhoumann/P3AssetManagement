@@ -1,8 +1,8 @@
+using AssetManagement.Core;
+using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using AssetManagement.Core;
-using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.DataAccessLibrary.DataModels
 {
@@ -30,14 +30,13 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 
-        [Required] public Computer Computer { get; set; }
+        [Required] public Computer Computer { get; private set; }
 
-        [Required] public DateTime Timestamp { get; set; }
+        [Required] public DateTime Timestamp { get; private set; }
 
-        [Required] public AssetState State { get; set; }
+        [Required] public AssetState State { get; private set; }
 
         [Required] public AssetHolder Holder { get; set; }
-
         #endregion
     }
 }

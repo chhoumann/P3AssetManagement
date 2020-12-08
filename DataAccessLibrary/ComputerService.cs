@@ -1,6 +1,7 @@
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
+using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -86,28 +87,34 @@ namespace AssetManagement.DataAccessLibrary
         /// <summary>
         /// Deletes an computer from the database.
         /// </summary>
-        /// <param name="computer">The computer to be deleted.</param>
-        public override void DeleteAsset(Computer computer)
+        /// <param name="asset">The computer to be deleted.</param>
+        public override void DeleteAsset(IAsset asset)
         {
-            Db.Remove(computer);
-            Db.SaveChanges();
-            AssetUpdated?.Invoke();
+            if (asset is Computer computer)
+            {
+                Db.Remove(computer);
+                Db.SaveChanges();
+                AssetUpdated?.Invoke();
+            }
         }
 
         /// <summary>
         /// Adds a new computer to the database.
         /// </summary>
-        /// <param name="computer">The computer to be added</param>
-        public override void AddAsset(Computer computer)
+        /// <param name="asset">The computer to be added</param>
+        public override void AddAsset(IAsset asset)
         {
-            if (computer.AssetRecords.Count == 0)
+            if (asset is Computer computer)
             {
-                computer.ComputerRecords.Add(InitialRecord(computer));
-            }
+                if (computer.AssetRecords.Count == 0)
+                {
+                    computer.ComputerRecords.Add(InitialRecord(computer));
+                }
 
-            Db.Add(computer);
-            Db.SaveChanges();
-            AssetUpdated?.Invoke();
+                Db.Add(computer);
+                Db.SaveChanges();
+                AssetUpdated?.Invoke();
+            }
         }
     }
 }
