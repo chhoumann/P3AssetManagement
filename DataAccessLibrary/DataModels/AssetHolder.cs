@@ -6,10 +6,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 {
     public class AssetHolder : IEquatable<AssetHolder>
     {
-        public AssetHolder()
-        {
-        }
-
         public AssetHolder(string name, string username)
         {
             Name = name;
@@ -17,23 +13,28 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         }
 
         public AssetHolder(string name, string username, string department)
+            : this(name, username)
         {
-            Name = name;
-            Username = username;
             Department = department;
+        }
+
+        public bool Equals(AssetHolder other) => Username == other?.Username;
+
+        public override string ToString() => Name;
+
+        #region EFCore stuff
+        public AssetHolder()
+        {
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 
-        [Required] public string Name { get; set; }
+        [Required] public string Name { get; private set; }
 
-        [Required] public string Username { get; set; }
+        [Required] public string Username { get; private set; }
 
-        public string Department { get; set; }
-
-        public bool Equals(AssetHolder other) => Username == other.Username;
-
-        public override string ToString() => Name;
+        public string Department { get; private set; }
+        #endregion
     }
 }

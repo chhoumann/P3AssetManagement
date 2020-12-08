@@ -8,9 +8,8 @@ namespace AssetManagement.Models
     /// <summary>
     ///     Watches directory for new files and reacts when a new file is found.
     /// </summary>
-    /// <typeparam name="TIn">Type to load data as.</typeparam>
     /// <typeparam name="TOut">Type to return data as.</typeparam>
-    public abstract class AafFileWatcherBase<TIn, TOut>
+    public abstract class AafFileWatcherBase<TOut>
     {
         private readonly string directoryPath;
         private readonly string fileTypeFilter;
@@ -35,7 +34,7 @@ namespace AssetManagement.Models
         /// <summary>
         ///     Start watching for new CSV files at the path the class was initialized with.
         /// </summary>
-        public AafFileWatcherBase<TIn, TOut> StartWatching()
+        public AafFileWatcherBase<TOut> StartWatching()
         {
             FileSystemWatcher watcher = new FileSystemWatcher
             {

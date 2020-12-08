@@ -16,16 +16,16 @@ namespace AssetManagement.Models
         public void OnNewData(IEnumerable<T> assetsFromList)
         {
             IEnumerable<T> intersectingAssets = new List<T>();
-
+            
             if (currentAssets.Count > 0)
             {
                 intersectingAssets = GetIntersectingAssets(assetsFromList);
-
+                
                 UpdateAssets(intersectingAssets);
             }
 
             List<T> addedAssets = GetAddedAssets(assetsFromList, intersectingAssets);
-
+            
             if (addedAssets.Count > 0)
             {
                 NewAssetsFound?.Invoke(addedAssets);
@@ -81,10 +81,10 @@ namespace AssetManagement.Models
             {
                 T currentAsset = currentAssets.Find(oldAsset => oldAsset.AssetId == newAsset.AssetId);
 
-                if (currentAsset.CurrentAssetHolder == null ||
-                    !currentAsset.CurrentAssetHolder.Equals(newAsset.CurrentAssetHolder))
+                if (currentAsset.CurrentHolder == null ||
+                    !currentAsset.CurrentHolder.Equals(newAsset.CurrentHolder))
                 {
-                    currentAsset.Transfer.ToUser(newAsset.CurrentAssetHolder);
+                    currentAsset.Transfer.ToUser(newAsset.CurrentHolder);
                 }
             }
         }
