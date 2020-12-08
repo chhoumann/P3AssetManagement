@@ -12,11 +12,15 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
 
         public static event Action AssetStateChanged;
 
-        private void ChangeState(AssetState state)
+        /// <summary>
+        /// Simulates an state change of an asset by adding a new asset record to the asset with the new state.
+        /// </summary>
+        /// <param name="newState">The new state of the asset</param>
+        private void ChangeState(AssetState newState)
         {
-            if (Asset is Computer computer)
+            if (Asset is Computer computer && newState != computer.CurrentState)
             {
-                computer.ComputerRecords.Add(new ComputerRecord(computer, computer.CurrentAssetHolder, DateTime.Now, state));
+                computer.ComputerRecords.Add(new ComputerRecord(computer, computer.CurrentHolder, DateTime.Now, newState));
             }
             AssetStateChanged?.Invoke();
         }

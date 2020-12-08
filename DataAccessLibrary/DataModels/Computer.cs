@@ -26,11 +26,11 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         // TODO: Copy reference instead of making a new list
         public IReadOnlyList<IAssetRecord> AssetRecords => ComputerRecords.Cast<IAssetRecord>().ToList();
         public IAssetRecord LastAssetRecord => ComputerRecords.OrderByDescending(x => x.Timestamp).First();
-        public AssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
+        public AssetHolder CurrentHolder => LastAssetRecord.Holder;
         public DateTime LastChanged => LastAssetRecord.Timestamp;
         public AssetState CurrentState => LastAssetRecord.State;
-        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
 
+        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
         public AssetStateHandler ChangeState => new AssetStateHandler(this);
 
         #region EF Core Stuff
