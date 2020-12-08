@@ -13,11 +13,14 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         }
 
         public AssetHolder(string name, string username, string department)
+            : this(name, username)
         {
-            Name = name;
-            Username = username;
             Department = department;
         }
+
+        public bool Equals(AssetHolder other) => Username == other?.Username;
+
+        public override string ToString() => Name;
 
         #region EFCore stuff
         public AssetHolder()
@@ -33,9 +36,5 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         public string Department { get; private set; }
         #endregion
-
-        public bool Equals(AssetHolder other) => Username == other?.Username;
-
-        public override string ToString() => Name;
     }
 }

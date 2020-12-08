@@ -34,7 +34,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public AssetStateHandler ChangeState => new AssetStateHandler(this);
 
         #region EF Core Stuff
-
         public Computer()
         {
         }
@@ -51,7 +50,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         [Required] public string SerialNumber { get; private set; }
 
         public List<ComputerRecord> ComputerRecords { get; private set; } = new List<ComputerRecord>();
-
         #endregion
     }
 }
