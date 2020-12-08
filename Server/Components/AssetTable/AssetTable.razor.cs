@@ -1,8 +1,8 @@
-using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Server.Shared;
 using MatBlazor;
 using Microsoft.AspNetCore.Components.Web;
+using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Components
 {
@@ -66,7 +66,7 @@ namespace AssetManagement.Server.Components
         private async Task NavigateToDetails(Computer asset)
         {
             string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.Id}";
-            await JSRuntime.InvokeAsync<object>("open", new object[] {url, "_blank"});
+            await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
         }
     }
 }

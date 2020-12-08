@@ -17,6 +17,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Interfaces
 
         IReadOnlyList<IAssetRecord> AssetRecords { get; }
         AssetOwnershipHandler Transfer { get; }
-        AssetStateHandler Is { get; }
+        AssetStateHandler ChangeState { get; }
     }
 }

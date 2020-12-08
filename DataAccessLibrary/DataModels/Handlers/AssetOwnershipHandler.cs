@@ -1,29 +1,33 @@
-using System;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
+using System;
 
-namespace AssetManagement.DataAccessLibrary.DataModels
+namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
 {
     public sealed class AssetOwnershipHandler
     {
-        private readonly IAsset asset;
+        private IAsset Asset { get; }
 
-        public AssetOwnershipHandler(IAsset asset) => this.asset = asset;
+        public AssetOwnershipHandler(IAsset asset) => this.Asset = asset;
 
         /// <summary>
         ///     An event which can be triggered when the status of an asset is updated to sync with the database
         /// </summary>
-        public static event Action<IAsset, string, DateTime, AssetState> AssetHolderChanged;
+        public static event Action AssetOwnerShipChanged;
 
-        private void TransferTo(string newHolderUsername)
+        private void TransferTo(AssetHolder newHolder)
         {
-            AssetHolderChanged?.Invoke(asset, newHolderUsername, DateTime.Now, AssetState.Online);
+            if (Asset is Computer computer)
+            {
+                computer.ComputerRecords.Add(new ComputerRecord(computer, newHolder, DateTime.Now, AssetState.Online));
+            }
+            AssetOwnerShipChanged?.Invoke();
         }
 
-        public void ToDepot() => TransferTo(StaticUsernames.Depot);
+        public void ToDepot() => TransferTo(ComputerService.Instance.Depot);
 
-        public void ToCage() => TransferTo(StaticUsernames.Cage);
+        public void ToCage() => TransferTo(ComputerService.Instance.Cage);
 
-        public void ToUser(AssetHolder user) => TransferTo(user.Username);
+        public void ToUser(AssetHolder user) => TransferTo(user);
     }
 }
