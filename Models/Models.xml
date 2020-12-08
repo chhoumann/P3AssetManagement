@@ -6,31 +6,31 @@
     <members>
         <member name="M:AssetManagement.Models.AafComputerCsvFileWatcher.OnNewFile(System.Object,System.IO.FileSystemEventArgs)">
             <summary>
-            Fired when a new CSV file is created.
+                Fired when a new CSV file is created.
             </summary>
         </member>
         <member name="M:AssetManagement.Models.AafComputerCsvFileWatcher.ReadNewDataFile(System.String)">
             <summary>
-            Reads new data file.
+                Reads new data file.
             </summary>
             <param name="filePath">Path to file.</param>
             <returns>IEnumerable of read data.</returns>
         </member>
         <member name="M:AssetManagement.Models.AafComputerCsvFileWatcher.OnError(System.Object,System.IO.ErrorEventArgs)">
             <summary>
-            Fired when the FileSystemWatcher errors.
+                Fired when the FileSystemWatcher errors.
             </summary>
         </member>
         <member name="T:AssetManagement.Models.AafFileWatcherBase`2">
             <summary>
-            Watches directory for new files and reacts when a new file is found.
+                Watches directory for new files and reacts when a new file is found.
             </summary>
             <typeparam name="TLoad">Type to load data as.</typeparam>
             <typeparam name="TReturn">Type to return data as.</typeparam>
         </member>
         <member name="M:AssetManagement.Models.AafFileWatcherBase`2.#ctor(System.String,System.String,AssetManagement.Models.DataLoadStrategy.IAssetLoadStrategy{`0})">
             <summary>
-            Constructor for AafFileWatcherBase. Sets necessary fields.
+                Constructor for AafFileWatcherBase. Sets necessary fields.
             </summary>
             <param name="directoryPath">Path to directory.</param>
             <param name="fileTypeFilter">File type to filter for in folder.</param>
@@ -38,42 +38,42 @@
         </member>
         <member name="M:AssetManagement.Models.AafFileWatcherBase`2.StartWatching">
             <summary>
-            Start watching for new CSV files at the path the class was initialized with.
+                Start watching for new CSV files at the path the class was initialized with.
             </summary>
         </member>
         <member name="M:AssetManagement.Models.AafFileWatcherBase`2.OnNewFile(System.Object,System.IO.FileSystemEventArgs)">
             <summary>
-            Fired when a new file is created.
+                Fired when a new file is created.
             </summary>
         </member>
         <member name="M:AssetManagement.Models.AafFileWatcherBase`2.ReadNewDataFile(System.String)">
             <summary>
-            Reads new data file.
+                Reads new data file.
             </summary>
             <param name="filePath">Path to directory.</param>
             <returns>IEnumerable of read data.</returns>
         </member>
         <member name="M:AssetManagement.Models.AafFileWatcherBase`2.OnError(System.Object,System.IO.ErrorEventArgs)">
             <summary>
-            Fired when the FileSystemWatcher errors.
+                Fired when the FileSystemWatcher errors.
             </summary>
         </member>
         <member name="M:AssetManagement.Models.AssetComparer`1.GetIntersectingAssets(System.Collections.Generic.IEnumerable{`0})">
             <summary>
-            Gets the intersecting assets between the current assets and the assets from the list.
+                Gets the intersecting assets between the current assets and the assets from the list.
             </summary>
             <param name="assetsFromList">The assets to compare to the current assets.</param>
             <returns>The intersecting assets between the current assets and the assets from the list.</returns>
         </member>
         <member name="M:AssetManagement.Models.AssetComparer`1.UpdateAssetStates(System.Collections.Generic.IEnumerable{`0})">
             <summary>
-            Updates the state of the assets' states to missing if they are no longer on the list.
+                Updates the state of the assets' states to missing if they are no longer on the list.
             </summary>
             <param name="intersectingAssets">The intersecting assets between the current assets and the assets from the list.</param>
         </member>
         <member name="M:AssetManagement.Models.AssetComparer`1.UpdateAssetHolders(System.Collections.Generic.IEnumerable{`0})">
             <summary>
-            Updates the asset holders of the assets that have changed holder.
+                Updates the asset holders of the assets that have changed holder.
             </summary>
             <param name="intersectingAssets">The intersecting assets between the current assets and the assets from the list.</param>
         </member>
@@ -82,21 +82,21 @@
         </member>
         <member name="M:AssetManagement.Core.DataLoadStrategy.ComputerDataCsvLoader.ReadData(System.String)">
             <summary>
-            Reads data from CSV data file.
+                Reads data from CSV data file.
             </summary>
             <returns>An enumerable of the read data.</returns>
             <exception cref="T:AssetManagement.Core.Exceptions.FileNotReadException">File could not be read.</exception>
         </member>
         <member name="M:AssetManagement.Core.DataLoadStrategy.CsvLoaderBase`1.IsFileReady(System.String)">
             <summary>
-            Checks if a file is locked and cannot be read from.
+                Checks if a file is locked and cannot be read from.
             </summary>
             <returns>True if the file can be read, false if it is locked.</returns>
         </member>
         <member name="M:AssetManagement.DataAccessLibrary.DataModels.ComputerData.#ctor(System.String,System.Char,System.Globalization.CultureInfo,System.String)">
             <summary>
-            This constructor can construct this object from a line of csv data,
-            which is provided by PC-ID.
+                This constructor can construct this object from a line of csv data,
+                which is provided by PC-ID.
             </summary>
             <param name="fileName">The name of the file.</param>
             <param name="separator">The char which separates the fields in the csvLine. This is usually ',' or ';'.</param>

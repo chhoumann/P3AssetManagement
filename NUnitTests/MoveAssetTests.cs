@@ -15,7 +15,7 @@ namespace AssetManagement.NUnitTests
             Computer computer = Substitute.For<Computer>();
 
             //    // Act
-            //    asset.Transfer.ToDepot();
+            //    asset.TransferTo.ToDepot();
 
             //    // Assert
             //    Assert.AreEqual(StaticAssetHolders.Depot, asset.CurrentAssetHolder);
@@ -29,7 +29,7 @@ namespace AssetManagement.NUnitTests
             Computer computer = Substitute.For<Computer>();
 
             //    // Act
-            //    asset.Transfer.ToCage();
+            //    asset.TransferTo.ToCage();
 
             //    // Assert
             //    Assert.AreEqual(StaticAssetHolders.Cage, asset.CurrentAssetHolder);
