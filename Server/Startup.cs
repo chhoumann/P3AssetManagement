@@ -1,7 +1,10 @@
 using System;
+using System.IO;
 using System.Net.Http;
 using AssetManagement.DataAccessLibrary;
+using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Models;
+using AssetManagement.Models.DataLoadStrategy;
 using MatBlazor;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,8 +19,12 @@ namespace AssetManagement.Server
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
-            AssetController assetController = new AssetController().StartWatchingAlienData();
+            
+            ComputerCsvLoader csvLoader = new ComputerCsvLoader(';');
+            string path = Directory.GetParent(Environment.CurrentDirectory) + @"/AAFData";
+            AafComputerCsvFileWatcher computerCsvFileWatcher = new AafComputerCsvFileWatcher(path, csvLoader);
+            
+            new AssetController<Computer, ComputerService>().StartWatchingAlienData(computerCsvFileWatcher);
 
             Console.WriteLine("Ready...");
         }

@@ -24,9 +24,9 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
             AssetOwnerShipChanged?.Invoke();
         }
 
-        public void ToDepot() => TransferTo(ComputerService.Instance.Depot);
+        public void ToDepot() => TransferTo(new ComputerService().Depot);
 
-        public void ToCage() => TransferTo(ComputerService.Instance.Cage);
+        public void ToCage() => TransferTo(new ComputerService().Cage);
 
         public void ToUser(AssetHolder user) => TransferTo(user);
     }

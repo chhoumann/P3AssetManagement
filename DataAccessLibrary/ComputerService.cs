@@ -13,11 +13,6 @@ namespace AssetManagement.DataAccessLibrary
     {
         public ComputerService()
         {
-            if (Instance != null)
-            {
-                throw new InvalidOperationException("ComputerService instance already exists. Only one instance may exist.");
-            }
-            Instance = this;
             InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 
@@ -30,8 +25,6 @@ namespace AssetManagement.DataAccessLibrary
         }
 
         protected override ComputerContext Db { get; } = new ComputerContext();
-
-        public static ComputerService Instance { get; private set; }
 
         protected override ComputerRecord InitialRecord(Computer computer) =>
             new ComputerRecord(computer, Depot, DateTime.Now, AssetState.Online);

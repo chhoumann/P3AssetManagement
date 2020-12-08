@@ -25,8 +25,8 @@ namespace AssetManagement.DataAccessLibrary
 
         protected abstract TDbContext Db { get; }
 
-        public string DepotUsername { get; } = "depot";
-        public string CageUsername { get; } = "cage";
+        private string DepotUsername { get; } = "depot";
+        private string CageUsername { get; } = "cage";
 
         public AssetHolder Depot => Db.AssetHolders.Single(holder => holder.Username == DepotUsername);
         public AssetHolder Cage => Db.AssetHolders.Single(holder => holder.Username == CageUsername);
