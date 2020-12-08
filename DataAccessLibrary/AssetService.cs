@@ -1,9 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
-using System;
-using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary
 {
@@ -91,6 +93,7 @@ namespace AssetManagement.DataAccessLibrary
         /// </summary>
         /// <param name="asset">The asset to be added</param>
         public abstract void AddAsset(IAsset asset);
+        public abstract void AddAssets(IEnumerable<IAsset> assets);
 
         /// <summary>
         /// Deletes an asset from the database.

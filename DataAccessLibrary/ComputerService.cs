@@ -1,11 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary
 {
@@ -24,9 +24,8 @@ namespace AssetManagement.DataAccessLibrary
         /// <summary>
         /// Signals that a computer has been updated in the database.
         /// </summary>
+        protected override ComputerContext Db => new ComputerContext();
         public override event Action AssetUpdated;
-
-        protected override ComputerContext Db { get; } = new ComputerContext();
 
         public static ComputerService Instance { get; private set; }
 
@@ -82,7 +81,13 @@ namespace AssetManagement.DataAccessLibrary
         /// </summary>
         /// <param name="id"></param>
         /// <returns>The computer with the given ID.</returns>
-        public override Computer GetAssetById(string id) => Db.Computers.Find(id);
+        public override Computer GetAssetById(string id)
+        {
+            return Db.Computers
+                .Include(computer => computer.ComputerRecords)
+                .ThenInclude(record => record.Holder)
+                .SingleOrDefault(computer => computer.Id == id);
+        }
 
         /// <summary>
         /// Deletes a computer from the database.
@@ -115,6 +120,14 @@ namespace AssetManagement.DataAccessLibrary
                 Db.SaveChanges();
                 AssetUpdated?.Invoke();
             }
+        }
+
+        public override void AddAssets(IEnumerable<IAsset> assets)
+        {
+            Db.AddRange(assets.Where(asset => asset is Computer));
+            
+            Db.SaveChanges();
+            AssetUpdated?.Invoke();    
         }
     }
 }
