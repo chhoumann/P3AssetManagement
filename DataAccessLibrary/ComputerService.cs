@@ -41,10 +41,10 @@ namespace AssetManagement.DataAccessLibrary
         }
 
         /// <summary>
-        /// Gets the initial record for an computer.
+        /// Gets the initial record for a computer.
         /// </summary>
         /// <param name="computer">The computer which the record refers to</param>
-        /// <returns>The initial record present in an computer</returns>
+        /// <returns>The initial record present in a computer</returns>
         protected override ComputerRecord InitialRecord(Computer computer) =>
             new ComputerRecord(computer, Depot, DateTime.Now, AssetState.Online);
 
@@ -78,14 +78,14 @@ namespace AssetManagement.DataAccessLibrary
         }
 
         /// <summary>
-        /// Gets an computer from the database by the computer's ID.
+        /// Gets a computer from the database by the computer's ID.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>The computer with the given ID.</returns>
         public override Computer GetAssetById(string id) => Db.Computers.Find(id);
 
         /// <summary>
-        /// Deletes an computer from the database.
+        /// Deletes a computer from the database.
         /// </summary>
         /// <param name="asset">The computer to be deleted.</param>
         public override void DeleteAsset(IAsset asset)
