@@ -29,9 +29,9 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public AssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
         public DateTime LastChanged => LastAssetRecord.Timestamp;
         public AssetState CurrentState => LastAssetRecord.State;
-        public AssetOwnershipHandler TransferTo => new AssetOwnershipHandler(this);
+        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
 
-        public AssetStateHandler ChangeStateTo => new AssetStateHandler(this);
+        public AssetStateHandler ChangeState => new AssetStateHandler(this);
 
         #region EF Core Stuff
 

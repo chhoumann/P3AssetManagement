@@ -68,8 +68,8 @@ namespace AssetManagement.NUnitTests.AssetComparerTests
         public void OnNewData_AssetReappearsInList_AssetStateIsOnline()
         {
             // Arrange
-            Asset1.ChangeStateTo.Online();
-            Asset2.ChangeStateTo.Missing();
+            Asset1.ChangeState.ToOnline();
+            Asset2.ChangeState.ToMissing();
 
             List<Computer> currentAssets = new List<Computer> { Asset1, Asset2 };
             List<Computer> assetsFromList = new List<Computer> { Asset1, Asset2 };

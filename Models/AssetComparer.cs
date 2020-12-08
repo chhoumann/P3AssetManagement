@@ -61,12 +61,12 @@ namespace AssetManagement.Models
             {
                 if (!intersectingAssets.Any(asset => asset.AssetId == currentAsset.AssetId))
                 {
-                    currentAsset.ChangeStateTo.Missing();
+                    currentAsset.ChangeState.ToMissing();
                 }
                 else if (currentAsset.LastAssetRecord == null ||
                          currentAsset.LastAssetRecord.State != AssetState.Online)
                 {
-                    currentAsset.ChangeStateTo.Online();
+                    currentAsset.ChangeState.ToOnline();
                 }
             }
         }
@@ -84,7 +84,7 @@ namespace AssetManagement.Models
                 if (currentAsset.CurrentAssetHolder == null ||
                     !currentAsset.CurrentAssetHolder.Equals(newAsset.CurrentAssetHolder))
                 {
-                    currentAsset.TransferTo.ToUser(newAsset.CurrentAssetHolder);
+                    currentAsset.Transfer.ToUser(newAsset.CurrentAssetHolder);
                 }
             }
         }
@@ -95,7 +95,7 @@ namespace AssetManagement.Models
                 .Where(addedAsset => intersectingAssets.All(asset => asset.AssetId != addedAsset.AssetId))
                 .Select(addedAsset =>
                 {
-                    addedAsset.ChangeStateTo.Online();
+                    addedAsset.ChangeState.ToOnline();
                     return addedAsset;
                 })
                 .ToList();

@@ -21,8 +21,8 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
             AssetStateChanged?.Invoke();
         }
 
-        public void Online() => ChangeState(AssetState.Online);
-        public void Missing() => ChangeState(AssetState.Missing);
-        public void Null() => ChangeState(AssetState.Null);
+        public void ToOnline() => ChangeState(AssetState.Online);
+        public void ToMissing() => ChangeState(AssetState.Missing);
+        public void ToNull() => ChangeState(AssetState.Null);
     }
 }
