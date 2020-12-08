@@ -3,10 +3,11 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using AssetManagement.Core.DataLoadStrategy;
 using AssetManagement.Core.Exceptions;
 using AssetManagement.DataAccessLibrary.DataModels;
 
-namespace AssetManagement.Core.DataLoadStrategy
+namespace AssetManagement.Models.DataLoadStrategy
 {
     public sealed class ComputerDataCsvLoader : CsvLoaderBase<ComputerData>
     {

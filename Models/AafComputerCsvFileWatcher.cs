@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Models.DataLoadStrategy;
 
 namespace AssetManagement.Models
 {
-    public sealed class AafComputerCsvFileWatcher : AafFileWatcherBase<ComputerData, Computer>
+    public sealed class AafComputerCsvFileWatcher : AafFileWatcherBase<Computer, Computer>
     {
-        public AafComputerCsvFileWatcher(string directoryPath, IAssetLoadStrategy<ComputerData> loadStrategy)
+        public AafComputerCsvFileWatcher(string directoryPath, IAssetLoadStrategy<Computer> loadStrategy)
             : base(directoryPath, "*.csv", loadStrategy)
         {
         }
@@ -22,7 +23,7 @@ namespace AssetManagement.Models
         {
             string filePath = e.FullPath;
 
-            List<Computer> computerAssets = (List<Computer>) ReadNewDataFile(filePath);
+            List<Computer> computerAssets = ReadNewDataFile(filePath).ToList();
 
             FileRead?.Invoke(computerAssets);
         }
@@ -32,7 +33,7 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="filePath">Path to file.</param>
         /// <returns>IEnumerable of read data.</returns>
-        private protected override IEnumerable<ComputerData> ReadNewDataFile(string filePath) =>
+        private protected override IEnumerable<Computer> ReadNewDataFile(string filePath) =>
             LoadStrategy.ReadData(filePath);
 
         /// <summary>

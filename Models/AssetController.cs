@@ -1,20 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using AssetManagement.Core.DataLoadStrategy;
 using AssetManagement.DataAccessLibrary.DataModels;
+using AssetManagement.Models.DataLoadStrategy;
+using AssetManagement.Server;
 
 namespace AssetManagement.Models
 {
     // TODO: Make this generic
     public sealed class AssetController
     {
-        private readonly List<Computer> assets = new List<Computer>();
         private readonly string filePath = Directory.GetParent(Environment.CurrentDirectory) + @"/AAFData";
 
         public AssetController StartWatchingAlienData()
         {
-            new AafComputerCsvFileWatcher(filePath, new ComputerDataCsvLoader(';'))
+            new AafComputerCsvFileWatcher(filePath, new ComputerCsvLoader(';'))
                 .StartWatching()
                 .FileRead += OnNewData;
 
@@ -23,7 +25,12 @@ namespace AssetManagement.Models
 
         private void OnNewData(List<Computer> assetsInList)
         {
-            AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(assets);
+            ComputerService computerService = new ComputerService();
+            List<Computer> currentAssets = computerService.GetAssets().ToList();
+
+            Console.WriteLine(currentAssets.Count);
+            
+            AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
 
             assetComparer.NewAssetsFound += OnNewAssetsFound;
             assetComparer.OnNewData(assetsInList);
@@ -32,7 +39,8 @@ namespace AssetManagement.Models
         private void OnNewAssetsFound(List<Computer> addedAssets)
         {
             // TODO: Connect to DB and add the new assets
-            assets.AddRange(addedAssets);
+            ComputerService computerService = new ComputerService();
+            computerService.AddAssets(addedAssets);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using AssetManagement.Core.DataLoadStrategy;
 using AssetManagement.DataAccessLibrary.DataModels;
+using AssetManagement.Models.DataLoadStrategy;
 using NUnit.Framework;
 
 namespace AssetManagement.NUnitTests
