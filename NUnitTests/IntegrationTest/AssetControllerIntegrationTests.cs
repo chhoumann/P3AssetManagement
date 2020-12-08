@@ -24,22 +24,18 @@ namespace AssetManagement.NUnitTests.IntegrationTests
         
         // Succes: Vi har en funktion som subscriber til FileRead fra AafComputerCsvFileWatcher, der bliver invoket.
         [Test]
-        public void METHOD()
+        public void AafComputerCsvFileWatcher_NewDataReceived_FileReadEventIsCalled()
         {
-            Console.WriteLine(filePathToB);
             // Arrange
-            List<Computer> computerAssets = new List<Computer>();
             bool hasBeenCallled = false;
 
-            new AafComputerCsvFileWatcher(filePathToBFolder, new ComputerDataCsvLoader(';'))
-                .StartWatching()
-                .FileRead += (output) =>
-            {
-                hasBeenCallled = true;
-            };
-            
-            
+            AafFileWatcherBase<ComputerData, Computer> fileWatcher = 
+                new AafComputerCsvFileWatcher(filePathToBFolder, new ComputerDataCsvLoader(';'))
+                .StartWatching();
+                
             // Act
+            fileWatcher.FileRead += computers => hasBeenCallled = true;
+            
             if (File.Exists(filePathToB))
             {
                 File.Delete(filePathToB);
