@@ -18,7 +18,7 @@ namespace AssetManagement.NUnitTests
             //    asset.TransferTo.ToDepot();
 
             //    // Assert
-            //    Assert.AreEqual(StaticAssetHolders.Depot, asset.CurrentAssetHolder);
+            //    Assert.AreEqual(StaticAssetHolders.Depot, asset.CurrentHolder);
             //}
         }
 
@@ -32,7 +32,7 @@ namespace AssetManagement.NUnitTests
             //    asset.TransferTo.ToCage();
 
             //    // Assert
-            //    Assert.AreEqual(StaticAssetHolders.Cage, asset.CurrentAssetHolder);
+            //    Assert.AreEqual(StaticAssetHolders.Cage, asset.CurrentHolder);
             //}
         }
     }

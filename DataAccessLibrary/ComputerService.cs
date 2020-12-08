@@ -21,18 +21,30 @@ namespace AssetManagement.DataAccessLibrary
             InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 
+        /// <summary>
+        /// Signals that a computer has been updated in the database.
+        /// </summary>
         public override event Action AssetUpdated;
 
+        protected override ComputerContext Db { get; } = new ComputerContext();
+
+        public static ComputerService Instance { get; private set; }
+
+        /// <summary>
+        /// This method is invoked by a property change in a computer,
+        /// which saves the changes to the database and invokes the AssetUpdated event.
+        /// </summary>
         protected override void OnAssetUpdated()
         {
             Db.SaveChanges();
             AssetUpdated?.Invoke();
         }
 
-        protected override ComputerContext Db { get; } = new ComputerContext();
-
-        public static ComputerService Instance { get; private set; }
-
+        /// <summary>
+        /// Gets the initial record for a computer.
+        /// </summary>
+        /// <param name="computer">The computer which the record refers to</param>
+        /// <returns>The initial record present in a computer</returns>
         protected override ComputerRecord InitialRecord(Computer computer) =>
             new ComputerRecord(computer, Depot, DateTime.Now, AssetState.Online);
 
@@ -53,6 +65,10 @@ namespace AssetManagement.DataAccessLibrary
             }
         }
 
+        /// <summary>
+        /// Gets all computers from the database.
+        /// </summary>
+        /// <returns>An array of all computers from the database.</returns>
         public override Computer[] GetAssets()
         {
             return Db.Computers
@@ -61,8 +77,17 @@ namespace AssetManagement.DataAccessLibrary
                 .ToArray();
         }
 
+        /// <summary>
+        /// Gets a computer from the database by the computer's ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The computer with the given ID.</returns>
         public override Computer GetAssetById(string id) => Db.Computers.Find(id);
 
+        /// <summary>
+        /// Deletes a computer from the database.
+        /// </summary>
+        /// <param name="asset">The computer to be deleted.</param>
         public override void DeleteAsset(IAsset asset)
         {
             if (asset is Computer computer)
@@ -73,6 +98,10 @@ namespace AssetManagement.DataAccessLibrary
             }
         }
 
+        /// <summary>
+        /// Adds a new computer to the database.
+        /// </summary>
+        /// <param name="asset">The computer to be added</param>
         public override void AddAsset(IAsset asset)
         {
             if (asset is Computer computer)

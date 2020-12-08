@@ -26,15 +26,14 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         // TODO: Copy reference instead of making a new list
         public IReadOnlyList<IAssetRecord> AssetRecords => ComputerRecords.Cast<IAssetRecord>().ToList();
         public IAssetRecord LastAssetRecord => ComputerRecords.OrderByDescending(x => x.Timestamp).First();
-        public AssetHolder CurrentAssetHolder => LastAssetRecord.Holder;
+        public AssetHolder CurrentHolder => LastAssetRecord.Holder;
         public DateTime LastChanged => LastAssetRecord.Timestamp;
         public AssetState CurrentState => LastAssetRecord.State;
-        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
 
+        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
         public AssetStateHandler ChangeState => new AssetStateHandler(this);
 
         #region EF Core Stuff
-
         public Computer()
         {
         }
@@ -44,14 +43,13 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         [Required] public string PcName { get; set; }
 
-        public string OperatingSystem { get; set; }
-        public string Manufacturer { get; set; }
-        public string Model { get; set; }
+        public string OperatingSystem { get; private set; }
+        public string Manufacturer { get; private set; }
+        public string Model { get; private set; }
 
-        [Required] public string SerialNumber { get; set; }
+        [Required] public string SerialNumber { get; private set; }
 
-        public List<ComputerRecord> ComputerRecords { get; set; } = new List<ComputerRecord>();
-
+        public List<ComputerRecord> ComputerRecords { get; private set; } = new List<ComputerRecord>();
         #endregion
     }
 }
