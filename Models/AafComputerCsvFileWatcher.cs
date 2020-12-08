@@ -7,7 +7,7 @@ using AssetManagement.Models.DataLoadStrategy;
 
 namespace AssetManagement.Models
 {
-    public sealed class AafComputerCsvFileWatcher : AafFileWatcherBase<ComputerData, Computer>
+    public sealed class AafComputerCsvFileWatcher : AafFileWatcherBase<Computer, Computer>
     {
         public AafComputerCsvFileWatcher(string directoryPath, IAssetLoadStrategy<Computer> loadStrategy)
             : base(directoryPath, "*.csv", loadStrategy)

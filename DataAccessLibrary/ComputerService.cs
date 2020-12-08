@@ -87,5 +87,27 @@ namespace AssetManagement.DataAccessLibrary
                 AssetUpdated?.Invoke();
             }
         }
+
+        public override void AddAssets(IEnumerable<IAsset> assets)
+        {
+            int id = 0;
+            Console.WriteLine("Do we not get here");
+            foreach (IAsset asset in assets)
+            {
+                if (asset is Computer computer)
+                {
+                    Console.WriteLine("Yeetin in computer " + ++id);
+                    if (asset.AssetRecords.Count == 0)
+                    {
+                        computer.ComputerRecords.Add(InitialRecord(computer));
+                    }
+
+                    Db.Add(computer);
+                }
+            }
+
+            Db.SaveChanges();
+            AssetUpdated?.Invoke();
+        }
     }
 }

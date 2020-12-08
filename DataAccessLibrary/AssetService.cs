@@ -36,6 +36,7 @@ namespace AssetManagement.DataAccessLibrary
         public abstract TAsset[] GetAssets();
         public abstract TAsset GetAssetById(string id);
         public abstract void AddAsset(IAsset asset);
+        public abstract void AddAssets(IEnumerable<IAsset> assets);
         public abstract void DeleteAsset(IAsset asset);
 
         private void InsertDepotAndCageToDb()

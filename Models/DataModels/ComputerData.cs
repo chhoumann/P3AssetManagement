@@ -56,7 +56,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         public static explicit operator Computer(ComputerData data)
         {
-            AssetHolder holder = new AssetHolder(data.Holder, data.Username, data.Department);
             return new Computer(data.PcName, data.OperatingSystem, data.Manufacturer, data.Model1, data.SerialNumber);
         }
     }
