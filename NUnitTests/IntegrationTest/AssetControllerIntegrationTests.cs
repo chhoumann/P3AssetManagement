@@ -55,7 +55,7 @@ namespace AssetManagement.NUnitTests.IntegrationTests
             // Arrange
             bool hasBeenCallled = false;
 
-            AafFileWatcherBase<Computer, Computer> fileWatcher = 
+            AafFileWatcherBase<Computer> fileWatcher = 
                 new AafComputerCsvFileWatcher(filePathToBFolder, new ComputerCsvLoader(';'))
                 .StartWatching();
                 

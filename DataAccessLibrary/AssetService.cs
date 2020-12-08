@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
@@ -24,25 +25,12 @@ namespace AssetManagement.DataAccessLibrary
             InsertDepotAndCageToDb();
         }
 
-        public abstract event Action AssetUpdated;
-
-        protected abstract void OnAssetUpdated();
-
-        protected abstract TDbContext Db { get; }
-
         private string DepotUsername { get; } = "depot";
         private string CageUsername { get; } = "cage";
 
         public AssetHolder Depot => Db.AssetHolders.Single(holder => holder.Username == DepotUsername);
         public AssetHolder Cage => Db.AssetHolders.Single(holder => holder.Username == CageUsername);
-
-        protected abstract TAssetRecord InitialRecord(TAsset asset);
-
-        public abstract TAsset[] GetAssets();
-        public abstract TAsset GetAssetById(string id);
-        public abstract void AddAsset(TAsset asset);
-        public abstract void AddAssets(IEnumerable<TAsset> assets);
-        public abstract void DeleteAsset(TAsset asset);
+        
 
         /// <summary>
         /// Makes sure that a cage and a depot is always present in the database.
@@ -103,14 +91,14 @@ namespace AssetManagement.DataAccessLibrary
         /// Adds a new asset to the database.
         /// </summary>
         /// <param name="asset">The asset to be added</param>
-        public abstract void AddAsset(IAsset asset);
-        public abstract void AddAssets(IEnumerable<IAsset> assets);
+        public abstract void AddAsset(TAsset asset);
+        public abstract void AddAssets(IEnumerable<TAsset> assets);
 
         /// <summary>
         /// Deletes an asset from the database.
         /// </summary>
         /// <param name="asset">The asset to be deleted.</param>
-        public abstract void DeleteAsset(IAsset asset);
+        public abstract void DeleteAsset(TAsset asset);
         #endregion
     }
 }
