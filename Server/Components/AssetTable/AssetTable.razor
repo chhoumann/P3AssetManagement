@@ -3,6 +3,7 @@
 @inject NavigationManager NavigationManager
 @inject ComputerService ComputerService
 @inject IJSRuntime JSRuntime
+@inject IMatDialogService MatDialogService
 @namespace AssetManagement.Server.Components
 
 @if (pageAssets == null)
@@ -11,6 +12,8 @@
 }
 else
 {
+    <MatButton Class="mb-2" Style="background-color: dodgerblue" Raised="true" Icon="archive" @onclick="AddNewAsset">Tilføj Asset</MatButton>
+    
     <MatButton Label="Vis Kolonner..." OnClick="FilterMenuShow" RefBack="@buttonForwardRef"></MatButton>
     <MatMenu @ref="Menu" TargetForwardRef="@buttonForwardRef" Class="w-auto p-2 pr-3 mt-5" Style="align-items: center">
         <MatCheckbox Class="menuItem" @bind-Value="@showModelColumn">Model</MatCheckbox>
@@ -21,9 +24,11 @@ else
         <MatCheckbox Class="menuItem" @bind-Value="@showLastChangedColumn">Sidst Ændret</MatCheckbox>
         <MatCheckbox Class="menuItem" @bind-Value="@showPcAdStatusColumn">PC-AD Status</MatCheckbox>
     </MatMenu>
-
-    // TODO: Remove CreateNewAsset - make this work
-    @*<button class="btn" @onclick="() => AssetService.CreateNewAsset()">Add (test)</button>*@
+    
+    <div style="float: right;">
+        <MatTextField TValue="string" Label="Søgning" OnInput="OnSearchInput"></MatTextField>
+    </div>
+    
     <table class="table text-center">
         <thead>
         <tr>

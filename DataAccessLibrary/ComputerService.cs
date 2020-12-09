@@ -20,7 +20,7 @@ namespace AssetManagement.DataAccessLibrary
         /// <summary>
         /// Signals that a computer has been updated in the database.
         /// </summary>
-        protected override ComputerContext Db => new ComputerContext();
+        protected override ComputerContext Db { get; } = new ComputerContext();
         public override event Action AssetUpdated;
         
         /// <summary>
@@ -82,7 +82,15 @@ namespace AssetManagement.DataAccessLibrary
                 .ThenInclude(record => record.Holder)
                 .SingleOrDefault(computer => computer.Id == id);
         }
-        
+
+        public Computer GetAssetBySerialNumber(string serialNumber)
+        {
+            return Db.Computers
+                .Include(computer => computer.ComputerRecords)
+                .ThenInclude(record => record.Holder)
+                .SingleOrDefault(computer => computer.SerialNumber == serialNumber);
+        }
+
         /// <summary>
         /// Deletes a computer from the database.
         /// </summary>

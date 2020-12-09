@@ -21,6 +21,8 @@ namespace AssetManagement.DataAccessLibrary.DataModels
             SerialNumber = serialNumber;
         }
 
+        public Computer(string serialNumber) : this() => SerialNumber = serialNumber;
+
         public string AssetId => PcName;
 
         public void AddAssetRecord(AssetHolder holder, DateTime timestamp, AssetState state)

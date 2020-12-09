@@ -1,8 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Server.Shared;
 using MatBlazor;
 using Microsoft.AspNetCore.Components.Web;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
 
 namespace AssetManagement.Server.Components
 {
@@ -26,6 +31,39 @@ namespace AssetManagement.Server.Components
         private bool showSerialNumberColumn = true;
         private bool showStateColumn = true;
         private bool showUsernameColumn = true;
+
+        private async void OnSearchInput(ChangeEventArgs e)
+        {
+            string searchTerm = e.Value.ToString().ToLower();
+            
+            IEnumerable<Computer> foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm));
+            
+            if (!foundAssets.Any())
+            {
+                await MatDialogService.AlertAsync("Fandt ingen assets");
+                pageAssets = navigator.OnItemsUpdated(assets);
+                await InvokeAsync(StateHasChanged);
+                return;
+            }
+
+            pageAssets = navigator.OnItemsUpdated(foundAssets.ToArray());
+            await InvokeAsync(StateHasChanged);
+        }
+
+        private bool AssetSearchAllPredicate(Computer computer, string searchTerm)
+        {
+            if (computer.Id.ToLower().Contains(searchTerm)) return true;
+            if (computer.AssetId.ToLower().Contains(searchTerm)) return true;
+            if (computer.Model != null && computer.Model.ToLower().Contains(searchTerm)) return true;
+            if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(searchTerm)) return true;
+            if (computer.LastAssetRecord != null && computer.CurrentHolder != null)
+            {
+                if (computer.CurrentHolder.Username.ToLower().Contains(searchTerm)) return true;
+                if (computer.CurrentHolder.Name.ToLower().Contains(searchTerm)) return true;
+            }
+
+            return false;
+        }
 
         private void FilterMenuShow(MouseEventArgs e)
         {
@@ -67,6 +105,31 @@ namespace AssetManagement.Server.Components
         {
             string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.Id}";
             await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
+        }
+
+        // TODO: Add updating of asset id when we find it in a file by serialnumber
+        private async void AddNewAsset()
+        {
+            string result = await MatDialogService.PromptAsync("Tilføj et nyt asset vha. serienummer:");
+
+            if (string.IsNullOrWhiteSpace(result))
+            {
+                return;
+            }
+
+            Computer asset = new Computer(result) {PcName = "-"};
+            ComputerService.AddAsset(asset);
+
+            bool assetIsInDatabase = ComputerService.GetAssetBySerialNumber(asset.SerialNumber) != null;
+            
+            if (assetIsInDatabase)
+            {
+                await MatDialogService.AlertAsync("Asset tilføjet.");
+            }
+            else
+            {
+                await MatDialogService.AlertAsync("Asset blev ikke tilføjet.");
+            }
         }
     }
 }
