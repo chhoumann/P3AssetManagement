@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary.DataModels
 {
-    public sealed class Computer : IAsset
+    public class Computer : IAsset
     {
         public Computer(string pcName, string operatingSystem, string manufacturer,
             string model, string serialNumber) : this()
