@@ -1,6 +1,8 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using AssetManagement.DataAccessLibrary;
+using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using AssetManagement.Server.Shared;
 using Microsoft.AspNetCore.Components;
@@ -17,7 +19,7 @@ namespace AssetManagement.Server.Pages
             "Ja", "Annuller"
         };
 
-        private IAsset asset;
+        private Computer asset;
 
         private IPageNavigator<IAssetRecord> navigator;
 
@@ -27,7 +29,7 @@ namespace AssetManagement.Server.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            asset = ComputerService.GetAssetById(AssetDbId.ToString());
+            asset = new ComputerService().GetAssetById(AssetDbId.ToString());
 
             navigator = new PageNavigator<IAssetRecord>(assetRecords, out pageAssetRecords, AssetRecordsPerPage);
             navigator.PageChanged += GetAssetRecords;
@@ -45,7 +47,7 @@ namespace AssetManagement.Server.Pages
 
             if (UserClickedConfirm(result))
             {
-                ComputerService.DeleteAsset(asset);
+                new ComputerService().DeleteAsset(asset);
                 await JSRuntime.InvokeAsync<object>("close", new object[] { });
             }
         }

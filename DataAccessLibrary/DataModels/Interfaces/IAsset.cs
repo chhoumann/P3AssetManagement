@@ -2,6 +2,7 @@ using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
 using System;
 using System.Collections.Generic;
+using AssetManagement.DataAccessLibrary.Annotations;
 
 namespace AssetManagement.DataAccessLibrary.DataModels.Interfaces
 {
@@ -19,7 +20,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Interfaces
         AssetHolder CurrentHolder { get; }
         AssetState CurrentState { get; }
 
-        AssetOwnershipHandler Transfer { get; }
+        IAssetOwnershipHandler Transfer { get; }
         AssetStateHandler ChangeState { get; }
     }
 }

@@ -14,7 +14,7 @@ namespace AssetManagement.Models
         {
         }
 
-        public override event Action<List<Computer>> FileRead;
+        public override event Action<IEnumerable<Computer>> FileRead;
 
         /// <summary>
         ///     Fired when a new CSV file is created.
@@ -23,7 +23,7 @@ namespace AssetManagement.Models
         {
             string filePath = e.FullPath;
 
-            List<Computer> computerAssets = ReadNewDataFile(filePath).ToList();
+            IEnumerable<Computer> computerAssets = ReadNewDataFile(filePath).ToList();
 
             FileRead?.Invoke(computerAssets);
         }
@@ -33,8 +33,10 @@ namespace AssetManagement.Models
         /// </summary>
         /// <param name="filePath">Path to file.</param>
         /// <returns>IEnumerable of read data.</returns>
-        private protected override IEnumerable<Computer> ReadNewDataFile(string filePath) =>
-            LoadStrategy.ReadData(filePath);
+        private protected override IEnumerable<Computer> ReadNewDataFile(string filePath)
+        {
+            return LoadStrategy.ReadData(filePath);
+        }
 
         /// <summary>
         ///     Fired when the FileSystemWatcher errors.

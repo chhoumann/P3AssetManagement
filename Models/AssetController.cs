@@ -1,40 +1,39 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using AssetManagement.DataAccessLibrary;
-using AssetManagement.DataAccessLibrary.DataModels;
-using AssetManagement.Models.DataLoadStrategy;
+using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.Models
 {
-    // TODO: Make this generic
-    public sealed class AssetController
+    public sealed class AssetController<TAsset, TAssetService> 
+        where TAsset : IAsset
+        where TAssetService : IAssetService<TAsset>, new()
     {
-        private readonly string filePath = Directory.GetParent(Environment.CurrentDirectory) + @"/AAFData";
-
-        public AssetController StartWatchingAlienData()
+        public AssetController<TAsset, TAssetService> StartWatchingAlienData(AafFileWatcherBase<TAsset> assetFileWatcher)
         {
-            new AafComputerCsvFileWatcher(filePath, new ComputerCsvLoader(';'))
-                .StartWatching()
-                .FileRead += OnNewData;
+            assetFileWatcher.StartWatching().FileRead += OnNewData;
 
             return this;
         }
 
-        private void OnNewData(List<Computer> assetsInList)
+        private void OnNewData(IEnumerable<TAsset> assetsInList)
         {
-            List<Computer> currentAssets = ComputerService.Instance.GetAssets().ToList();
+            TAssetService assetService = new TAssetService();
+            List<TAsset> currentAssets = assetService.GetAssets().ToList();
 
-            AssetComparer<Computer> assetComparer = new AssetComparer<Computer>(currentAssets);
+            Console.WriteLine(currentAssets.Count);
+            
+            AssetComparer<TAsset> assetComparer = new AssetComparer<TAsset>(currentAssets);
 
             assetComparer.NewAssetsFound += OnNewAssetsFound;
             assetComparer.OnNewData(assetsInList);
         }
 
-        private void OnNewAssetsFound(List<Computer> addedAssets)
+        private void OnNewAssetsFound(List<TAsset> addedAssets)
         {
-            ComputerService.Instance.AddAssets(addedAssets);
+            TAssetService assetService = new TAssetService();
+            assetService.AddAssets(addedAssets);
         }
     }
 }

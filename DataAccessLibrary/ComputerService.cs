@@ -4,7 +4,7 @@ using System.Linq;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
-using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
+using AssetManagement.DataAccessLibrary.DataModels.Handlers;
 using Microsoft.EntityFrameworkCore;
 
 namespace AssetManagement.DataAccessLibrary
@@ -13,11 +13,7 @@ namespace AssetManagement.DataAccessLibrary
     {
         public ComputerService()
         {
-            if (Instance != null)
-            {
-                throw new InvalidOperationException("ComputerService instance already exists. Only one instance may exist.");
-            }
-            Instance = this;
+            AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
             InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 
@@ -26,9 +22,7 @@ namespace AssetManagement.DataAccessLibrary
         /// </summary>
         protected override ComputerContext Db => new ComputerContext();
         public override event Action AssetUpdated;
-
-        public static ComputerService Instance { get; private set; }
-
+        
         /// <summary>
         /// This method is invoked by a property change in a computer,
         /// which saves the changes to the database and invokes the AssetUpdated event.
@@ -88,46 +82,39 @@ namespace AssetManagement.DataAccessLibrary
                 .ThenInclude(record => record.Holder)
                 .SingleOrDefault(computer => computer.Id == id);
         }
-
+        
         /// <summary>
         /// Deletes a computer from the database.
         /// </summary>
         /// <param name="asset">The computer to be deleted.</param>
-        public override void DeleteAsset(IAsset asset)
+        public override void DeleteAsset(Computer asset)
         {
-            if (asset is Computer computer)
+            Db.Remove(asset);
+            Db.SaveChanges();
+            AssetUpdated?.Invoke(); 
+        }
+
+        public override void AddAsset(Computer asset)
+        {
+            if (asset.AssetRecords.Count == 0)
             {
-                Db.Remove(computer);
-                Db.SaveChanges();
-                AssetUpdated?.Invoke();
+                asset.ComputerRecords.Add(InitialRecord(asset));
             }
+
+            Db.Add(asset);
+            Db.SaveChanges();
+            AssetUpdated?.Invoke();
         }
 
         /// <summary>
         /// Adds a new computer to the database.
         /// </summary>
-        /// <param name="asset">The computer to be added</param>
-        public override void AddAsset(IAsset asset)
+        /// <param name="assets">The computer to be added</param>
+        public override void AddAssets(IEnumerable<Computer> assets)
         {
-            if (asset is Computer computer)
-            {
-                if (computer.AssetRecords.Count == 0)
-                {
-                    computer.ComputerRecords.Add(InitialRecord(computer));
-                }
-
-                Db.Add(computer);
-                Db.SaveChanges();
-                AssetUpdated?.Invoke();
-            }
-        }
-
-        public override void AddAssets(IEnumerable<IAsset> assets)
-        {
-            Db.AddRange(assets.Where(asset => asset is Computer));
-            
+            Db.AddRange(assets);
             Db.SaveChanges();
-            AssetUpdated?.Invoke();    
+            AssetUpdated?.Invoke(); 
         }
     }
 }

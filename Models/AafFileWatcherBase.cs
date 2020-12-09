@@ -29,7 +29,7 @@ namespace AssetManagement.Models
             LoadStrategy = loadStrategy;
         }
 
-        public abstract event Action<List<TOut>> FileRead;
+        public abstract event Action<IEnumerable<TOut>> FileRead;
 
         /// <summary>
         ///     Start watching for new CSV files at the path the class was initialized with.

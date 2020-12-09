@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
@@ -9,29 +8,35 @@ using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.DataAccessLibrary
 {
+    public interface IStaticAssetHolders
+    {
+        AssetHolder Depot { get; }
+        AssetHolder Cage { get; }
+    }
+    
     /// <summary>
     /// A base class for all service classes
     /// </summary>
     /// <typeparam name="TAsset">The datamodel type</typeparam>
     /// <typeparam name="TAssetRecord">The datamodels asset record type</typeparam>
     /// <typeparam name="TDbContext">The database context type</typeparam>
-    public abstract class AssetService<TAsset, TAssetRecord, TDbContext>
-        where TAsset : IAsset
+    public abstract class AssetService<TAsset, TAssetRecord, TDbContext> : IStaticAssetHolders, IAssetService<TAsset> where TAsset : IAsset
         where TAssetRecord : IAssetRecord
         where TDbContext : AssetContext
     {
         protected AssetService()
         {
-            AssetOwnershipHandler.AssetOwnerShipChanged += OnAssetUpdated;
+            // TODO: Should subscribe in inheriting class
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertDepotAndCageToDb();
         }
 
-        public string DepotUsername { get; } = "depot";
-        public string CageUsername { get; } = "cage";
+        private string DepotUsername { get; } = "depot";
+        private string CageUsername { get; } = "cage";
 
         public AssetHolder Depot => Db.AssetHolders.Single(holder => holder.Username == DepotUsername);
         public AssetHolder Cage => Db.AssetHolders.Single(holder => holder.Username == CageUsername);
+        
 
         /// <summary>
         /// Makes sure that a cage and a depot is always present in the database.
@@ -92,14 +97,14 @@ namespace AssetManagement.DataAccessLibrary
         /// Adds a new asset to the database.
         /// </summary>
         /// <param name="asset">The asset to be added</param>
-        public abstract void AddAsset(IAsset asset);
-        public abstract void AddAssets(IEnumerable<IAsset> assets);
+        public abstract void AddAsset(TAsset asset);
+        public abstract void AddAssets(IEnumerable<TAsset> assets);
 
         /// <summary>
         /// Deletes an asset from the database.
         /// </summary>
         /// <param name="asset">The asset to be deleted.</param>
-        public abstract void DeleteAsset(IAsset asset);
+        public abstract void DeleteAsset(TAsset asset);
         #endregion
     }
 }
