@@ -14,8 +14,6 @@ namespace AssetManagement.Models
         where TAsset : IAsset
         where TAssetService : IAssetService<TAsset>, new()
     {
-        private readonly string filePath = Directory.GetParent(Environment.CurrentDirectory) + @"/AAFData";
-
         public AssetController<TAsset, TAssetService> StartWatchingAlienData(AafFileWatcherBase<TAsset> assetFileWatcher)
         {
             assetFileWatcher.StartWatching().FileRead += OnNewData;

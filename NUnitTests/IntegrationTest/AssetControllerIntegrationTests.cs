@@ -13,7 +13,7 @@ namespace AssetManagement.NUnitTests.IntegrationTest
 {
     public sealed class MockComputerService : IAssetService<Computer>
     {
-        public static List<Computer> computersRecievedFromController = new List<Computer>();
+        public static List<Computer> ComputersReceivedFromController { get; } = new List<Computer>();
         public event Action AssetUpdated;
         public AssetHolder Cage { get; }
         public AssetHolder Depot { get; }
@@ -30,7 +30,7 @@ namespace AssetManagement.NUnitTests.IntegrationTest
 
         public void AddAssets(IEnumerable<Computer> assets)
         {
-            computersRecievedFromController.AddRange(assets);
+            ComputersReceivedFromController.AddRange(assets);
         }
 
         public void DeleteAsset(Computer asset)
@@ -108,7 +108,7 @@ namespace AssetManagement.NUnitTests.IntegrationTest
         }
         
         [Test]
-        public void AssetController_NewDataRecievedWithOneNewUser_OneAssetAddedToIAssetServices()
+        public void AssetController_NewDataReceivedWithOneNewUser_OneAssetAddedToIAssetServices()
         {
             // Arrange
             AafComputerCsvFileWatcher fileWatcher = 
@@ -123,8 +123,11 @@ namespace AssetManagement.NUnitTests.IntegrationTest
             File.Copy(filePathFromC,filePathToD);
             
             // Assert
-            Assert.That(() => (MockComputerService.computersRecievedFromController.Count == 1), 
+            Assert.That(() => (MockComputerService.ComputersReceivedFromController.Count == 1), 
                 Is.True.After(FileReadTimeout).Seconds.PollEvery(500).MilliSeconds);
+            
+            // Reset for possible future tests
+            MockComputerService.ComputersReceivedFromController.Clear();
         }
     }
 }
