@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary.DataModels
 {
-    public class Computer : IAsset
+    public sealed class Computer : IAsset
     {
         public Computer(string pcName, string operatingSystem, string manufacturer,
             string model, string serialNumber) : this()
@@ -23,6 +23,11 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         public string AssetId => PcName;
 
+        public void AddAssetRecord(AssetHolder holder, DateTime timestamp, AssetState state)
+        {
+            ComputerRecords.Add(new ComputerRecord(this, holder, timestamp, state));
+        }
+        
         // TODO: Copy reference instead of making a new list
         public IReadOnlyList<IAssetRecord> AssetRecords => ComputerRecords.Cast<IAssetRecord>().ToList();
         public IAssetRecord LastAssetRecord => ComputerRecords.OrderByDescending(x => x.Timestamp).First();
