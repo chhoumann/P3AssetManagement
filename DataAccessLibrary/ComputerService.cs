@@ -4,7 +4,7 @@ using System.Linq;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
-using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
+using AssetManagement.DataAccessLibrary.DataModels.Handlers;
 using Microsoft.EntityFrameworkCore;
 
 namespace AssetManagement.DataAccessLibrary
@@ -13,6 +13,7 @@ namespace AssetManagement.DataAccessLibrary
     {
         public ComputerService()
         {
+            AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
             InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 

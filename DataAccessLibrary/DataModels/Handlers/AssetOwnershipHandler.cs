@@ -4,7 +4,9 @@ using System;
 
 namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
 {
-    public sealed class AssetOwnershipHandler
+    public sealed class AssetOwnershipHandler<TAsset, TAssetService> : IAssetOwnershipHandler
+        where TAsset : IAsset
+        where TAssetService : IAssetService<TAsset>, new()
     {
         private IAsset Asset { get; }
 
@@ -21,7 +23,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
         /// <param name="newHolder">The new holder of the asset.</param>
         private void TransferTo(AssetHolder newHolder)
         {
-            if (Asset is Computer computer) // TODO: Make generic
+            if (Asset is Computer computer) // TODO: Make this part generic
             {
                 computer.ComputerRecords.Add(new ComputerRecord(computer, newHolder, DateTime.Now, AssetState.Online));
             }
@@ -29,9 +31,9 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
             AssetOwnershipChanged?.Invoke();
         }
 
-        public void ToDepot() => TransferTo(new ComputerService().Depot);
+        public void ToDepot() => TransferTo(new TAssetService().Depot);
 
-        public void ToCage() => TransferTo(new ComputerService().Cage);
+        public void ToCage() => TransferTo(new TAssetService().Cage);
 
         public void ToUser(AssetHolder user) => TransferTo(user);
     }

@@ -30,7 +30,8 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public DateTime LastChanged => LastAssetRecord.Timestamp;
         public AssetState CurrentState => LastAssetRecord.State;
 
-        public AssetOwnershipHandler Transfer => new AssetOwnershipHandler(this);
+        public IAssetOwnershipHandler Transfer => new AssetOwnershipHandler<Computer, ComputerService>(this);
+
         public AssetStateHandler ChangeState => new AssetStateHandler(this);
 
         #region EF Core Stuff

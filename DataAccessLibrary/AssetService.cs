@@ -8,19 +8,24 @@ using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.DataAccessLibrary
 {
+    public interface IStaticAssetHolders
+    {
+        AssetHolder Depot { get; }
+        AssetHolder Cage { get; }
+    }
+    
     /// <summary>
     /// A base class for all service classes
     /// </summary>
     /// <typeparam name="TAsset">The datamodel type</typeparam>
     /// <typeparam name="TAssetRecord">The datamodels asset record type</typeparam>
     /// <typeparam name="TDbContext">The database context type</typeparam>
-    public abstract class AssetService<TAsset, TAssetRecord, TDbContext> : IAssetService<TAsset> where TAsset : IAsset
+    public abstract class AssetService<TAsset, TAssetRecord, TDbContext> : IStaticAssetHolders, IAssetService<TAsset> where TAsset : IAsset
         where TAssetRecord : IAssetRecord
         where TDbContext : AssetContext
     {
         protected AssetService()
         {
-            AssetOwnershipHandler.AssetOwnershipChanged += OnAssetUpdated;
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertDepotAndCageToDb();
         }
