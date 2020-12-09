@@ -26,6 +26,7 @@ namespace AssetManagement.DataAccessLibrary
     {
         protected AssetService()
         {
+            // TODO: Should subscribe in inheriting class
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertDepotAndCageToDb();
         }
