@@ -26,7 +26,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public ComputerRecord()
         {
         }
-
+        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 

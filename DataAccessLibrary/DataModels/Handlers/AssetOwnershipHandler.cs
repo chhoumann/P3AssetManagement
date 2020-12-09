@@ -23,11 +23,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
         /// <param name="newHolder">The new holder of the asset.</param>
         private void TransferTo(AssetHolder newHolder)
         {
-            if (Asset is Computer computer) // TODO: Make this part generic
-            {
-                computer.ComputerRecords.Add(new ComputerRecord(computer, newHolder, DateTime.Now, AssetState.Online));
-            }
-
+            Asset.AddAssetRecord(newHolder, DateTime.Now, AssetState.Online);
             AssetOwnershipChanged?.Invoke();
         }
 

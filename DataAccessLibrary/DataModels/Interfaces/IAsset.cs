@@ -13,6 +13,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Interfaces
         /// </summary>
         string AssetId { get; }
         string SerialNumber { get; }
+        void AddAssetRecord(AssetHolder holder, DateTime timestamp, AssetState state);
 
         IReadOnlyList<IAssetRecord> AssetRecords { get; }
         IAssetRecord LastAssetRecord { get; }

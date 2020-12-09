@@ -18,10 +18,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
         /// <param name="newState">The new state of the asset</param>
         private void ChangeState(AssetState newState)
         {
-            if (Asset is Computer computer) // TODO: Make generic
-            {
-                computer.ComputerRecords.Add(new ComputerRecord(computer, computer.CurrentHolder, DateTime.Now, newState));
-            }
+            Asset.AddAssetRecord(Asset.CurrentHolder, DateTime.Now, newState);
             AssetStateChanged?.Invoke();
         }
 
