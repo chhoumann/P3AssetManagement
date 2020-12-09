@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using AssetManagement.DataAccessLibrary;
-using AssetManagement.DataAccessLibrary;
-using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
-using AssetManagement.Models.DataLoadStrategy;
 
 namespace AssetManagement.Models
 {
