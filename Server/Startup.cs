@@ -43,7 +43,7 @@ namespace AssetManagement.Server
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<ComputerService>();
+            services.AddScoped<ComputerService>();
             services.AddMatBlazor();
             services.AddScoped<HttpClient>();
         }

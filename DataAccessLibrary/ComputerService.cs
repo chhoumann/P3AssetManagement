@@ -30,6 +30,7 @@ namespace AssetManagement.DataAccessLibrary
         protected override void OnAssetUpdated()
         {
             Db.SaveChanges();
+            
             AssetUpdated?.Invoke();
         }
 
@@ -99,7 +100,8 @@ namespace AssetManagement.DataAccessLibrary
         {
             Db.Remove(asset);
             Db.SaveChanges();
-            AssetUpdated?.Invoke(); 
+            
+            AssetUpdated?.Invoke();     
         }
 
         public override void AddAsset(Computer asset)
@@ -110,7 +112,8 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             Db.Add(asset);
-            Db.SaveChanges();
+            Db.SaveChanges();    
+            
             AssetUpdated?.Invoke();
         }
 
@@ -122,6 +125,7 @@ namespace AssetManagement.DataAccessLibrary
         {
             Db.AddRange(assets);
             Db.SaveChanges();
+            
             AssetUpdated?.Invoke(); 
         }
     }

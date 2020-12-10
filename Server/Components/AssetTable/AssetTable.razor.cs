@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Server.Shared;
 using MatBlazor;
-using Microsoft.AspNetCore.Components.Web;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
-namespace AssetManagement.Server.Components
+namespace AssetManagement.Server.Components.AssetTable
 {
     // TODO: Use interchangeable AssetService instead of ComputerService
     public partial class AssetTable
@@ -32,9 +31,11 @@ namespace AssetManagement.Server.Components
         private bool showStateColumn = true;
         private bool showUsernameColumn = true;
 
+        private string searchTerm;
+
         private async void OnSearchInput(ChangeEventArgs e)
         {
-            string searchTerm = e.Value.ToString().ToLower();
+            searchTerm = e.Value.ToString().ToLower();
             
             IEnumerable<Computer> foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm));
             
@@ -43,6 +44,7 @@ namespace AssetManagement.Server.Components
                 await MatDialogService.AlertAsync("Fandt ingen assets");
                 pageAssets = navigator.OnItemsUpdated(assets);
                 await InvokeAsync(StateHasChanged);
+                searchTerm = "";
                 return;
             }
 
@@ -60,6 +62,7 @@ namespace AssetManagement.Server.Components
             {
                 if (computer.CurrentHolder.Username.ToLower().Contains(searchTerm)) return true;
                 if (computer.CurrentHolder.Name.ToLower().Contains(searchTerm)) return true;
+                if (computer.CurrentState.ToString().ToLower().Contains(searchTerm)) return true;
             }
 
             return false;
@@ -72,13 +75,14 @@ namespace AssetManagement.Server.Components
 
         protected override async Task OnInitializedAsync()
         {
-            FetchAssets();
+            assets = FetchAllAssets();
             navigator = new PageNavigator<Computer>(assets, out pageAssets, AssetsPerPage);
+            
             navigator.PageChanged += GetPageAssets;
             ComputerService.AssetUpdated += OnAssetUpdated;
         }
 
-        private void FetchAssets() => assets = ComputerService.GetAssets();
+        private Computer[] FetchAllAssets() => ComputerService.GetAssets();
 
         /// <summary>
         ///     Callback for AssetUpdate event that occurs in AssetService.
@@ -86,8 +90,9 @@ namespace AssetManagement.Server.Components
         /// </summary>
         private async void OnAssetUpdated()
         {
-            FetchAssets();
+            assets = FetchAllAssets();
             pageAssets = navigator.OnItemsUpdated(assets);
+            
             await InvokeAsync(StateHasChanged);
         }
 

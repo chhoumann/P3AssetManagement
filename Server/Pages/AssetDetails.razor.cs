@@ -29,7 +29,7 @@ namespace AssetManagement.Server.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            asset = new ComputerService().GetAssetById(AssetDbId.ToString());
+            asset = ComputerService.GetAssetById(AssetDbId.ToString());
 
             navigator = new PageNavigator<IAssetRecord>(assetRecords, out pageAssetRecords, AssetRecordsPerPage);
             navigator.PageChanged += GetAssetRecords;
@@ -47,7 +47,7 @@ namespace AssetManagement.Server.Pages
 
             if (UserClickedConfirm(result))
             {
-                new ComputerService().DeleteAsset(asset);
+                ComputerService.DeleteAsset(asset);
                 await JSRuntime.InvokeAsync<object>("close", new object[] { });
             }
         }
@@ -60,7 +60,7 @@ namespace AssetManagement.Server.Pages
 
             if (UserClickedConfirm(result))
             {
-                asset.Transfer.ToDepot();
+                asset.Transfer.ToUser(ComputerService.Depot);
             }
         }
 
@@ -72,7 +72,7 @@ namespace AssetManagement.Server.Pages
 
             if (UserClickedConfirm(result))
             {
-                asset.Transfer.ToCage();
+                asset.Transfer.ToUser(ComputerService.Cage);
             }
         }
 

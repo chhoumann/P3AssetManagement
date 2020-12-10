@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
@@ -26,6 +27,9 @@ namespace AssetManagement.DataAccessLibrary
     {
         protected AssetService()
         {
+            Cage = Db?.AssetHolders.Single(holder => holder.Username == CageUsername);
+            Depot = Db?.AssetHolders.Single(holder => holder.Username == DepotUsername);
+            
             // TODO: Should subscribe in inheriting class
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertDepotAndCageToDb();
@@ -34,8 +38,8 @@ namespace AssetManagement.DataAccessLibrary
         private string DepotUsername { get; } = "depot";
         private string CageUsername { get; } = "cage";
 
-        public AssetHolder Depot => Db.AssetHolders.Single(holder => holder.Username == DepotUsername);
-        public AssetHolder Cage => Db.AssetHolders.Single(holder => holder.Username == CageUsername);
+        public AssetHolder Depot { get; }
+        public AssetHolder Cage { get; }
         
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace AssetManagement.Models
             return this;
         }
 
-        private void OnNewData(IEnumerable<TAsset> assetsInList)
+        private async void OnNewData(IEnumerable<TAsset> assetsInList)
         {
             TAssetService assetService = new TAssetService();
             List<TAsset> currentAssets = assetService.GetAssets().ToList();

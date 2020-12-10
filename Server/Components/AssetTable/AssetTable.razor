@@ -4,7 +4,7 @@
 @inject ComputerService ComputerService
 @inject IJSRuntime JSRuntime
 @inject IMatDialogService MatDialogService
-@namespace AssetManagement.Server.Components
+@namespace AssetManagement.Server.Components.AssetTable
 
 @if (pageAssets == null)
 {
@@ -26,7 +26,7 @@ else
     </MatMenu>
     
     <div style="float: right;">
-        <MatTextField TValue="string" Label="Søgning" OnInput="OnSearchInput"></MatTextField>
+        <MatTextField @bind-Value="@searchTerm" TValue="string" Icon="search" Label="Søgning" OnInput="OnSearchInput"></MatTextField>
     </div>
     
     <table class="table text-center">
