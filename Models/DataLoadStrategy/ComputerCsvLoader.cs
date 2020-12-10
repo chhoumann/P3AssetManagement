@@ -46,12 +46,17 @@ namespace AssetManagement.Models.DataLoadStrategy
         private Computer CreateComputerFromCsvLine(string csvLine)
         {
             string[] fields = csvLine.Split(Separator);
-
+            
+            if (!DateTime.TryParse(fields[0], out DateTime date))
+            {
+                throw new InvalidCastException($"Could not convert {fields[0]} to DateTime!");
+            }
+            
             Computer computer = new Computer(fields[4], fields[5], fields[6],
                 fields[7], fields[9]);
             AssetHolder assetHolder = new AssetHolder(fields[2], fields[1], fields[3]);
 
-            computer.ComputerRecords.Add(new ComputerRecord(computer, assetHolder, DateTime.Now, AssetState.Online));
+            computer.ComputerRecords.Add(new ComputerRecord(computer, assetHolder, date, AssetState.Online));
 
             return computer;
         }

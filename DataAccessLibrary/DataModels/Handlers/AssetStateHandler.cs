@@ -18,6 +18,11 @@ namespace AssetManagement.DataAccessLibrary.DataModels.Handlers
         /// <param name="newState">The new state of the asset</param>
         private void ChangeState(AssetState newState)
         {
+            if (newState == Asset.CurrentState)
+            {
+                return;
+            }
+
             Asset.AddAssetRecord(Asset.CurrentHolder, DateTime.Now, newState);
             AssetStateChanged?.Invoke();
         }
