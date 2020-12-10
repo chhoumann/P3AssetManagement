@@ -22,4 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity quiet
+      run: dotnet test --filter ClassName=AssetManagement.NUnitTests.IntegrationTest.AssetControllerIntegrationTests	 --no-restore --verbosity quiet
+      #run: dotnet test --no-restore --verbosity quiet
