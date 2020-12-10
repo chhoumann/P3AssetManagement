@@ -4,19 +4,19 @@
         <name>AssetManagement.Server</name>
     </assembly>
     <members>
-        <member name="M:AssetManagement.Server.Components.AssetTable.OnAssetUpdated">
+        <member name="M:AssetManagement.Server.Components.AssetTable.AssetTable.OnAssetUpdated">
             <summary>
                 Callback for AssetUpdate event that occurs in AssetService.
                 Updates table with new data - live reloading.
             </summary>
         </member>
-        <member name="M:AssetManagement.Server.Components.AssetTable.GetPageAssets(AssetManagement.DataAccessLibrary.DataModels.Computer[])">
+        <member name="M:AssetManagement.Server.Components.AssetTable.AssetTable.GetPageAssets(AssetManagement.DataAccessLibrary.DataModels.Computer[])">
             <summary>
                 Callback function fired when the page is changed. Updates the pageAssets array.
             </summary>
             <param name="pageAssets">Sliced array of assets representing a page.</param>
         </member>
-        <member name="M:AssetManagement.Server.Components.AssetTable.NavigateToDetails(AssetManagement.DataAccessLibrary.DataModels.Computer)">
+        <member name="M:AssetManagement.Server.Components.AssetTable.AssetTable.NavigateToDetails(AssetManagement.DataAccessLibrary.DataModels.Computer)">
             <summary>
                 Opens the details page for an asset in a new page.
             </summary>

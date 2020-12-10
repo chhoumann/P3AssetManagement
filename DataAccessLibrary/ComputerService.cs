@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using AssetManagement.Core;
 using AssetManagement.DataAccessLibrary.Contexts;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Handlers;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AssetManagement.DataAccessLibrary
 {
@@ -22,7 +22,7 @@ namespace AssetManagement.DataAccessLibrary
         /// </summary>
         protected override ComputerContext Db { get; } = new ComputerContext();
         public override event Action AssetUpdated;
-        
+
         /// <summary>
         /// This method is invoked by a property change in a computer,
         /// which saves the changes to the database and invokes the AssetUpdated event.
@@ -49,7 +49,7 @@ namespace AssetManagement.DataAccessLibrary
                 List<Computer> newComputers = new List<Computer>();
                 for (int i = 0; i < 11; i++)
                 {
-                    Computer computer = new Computer($"SomeName{i}", "OpSystem", "Manumanu", "Model", "SerialNumber");
+                    Computer computer = new Computer($"SomeName{i}", "OpSystem", "Manumanu", new List<string>() { "Models" }, "SerialNumber");
                     computer.ComputerRecords.Add(InitialRecord(computer));
                     newComputers.Add(computer);
                 }
@@ -66,6 +66,7 @@ namespace AssetManagement.DataAccessLibrary
         public override Computer[] GetAssets()
         {
             return Db.Computers
+                .Include(computer => computer.Models)
                 .Include(computer => computer.ComputerRecords)
                 .ThenInclude(record => record.Holder)
                 .ToArray();

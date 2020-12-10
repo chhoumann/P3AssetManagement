@@ -24,7 +24,8 @@ namespace AssetManagement.Server.Components.AssetTable
         private bool showIdColumn = true;
         private bool showLastChangedColumn = true;
 
-        private bool showModelColumn = true;
+        private bool showModel1Column = true;
+        private bool showModel2Column = true;
         private bool showOwnerColumn = true;
         private bool showPcAdStatusColumn = true;
         private bool showSerialNumberColumn = true;
@@ -38,7 +39,7 @@ namespace AssetManagement.Server.Components.AssetTable
             searchTerm = e.Value.ToString().ToLower();
             
             IEnumerable<Computer> foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm));
-            
+
             if (!foundAssets.Any())
             {
                 await MatDialogService.AlertAsync("Fandt ingen assets");
@@ -56,7 +57,7 @@ namespace AssetManagement.Server.Components.AssetTable
         {
             if (computer.Id.ToLower().Contains(searchTerm)) return true;
             if (computer.AssetId.ToLower().Contains(searchTerm)) return true;
-            if (computer.Model != null && computer.Model.ToLower().Contains(searchTerm)) return true;
+            if (computer.Models != null && computer.Models.Any(model => model.Name.ToLower().Contains(searchTerm))) return true;
             if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(searchTerm)) return true;
             if (computer.LastAssetRecord != null && computer.CurrentHolder != null)
             {
@@ -122,11 +123,11 @@ namespace AssetManagement.Server.Components.AssetTable
                 return;
             }
 
-            Computer asset = new Computer(result) {PcName = "-"};
+            Computer asset = new Computer(result) { PcName = "-" };
             ComputerService.AddAsset(asset);
 
             bool assetIsInDatabase = ComputerService.GetAssetBySerialNumber(asset.SerialNumber) != null;
-            
+
             if (assetIsInDatabase)
             {
                 await MatDialogService.AlertAsync("Asset tilføjet.");

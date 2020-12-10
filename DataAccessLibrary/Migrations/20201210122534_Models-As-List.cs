@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AssetManagement.DataAccessLibrary.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class ModelsAsList : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,7 +30,6 @@ namespace AssetManagement.DataAccessLibrary.Migrations
                     PcName = table.Column<string>(nullable: false),
                     OperatingSystem = table.Column<string>(nullable: true),
                     Manufacturer = table.Column<string>(nullable: true),
-                    Model = table.Column<string>(nullable: true),
                     SerialNumber = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -39,7 +38,27 @@ namespace AssetManagement.DataAccessLibrary.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AssetRecords",
+                name: "ComputerModel",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    ComputerId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ComputerModel", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ComputerModel_Computers_ComputerId",
+                        column: x => x.ComputerId,
+                        principalTable: "Computers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ComputerRecords",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -51,15 +70,15 @@ namespace AssetManagement.DataAccessLibrary.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AssetRecords", x => x.Id);
+                    table.PrimaryKey("PK_ComputerRecords", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AssetRecords_Computers_ComputerId",
+                        name: "FK_ComputerRecords_Computers_ComputerId",
                         column: x => x.ComputerId,
                         principalTable: "Computers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AssetRecords_AssetHolders_HolderId",
+                        name: "FK_ComputerRecords_AssetHolders_HolderId",
                         column: x => x.HolderId,
                         principalTable: "AssetHolders",
                         principalColumn: "Id",
@@ -67,20 +86,28 @@ namespace AssetManagement.DataAccessLibrary.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AssetRecords_ComputerId",
-                table: "AssetRecords",
+                name: "IX_ComputerModel_ComputerId",
+                table: "ComputerModel",
                 column: "ComputerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AssetRecords_HolderId",
-                table: "AssetRecords",
+                name: "IX_ComputerRecords_ComputerId",
+                table: "ComputerRecords",
+                column: "ComputerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ComputerRecords_HolderId",
+                table: "ComputerRecords",
                 column: "HolderId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AssetRecords");
+                name: "ComputerModel");
+
+            migrationBuilder.DropTable(
+                name: "ComputerRecords");
 
             migrationBuilder.DropTable(
                 name: "Computers");

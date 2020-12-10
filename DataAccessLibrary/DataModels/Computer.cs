@@ -12,13 +12,14 @@ namespace AssetManagement.DataAccessLibrary.DataModels
     public class Computer : IAsset
     {
         public Computer(string pcName, string operatingSystem, string manufacturer,
-            string model, string serialNumber) : this()
+            List<string> models, string serialNumber) : this()
         {
             PcName = pcName;
             OperatingSystem = operatingSystem;
             Manufacturer = manufacturer;
-            Model = model;
             SerialNumber = serialNumber;
+
+            models?.ForEach(model => Models.Add(new ComputerModel(model)));
         }
 
         public Computer(string serialNumber) : this() => SerialNumber = serialNumber;
@@ -29,7 +30,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         {
             ComputerRecords.Add(new ComputerRecord(this, holder, timestamp, state));
         }
-        
+
         // TODO: Copy reference instead of making a new list
         public IReadOnlyList<IAssetRecord> AssetRecords => ComputerRecords.Cast<IAssetRecord>().ToList();
         public IAssetRecord LastAssetRecord => ComputerRecords.OrderByDescending(x => x.Timestamp).First();
@@ -53,7 +54,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels
 
         public string OperatingSystem { get; private set; }
         public string Manufacturer { get; private set; }
-        public string Model { get; private set; }
+        public List<ComputerModel> Models { get; private set; } = new List<ComputerModel>();
 
         [Required] public string SerialNumber { get; private set; }
 

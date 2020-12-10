@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
 using AssetManagement.Core;
 using AssetManagement.Core.DataLoadStrategy;
 using AssetManagement.Core.Exceptions;
 using AssetManagement.DataAccessLibrary.DataModels;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading;
 
 namespace AssetManagement.Models.DataLoadStrategy
 {
@@ -16,7 +16,7 @@ namespace AssetManagement.Models.DataLoadStrategy
         private const int FileReadTimeoutInterval = 100;
 
         public ComputerCsvLoader(char separator) => Separator = separator;
-        
+
         public override IEnumerable<Computer> ReadData(string filePath)
         {
             WaitForFileToBeReadable(filePath);
@@ -53,7 +53,7 @@ namespace AssetManagement.Models.DataLoadStrategy
             }
             
             Computer computer = new Computer(fields[4], fields[5], fields[6],
-                fields[7], fields[9]);
+                new List<string>() { fields[7], fields[8] }, fields[9]);
             AssetHolder assetHolder = new AssetHolder(fields[2], fields[1], fields[3]);
 
             computer.ComputerRecords.Add(new ComputerRecord(computer, assetHolder, date, AssetState.Online));
