@@ -12,6 +12,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public int Id { get; private set; }
 
         [Required]
+        [MaxLength(50)]
         public string Name { get; private set; }
 
         [Required]

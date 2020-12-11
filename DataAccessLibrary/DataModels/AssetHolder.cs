@@ -30,10 +30,15 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; private set; }
 
-        [Required] public string Name { get; private set; }
+        [Required]
+        [MaxLength(50)]
+        public string Name { get; private set; }
 
-        [Required] public string Username { get; private set; }
+        [Required]
+        [MaxLength(30)]
+        public string Username { get; private set; }
 
+        [MaxLength(50)]
         public string Department { get; private set; }
         #endregion
     }
