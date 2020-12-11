@@ -50,14 +50,21 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; private set; }
 
-        [Required] public string PcName { get; set; }
+        [Required]
+        [MaxLength(30)]
+        public string PcName { get; set; }
 
+        [MaxLength(50)]
         public string OperatingSystem { get; private set; }
+
+        [MaxLength(50)]
         public string Manufacturer { get; private set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string SerialNumber { get; private set; }
+
         public List<ComputerModel> Models { get; private set; } = new List<ComputerModel>();
-
-        [Required] public string SerialNumber { get; private set; }
-
         public List<ComputerRecord> ComputerRecords { get; private set; } = new List<ComputerRecord>();
         #endregion
     }
