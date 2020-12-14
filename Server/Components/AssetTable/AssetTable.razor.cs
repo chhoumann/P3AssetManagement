@@ -119,6 +119,12 @@ namespace AssetManagement.Server.Components.AssetTable
         /// <param name="asset">IAsset to open details for</param>
         private async Task NavigateToDetails(Computer asset)
         {
+            if (ComputerService.GetAssetById(asset.Id) == null)
+            {
+                await MatDialogService.AlertAsync("Asset does not exist.");
+                return;
+            }
+            
             string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.Id}";
             await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
         }
