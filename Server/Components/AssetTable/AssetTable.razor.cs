@@ -34,6 +34,40 @@ namespace AssetManagement.Server.Components.AssetTable
 
         private string searchTerm;
 
+        protected override async Task OnInitializedAsync()
+        {
+            assets = FetchAllAssets();
+            navigator = new PageNavigator<Computer>(assets, out pageAssets, AssetsPerPage);
+
+            navigator.PageChanged += GetPageAssets;
+            ComputerService.AssetUpdated += OnAssetUpdated;
+        }
+
+        private Computer[] FetchAllAssets() => ComputerService.GetAssets();
+
+        /// <summary>
+        ///     Callback function fired when the page is changed. Updates the pageAssets array.
+        /// </summary>
+        /// <param name="assetsOnPage">Sliced array of assets representing a page.</param>
+        private void GetPageAssets(Computer[] assetsOnPage) => pageAssets = assetsOnPage;
+
+        /// <summary>
+        ///     Callback for AssetUpdate event that occurs in AssetService.
+        ///     Updates table with new data - live reloading.
+        /// </summary>
+        private async void OnAssetUpdated()
+        {
+            assets = FetchAllAssets();
+            pageAssets = navigator.OnItemsUpdated(assets);
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                await SearchHandler();
+            }
+
+            await InvokeAsync(StateHasChanged);
+        }
+
         private async void OnSearchInput(ChangeEventArgs e)
         {
             searchTerm = e.Value.ToString().ToLower();
@@ -62,7 +96,8 @@ namespace AssetManagement.Server.Components.AssetTable
         {
             if (computer.Id.ToLower().Contains(searchTerm)) return true;
             if (computer.AssetId.ToLower().Contains(searchTerm)) return true;
-            if (computer.Models != null && computer.Models.Any(model => model.Name.ToLower().Contains(searchTerm))) return true;
+            if (computer.Models != null &&
+                computer.Models.Any(model => model.Name.ToLower().Contains(searchTerm))) return true;
             if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(searchTerm)) return true;
             if (computer.LastAssetRecord != null && computer.CurrentHolder != null)
             {
@@ -79,40 +114,6 @@ namespace AssetManagement.Server.Components.AssetTable
             Menu.OpenAsync();
         }
 
-        protected override async Task OnInitializedAsync()
-        {
-            assets = FetchAllAssets();
-            navigator = new PageNavigator<Computer>(assets, out pageAssets, AssetsPerPage);
-            
-            navigator.PageChanged += GetPageAssets;
-            ComputerService.AssetUpdated += OnAssetUpdated;
-        }
-
-        private Computer[] FetchAllAssets() => ComputerService.GetAssets();
-
-        /// <summary>
-        ///     Callback for AssetUpdate event that occurs in AssetService.
-        ///     Updates table with new data - live reloading.
-        /// </summary>
-        private async void OnAssetUpdated()
-        {
-            assets = FetchAllAssets();
-            pageAssets = navigator.OnItemsUpdated(assets);
-
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                await SearchHandler();
-            }
-
-            await InvokeAsync(StateHasChanged);
-        }
-
-        /// <summary>
-        ///     Callback function fired when the page is changed. Updates the pageAssets array.
-        /// </summary>
-        /// <param name="assetsOnPage">Sliced array of assets representing a page.</param>
-        private void GetPageAssets(Computer[] assetsOnPage) => pageAssets = assetsOnPage;
-
         /// <summary>
         ///     Opens the details page for an asset in a new page.
         /// </summary>
@@ -124,9 +125,9 @@ namespace AssetManagement.Server.Components.AssetTable
                 await MatDialogService.AlertAsync("Asset does not exist.");
                 return;
             }
-            
+
             string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.Id}";
-            await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
+            await JSRuntime.InvokeAsync<object>("open", new object[] {url, "_blank"});
         }
 
         // TODO: Add updating of asset id when we find it in a file by serialnumber
@@ -139,7 +140,7 @@ namespace AssetManagement.Server.Components.AssetTable
                 return;
             }
 
-            Computer asset = new Computer(result) { PcName = "-" };
+            Computer asset = new Computer(result) {PcName = "-"};
             ComputerService.AddAsset(asset);
 
             bool assetIsInDatabase = ComputerService.GetAssetBySerialNumber(asset.SerialNumber) != null;
