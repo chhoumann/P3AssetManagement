@@ -25,13 +25,13 @@ namespace AssetManagement.Server.Pages
 
         private IAssetRecord[] pageAssetRecords;
         [Parameter] public Guid AssetDbId { get; set; }
-        private IAssetRecord[] assetRecords => asset.AssetRecords.OrderByDescending(x => x.Timestamp).ToArray();
+        private IAssetRecord[] AssetRecords => asset.AssetRecords.OrderByDescending(x => x.Timestamp).ToArray();
 
         protected override async Task OnInitializedAsync()
         {
             asset = ComputerService.GetAssetById(AssetDbId.ToString());
 
-            navigator = new PageNavigator<IAssetRecord>(assetRecords, out pageAssetRecords, AssetRecordsPerPage);
+            navigator = new PageNavigator<IAssetRecord>(AssetRecords, out pageAssetRecords, AssetRecordsPerPage);
             navigator.PageChanged += GetAssetRecords;
         }
 
@@ -42,8 +42,8 @@ namespace AssetManagement.Server.Pages
 
         private async Task DeleteAssetPrompt()
         {
-            string result =
-                await MatDialogService.AskAsync($"Er du sikker på, at du vil slette {asset.AssetId}?", dialogOptions);
+            string dialogMessage = $"Er du sikker på, at du vil slette {asset.AssetId}?";
+            string result = await MatDialogService.AskAsync(dialogMessage, dialogOptions);
 
             if (UserClickedConfirm(result))
             {
@@ -54,9 +54,8 @@ namespace AssetManagement.Server.Pages
 
         private async Task MoveAssetToDepotPrompt()
         {
-            string result =
-                await MatDialogService.AskAsync($"Er du sikker på, at du vil flytte {asset.AssetId} til depotet?",
-                    dialogOptions);
+            string dialogMessage = $"Er du sikker på, at du vil flytte {asset.AssetId} til depotet?";
+            string result = await MatDialogService.AskAsync(dialogMessage, dialogOptions);
 
             if (UserClickedConfirm(result))
             {
@@ -66,9 +65,8 @@ namespace AssetManagement.Server.Pages
 
         private async Task MoveAssetToCagePrompt()
         {
-            string result =
-                await MatDialogService.AskAsync($"Er du sikker på, at du vil sende {asset.AssetId} til bortskaffelse?",
-                    dialogOptions);
+            string dialogMessage = $"Er du sikker på, at du vil sende {asset.AssetId} til bortskaffelse?";
+            string result = await MatDialogService.AskAsync(dialogMessage, dialogOptions);
 
             if (UserClickedConfirm(result))
             {
