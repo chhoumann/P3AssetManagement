@@ -37,7 +37,12 @@ namespace AssetManagement.Server.Components.AssetTable
         private async void OnSearchInput(ChangeEventArgs e)
         {
             searchTerm = e.Value.ToString().ToLower();
-            
+
+            await SearchHandler();
+        }
+
+        private async Task SearchHandler()
+        {
             IEnumerable<Computer> foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm));
 
             if (!foundAssets.Any())
@@ -93,15 +98,20 @@ namespace AssetManagement.Server.Components.AssetTable
         {
             assets = FetchAllAssets();
             pageAssets = navigator.OnItemsUpdated(assets);
-            
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                await SearchHandler();
+            }
+
             await InvokeAsync(StateHasChanged);
         }
 
         /// <summary>
         ///     Callback function fired when the page is changed. Updates the pageAssets array.
         /// </summary>
-        /// <param name="pageAssets">Sliced array of assets representing a page.</param>
-        private void GetPageAssets(Computer[] pageAssets) => this.pageAssets = pageAssets;
+        /// <param name="assetsOnPage">Sliced array of assets representing a page.</param>
+        private void GetPageAssets(Computer[] assetsOnPage) => pageAssets = assetsOnPage;
 
         /// <summary>
         ///     Opens the details page for an asset in a new page.

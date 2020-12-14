@@ -30,8 +30,6 @@ namespace AssetManagement.DataAccessLibrary
             Cage = Db?.AssetHolders.Single(holder => holder.Username == CageUsername);
             Depot = Db?.AssetHolders.Single(holder => holder.Username == DepotUsername);
             
-            // TODO: Should subscribe in inheriting class
-            AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertDepotAndCageToDb();
         }
 

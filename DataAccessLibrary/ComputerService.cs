@@ -14,6 +14,7 @@ namespace AssetManagement.DataAccessLibrary
         public ComputerService()
         {
             AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
+            AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 
