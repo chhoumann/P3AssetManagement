@@ -15,7 +15,6 @@ namespace AssetManagement.DataAccessLibrary
         {
             AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
-            InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 
         /// <summary>
@@ -31,7 +30,7 @@ namespace AssetManagement.DataAccessLibrary
         protected override void OnAssetUpdated()
         {
             Db.SaveChanges();
-            
+
             AssetUpdated?.Invoke();
         }
 
@@ -42,23 +41,6 @@ namespace AssetManagement.DataAccessLibrary
         /// <returns>The initial record present in a computer</returns>
         protected override ComputerRecord InitialRecord(Computer computer) =>
             new ComputerRecord(computer, Depot, DateTime.Now, AssetState.Online);
-
-        private void InsertMockDataToDb()
-        {
-            if (!Db.Computers.Any())
-            {
-                List<Computer> newComputers = new List<Computer>();
-                for (int i = 0; i < 11; i++)
-                {
-                    Computer computer = new Computer($"SomeName{i}", "OpSystem", "Manumanu", new List<string>() { "Models" }, "SerialNumber");
-                    computer.ComputerRecords.Add(InitialRecord(computer));
-                    newComputers.Add(computer);
-                }
-
-                Db.AddRange(newComputers);
-                Db.SaveChanges();
-            }
-        }
 
         /// <summary>
         /// Gets all computers from the database.
@@ -102,8 +84,8 @@ namespace AssetManagement.DataAccessLibrary
         {
             Db.Remove(asset);
             Db.SaveChanges();
-            
-            AssetUpdated?.Invoke();     
+
+            AssetUpdated?.Invoke();
         }
 
         public override void AddAsset(Computer asset)
@@ -114,8 +96,8 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             Db.Add(asset);
-            Db.SaveChanges();    
-            
+            Db.SaveChanges();
+
             AssetUpdated?.Invoke();
         }
 
@@ -127,8 +109,8 @@ namespace AssetManagement.DataAccessLibrary
         {
             Db.AddRange(assets);
             Db.SaveChanges();
-            
-            AssetUpdated?.Invoke(); 
+
+            AssetUpdated?.Invoke();
         }
     }
 }
