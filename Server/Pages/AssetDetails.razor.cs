@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using AssetManagement.Server.Shared;
 using Microsoft.AspNetCore.Components;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Pages
 {
@@ -41,13 +41,20 @@ namespace AssetManagement.Server.Pages
 
         private async Task DeleteAssetPrompt()
         {
-            string dialogMessage = $"Er du sikker på, at du vil slette {asset.AssetId}?";
-            string result = await MatDialogService.AskAsync(dialogMessage, dialogOptions);
+            string initialMessage = $"Er du sikker på, at du vil slette {asset.AssetId}?";
+            string initialResult = await MatDialogService.AskAsync(initialMessage, dialogOptions);
 
-            if (UserClickedConfirm(result))
+            if (UserClickedConfirm(initialResult))
             {
-                ComputerService.DeleteAsset(asset);
-                await JSRuntime.InvokeAsync<object>("close", new object[] { });
+                string secondPrompt = $"Er du helt sikker på, at du vil slette {asset.AssetId}?\n" +
+                                        $"Advarsel! Denne handling er permanent og kan ikke fortrydes.";
+                string secondPromptResult = await MatDialogService.AskAsync(secondPrompt, dialogOptions);
+
+                if (UserClickedConfirm(secondPromptResult))
+                {
+                    ComputerService.DeleteAsset(asset);
+                    await JSRuntime.InvokeAsync<object>("close", new object[] { });
+                }
             }
         }
 

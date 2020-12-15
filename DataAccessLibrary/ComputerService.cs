@@ -15,7 +15,7 @@ namespace AssetManagement.DataAccessLibrary
         {
             AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
-            InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
+            //InsertMockDataToDb();
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace AssetManagement.DataAccessLibrary
         protected override void OnAssetUpdated()
         {
             Db.SaveChanges();
-            
+
             AssetUpdated?.Invoke();
         }
 
@@ -102,8 +102,8 @@ namespace AssetManagement.DataAccessLibrary
         {
             Db.Remove(asset);
             Db.SaveChanges();
-            
-            AssetUpdated?.Invoke();     
+
+            AssetUpdated?.Invoke();
         }
 
         public override void AddAsset(Computer asset)
@@ -114,8 +114,8 @@ namespace AssetManagement.DataAccessLibrary
             }
 
             Db.Add(asset);
-            Db.SaveChanges();    
-            
+            Db.SaveChanges();
+
             AssetUpdated?.Invoke();
         }
 
@@ -127,8 +127,8 @@ namespace AssetManagement.DataAccessLibrary
         {
             Db.AddRange(assets);
             Db.SaveChanges();
-            
-            AssetUpdated?.Invoke(); 
+
+            AssetUpdated?.Invoke();
         }
     }
 }

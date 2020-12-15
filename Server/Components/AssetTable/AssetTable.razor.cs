@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Server.Shared;
 using MatBlazor;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Components.AssetTable
 {
@@ -21,7 +19,7 @@ namespace AssetManagement.Server.Components.AssetTable
 
         private IPageNavigator<Computer> navigator;
         private Computer[] pageAssets;
-        
+
         private bool showIdColumn = true;
         private bool showLastChangedColumn = true;
         private bool showModel1Column = true;
@@ -59,13 +57,13 @@ namespace AssetManagement.Server.Components.AssetTable
         {
             assets = FetchAllAssets();
             pageAssets = navigator.OnItemsUpdated(assets);
-            
+
             await InvokeAsync(StateHasChanged);
         }
 
         private async void OnSearchInput(ChangeEventArgs e)
         {
-            searchTerm = e.Value.ToString().ToLower();
+            searchTerm = e.Value.ToString()?.ToLower();
 
             await SearchHandler();
         }
@@ -79,7 +77,7 @@ namespace AssetManagement.Server.Components.AssetTable
                 searchTerm = "";
                 await MatDialogService.AlertAsync("Fandt ingen assets");
                 pageAssets = navigator.OnItemsUpdated(assets);
-                
+
                 await InvokeAsync(StateHasChanged);
                 return;
             }
