@@ -42,28 +42,34 @@ namespace AssetManagement.Server.Pages
         private async Task DeleteAssetPrompt()
         {
             string initialMessage = $"Er du sikker på, at du vil slette {asset.AssetId}?";
-            string initialResult = await MatDialogService.AskAsync(initialMessage, dialogOptions);
+            string secondMessage = $"Er du helt sikker på, at du vil slette {asset.AssetId}?\n" +
+                                  $"Advarsel! Denne handling er permanent og kan ikke fortrydes.";
 
-            if (UserClickedConfirm(initialResult))
+            if (await RunPrompt(initialMessage) && await RunPrompt(secondMessage))
             {
-                string secondPrompt = $"Er du helt sikker på, at du vil slette {asset.AssetId}?\n" +
-                                        $"Advarsel! Denne handling er permanent og kan ikke fortrydes.";
-                string secondPromptResult = await MatDialogService.AskAsync(secondPrompt, dialogOptions);
-
-                if (UserClickedConfirm(secondPromptResult))
-                {
-                    ComputerService.DeleteAsset(asset);
-                    await JSRuntime.InvokeAsync<object>("close", new object[] { });
-                }
+                ComputerService.DeleteAsset(asset);
+                await JSRuntime.InvokeAsync<object>("close", new object[] { });
             }
         }
+
+        /// <summary>
+        /// Runs a prompt with the given message.
+        /// </summary>
+        /// <param name="message">The message which is shown to the user.</param>
+        /// <returns>True if the user confirmed the action. False otherwise.</returns>
+        private async Task<bool> RunPrompt(string message)
+        {
+            string result = await MatDialogService.AskAsync(message, dialogOptions);
+            return UserClickedConfirm(result);
+        }
+
+        private bool UserClickedConfirm(string result) => result == dialogOptions[0];
 
         private async Task MoveAssetToDepotPrompt()
         {
             string dialogMessage = $"Er du sikker på, at du vil flytte {asset.AssetId} til depotet?";
-            string result = await MatDialogService.AskAsync(dialogMessage, dialogOptions);
 
-            if (UserClickedConfirm(result))
+            if (await RunPrompt(dialogMessage))
             {
                 asset.Transfer.ToUser(ComputerService.Depot);
             }
@@ -74,9 +80,8 @@ namespace AssetManagement.Server.Pages
         private async Task MoveAssetToCagePrompt()
         {
             string dialogMessage = $"Er du sikker på, at du vil sende {asset.AssetId} til bortskaffelse?";
-            string result = await MatDialogService.AskAsync(dialogMessage, dialogOptions);
 
-            if (UserClickedConfirm(result))
+            if (await RunPrompt(dialogMessage))
             {
                 asset.Transfer.ToUser(ComputerService.Cage);
             }
@@ -84,6 +89,5 @@ namespace AssetManagement.Server.Pages
             pageAssetRecords = navigator.OnItemsUpdated(AssetRecords);
         }
 
-        private bool UserClickedConfirm(string result) => result == dialogOptions[0];
     }
 }
