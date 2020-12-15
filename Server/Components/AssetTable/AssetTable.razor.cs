@@ -77,33 +77,34 @@ namespace AssetManagement.Server.Components.AssetTable
 
         private async Task SearchHandler()
         {
-            IEnumerable<Computer> foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm));
+            Computer[] foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm)).ToArray();
 
             if (!foundAssets.Any())
             {
+                searchTerm = "";
                 await MatDialogService.AlertAsync("Fandt ingen assets");
                 pageAssets = navigator.OnItemsUpdated(assets);
                 await InvokeAsync(StateHasChanged);
-                searchTerm = "";
                 return;
             }
 
-            pageAssets = navigator.OnItemsUpdated(foundAssets.ToArray());
+            pageAssets = navigator.OnItemsUpdated(foundAssets);
             await InvokeAsync(StateHasChanged);
         }
 
-        private bool AssetSearchAllPredicate(Computer computer, string searchTerm)
+        private bool AssetSearchAllPredicate(Computer computer, string query)
         {
-            if (computer.Id.ToLower().Contains(searchTerm)) return true;
-            if (computer.AssetId.ToLower().Contains(searchTerm)) return true;
+            if (computer.Id.ToLower().Contains(query)) return true;
+            if (computer.PcAdStatus.ToLower().Contains(query)) return true;
+            if (computer.AssetId.ToLower().Contains(query)) return true;
             if (computer.Models != null &&
-                computer.Models.Any(model => model.Name.ToLower().Contains(searchTerm))) return true;
-            if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(searchTerm)) return true;
+                computer.Models.Any(model => model.Name.ToLower().Contains(query))) return true;
+            if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(query)) return true;
             if (computer.LastAssetRecord != null && computer.CurrentHolder != null)
             {
-                if (computer.CurrentHolder.Username.ToLower().Contains(searchTerm)) return true;
-                if (computer.CurrentHolder.Name.ToLower().Contains(searchTerm)) return true;
-                if (computer.CurrentState.ToString().ToLower().Contains(searchTerm)) return true;
+                if (computer.CurrentHolder.Username.ToLower().Contains(query)) return true;
+                if (computer.CurrentHolder.Name.ToLower().Contains(query)) return true;
+                if (computer.CurrentState.ToString().ToLower().Contains(query)) return true;
             }
 
             return false;

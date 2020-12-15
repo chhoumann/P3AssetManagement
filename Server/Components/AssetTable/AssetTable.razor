@@ -56,7 +56,7 @@ else
                     <td class="@(showOwnerColumn ? "" : "d-none")">@(computer.CurrentHolder)</td>
                     <td class="@(showUsernameColumn ? "" : "d-none")">@(computer.CurrentHolder.Username)</td>
                     <td class="@(showLastChangedColumn ? "" : "d-none")">@computer.LastChanged</td>
-                    <td class="@(showPcAdStatusColumn ? "" : "d-none")">Awaiting Imp.</td>
+                    <td class="@(showPcAdStatusColumn ? "" : "d-none")">@(computer.PcAdStatus ?? "-")</td>
                     <td class="@(showStateColumn ? "" : "d-none")">@(computer.CurrentState)</td>
                     <td>
                         <MatButton @onclick="() => NavigateToDetails(computer)" Match="NavLinkMatch.All">

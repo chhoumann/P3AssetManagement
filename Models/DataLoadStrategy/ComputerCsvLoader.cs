@@ -53,7 +53,7 @@ namespace AssetManagement.Models.DataLoadStrategy
             }
             
             Computer computer = new Computer(fields[4], fields[5], fields[6],
-                new List<string>() { fields[7], fields[8] }, fields[9]);
+                new List<string>() { fields[7], fields[8] }, fields[9]) { PcAdStatus = fields[10]};
             AssetHolder assetHolder = new AssetHolder(fields[2], fields[1], fields[3]);
 
             computer.ComputerRecords.Add(new ComputerRecord(computer, assetHolder, date, AssetState.Online));

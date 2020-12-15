@@ -27,10 +27,10 @@ namespace AssetManagement.DataAccessLibrary
     {
         protected AssetService()
         {
+            InsertDepotAndCageToDb();
+            
             Cage = Db?.AssetHolders.Single(holder => holder.Username == CageUsername);
             Depot = Db?.AssetHolders.Single(holder => holder.Username == DepotUsername);
-            
-            InsertDepotAndCageToDb();
         }
 
         private string DepotUsername { get; } = "depot";
