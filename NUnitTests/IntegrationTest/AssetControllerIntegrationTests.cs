@@ -23,6 +23,7 @@ namespace AssetManagement.NUnitTests.IntegrationTest
             "test-files", "asset-controller-test", "2020-10-07-PCID.csv")).ToArray();
 
         public Computer GetAssetById(string id) => throw new NotImplementedException();
+        public Computer GetAssetBySerialNumber(string serialNumber) => throw new NotImplementedException();
 
         public void AddAsset(Computer asset)
         {

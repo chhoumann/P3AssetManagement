@@ -23,7 +23,7 @@ namespace AssetManagement.Server
             ComputerCsvLoader csvLoader = new ComputerCsvLoader(';');
             string path = Directory.GetParent(Environment.CurrentDirectory) + @"/AAFData";
             AafComputerCsvFileWatcher computerCsvFileWatcher = new AafComputerCsvFileWatcher(path, csvLoader);
-            
+
             new AssetController<Computer, ComputerService>().StartWatchingAlienData(computerCsvFileWatcher);
 
             Console.WriteLine("Ready...");
@@ -43,7 +43,7 @@ namespace AssetManagement.Server
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<ComputerService>();
+            services.AddSingleton<IAssetService<Computer>, ComputerService>();
             services.AddMatBlazor();
             services.AddScoped<HttpClient>();
         }

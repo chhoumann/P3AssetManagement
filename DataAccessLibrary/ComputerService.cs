@@ -86,7 +86,7 @@ namespace AssetManagement.DataAccessLibrary
                 .SingleOrDefault(computer => computer.Id == id);
         }
 
-        public Computer GetAssetBySerialNumber(string serialNumber)
+        public override Computer GetAssetBySerialNumber(string serialNumber)
         {
             return Db.Computers
                 .Include(computer => computer.ComputerRecords)
