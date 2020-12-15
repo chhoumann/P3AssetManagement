@@ -1,0 +1,26 @@
+﻿@using AssetManagement.DataAccessLibrary.DataModels
+@using AssetManagement.DataAccessLibrary
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject IMatDialogService MatDialogService
+@inject IAssetService<Computer> ComputerService
+
+@if (Asset != null)
+{
+    <tr>
+        <td class="@(ShowModel1Column ? "" : "d-none")">@(Asset.Models.FirstOrDefault())</td>
+        <td class="@(ShowModel2Column ? "" : "d-none")">@(Asset.Models.LastOrDefault())</td>
+        <td class="@(ShowSerialNumberColumn ? "" : "d-none")">@(Asset.SerialNumber)</td>
+        <td class="@(ShowIdColumn ? "" : "d-none")">@(Asset.PcName)</td>
+        <td class="@(ShowOwnerColumn ? "" : "d-none")">@(Asset.CurrentHolder)</td>
+        <td class="@(ShowUsernameColumn ? "" : "d-none")">@(Asset.CurrentHolder.Username)</td>
+        <td class="@(ShowLastChangedColumn ? "" : "d-none")">@Asset.LastChanged</td>
+        <td class="@(ShowPcAdStatusColumn ? "" : "d-none")">@(Asset.PcAdStatus ?? "-")</td>
+        <td class="@(ShowStateColumn ? "" : "d-none")">@(Asset.CurrentState)</td>
+        <td>
+            <MatButton @onclick="() => NavigateToDetails(Asset)" Match="NavLinkMatch.All">
+                🕵️‍♂️ Detaljer
+            </MatButton>
+        </td>
+    </tr>
+}

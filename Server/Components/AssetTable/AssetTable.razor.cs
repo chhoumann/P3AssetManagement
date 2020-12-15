@@ -21,9 +21,9 @@ namespace AssetManagement.Server.Components.AssetTable
 
         private IPageNavigator<Computer> navigator;
         private Computer[] pageAssets;
+        
         private bool showIdColumn = true;
         private bool showLastChangedColumn = true;
-
         private bool showModel1Column = true;
         private bool showModel2Column = true;
         private bool showOwnerColumn = true;
@@ -59,12 +59,7 @@ namespace AssetManagement.Server.Components.AssetTable
         {
             assets = FetchAllAssets();
             pageAssets = navigator.OnItemsUpdated(assets);
-
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                await SearchHandler();
-            }
-
+            
             await InvokeAsync(StateHasChanged);
         }
 
@@ -84,18 +79,18 @@ namespace AssetManagement.Server.Components.AssetTable
                 searchTerm = "";
                 await MatDialogService.AlertAsync("Fandt ingen assets");
                 pageAssets = navigator.OnItemsUpdated(assets);
+                
                 await InvokeAsync(StateHasChanged);
                 return;
             }
 
             pageAssets = navigator.OnItemsUpdated(foundAssets);
-            await InvokeAsync(StateHasChanged);
         }
 
         private bool AssetSearchAllPredicate(Computer computer, string query)
         {
             if (computer.Id.ToLower().Contains(query)) return true;
-            if (computer.PcAdStatus.ToLower().Contains(query)) return true;
+            if (computer.PcAdStatus != null && computer.PcAdStatus.ToLower().Contains(query)) return true;
             if (computer.AssetId.ToLower().Contains(query)) return true;
             if (computer.Models != null &&
                 computer.Models.Any(model => model.Name.ToLower().Contains(query))) return true;
@@ -113,47 +108,6 @@ namespace AssetManagement.Server.Components.AssetTable
         private void FilterMenuShow(MouseEventArgs e)
         {
             Menu.OpenAsync();
-        }
-
-        /// <summary>
-        ///     Opens the details page for an asset in a new page.
-        /// </summary>
-        /// <param name="asset">IAsset to open details for</param>
-        private async Task NavigateToDetails(Computer asset)
-        {
-            if (ComputerService.GetAssetById(asset.Id) == null)
-            {
-                await MatDialogService.AlertAsync("Asset does not exist.");
-                return;
-            }
-
-            string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.Id}";
-            await JSRuntime.InvokeAsync<object>("open", new object[] {url, "_blank"});
-        }
-
-        // TODO: Add updating of asset id when we find it in a file by serialnumber
-        private async void AddNewAsset()
-        {
-            string result = await MatDialogService.PromptAsync("Tilføj et nyt asset vha. serienummer:");
-
-            if (string.IsNullOrWhiteSpace(result))
-            {
-                return;
-            }
-
-            Computer asset = new Computer(result) {PcName = "-"};
-            ComputerService.AddAsset(asset);
-
-            bool assetIsInDatabase = ComputerService.GetAssetBySerialNumber(asset.SerialNumber) != null;
-
-            if (assetIsInDatabase)
-            {
-                await MatDialogService.AlertAsync("Asset tilføjet.");
-            }
-            else
-            {
-                await MatDialogService.AlertAsync("Asset blev ikke tilføjet.");
-            }
         }
     }
 }

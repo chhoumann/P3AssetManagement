@@ -1,0 +1,6 @@
+﻿@using AssetManagement.DataAccessLibrary.DataModels
+@using AssetManagement.DataAccessLibrary
+@inject IMatDialogService MatDialogService
+@inject IAssetService<Computer> ComputerService
+
+<MatButton Class="mb-2" Style="background-color: dodgerblue" Raised="true" Icon="archive" @onclick="AddNewAsset">Tilføj Asset</MatButton>

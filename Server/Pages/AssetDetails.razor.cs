@@ -60,6 +60,8 @@ namespace AssetManagement.Server.Pages
             {
                 asset.Transfer.ToUser(ComputerService.Depot);
             }
+
+            pageAssetRecords = navigator.OnItemsUpdated(AssetRecords);
         }
 
         private async Task MoveAssetToCagePrompt()
@@ -71,6 +73,8 @@ namespace AssetManagement.Server.Pages
             {
                 asset.Transfer.ToUser(ComputerService.Cage);
             }
+
+            pageAssetRecords = navigator.OnItemsUpdated(AssetRecords);
         }
 
         private bool UserClickedConfirm(string result) => result == dialogOptions[0];
