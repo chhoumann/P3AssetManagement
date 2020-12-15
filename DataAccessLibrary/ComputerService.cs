@@ -15,7 +15,6 @@ namespace AssetManagement.DataAccessLibrary
         {
             AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
             AssetStateHandler.AssetStateChanged += OnAssetUpdated;
-            //InsertMockDataToDb();
         }
 
         /// <summary>
@@ -42,23 +41,6 @@ namespace AssetManagement.DataAccessLibrary
         /// <returns>The initial record present in a computer</returns>
         protected override ComputerRecord InitialRecord(Computer computer) =>
             new ComputerRecord(computer, Depot, DateTime.Now, AssetState.Online);
-
-        private void InsertMockDataToDb()
-        {
-            if (!Db.Computers.Any())
-            {
-                List<Computer> newComputers = new List<Computer>();
-                for (int i = 0; i < 11; i++)
-                {
-                    Computer computer = new Computer($"SomeName{i}", "OpSystem", "Manumanu", new List<string>() { "Models" }, "SerialNumber");
-                    computer.ComputerRecords.Add(InitialRecord(computer));
-                    newComputers.Add(computer);
-                }
-
-                Db.AddRange(newComputers);
-                Db.SaveChanges();
-            }
-        }
 
         /// <summary>
         /// Gets all computers from the database.
