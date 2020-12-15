@@ -51,7 +51,7 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         public string Id { get; private set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(50)]
         public string PcName { get; set; }
 
         [MaxLength(50)]
@@ -63,6 +63,9 @@ namespace AssetManagement.DataAccessLibrary.DataModels
         [Required]
         [MaxLength(50)]
         public string SerialNumber { get; private set; }
+
+        [MaxLength(30)]
+        public string PcAdStatus { get; set; }
 
         public List<ComputerModel> Models { get; private set; } = new List<ComputerModel>();
         public List<ComputerRecord> ComputerRecords { get; private set; } = new List<ComputerRecord>();
