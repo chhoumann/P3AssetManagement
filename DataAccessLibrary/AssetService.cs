@@ -27,12 +27,10 @@ namespace AssetManagement.DataAccessLibrary
     {
         protected AssetService()
         {
+            InsertDepotAndCageToDb();
+            
             Cage = Db?.AssetHolders.Single(holder => holder.Username == CageUsername);
             Depot = Db?.AssetHolders.Single(holder => holder.Username == DepotUsername);
-            
-            // TODO: Should subscribe in inheriting class
-            AssetStateHandler.AssetStateChanged += OnAssetUpdated;
-            InsertDepotAndCageToDb();
         }
 
         private string DepotUsername { get; } = "depot";
@@ -89,13 +87,15 @@ namespace AssetManagement.DataAccessLibrary
         /// </summary>
         /// <returns>An array of all assets from the database.</returns>
         public abstract TAsset[] GetAssets();
-
+        
         /// <summary>
         /// Gets an asset from the database by the asset's ID.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>The asset with the given ID.</returns>
         public abstract TAsset GetAssetById(string id);
+
+        public abstract TAsset GetAssetBySerialNumber(string serialNumber);
 
         /// <summary>
         /// Adds a new asset to the database.

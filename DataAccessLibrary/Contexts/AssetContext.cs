@@ -21,7 +21,7 @@ namespace AssetManagement.DataAccessLibrary.Contexts
 
                 string connectionString = configuration.GetConnectionString(connectionStringKey);
                 optionsBuilder.EnableSensitiveDataLogging();
-                optionsBuilder.UseSqlServer(connectionString);
+                optionsBuilder.UseSqlServer(connectionString, builder => builder.EnableRetryOnFailure());
             }
         }
     }

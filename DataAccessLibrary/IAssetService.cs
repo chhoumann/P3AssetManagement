@@ -13,6 +13,7 @@ namespace AssetManagement.DataAccessLibrary
         AssetHolder Depot { get; }
         TAsset[] GetAssets();
         TAsset GetAssetById(string id);
+        TAsset GetAssetBySerialNumber(string serialNumber);
         void AddAsset(TAsset asset);
         void AddAssets(IEnumerable<TAsset> assets);
         void DeleteAsset(TAsset asset);

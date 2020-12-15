@@ -2,7 +2,8 @@
 @page "/AssetDetails/{AssetDbId:guid}"
 @using AssetManagement.DataAccessLibrary.DataModels.Interfaces
 @using AssetManagement.DataAccessLibrary
-@inject ComputerService ComputerService
+@using AssetManagement.DataAccessLibrary.DataModels
+@inject IAssetService<Computer> ComputerService
 @inject IJSRuntime JSRuntime
 <!-- This is required though. Don't listen to what it says -->
 @inject IMatDialogService MatDialogService
@@ -33,6 +34,15 @@ else
                                 <text placeholder="STATUS" disabled>@asset.CurrentState</text>
                             </td>
                         </tr>
+                        @if (asset.PcAdStatus != null)
+                        {
+                            <tr>
+                                <td scope="row">PC-AD Status</td>
+                                <td>
+                                    <text placeholder="PC-AD Status" disabled>@(asset.PcAdStatus)</text>
+                                </td>
+                            </tr>
+                        }
                         <tr>
                             <td scope="row">Serienummer</td>
                             <td>

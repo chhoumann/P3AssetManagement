@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using AssetManagement.DataAccessLibrary;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 using AssetManagement.Server.Shared;
@@ -61,6 +60,8 @@ namespace AssetManagement.Server.Pages
             {
                 asset.Transfer.ToUser(ComputerService.Depot);
             }
+
+            pageAssetRecords = navigator.OnItemsUpdated(AssetRecords);
         }
 
         private async Task MoveAssetToCagePrompt()
@@ -72,6 +73,8 @@ namespace AssetManagement.Server.Pages
             {
                 asset.Transfer.ToUser(ComputerService.Cage);
             }
+
+            pageAssetRecords = navigator.OnItemsUpdated(AssetRecords);
         }
 
         private bool UserClickedConfirm(string result) => result == dialogOptions[0];

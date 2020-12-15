@@ -14,6 +14,7 @@ namespace AssetManagement.DataAccessLibrary
         public ComputerService()
         {
             AssetOwnershipHandler<Computer, ComputerService>.AssetOwnershipChanged += OnAssetUpdated;
+            AssetStateHandler.AssetStateChanged += OnAssetUpdated;
             InsertMockDataToDb(); // TODO: Remove this as soon as we get real data
         }
 
@@ -85,7 +86,7 @@ namespace AssetManagement.DataAccessLibrary
                 .SingleOrDefault(computer => computer.Id == id);
         }
 
-        public Computer GetAssetBySerialNumber(string serialNumber)
+        public override Computer GetAssetBySerialNumber(string serialNumber)
         {
             return Db.Computers
                 .Include(computer => computer.ComputerRecords)

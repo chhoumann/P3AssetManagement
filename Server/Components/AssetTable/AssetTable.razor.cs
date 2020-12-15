@@ -21,9 +21,9 @@ namespace AssetManagement.Server.Components.AssetTable
 
         private IPageNavigator<Computer> navigator;
         private Computer[] pageAssets;
+        
         private bool showIdColumn = true;
         private bool showLastChangedColumn = true;
-
         private bool showModel1Column = true;
         private bool showModel2Column = true;
         private bool showOwnerColumn = true;
@@ -34,56 +34,22 @@ namespace AssetManagement.Server.Components.AssetTable
 
         private string searchTerm;
 
-        private async void OnSearchInput(ChangeEventArgs e)
-        {
-            searchTerm = e.Value.ToString().ToLower();
-            
-            IEnumerable<Computer> foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm));
-
-            if (!foundAssets.Any())
-            {
-                await MatDialogService.AlertAsync("Fandt ingen assets");
-                pageAssets = navigator.OnItemsUpdated(assets);
-                await InvokeAsync(StateHasChanged);
-                searchTerm = "";
-                return;
-            }
-
-            pageAssets = navigator.OnItemsUpdated(foundAssets.ToArray());
-            await InvokeAsync(StateHasChanged);
-        }
-
-        private bool AssetSearchAllPredicate(Computer computer, string searchTerm)
-        {
-            if (computer.Id.ToLower().Contains(searchTerm)) return true;
-            if (computer.AssetId.ToLower().Contains(searchTerm)) return true;
-            if (computer.Models != null && computer.Models.Any(model => model.Name.ToLower().Contains(searchTerm))) return true;
-            if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(searchTerm)) return true;
-            if (computer.LastAssetRecord != null && computer.CurrentHolder != null)
-            {
-                if (computer.CurrentHolder.Username.ToLower().Contains(searchTerm)) return true;
-                if (computer.CurrentHolder.Name.ToLower().Contains(searchTerm)) return true;
-                if (computer.CurrentState.ToString().ToLower().Contains(searchTerm)) return true;
-            }
-
-            return false;
-        }
-
-        private void FilterMenuShow(MouseEventArgs e)
-        {
-            Menu.OpenAsync();
-        }
-
         protected override async Task OnInitializedAsync()
         {
             assets = FetchAllAssets();
             navigator = new PageNavigator<Computer>(assets, out pageAssets, AssetsPerPage);
-            
+
             navigator.PageChanged += GetPageAssets;
             ComputerService.AssetUpdated += OnAssetUpdated;
         }
 
         private Computer[] FetchAllAssets() => ComputerService.GetAssets();
+
+        /// <summary>
+        ///     Callback function fired when the page is changed. Updates the pageAssets array.
+        /// </summary>
+        /// <param name="assetsOnPage">Sliced array of assets representing a page.</param>
+        private void GetPageAssets(Computer[] assetsOnPage) => pageAssets = assetsOnPage;
 
         /// <summary>
         ///     Callback for AssetUpdate event that occurs in AssetService.
@@ -97,45 +63,51 @@ namespace AssetManagement.Server.Components.AssetTable
             await InvokeAsync(StateHasChanged);
         }
 
-        /// <summary>
-        ///     Callback function fired when the page is changed. Updates the pageAssets array.
-        /// </summary>
-        /// <param name="pageAssets">Sliced array of assets representing a page.</param>
-        private void GetPageAssets(Computer[] pageAssets) => this.pageAssets = pageAssets;
-
-        /// <summary>
-        ///     Opens the details page for an asset in a new page.
-        /// </summary>
-        /// <param name="asset">IAsset to open details for</param>
-        private async Task NavigateToDetails(Computer asset)
+        private async void OnSearchInput(ChangeEventArgs e)
         {
-            string url = $"{NavigationManager.BaseUri}AssetDetails/{asset.Id}";
-            await JSRuntime.InvokeAsync<object>("open", new object[] { url, "_blank" });
+            searchTerm = e.Value.ToString().ToLower();
+
+            await SearchHandler();
         }
 
-        // TODO: Add updating of asset id when we find it in a file by serialnumber
-        private async void AddNewAsset()
+        private async Task SearchHandler()
         {
-            string result = await MatDialogService.PromptAsync("Tilføj et nyt asset vha. serienummer:");
+            Computer[] foundAssets = assets.Where(computer => AssetSearchAllPredicate(computer, searchTerm)).ToArray();
 
-            if (string.IsNullOrWhiteSpace(result))
+            if (!foundAssets.Any())
             {
+                searchTerm = "";
+                await MatDialogService.AlertAsync("Fandt ingen assets");
+                pageAssets = navigator.OnItemsUpdated(assets);
+                
+                await InvokeAsync(StateHasChanged);
                 return;
             }
 
-            Computer asset = new Computer(result) { PcName = "-" };
-            ComputerService.AddAsset(asset);
+            pageAssets = navigator.OnItemsUpdated(foundAssets);
+        }
 
-            bool assetIsInDatabase = ComputerService.GetAssetBySerialNumber(asset.SerialNumber) != null;
+        private bool AssetSearchAllPredicate(Computer computer, string query)
+        {
+            if (computer.Id.ToLower().Contains(query)) return true;
+            if (computer.PcAdStatus != null && computer.PcAdStatus.ToLower().Contains(query)) return true;
+            if (computer.AssetId.ToLower().Contains(query)) return true;
+            if (computer.Models != null &&
+                computer.Models.Any(model => model.Name.ToLower().Contains(query))) return true;
+            if (computer.SerialNumber != null && computer.SerialNumber.ToLower().Contains(query)) return true;
+            if (computer.LastAssetRecord != null && computer.CurrentHolder != null)
+            {
+                if (computer.CurrentHolder.Username.ToLower().Contains(query)) return true;
+                if (computer.CurrentHolder.Name.ToLower().Contains(query)) return true;
+                if (computer.CurrentState.ToString().ToLower().Contains(query)) return true;
+            }
 
-            if (assetIsInDatabase)
-            {
-                await MatDialogService.AlertAsync("Asset tilføjet.");
-            }
-            else
-            {
-                await MatDialogService.AlertAsync("Asset blev ikke tilføjet.");
-            }
+            return false;
+        }
+
+        private void FilterMenuShow(MouseEventArgs e)
+        {
+            Menu.OpenAsync();
         }
     }
 }

@@ -1,7 +1,7 @@
 @using AssetManagement.DataAccessLibrary.DataModels
 @using AssetManagement.DataAccessLibrary
 @inject NavigationManager NavigationManager
-@inject ComputerService ComputerService
+@inject IAssetService<Computer> ComputerService
 @inject IJSRuntime JSRuntime
 @inject IMatDialogService MatDialogService
 @namespace AssetManagement.Server.Components.AssetTable
@@ -12,7 +12,7 @@
 }
 else
 {
-    <MatButton Class="mb-2" Style="background-color: dodgerblue" Raised="true" Icon="archive" @onclick="AddNewAsset">Tilføj Asset</MatButton>
+    <AddAssetButton />
 
     <MatButton Label="Vis Kolonner..." OnClick="FilterMenuShow" RefBack="@buttonForwardRef"></MatButton>
     <MatMenu @ref="Menu" TargetForwardRef="@buttonForwardRef" Class="w-auto p-2 pr-3 mt-5" Style="align-items: center">
@@ -48,22 +48,17 @@ else
         <tbody>
             @foreach (Computer computer in pageAssets)
             {
-                <tr>
-                    <td class="@(showModel1Column ? "" : "d-none")">@(computer.Models.FirstOrDefault())</td>
-                    <td class="@(showModel2Column ? "" : "d-none")">@(computer.Models.LastOrDefault())</td>
-                    <td class="@(showSerialNumberColumn ? "" : "d-none")">@(computer.SerialNumber)</td>
-                    <td class="@(showIdColumn ? "" : "d-none")">@(computer.PcName)</td>
-                    <td class="@(showOwnerColumn ? "" : "d-none")">@(computer.CurrentHolder)</td>
-                    <td class="@(showUsernameColumn ? "" : "d-none")">@(computer.CurrentHolder.Username)</td>
-                    <td class="@(showLastChangedColumn ? "" : "d-none")">@computer.LastChanged</td>
-                    <td class="@(showPcAdStatusColumn ? "" : "d-none")">Awaiting Imp.</td>
-                    <td class="@(showStateColumn ? "" : "d-none")">@(computer.CurrentState)</td>
-                    <td>
-                        <MatButton @onclick="() => NavigateToDetails(computer)" Match="NavLinkMatch.All">
-                            🕵️‍♂️ Detaljer
-                        </MatButton>
-                    </td>
-                </tr>
+                <AssetRow Asset="@computer"
+                          ShowModel1Column="@showModel1Column"
+                          ShowModel2Column="@showModel2Column"
+                          ShowSerialNumberColumn="@showSerialNumberColumn"
+                          ShowIdColumn="@showIdColumn"
+                          ShowOwnerColumn="@showOwnerColumn"
+                          ShowUsernameColumn="@showUsernameColumn"
+                          ShowLastChangedColumn="@showLastChangedColumn"
+                          ShowPcAdStatusColumn="@showPcAdStatusColumn"
+                          ShowStateColumn="@showStateColumn"
+                />
             }
         </tbody>
     </table>

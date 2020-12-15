@@ -17,12 +17,10 @@ namespace AssetManagement.Models
             return this;
         }
 
-        private async void OnNewData(IEnumerable<TAsset> assetsInList)
+        private void OnNewData(IEnumerable<TAsset> assetsInList)
         {
             TAssetService assetService = new TAssetService();
             List<TAsset> currentAssets = assetService.GetAssets().ToList();
-
-            Console.WriteLine(currentAssets.Count);
             
             AssetComparer<TAsset> assetComparer = new AssetComparer<TAsset>(currentAssets);
 
