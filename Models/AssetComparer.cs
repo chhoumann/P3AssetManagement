@@ -16,7 +16,6 @@ namespace AssetManagement.Models
 
         public void OnNewData(IEnumerable<T> assetsFromList)
         {
-            Console.WriteLine("Doing comparison");
             IEnumerable<T> intersectingAssets = new List<T>();
             
             if (currentAssets.Count > 0)
@@ -30,11 +29,9 @@ namespace AssetManagement.Models
             
             if (addedAssets.Count > 0)
             {
-                Console.WriteLine("New assets found. Adding...");
                 NewAssetsFound?.Invoke(addedAssets);
             }
 
-            Console.WriteLine("Comparison finished.");
         }
 
         /// <summary>
