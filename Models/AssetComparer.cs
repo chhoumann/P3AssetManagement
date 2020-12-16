@@ -60,10 +60,10 @@ namespace AssetManagement.Models
         {
             foreach (T currentAsset in currentAssets)
             {
-                T foundIntersectingAsset =
+                T intersectingAsset =
                     intersectingAssets.SingleOrDefault(asset => asset.AssetId == currentAsset.AssetId);
                 
-                if (foundIntersectingAsset == null)
+                if (intersectingAsset == null)
                 {
                     if (currentAsset is Computer computer)
                     {
@@ -77,7 +77,7 @@ namespace AssetManagement.Models
                 {
                     if (currentAsset.LastAssetRecord == null || currentAsset.CurrentState != AssetState.Online)
                     {
-                        if (currentAsset is Computer computer && foundIntersectingAsset is Computer intersectingComputer)
+                        if (currentAsset is Computer computer && intersectingAsset is Computer intersectingComputer)
                         {
                             computer.PcAdStatus = intersectingComputer.PcAdStatus;
                         }
