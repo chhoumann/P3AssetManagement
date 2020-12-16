@@ -46,6 +46,11 @@ namespace AssetManagement.Server.Components.AssetTable
         private string searchTerm;
         private int assetsPerPage = 10;
 
+        private int[] assetsPerPageOptions =
+        {
+            10, 20, 50, 100, 500, 1000
+        };
+
         protected override async Task OnInitializedAsync()
         {
             assets = FetchAllAssets();
