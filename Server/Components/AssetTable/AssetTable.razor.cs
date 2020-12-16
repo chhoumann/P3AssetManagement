@@ -1,3 +1,4 @@
+using System;
 using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.Server.Shared;
 using MatBlazor;
@@ -11,7 +12,18 @@ namespace AssetManagement.Server.Components.AssetTable
     // TODO: Use interchangeable AssetService instead of ComputerService
     public partial class AssetTable
     {
-        private const int AssetsPerPage = 9;
+        private int AssetsPerPage
+        {
+            get => assetsPerPage;
+            set
+            {
+                navigator.SetItemsPerPage(value);
+                pageAssets = navigator.OnItemsUpdated(assets);
+                
+                assetsPerPage = value;
+            }
+        }
+
         private Computer[] assets;
 
         private ForwardRef buttonForwardRef = new ForwardRef();
@@ -32,6 +44,7 @@ namespace AssetManagement.Server.Components.AssetTable
         private bool showDataColumn = true;
         
         private string searchTerm;
+        private int assetsPerPage = 10;
 
         protected override async Task OnInitializedAsync()
         {

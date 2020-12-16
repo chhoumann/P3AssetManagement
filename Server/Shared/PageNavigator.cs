@@ -5,7 +5,7 @@ namespace AssetManagement.Server.Shared
 {
     public sealed class PageNavigator<T> : IPageNavigator<T>
     {
-        private readonly int itemsPerPage;
+        private int itemsPerPage;
 
         private T[] items;
 
@@ -17,9 +17,14 @@ namespace AssetManagement.Server.Shared
         /// <param name="itemsPerPage">The number of items to display on a single page.</param>
         public PageNavigator(T[] items, out T[] pageItems, int itemsPerPage)
         {
-            this.itemsPerPage = itemsPerPage;
+            SetItemsPerPage(itemsPerPage);
             this.items = items;
             pageItems = GetPageItems();
+        }
+
+        public void SetItemsPerPage(int itemsPerPage)
+        {
+            this.itemsPerPage = itemsPerPage;
         }
 
         /// <summary>
