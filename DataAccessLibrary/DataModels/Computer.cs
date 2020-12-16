@@ -31,7 +31,6 @@ namespace AssetManagement.DataAccessLibrary.DataModels
             ComputerRecords.Add(new ComputerRecord(this, holder, timestamp, state));
         }
 
-        // TODO: Copy reference instead of making a new list
         public IReadOnlyList<IAssetRecord> AssetRecords => ComputerRecords.Cast<IAssetRecord>().ToList();
         public IAssetRecord LastAssetRecord => ComputerRecords.OrderByDescending(x => x.Timestamp).First();
         public AssetHolder CurrentHolder => LastAssetRecord.Holder;

@@ -35,12 +35,6 @@ namespace AssetManagement.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // TODO: Make this work instead of the current implementation of the context files
-            //services.AddDbContext<ComputerContext>(options =>
-            //{
-            //    options.UseSqlServer(Configuration.GetConnectionString("P3EFCoreDB"));
-            //});
-
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IAssetService<Computer>, ComputerService>();
