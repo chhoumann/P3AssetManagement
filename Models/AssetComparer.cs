@@ -31,7 +31,6 @@ namespace AssetManagement.Models
             {
                 NewAssetsFound?.Invoke(addedAssets);
             }
-
         }
 
         /// <summary>
