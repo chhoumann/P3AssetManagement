@@ -29,7 +29,8 @@ namespace AssetManagement.Server.Components.AssetTable
         private bool showSerialNumberColumn = true;
         private bool showStateColumn = true;
         private bool showUsernameColumn = true;
-
+        private bool showDataColumn = true;
+        
         private string searchTerm;
 
         protected override async Task OnInitializedAsync()
