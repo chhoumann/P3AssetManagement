@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AssetManagement.Core;
+using AssetManagement.DataAccessLibrary.DataModels;
 using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.Models
@@ -15,6 +16,7 @@ namespace AssetManagement.Models
 
         public void OnNewData(IEnumerable<T> assetsFromList)
         {
+            Console.WriteLine("Doing comparison");
             IEnumerable<T> intersectingAssets = new List<T>();
             
             if (currentAssets.Count > 0)
@@ -28,8 +30,11 @@ namespace AssetManagement.Models
             
             if (addedAssets.Count > 0)
             {
+                Console.WriteLine("New assets found. Adding...");
                 NewAssetsFound?.Invoke(addedAssets);
             }
+
+            Console.WriteLine("Comparison finished.");
         }
 
         /// <summary>
@@ -59,14 +64,31 @@ namespace AssetManagement.Models
         {
             foreach (T currentAsset in currentAssets)
             {
-                if (!intersectingAssets.Any(asset => asset.AssetId == currentAsset.AssetId))
+                T foundIntersectingAsset =
+                    intersectingAssets.SingleOrDefault(asset => asset.AssetId == currentAsset.AssetId);
+                
+                if (foundIntersectingAsset == null)
                 {
+                    if (currentAsset is Computer computer)
+                    {
+                        computer.PcAdStatus = "Deaktiveret";
+                    }
+                    
                     currentAsset.ChangeState.ToMissing();
+
                 }
-                else if (currentAsset.LastAssetRecord == null ||
-                         currentAsset.LastAssetRecord.State != AssetState.Online)
+                else
                 {
-                    currentAsset.ChangeState.ToOnline();
+                    if (currentAsset.LastAssetRecord == null || currentAsset.CurrentState != AssetState.Online)
+                    {
+                        if (currentAsset is Computer computer && foundIntersectingAsset is Computer intersectingComputer)
+                        {
+                            computer.PcAdStatus = intersectingComputer.PcAdStatus;
+                        }
+                        
+                        currentAsset.ChangeState.ToOnline();
+
+                    }
                 }
             }
         }
