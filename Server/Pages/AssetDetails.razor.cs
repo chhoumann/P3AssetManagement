@@ -47,8 +47,13 @@ namespace AssetManagement.Server.Pages
             if (await RunPrompt(initialMessage) && await RunPrompt(secondMessage))
             {
                 ComputerService.DeleteAsset(asset);
-                await JSRuntime.InvokeAsync<object>("close", new object[] { });
+                ClosePage();
             }
+        }
+
+        private void ClosePage()
+        {
+            JSRuntime.InvokeAsync<object>("close", new object[] { });
         }
 
         /// <summary>

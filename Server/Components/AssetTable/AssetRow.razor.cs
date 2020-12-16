@@ -16,6 +16,7 @@ namespace AssetManagement.Server.Components.AssetTable
         [Parameter] public bool ShowLastChangedColumn { get; set; }
         [Parameter] public bool ShowPcAdStatusColumn{ get; set; }
         [Parameter] public bool ShowStateColumn { get; set; }
+        [Parameter] public bool ShowDataColumn { get; set; }
             
         /// <summary>
         ///     Opens the details page for an asset in a new page.
