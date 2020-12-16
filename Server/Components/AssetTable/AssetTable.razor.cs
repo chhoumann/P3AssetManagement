@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Components.AssetTable
 {
-    // TODO: Use interchangeable AssetService instead of ComputerService
     public partial class AssetTable
     {
         private const int AssetsPerPage = 9;

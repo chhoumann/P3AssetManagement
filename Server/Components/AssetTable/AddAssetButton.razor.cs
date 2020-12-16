@@ -6,7 +6,6 @@ namespace AssetManagement.Server.Components.AssetTable
 {
     public partial class AddAssetButton
     {
-        // TODO: Add updating of asset id when we find it in a file by serialnumber
         private async void AddNewAsset()
         {
             string result = await MatDialogService.PromptAsync("Tilføj et nyt asset vha. serienummer:");
