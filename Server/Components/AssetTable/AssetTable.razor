@@ -14,10 +14,8 @@ else
 {
     <AddAssetButton />
     
-    <MatSelectValue @bind-Value="AssetsPerPage" ValueSelector="@(e => e)" Items="assetsPerPageOptions" />
-
     <MatButton Label="Vis Kolonner..." OnClick="FilterMenuShow" RefBack="@buttonForwardRef"></MatButton>
-    <MatMenu @ref="Menu" TargetForwardRef="@buttonForwardRef" Class="w-auto p-2 pr-3 mt-5" Style="align-items: center">
+    <MatMenu @ref="Menu" TargetForwardRef="@buttonForwardRef" Class="w-auto p-2 pr-3 mt-5" Style="align-items: center;">
         <MatCheckbox Class="menuItem" @bind-Value="@showModel1Column">Models</MatCheckbox>
         <MatCheckbox Class="menuItem" @bind-Value="@showModel2Column">Models2</MatCheckbox>
         <MatCheckbox Class="menuItem" @bind-Value="@showSerialNumberColumn">Serienummer</MatCheckbox>
@@ -31,48 +29,50 @@ else
     </MatMenu>
     
     <div style="float: right;">
+        <span>Assets pr. side:</span>
+        <MatSelectValue Class="mx-1" @bind-Value="AssetsPerPage" ValueSelector="@(e => e)" Items="assetsPerPageOptions"></MatSelectValue>
         <MatTextField @bind-Value="@searchTerm" TValue="string" Icon="search" Label="Søgning" OnInput="OnSearchInput"></MatTextField>
     </div>
 
     <table class="table text-center">
         <thead>
-            <tr>
-                <th class="@(showModel1Column ? "" : "d-none")">Model1</th>
-                <th class="@(showModel2Column ? "" : "d-none")">Model2</th>
-                <th class="@(showSerialNumberColumn ? "" : "d-none")">Serienummer</th>
-                <th class="@(showIdColumn ? "" : "d-none")">ID</th>
-                <th class="@(showOwnerColumn ? "" : "d-none")">Ejer</th>
-                <th class="@(showUsernameColumn ? "" : "d-none")">Brugernavn</th>
-                <th class="@(showLastChangedColumn ? "" : "d-none")">Sidst Ændret</th>
-                <th class="@(showPcAdStatusColumn ? "" : "d-none")">PC-AD Status</th>
-                <th class="@(showStateColumn ? "" : "d-none")">State</th>
-                <th class="@(showDataColumn ? "" : "d-none")">Data</th>
-            </tr>
+        <tr>
+            <th class="@(showModel1Column ? "" : "d-none")">Model1</th>
+            <th class="@(showModel2Column ? "" : "d-none")">Model2</th>
+            <th class="@(showSerialNumberColumn ? "" : "d-none")">Serienummer</th>
+            <th class="@(showIdColumn ? "" : "d-none")">ID</th>
+            <th class="@(showOwnerColumn ? "" : "d-none")">Ejer</th>
+            <th class="@(showUsernameColumn ? "" : "d-none")">Brugernavn</th>
+            <th class="@(showLastChangedColumn ? "" : "d-none")">Sidst Ændret</th>
+            <th class="@(showPcAdStatusColumn ? "" : "d-none")">PC-AD Status</th>
+            <th class="@(showStateColumn ? "" : "d-none")">State</th>
+            <th class="@(showDataColumn ? "" : "d-none")">Data</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (Computer computer in pageAssets)
-            {
-                <AssetRow Asset="@computer"
-                          ShowModel1Column="@showModel1Column"
-                          ShowModel2Column="@showModel2Column"
-                          ShowSerialNumberColumn="@showSerialNumberColumn"
-                          ShowIdColumn="@showIdColumn"
-                          ShowOwnerColumn="@showOwnerColumn"
-                          ShowUsernameColumn="@showUsernameColumn"
-                          ShowLastChangedColumn="@showLastChangedColumn"
-                          ShowPcAdStatusColumn="@showPcAdStatusColumn"
-                          ShowStateColumn="@showStateColumn"
-                          ShowDataColumn="@showDataColumn"
-                />
-            }
+        @foreach (Computer computer in pageAssets)
+        {
+            <AssetRow Asset="@computer"
+                      ShowModel1Column="@showModel1Column"
+                      ShowModel2Column="@showModel2Column"
+                      ShowSerialNumberColumn="@showSerialNumberColumn"
+                      ShowIdColumn="@showIdColumn"
+                      ShowOwnerColumn="@showOwnerColumn"
+                      ShowUsernameColumn="@showUsernameColumn"
+                      ShowLastChangedColumn="@showLastChangedColumn"
+                      ShowPcAdStatusColumn="@showPcAdStatusColumn"
+                      ShowStateColumn="@showStateColumn"
+                      ShowDataColumn="@showDataColumn"
+            />
+        }
         </tbody>
     </table>
 
-    <div class="container fixed-bottom pb-4 align-bottom">
+    <div class="container pb-4 align-bottom">
         <div class="row justify-content-center">
-            <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == 0) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Previous</MatButton>
+            <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == 0) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Left)">Forrige</MatButton>
             <p class="col-4 w-50 text-center text-lg-center">@(navigator.PageIndex + 1) / @navigator.NumPages</p>
-            <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Right)">Next</MatButton>
+            <MatButton Class="col-3 w-25" Unelevated="true" disabled=@(navigator.PageIndex == navigator.NumPages - 1) type="button" @onclick="() => navigator.ChangePage(HorizontalDirection.Right)">Næste</MatButton>
         </div>
     </div>
 }
