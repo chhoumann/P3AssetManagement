@@ -4,6 +4,7 @@ using AssetManagement.Core.Exceptions;
 using AssetManagement.DataAccessLibrary.DataModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -46,11 +47,8 @@ namespace AssetManagement.Models.DataLoadStrategy
         {
             string[] fields = csvLine.Split(Separator);
             
-            if (!DateTime.TryParse(fields[0], out DateTime date))
-            {
-                throw new InvalidCastException($"Could not convert {fields[0]} to DateTime!");
-            }
-            
+            DateTime date = DateTime.ParseExact(fields[0], "dd/MM/yy HH:mm", CultureInfo.InvariantCulture);
+
             Computer computer = new Computer(fields[4], fields[5], fields[6],
                 new List<string>() { fields[7], fields[8] }, fields[9]) { PcAdStatus = fields[10]};
             AssetHolder assetHolder = new AssetHolder(fields[2], fields[1], fields[3]);
