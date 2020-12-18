@@ -24,4 +24,22 @@
     <ProjectReference Include="..\Server\AssetManagement.Server.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="test-files\asset-controller-test\fromC\2020-10-27-PCID.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="test-files\file-watcher-test\fromA\2020-10-27-PCID.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="test-files\asset-controller-test\toD\.gitignore">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="test-files\file-watcher-test\toB\.gitignore">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="test-files\asset-controller-test\2020-10-27-PCID.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

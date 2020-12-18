@@ -1,0 +1,73 @@
+Timestamp;Username;Navn;Afdeling;PCNavn;OS;Producent;Model1;Model2;S/N;PC-AD-Status
+09/10/20 08:47;N1M001;Nikhil Copeland;"L�n, HR og Arbejdsmilj�";PC5001139;Windows 10;Dell Inc.;OptiPlex 7010;01;6CRPJ5J;Aktiv
+23/10/20 07:55;N1M002;Carlo Carey;Milj�- og Energiforvaltningen;PC5001268;Windows 10;American Megatrends Inc.;Surface Pro 3;1;014397451253;Aktiv
+27/10/20 08:19;N1M003;Jazlene Higgins;MP Vandl�b;PC5001299;Windows 10;Dell Inc.;Latitude E7250;;1DR7F72;Aktiv
+22/09/20 10:49;N1M004;Agripina�Groleau;MP VandMilj�;PC5001303;Windows 10;Dell Inc.;Latitude E7450;;5XG5F72;Aktiv
+27/10/20 07:00;N1M005;Kira Kim;"AFS DiGIT, DAD-Opm�ling";PC5001316;Windows 10;Dell Inc.;Latitude E7450;;H2FXN72;Aktiv
+27/10/20 03:30;N1M006;Orlando Larson;"AFS DiGIT, DAD-Konsulenter";PC5001326;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0E2NWT;Aktiv
+27/10/20 08:21;N1M007;Walter Harrison;MP VirksomhedsMilj�;PC5001329;Windows 10;Dell Inc.;Latitude E7270;;BXYQGC2;Aktiv
+27/10/20 06:00;N1M008;Jayce Giles;"ADB �konomi, Kantine SB5";PC5001335;Windows 10;Dell Inc.;Latitude E7270;;9RD0PC2;Aktiv
+27/10/20 01:01;N1M009;Lailah Flores;"AFS �konomi, Finans";PC5001341;Windows 10;Dell Inc.;Latitude E7470;;96Q9TC2;Aktiv
+27/10/20 05:51;N1M010;Kobe Parsons;"AFS DiGIT, DAD";PC5001350;Windows 10;LENOVO;30AVS06X00;ThinkStation P310;S4AV9282;Aktiv
+27/10/20 07:35;N1M011;Asher Hayes;"AFS DiGIT, DAD-Konsulenter";PC5001355;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0JC7GN;Aktiv
+27/10/20 08:11;N1M012;Chad Taylor;"AFS Direktion, Sekretariat og Strategi";PC5001360;Windows 10;Dell Inc.;Latitude E7470;;9WG8WF2;Aktiv
+28/09/20 08:17;N1M013;Nikolas Moyer;MEF Eksterne brugere;PC5001361;Windows 10;LENOVO;80U1;MIIX 510-12ISK;YD023VGR;Aktiv
+27/10/20 08:31;N1M014;Carie�Howell;"AFS Direktion, Jura";PC5001364;Windows 10;Dell Inc.;Latitude E5270;;DNLMWF2;Aktiv
+15/10/20 09:00;N1M015;Kamren Pineda;AFV Innovation og Videndeling;PC5001373;Windows 10;Dell Inc.;Latitude E7270;;9LCJ1G2;Aktiv
+27/10/20 08:07;N1M016;Jazmin Novak;"AFS DiGIT, IT-Service";PC5001381;Windows 10;LENOVO;20HGS3JB00;ThinkPad T470s;PC0N4PYD;Aktiv
+27/10/20 06:47;N1M017;Ashanti Graves;"AFS DiGIT, Projekter";PC5001382;Windows 10;LENOVO;20HGS3JB00;ThinkPad T470s;PC0N4PYC;Aktiv
+23/10/20 08:56;N1M018;Hadassah Tucker;"DIGIT, AFS";PC5001384;Windows 10;Dell Inc.;Latitude 7480;;2YJC9H2;Aktiv
+27/10/20 07:54;N1M019;Jerome Brooks;"AFS DiGIT, IT-Service";PC5001386;Windows 10;LENOVO;20HMS37W00;ThinkPad X270;PC0NLW3N;Aktiv
+27/10/20 07:45;N1M020;Victor Hanson;AFS Kunder og Indk�b;PC5001389;Windows 10;Dell Inc.;Latitude 7480;;G063BH2;Aktiv
+27/10/20 08:19;N1M021;Sarai Ferguson;"AFS �konomi, Business Controlling";PC5001390;Windows 10;Dell Inc.;Latitude 7480;;7XQ0FH2;Aktiv
+27/10/20 01:07;N1M022;Dustin Bonilla;"AFS DiGIT, DAD-Konsulenter";PC5001392;Windows 10;LENOVO;20HMS1QE00;ThinkPad X270;PC0NLZAR;Aktiv
+26/10/20 18:05;N1M023;Seth Ortega;"AFS Direktion, Jura";PC5001398;Windows 10;Dell Inc.;Latitude 7480;;71R4MH2;Aktiv
+27/10/20 08:13;N1M024;Monica Padilla;"AFS Direktion, Sekretariat og Strategi";PC5001401;Windows 10;Dell Inc.;Latitude 7480;;2M15PH2;Aktiv
+27/10/20 06:59;N1M025;Elisha Soto;"AFS �konomi, Finans";PC5001402;Windows 10;Dell Inc.;Latitude 7480;;78P0NH2;Aktiv
+27/10/20 07:00;N1M026;Kellen Schwartz;"AFS Direk., HR,Personale og Arbejdsmilj�";PC5001403;Windows 10;Dell Inc.;Latitude 7480;;4N15PH2;Aktiv
+27/10/20 07:44;N1M027;Cedric Savage;"AFS Kundeservice, Afregning og Inddrivelse";PC5001406;Windows 10;Dell Inc.;Latitude 7480;;3TVXLH2;Aktiv
+27/10/20 06:50;N1M028;Breanna Reeves;"AFS Kundeservice, Kundeservice";PC5001407;Windows 10;Dell Inc.;Latitude 7480;;1YW1NH2;Aktiv
+27/10/20 08:10;N1M029;Nilsa Goodsell �;MP BorgerMilj�;PC5001409;Windows 10;Dell Inc.;Latitude 7480;;17PXLH2;Aktiv
+12/10/20 08:52;N1M030;Xander Zuniga;BU Center for Gr�n Omstilling;PC5001411;Windows 10;Dell Inc.;Latitude 7480;;33PXLH2;Aktiv
+27/10/20 07:57;N1M031;Leonard Tanner;"AFS Direktion, Jura";PC5001412;Windows 10;Dell Inc.;Latitude 7480;;DFPXLH2;Aktiv
+27/10/20 08:00;N1M032;Rafael Banks;"AFS Kundeservice, Kundeservice";PC5001413;Windows 10;Dell Inc.;Latitude 7480;;GRKSLH2;Aktiv
+26/10/20 08:02;N1M033;Andre Mcmahon;"AFS Kundeservice, Afregning og Inddrivelse";PC5001414;Windows 10;Dell Inc.;Latitude 7480;;GFRSLH2;Aktiv
+27/10/20 06:56;N1M034;Shaniya Charles;"AFS Kundeservice, Lager og Logistik";PC5001415;Windows 10;Dell Inc.;Latitude 7480;;BZCSLH2;Aktiv
+27/10/20 08:36;N1M035;Kareem Dennis;"AFS DiGIT, IT-Service";PC5001417;Windows 10;Dell Inc.;Latitude 7480;;BC8S5M2;Aktiv
+27/10/20 07:43;N1M036;Kyson Thornton;"AFS DiGIT, DAD-Opm�ling";PC5001418;Windows 10;Dell Inc.;Latitude 7480;;CDRSLH2;Aktiv
+27/10/20 08:02;N1M037;Jordin Colon;BU Center for Gr�n Omstilling;PC5001419;Windows 10;Dell Inc.;Latitude 7480;;D9RSLH2;Aktiv
+27/10/20 08:13;N1M038;Kurt�Legge;"AFS Kundeservice, Afregning og Inddrivelse";PC5001421;Windows 10;Dell Inc.;Latitude 7480;;9MVR5M2;Aktiv
+27/10/20 02:20;N1M039;Prince Stephens;"AFS Kundeservice, Afregning og Inddrivelse";PC5001422;Windows 10;Dell Inc.;Latitude 7480;;2PVR5M2;Aktiv
+27/10/20 08:39;N1M040;Tyrell Marsh;"AFS Kundeservice, Udbudsjura og Indk�b";PC5001423;Windows 10;Dell Inc.;Latitude 7480;;GFXG4M2;Aktiv
+23/09/20 12:43;N1M041;Jaquan Chase;BU B�redygtig Borger og Erhverv;PC5001426;Windows 10;Dell Inc.;Latitude 7280;;DC25GH2;Aktiv
+27/10/20 08:03;N1M042;Darian Sanford;"AFS Direktion, Sekretariat og Strategi";PC5001429;Windows 10;Dell Inc.;Latitude 7480;;2HFXJM2;Aktiv
+27/10/20 08:00;N1M043;Jaylyn Phelps;AFS �konomi;PC5001434;Windows 10;Dell Inc.;Latitude 7480;;34MXJM2;Aktiv
+23/10/20 08:00;N1M044;Moshe Hinton;"AFS �konomi, Finans";PC5001435;Windows 10;Dell Inc.;Latitude 7480;;C2MXJM2;Aktiv
+13/10/20 08:33;N1M045;Maia Cabrera;"AFS DiGIT, IT-Service";PC5001438;Windows 10;Dell Inc.;Latitude 7480;;9P7XJM2;Aktiv
+27/10/20 07:50;N1M046;Caitlyn Church;BU Center for Gr�n Omstilling;PC5001441;Windows 10;Dell Inc.;Latitude 7480;;162XJM2;Aktiv
+27/10/20 08:03;N1M047;Yazmin Floyd;"AFS �konomi, Finans";PC5001442;Windows 10;Dell Inc.;Latitude 7480;;252XJM2;Aktiv
+27/10/20 08:37;N1M048;Moises Lozano;"AFS Direktion, Sekretariat og Jura";PC5001445;Windows 10;Dell Inc.;Latitude 7480;;2LFXJM2;Aktiv
+27/10/20 07:53;N1M049;Skyler Olsen;"AFS Direktion, Jura";PC5001449;Windows 10;Dell Inc.;Latitude 7480;;HDFXJM2;Aktiv
+27/10/20 08:02;N1M050;Harmony Dickerson;"AFS Kundeservice, Kundeservice";PC5001460;Windows 10;Dell Inc.;Latitude 7480;;8ZYYDH2;Aktiv
+27/10/20 08:20;N1M051;Emelia Sellers;"AFS DiGIT, DAD-Drift";PC5001461;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF0XS9P3;Aktiv
+27/10/20 06:49;N1M052;Audrina Smith;"AFS Kundeservice, Udbudsjura og Indk�b";PC5001464;Windows 10;Dell Inc.;Latitude 5590;;6QXBNN2;Aktiv
+27/10/20 08:11;N1M053;Fletcher Lewis;MP By- og LandMilj�;PC5001465;Windows 10;Dell Inc.;Latitude 7490;;4V4MNN2;Aktiv
+27/10/20 07:10;N1M054;Adrian Fields;"AFS DiGIT, DAD-Drift";PC5001466;Windows 10;LENOVO;20LAS0XW00;ThinkPad T580;R90QE6CY;Aktiv
+27/10/20 08:28;N1M055;Elisa Rich;AFS DiGIT;PC5001475;Windows 10;LENOVO;20L8S3J000;ThinkPad T480s;PF11KPZN;Aktiv
+27/10/20 01:34;N1M010;Kobe Parsons;"AFS DiGIT, DAD";PC5001477;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FL0771;Aktiv
+27/10/20 06:55;N1M056;Jadon Carson;"AFS DiGIT, DAD-Opm�ling";PC5001479;Windows 10;Dell Inc.;Latitude 7480;;JCFXJM2;Aktiv
+27/10/20 08:00;N1M057;Marcus Jackson;AFS Direktionssekretariat;PC5001480;Windows 10;Dell Inc.;Latitude 7480;;B1DSLH2;Aktiv
+27/10/20 07:16;N1M058;Melina Hudson;"AFS DiGIT, DAD-Drift";PC5001482;Windows 10;Dell Inc.;Latitude 7490;;JNYFTN2;Aktiv
+27/10/20 06:59;N1M059;Ibrahim Stein;"AFS DiGIT, DAD-Drift";PC5001483;Windows 10;LENOVO;20LAS24R00;ThinkPad T580;R90QP0K4;Aktiv
+27/10/20 07:00;N1M060;Landyn Cardenas;"AFS Direk., HR,Personale og Arbejdsmilj�";PC5001484;Windows 10;Dell Inc.;Latitude 7480;;172XJM2;Aktiv
+26/10/20 20:07;N1M008;Jayce Giles;"ADB �konomi, Kantine SB5";PC5001485;Windows 10;Dell Inc.;Latitude 7480;;2VQ5PN2;Aktiv
+27/10/20 08:03;N1M061;Sienna Sheppard;"AFS Kundeservice, Udbudsjura og Indk�b";PC5001486;Windows 10;Dell Inc.;Latitude 7490;;GWVLSN2;Aktiv
+27/10/20 07:51;N1M062;Tatum Hodge;"AFS Kundeservice, Kommunikation/Design";PC5001487;Windows 10;Dell Inc.;Latitude 7490;;C6Z0VN2;Aktiv
+27/10/20 07:31;N1M063;Mallory Mccullough;"AFS �konomi, Finans";PC5001489;Windows 10;Dell Inc.;Latitude 7490;;3MKPTN2;Aktiv
+27/10/20 07:53;N1M064;Estrella Lee;BU Center for Gr�n Omstilling;PC5001490;Windows 10;Dell Inc.;Latitude 7480;;BBPXLH2;Aktiv
+09/10/20 09:37;N1M065;Hailie Tyler;"AFS DiGIT, IT-Service";PC5001491;Windows 10;Dell Inc.;Latitude 7490;;1DN7VP2;Aktiv
+27/10/20 08:30;N1M066;Gustavo Andersen;"AFS �konomi, Business Controlling";PC5001492;Windows 10;Dell Inc.;Latitude 7490;;92MX5Q2;Aktiv
+27/10/20 08:33;N1M067;Maryjane Ibarra;AFS DiGIT;PC5001493;Windows 10;LENOVO;20KES0S200;ThinkPad X280;PC0W0ZF3;Aktiv
+27/10/20 08:17;N1M068;Hailey Horn;AFE Vedligeholdelse;PC5001495;Windows 10;Dell Inc.;Latitude 7490;;8ZCJTN2;Aktiv
+27/10/20 07:44;N1M069;Tatiana Moreno;"AFS Kundeservice, Afregning og Inddrivelse";PC5001497;Windows 10;Dell Inc.;Latitude 7480;;1LRSLH2;Aktiv
+28/09/20 12:19;N1M070;Braxton Knox;"AFS DiGIT, IT-Service";PC5001500;Windows 10;LENOVO;20KES0S200;ThinkPad X280;PF119876;Aktiv
