@@ -105,8 +105,7 @@ Bare følg:
 
 # Error handling
 
-- Hvordan håndterer vi error handling? (Måske er det noget vi lærer i OOP?)
-    - Ja - exceptions er næste forlæsning igen
+- Implementeres hvor det findes nødvendigt
 
 # Classes
 
