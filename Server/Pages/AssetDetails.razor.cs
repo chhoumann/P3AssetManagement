@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace AssetManagement.Server.Pages
 {
-    // TODO: Use interchangeable AssetService instead of ComputerService
     public sealed partial class AssetDetails
     {
         private const int AssetRecordsPerPage = 10;
@@ -48,8 +47,13 @@ namespace AssetManagement.Server.Pages
             if (await RunPrompt(initialMessage) && await RunPrompt(secondMessage))
             {
                 ComputerService.DeleteAsset(asset);
-                await JSRuntime.InvokeAsync<object>("close", new object[] { });
+                ClosePage();
             }
+        }
+
+        private void ClosePage()
+        {
+            JSRuntime.InvokeAsync<object>("close", new object[] { });
         }
 
         /// <summary>

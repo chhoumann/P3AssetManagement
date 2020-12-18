@@ -41,7 +41,6 @@ namespace AssetManagement.Models
         /// <summary>
         ///     Fired when the FileSystemWatcher errors.
         /// </summary>
-        // TODO: CATCH THIS PLEASE & Do some error handling / logging
         private protected override void OnError(object sender, ErrorEventArgs e)
         {
             throw e.GetException();

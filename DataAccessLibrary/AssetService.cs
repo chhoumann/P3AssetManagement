@@ -9,12 +9,6 @@ using AssetManagement.DataAccessLibrary.DataModels.Interfaces;
 
 namespace AssetManagement.DataAccessLibrary
 {
-    public interface IStaticAssetHolders
-    {
-        AssetHolder Depot { get; }
-        AssetHolder Cage { get; }
-    }
-    
     /// <summary>
     /// A base class for all service classes
     /// </summary>

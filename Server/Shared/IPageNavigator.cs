@@ -15,5 +15,6 @@ namespace AssetManagement.Server.Shared
         T[] OnItemsUpdated(T[] items);
 
         bool SetPage(int requestedPageIndex);
+        void SetItemsPerPage(int itemsPerPage);
     }
 }

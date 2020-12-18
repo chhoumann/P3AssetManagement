@@ -14,6 +14,7 @@
 }
 else
 {
+    <p class="pointerOnHover" @onclick="ClosePage">&#129044; Tilbage</p>
     <h1 class="text-center my-3">Detaljer for @(asset.AssetId)</h1>
     <div class="container text-center">
         <div class="row">
@@ -52,7 +53,7 @@ else
                         <tr class="border-bottom">
                             <td scope="row">Sidst Ændret</td>
                             <td>
-                                <text placeholder="DATO" disabled>@(asset.LastAssetRecord != null ? asset.LastChanged.ToLongDateString() : "-")</text>
+                                <text placeholder="DATO" disabled>@(asset.LastChanged.ToLongDateString())</text>
                             </td>
                         </tr>
                         </tbody>
@@ -104,5 +105,8 @@ else
     }
     .hideOnDetailsPage {
         display: none;
+    }
+    .pointerOnHover:hover{
+        cursor: pointer;
     }
 </style>

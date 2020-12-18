@@ -17,7 +17,7 @@
         <td class="@(ShowLastChangedColumn ? "" : "d-none")">@Asset.LastChanged</td>
         <td class="@(ShowPcAdStatusColumn ? "" : "d-none")">@(Asset.PcAdStatus ?? "-")</td>
         <td class="@(ShowStateColumn ? "" : "d-none")">@(Asset.CurrentState)</td>
-        <td>
+        <td class="@(ShowDataColumn ? "" : "d-none")">
             <MatButton @onclick="() => NavigateToDetails(Asset)" Match="NavLinkMatch.All">
                 🕵️‍♂️ Detaljer
             </MatButton>

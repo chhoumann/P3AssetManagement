@@ -39,7 +39,6 @@ namespace AssetManagement.Models.DataLoadStrategy
 
             if (numReadAttempts >= MaxFileReadAttempts)
             {
-                // TODO: The caller of this method should catch this exception
                 throw new FileNotReadException($"CSV file could not be read at path {filePath}!");
             }
         }
