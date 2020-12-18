@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AssetManagement.DataAccessLibrary;
 using AssetManagement.DataAccessLibrary.DataModels;
@@ -19,8 +20,8 @@ namespace AssetManagement.NUnitTests.IntegrationTest
         public AssetHolder Cage { get; }
         public AssetHolder Depot { get; }
 
-        public Computer[] GetAssets() => new ComputerCsvLoader(';').ReadData(Path.Combine(Environment.CurrentDirectory, 
-            "test-files", "asset-controller-test", "2020-10-07-PCID.csv")).ToArray();
+        public Computer[] GetAssets() => new ComputerCsvLoader(';').ReadData(Path.Combine(Environment.CurrentDirectory,
+                "test-files", "asset-controller-test", "2020-10-27-PCID.csv")).ToArray();
 
         public Computer GetAssetById(string id) => throw new NotImplementedException();
         public Computer GetAssetBySerialNumber(string serialNumber) => throw new NotImplementedException();
@@ -114,7 +115,7 @@ namespace AssetManagement.NUnitTests.IntegrationTest
             AafComputerCsvFileWatcher fileWatcher = 
                 new AafComputerCsvFileWatcher(filePathToDFolder, new ComputerCsvLoader(';'));
             new AssetController<Computer, MockComputerService>().StartWatchingAlienData(fileWatcher);
-            
+
             // Act
             if (File.Exists(filePathToD))
             {
@@ -125,7 +126,7 @@ namespace AssetManagement.NUnitTests.IntegrationTest
             // Assert
             Assert.That(() => (MockComputerService.ComputersReceivedFromController.Count == 1), 
                 Is.True.After(FileReadTimeout).Seconds.PollEvery(500).MilliSeconds);
-            
+                        
             // Reset for possible future tests
             MockComputerService.ComputersReceivedFromController.Clear();
         }

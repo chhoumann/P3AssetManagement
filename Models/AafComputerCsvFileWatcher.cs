@@ -24,7 +24,7 @@ namespace AssetManagement.Models
             string filePath = e.FullPath;
 
             IEnumerable<Computer> computerAssets = ReadNewDataFile(filePath).ToList();
-
+            
             FileRead?.Invoke(computerAssets);
         }
 
