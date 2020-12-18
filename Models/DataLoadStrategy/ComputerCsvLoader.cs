@@ -47,6 +47,9 @@ namespace AssetManagement.Models.DataLoadStrategy
         {
             string[] fields = csvLine.Split(Separator);
             
+            
+            
+            
             if (!DateTime.TryParse(fields[0], out DateTime date))
             {
                 throw new InvalidCastException($"Could not convert {fields[0]} to DateTime!");

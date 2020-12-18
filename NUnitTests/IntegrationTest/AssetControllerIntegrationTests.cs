@@ -49,9 +49,9 @@ namespace AssetManagement.NUnitTests.IntegrationTest
             "test-files", "file-watcher-test", "toB");
         
         private readonly string filePathFromA = Path.Combine(Environment.CurrentDirectory, 
-            "test-files", "file-watcher-test", "fromA", "2020-10-07-PCID.csv");
+            "test-files", "file-watcher-test", "fromA", "2020-10-27-PCID.csv");
         private readonly string filePathToB = Path.Combine(Environment.CurrentDirectory, 
-            "test-files", "file-watcher-test", "toB", "2020-10-07-PCID.csv");
+            "test-files", "file-watcher-test", "toB", "2020-10-27-PCID.csv");
         
         // Filepaths for AssetController test
         private readonly string filePathToDFolder = Path.Combine(Environment.CurrentDirectory, 
@@ -95,14 +95,12 @@ namespace AssetManagement.NUnitTests.IntegrationTest
             List<IAsset> currentAssets = new List<IAsset> { new Computer() {PcName = "PC1"} };
             List<IAsset> assetsFromCsvList = new List<IAsset> { new Computer() {PcName = "PC1"} };
             
-            assetsFromCsvList[0].Transfer.ToUser(assetHolder1);
+            assetsFromCsvList[0].Transfer.ToUser(assetHolder2);
             currentAssets[0].Transfer.ToUser(assetHolder1);
             
             AssetComparer<IAsset> assetComparer = new AssetComparer<IAsset>(currentAssets);
 
             // Act
-            assetsFromCsvList[0].Transfer.ToUser(assetHolder2);
-            
             assetComparer.OnNewData(assetsFromCsvList);
 
             // Assert
