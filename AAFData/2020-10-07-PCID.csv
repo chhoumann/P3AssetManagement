@@ -1,0 +1,873 @@
+Timestamp;Username;Navn;Afdeling;PCNavn;OS;Producent;Model1;Model2;S/N;PC-AD-Status
+02/10/20 13:36;N1M001;Nikhil Copeland;"Løn, HR og Arbejdsmiljø";PC5001139;Windows 10;Dell Inc.;OptiPlex 7010;01;6CRPJ5J;Aktiv
+07/10/20 08:45;N1M002;Carlo Carey;Miljø- og Energiforvaltningen;PC5001268;Windows 10;American Megatrends Inc.;Surface Pro 3;1;014397451253;Aktiv
+30/09/20 14:23;N1M003;Jazlene Higgins;MP Vandløb;PC5001299;Windows 10;Dell Inc.;Latitude E7250;;1DR7F72;Aktiv
+22/09/20 10:49;N1M004;Agripina Groleau;MP VandMiljø;PC5001303;Windows 10;Dell Inc.;Latitude E7450;;5XG5F72;Aktiv
+06/10/20 08:21;N1M005;Kira Kim;"AFS DiGIT, DAD-Opmåling";PC5001316;Windows 10;Dell Inc.;Latitude E7450;;H2FXN72;Aktiv
+07/10/20 08:03;N1M006;Orlando Larson;"AFS DiGIT, DAD-Konsulenter";PC5001326;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0E2NWT;Aktiv
+03/09/20 12:10;N1M170;Finley Rice;"AFS Kundeservice, Kunde- og Målerdata";PC5001327;Windows 10;Dell Inc.;Latitude E7270;;8BTQGC2;Aktiv
+07/10/20 08:18;N1M007;Walter Harrison;MP VirksomhedsMiljø;PC5001329;Windows 10;Dell Inc.;Latitude E7270;;BXYQGC2;Aktiv
+07/10/20 06:47;N1M008;Jayce Giles;"ADB Økonomi, Kantine SB5";PC5001335;Windows 10;Dell Inc.;Latitude E7270;;9RD0PC2;Aktiv
+07/10/20 03:53;N1M009;Lailah Flores;"AFS Økonomi, Finans";PC5001341;Windows 10;Dell Inc.;Latitude E7470;;96Q9TC2;Aktiv
+07/10/20 03:52;N1M010;Kobe Parsons;"AFS DiGIT, DAD";PC5001350;Windows 10;LENOVO;30AVS06X00;ThinkStation P310;S4AV9282;Aktiv
+07/10/20 07:04;N1M011;Asher Hayes;"AFS DiGIT, DAD-Konsulenter";PC5001355;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0JC7GN;Aktiv
+27/08/20 08:12;N1M609;Armida Calder;BU Netværk for Bæredygtig Erhvervsudv.;PC5001356;Windows 10;Dell Inc.;Latitude E7250;;6J04662;Aktiv
+25/08/20 09:22;N1M176;Adrianna Stout;"AFS Kundeservice, Fakt. og Opkrævning";PC5001358;Windows 10;Dell Inc.;Latitude E7270;;BC58WF2;Aktiv
+07/10/20 07:07;N1M012;Chad Taylor;"AFS Direktion, Sekretariat og Strategi";PC5001360;Windows 10;Dell Inc.;Latitude E7470;;9WG8WF2;Aktiv
+28/09/20 08:17;N1M013;Nikolas Moyer;MEF Eksterne brugere;PC5001361;Windows 10;LENOVO;80U1;MIIX 510-12ISK;YD023VGR;Aktiv
+07/10/20 07:14;N1M014;Carie Howell;"AFS Direktion, Jura";PC5001364;Windows 10;Dell Inc.;Latitude E5270;;DNLMWF2;Aktiv
+06/10/20 09:07;N1M015;Kamren Pineda;AFV Innovation og Videndeling;PC5001373;Windows 10;Dell Inc.;Latitude E7270;;9LCJ1G2;Aktiv
+07/10/20 07:54;N1M016;Jazmin Novak;"AFS DiGIT, IT-Service";PC5001381;Windows 10;LENOVO;20HGS3JB00;ThinkPad T470s;PC0N4PYD;Aktiv
+07/10/20 07:44;N1M017;Ashanti Graves;"AFS DiGIT, Projekter";PC5001382;Windows 10;LENOVO;20HGS3JB00;ThinkPad T470s;PC0N4PYC;Aktiv
+17/09/20 14:41;N1M162;Braelyn Eaton;"IT-Support, AFS";PC5001384;Windows 10;Dell Inc.;Latitude 7480;;2YJC9H2;Aktiv
+07/10/20 07:59;N1M019;Jerome Brooks;"AFS DiGIT, IT-Service";PC5001386;Windows 10;LENOVO;20HMS37W00;ThinkPad X270;PC0NLW3N;Aktiv
+07/10/20 08:11;N1M186;Rex Harrell;"AFS Direktion, Sekretariat og Strategi";PC5001388;Windows 10;Dell Inc.;Latitude 7480;;55KK7H2;Aktiv
+07/10/20 07:36;N1M020;Victor Hanson;AFS Kunder og Indkøb;PC5001389;Windows 10;Dell Inc.;Latitude 7480;;G063BH2;Aktiv
+07/10/20 08:25;N1M021;Sarai Ferguson;"AFS Økonomi, Business Controlling";PC5001390;Windows 10;Dell Inc.;Latitude 7480;;7XQ0FH2;Aktiv
+07/10/20 09:47;N1M022;Dustin Bonilla;"AFS DiGIT, DAD-Konsulenter";PC5001392;Windows 10;LENOVO;20HMS1QE00;ThinkPad X270;PC0NLZAR;Aktiv
+10/09/20 10:18;N1M045;Maia Cabrera;"AFS DiGIT, IT-Service";PC5001395;Windows 10;Dell Inc.;Latitude 7480;;3RKSLH2;Aktiv
+07/10/20 08:20;N1M023;Seth Ortega;"AFS Direktion, Jura";PC5001398;Windows 10;Dell Inc.;Latitude 7480;;71R4MH2;Aktiv
+07/10/20 07:53;N1M024;Monica Padilla;"AFS Direktion, Sekretariat og Strategi";PC5001401;Windows 10;Dell Inc.;Latitude 7480;;2M15PH2;Aktiv
+07/10/20 09:11;N1M025;Elisha Soto;"AFR Sekretariat, Kørselskontor";PC5001402;Windows 10;Dell Inc.;Latitude 7480;;78P0NH2;Aktiv
+07/10/20 08:16;N1M026;Kellen Schwartz;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001403;Windows 10;Dell Inc.;Latitude 7480;;4N15PH2;Aktiv
+07/10/20 07:15;N1M027;Cedric Savage;"AFS Kundeservice, Fakt. og Opkrævning";PC5001406;Windows 10;Dell Inc.;Latitude 7480;;3TVXLH2;Aktiv
+07/10/20 08:05;N1M028;Breanna Reeves;"AFS Kundeservice, Kunde- og Målerdata";PC5001407;Windows 10;Dell Inc.;Latitude 7480;;1YW1NH2;Aktiv
+07/10/20 07:32;N1M029;Nilsa Goodsell  ;MP BorgerMiljø;PC5001409;Windows 10;Dell Inc.;Latitude 7480;;17PXLH2;Aktiv
+30/09/20 08:21;N1M113;Yasmin Oconnell;"AFS DiGIT, IT-Service";PC5001411;Windows 10;Dell Inc.;Latitude 7480;;33PXLH2;Aktiv
+07/10/20 08:07;N1M031;Leonard Tanner;"AFS Direktion, Jura";PC5001412;Windows 10;Dell Inc.;Latitude 7480;;DFPXLH2;Aktiv
+07/10/20 07:29;N1M032;Rafael Banks;"AFS Kundeservice, Kunde- og Målerdata";PC5001413;Windows 10;Dell Inc.;Latitude 7480;;GRKSLH2;Aktiv
+07/10/20 07:06;N1M033;Andre Mcmahon;"AFS Kundeservice, Fakt. og Opkrævning";PC5001414;Windows 10;Dell Inc.;Latitude 7480;;GFRSLH2;Aktiv
+05/10/20 07:03;N1M034;Shaniya Charles;"AFS Kundeservice, Lager og Logistik";PC5001415;Windows 10;Dell Inc.;Latitude 7480;;BZCSLH2;Aktiv
+07/10/20 09:13;N1M035;Kareem Dennis;"AFS DiGIT, IT-Service";PC5001417;Windows 10;Dell Inc.;Latitude 7480;;BC8S5M2;Aktiv
+07/10/20 08:08;N1M036;Kyson Thornton;"AFS DiGIT, DAD-Opmåling";PC5001418;Windows 10;Dell Inc.;Latitude 7480;;CDRSLH2;Aktiv
+07/10/20 08:20;N1M037;Jordin Colon;BU Center for Grøn Omstilling;PC5001419;Windows 10;Dell Inc.;Latitude 7480;;D9RSLH2;Aktiv
+07/10/20 07:26;N1M038;Kurt Legge;"AFS Kundeservice, Fakt. og Opkrævning";PC5001421;Windows 10;Dell Inc.;Latitude 7480;;9MVR5M2;Aktiv
+07/10/20 08:10;N1M039;Prince Stephens;"AFS Kundeservice, Fakt. og Opkrævning";PC5001422;Windows 10;Dell Inc.;Latitude 7480;;2PVR5M2;Aktiv
+07/10/20 08:26;N1M040;Tyrell Marsh;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001423;Windows 10;Dell Inc.;Latitude 7480;;GFXG4M2;Aktiv
+23/09/20 12:43;N1M041;Jaquan Chase;BU Bæredygtig Borger og Erhverv;PC5001426;Windows 10;Dell Inc.;Latitude 7280;;DC25GH2;Aktiv
+07/10/20 08:33;N1M042;Darian Sanford;"AFS Direktion, Sekretariat og Strategi";PC5001429;Windows 10;Dell Inc.;Latitude 7480;;2HFXJM2;Aktiv
+07/10/20 07:54;N1M043;Jaylyn Phelps;AFS Økonomi;PC5001434;Windows 10;Dell Inc.;Latitude 7480;;34MXJM2;Aktiv
+07/10/20 07:59;N1M044;Moshe Hinton;"AFS Økonomi, Finans";PC5001435;Windows 10;Dell Inc.;Latitude 7480;;C2MXJM2;Aktiv
+18/09/20 09:07;N1M121;Mohammed Moon;"AFS Kundeservice, Kunde- og Målerdata";PC5001438;Windows 10;Dell Inc.;Latitude 7480;;9P7XJM2;Aktiv
+07/10/20 07:26;N1M046;Caitlyn Church;BU Center for Grøn Omstilling;PC5001441;Windows 10;Dell Inc.;Latitude 7480;;162XJM2;Aktiv
+07/10/20 07:59;N1M047;Yazmin Floyd;"AFS Økonomi, Finans";PC5001442;Windows 10;Dell Inc.;Latitude 7480;;252XJM2;Aktiv
+07/10/20 06:51;N1M048;Moises Lozano;"AFS Direktion, Sekretariat og Jura";PC5001445;Windows 10;Dell Inc.;Latitude 7480;;2LFXJM2;Aktiv
+07/10/20 07:51;N1M049;Skyler Olsen;"AFS Direktion, Jura";PC5001449;Windows 10;Dell Inc.;Latitude 7480;;HDFXJM2;Aktiv
+07/10/20 08:01;N1M050;Harmony Dickerson;"AFS Kundeservice, Kunde- og Målerdata";PC5001460;Windows 10;Dell Inc.;Latitude 7480;;8ZYYDH2;Aktiv
+07/10/20 07:28;N1M051;Emelia Sellers;"AFS DiGIT, DAD-Drift";PC5001461;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF0XS9P3;Aktiv
+07/10/20 07:08;N1M052;Audrina Smith;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001464;Windows 10;Dell Inc.;Latitude 5590;;6QXBNN2;Aktiv
+07/10/20 07:36;N1M054;Adrian Fields;"AFS DiGIT, DAD-Drift";PC5001466;Windows 10;LENOVO;20LAS0XW00;ThinkPad T580;R90QE6CY;Aktiv
+06/10/20 18:15;N1M055;Elisa Rich;AFS DiGIT;PC5001475;Windows 10;LENOVO;20L8S3J000;ThinkPad T480s;PF11KPZN;Aktiv
+07/10/20 03:51;N1M010;Kobe Parsons;"AFS DiGIT, DAD";PC5001477;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FL0771;Aktiv
+07/10/20 07:05;N1M056;Jadon Carson;"AFS DiGIT, DAD-Opmåling";PC5001479;Windows 10;Dell Inc.;Latitude 7480;;JCFXJM2;Aktiv
+05/10/20 07:59;N1M057;Marcus Jackson;AFS Direktionssekretariat;PC5001480;Windows 10;Dell Inc.;Latitude 7480;;B1DSLH2;Aktiv
+07/10/20 07:53;N1M058;Melina Hudson;"AFS DiGIT, DAD-Drift";PC5001482;Windows 10;Dell Inc.;Latitude 7490;;JNYFTN2;Aktiv
+07/10/20 07:55;N1M059;Ibrahim Stein;"AFS DiGIT, DAD-Drift";PC5001483;Windows 10;LENOVO;20LAS24R00;ThinkPad T580;R90QP0K4;Aktiv
+07/10/20 08:36;N1M060;Landyn Cardenas;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001484;Windows 10;Dell Inc.;Latitude 7480;;172XJM2;Aktiv
+07/10/20 08:14;N1M008;Jayce Giles;"ADB Økonomi, Kantine SB5";PC5001485;Windows 10;Dell Inc.;Latitude 7480;;2VQ5PN2;Aktiv
+07/10/20 08:59;N1M061;Sienna Sheppard;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001486;Windows 10;Dell Inc.;Latitude 7490;;GWVLSN2;Aktiv
+07/10/20 08:02;N1M062;Tatum Hodge;"AFS Kundeservice, Kommunikation/Design";PC5001487;Windows 10;Dell Inc.;Latitude 7490;;C6Z0VN2;Aktiv
+07/10/20 07:18;N1M063;Mallory Mccullough;"AFS Økonomi, Finans";PC5001489;Windows 10;Dell Inc.;Latitude 7490;;3MKPTN2;Aktiv
+07/10/20 08:17;N1M064;Estrella Lee;BU Center for Grøn Omstilling;PC5001490;Windows 10;Dell Inc.;Latitude 7480;;BBPXLH2;Aktiv
+01/09/20 08:21;N1M065;Hailie Tyler;"AFS DiGIT, IT-Service";PC5001491;Windows 10;Dell Inc.;Latitude 7490;;1DN7VP2;Aktiv
+07/10/20 08:07;N1M066;Gustavo Andersen;"AFS Økonomi, Business Controlling";PC5001492;Windows 10;Dell Inc.;Latitude 7490;;92MX5Q2;Aktiv
+07/10/20 08:10;N1M067;Maryjane Ibarra;AFS DiGIT;PC5001493;Windows 10;LENOVO;20KES0S200;ThinkPad X280;PC0W0ZF3;Aktiv
+07/10/20 07:47;N1M068;Hailey Horn;AFE Vedligeholdelse;PC5001495;Windows 10;Dell Inc.;Latitude 7490;;8ZCJTN2;Aktiv
+07/10/20 07:33;N1M069;Tatiana Moreno;"AFS Kundeservice, Fakt. og Opkrævning";PC5001497;Windows 10;Dell Inc.;Latitude 7480;;1LRSLH2;Aktiv
+28/09/20 12:19;N1M070;Braxton Knox;"AFS DiGIT, IT-Service";PC5001500;Windows 10;LENOVO;20KES0S200;ThinkPad X280;PF119876;Aktiv
+17/09/20 08:20;N1M071;Jaxson Kent;;PC5001502;Windows 10;Dell Inc.;Latitude 7490;;626JTN2;Deaktiveret
+08/09/20 07:57;N1M037;Jordin Colon;BU Center for Grøn Omstilling;PC5001504;Windows 10;Dell Inc.;Latitude 7490;;BRVLSN2;Aktiv
+25/09/20 14:55;N1M130;Cara Waller;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001510;Windows 10;Dell Inc.;Latitude 7490;;4VK1TQ2;Aktiv
+07/10/20 07:28;N1M072;Audrey Simmons;"AFS Økonomi, Finans";PC5001511;Windows 10;Dell Inc.;Latitude 7490;;2S2DTQ2;Aktiv
+07/10/20 07:25;N1M073;Livia Schmitt;MP BorgerMiljø;PC5001513;Windows 10;Dell Inc.;Latitude 7490;;8Y2NSQ2;Aktiv
+07/10/20 08:18;N1M074;Libby Parrish;"AFS DiGIT, DAD-Konsulenter";PC5001514;Windows 10;LENOVO;20L6SB2400;ThinkPad T480;PF1EKFN2;Aktiv
+07/10/20 06:05;N1M010;Kobe Parsons;"AFS DiGIT, DAD";PC5001519;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FL0769;Aktiv
+05/10/20 13:01;N1M075;Lillian Mosley;AFE Vagthold;PC5001522;Windows 10;Dell Inc.;Latitude E7250;;82H3662;Aktiv
+07/10/20 07:51;N1M076;Anastasia Osborne;"AFS Kundeservice, Kommunikation/Design";PC5001524;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90S2GD1;Aktiv
+07/10/20 08:12;N1M057;Marcus Jackson;AFS Direktionssekretariat;PC5001525;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90S2Y5T;Aktiv
+06/10/20 08:50;N1M079;Chandler Atkinson;"AFS Direktion, Sekretariat og Strategi";PC5001527;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC0Z5QLF;Aktiv
+07/10/20 07:48;N1M077;Alfred George;"AFS Kundeservice, Kunde- og Målerdata";PC5001528;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1H640U;Aktiv
+07/10/20 10:14;N1M079;Chandler Atkinson;"AFS Direktion, Sekretariat og Strategi";PC5001530;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC0ZWKH5;Aktiv
+06/10/20 07:32;N1M080;Oscar Willis;Digital formidling;PC5001531;Windows 10;HP;HP ProBook 640 G4; ;5CG8464R72;Aktiv
+07/10/20 07:16;N1M081;Fletcher Monroe;"AFS Direktion, Sekretariat og Strategi";PC5001532;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC100CXC;Aktiv
+07/10/20 06:48;N1M082;Jayla Trujillo;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001534;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1GTXXV;Aktiv
+07/10/20 08:26;N1M083;Daniella Fuentes;"AFS Kundeservice, Kunde- og Målerdata";PC5001535;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1GTXYJ;Aktiv
+07/10/20 07:39;N1M084;Violet Everett;"AFS Økonomi, Business Controlling";PC5001536;Windows 10;LENOVO;20L8S8TV00;ThinkPad T480s;PC1158W2;Aktiv
+10/09/20 10:29;N1M179;Jonathon Hogan;"AFS DiGIT, DAD-Opmåling";PC5001537;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1H250T;Aktiv
+07/10/20 08:05;N1M085;Beau Maynard;"AFS DiGIT, Projekter";PC5001538;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11BZLE;Aktiv
+07/10/20 07:58;N1M086;Shea Tate;"AFS Økonomi, Business Controlling";PC5001540;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1GE1RT;Aktiv
+07/10/20 07:07;N1M087;Josue Stone;"AFS DiGIT, Projekter";PC5001541;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11LGH5;Aktiv
+07/10/20 08:05;N1M088;Ryder Huynh;"AFS DiGIT, DAD";PC5001542;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11LGH6;Aktiv
+07/10/20 08:02;N1M089;Catherine Barrett;"AFS Kundeservice, Kommunikation/Design";PC5001543;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1HH60R;Aktiv
+01/09/20 07:59;#I/T;#I/T;"AFS Økonomi, Finans";PC5001544;Windows 10;Dell Inc.;Latitude E7250;;8B9N462;Deaktiveret
+07/10/20 09:47;N1M090;Fletcher Arellano;"AFS Økonomi, Finans";PC5001545;Windows 10;Dell Inc.;Latitude 7490;;1GLRRQ2;Aktiv
+07/10/20 08:54;N1M019;Jerome Brooks;"AFS DiGIT, IT-Service";PC5001546;Windows 10;LENOVO;20L6SB2400;ThinkPad T480;PF1LF941;Aktiv
+07/10/20 07:53;N1M091;Johan Little;"AFS Kundeservice, Fakt. og Opkrævning";PC5001549;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC12CA9A;Aktiv
+07/10/20 08:39;N1M092;Jeffrey Duncan;"AFS Direktion, Jura";PC5001550;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC122MW5;Aktiv
+27/09/20 18:07;N1M093;Griffin Lowe;"AFS Kundeservice, Kommunikation/Design";PC5001551;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90T19SV;Aktiv
+29/09/20 13:36;N1M094;Odin Haley;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001552;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90T19SW;Aktiv
+07/10/20 09:08;N1M095;Emiliano Lawson;MP JordMiljø;PC5001553;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC130FMP;Aktiv
+07/10/20 10:07;N1M096;Camron Powers;AFS Økonomi;PC5001554;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1N30LJ;Aktiv
+07/10/20 07:54;N1M097;Isiah Blanchard;"AFS DiGIT, IT-Service";PC5001555;Windows 10;HP;HP EliteBook 830 G5; ;5CG90807Y2;Aktiv
+07/10/20 07:32;N1M098;Chaz Trevino;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001556;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC13X0Z2;Aktiv
+11/09/20 17:42;N1M048;Moises Lozano;"AFS Direktion, Sekretariat og Strategi";PC5001557;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC13TFBZ;Aktiv
+07/10/20 07:46;N1M099;Meredith Shelton;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001559;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC14FDN8;Aktiv
+07/10/20 08:04;N1M100;Ariana Duke;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001560;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC1427AX;Aktiv
+07/10/20 07:40;N1M101;Tatiana Curry;"AFS Økonomi, Business Controlling";PC5001561;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC14QYFL;Aktiv
+07/10/20 07:15;N1M102;Diego Delacruz;"Kundeservice, ADM";PC5001562;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC1537R2;Aktiv
+18/09/20 14:09;N1M103;Paris Graves;AFS Kundeservice;PC5001563;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90TPQ0Z;Aktiv
+07/10/20 07:33;N1M104;Sidney Aguilar;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001565;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15M0F6;Aktiv
+07/10/20 08:16;N1M105;Cannon Grimes;"AFS Direktion, Sekretariat og Strategi";PC5001566;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15M0F5;Aktiv
+07/10/20 07:26;N1M106;Jayden Gregory;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001567;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC122S06;Aktiv
+07/10/20 08:07;N1M107;Aleah Washington;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001568;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15M0F7;Aktiv
+07/10/20 07:59;N1M108;Kyra Melton;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001569;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15XDE6;Aktiv
+07/10/20 07:02;N1M109;Aiyana Horton;"AFS DiGIT, DAD-Opmåling";PC5001570;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VK2NK;Aktiv
+07/10/20 07:21;N1M110;River Montgomery;AFS DiGIT;PC5001572;Windows 10;LENOVO;20L6SB2900;ThinkPad T480;PF1RZ2DM;Aktiv
+07/10/20 06:59;N1M111;Aleah Mcintosh;"AFS DiGIT, Projekter";PC5001573;Windows 10;LENOVO;20LHS0GQ00;ThinkPad X380 Yoga;MP1L2Z3L;Aktiv
+07/10/20 07:25;N1M112;Miley Stout;BU Netværk for Bæredygtig Erhvervsudv.;PC5001574;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PF1KAHY6;Aktiv
+07/10/20 07:48;N1M113;Yasmin Oconnell;"AFS DiGIT, IT-Service";PC5001575;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC16TQRX;Aktiv
+22/09/20 07:10;N1M097;Isiah Blanchard;"AFS DiGIT, IT-Service";PC5001577;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBR;Aktiv
+07/10/20 08:14;N1M114;Gilberto Hendrix;AFV Innovation og Videndeling;PC5001578;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBM;Aktiv
+07/10/20 06:15;N1M115;Saul Giles;AFR Projekt og Udvikling;PC5001579;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBE;Aktiv
+06/10/20 19:51;N1M116;Alexia Bond;"AFS DiGIT, Projekter";PC5001580;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1E6CCJ;Aktiv
+07/10/20 07:20;N1M117;Odin Blake;"AFS Økonomi, Business Controlling";PC5001581;Windows 10;LENOVO;20NYS1JC00;ThinkPad T490s;PF1GGT6S;Aktiv
+07/10/20 07:48;N1M006;Orlando Larson;"AFS DiGIT, DAD-Konsulenter";PC5001582;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VLVRZ;Aktiv
+07/10/20 07:26;N1M118;Kendrick Kelley;"AFS DiGIT, DAD-Opmåling";PC5001583;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VLVS0;Aktiv
+07/10/20 07:08;N1M119;Isai Walls;MP VirksomhedsMiljø;PC5001586;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC17ZKC2;Aktiv
+07/10/20 10:15;N1M120;Carla Cooke;"AFS Økonomi, Finans";PC5001587;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBD;Aktiv
+07/10/20 07:16;N1M121;Mohammed Moon;"AFS Kundeservice, Kunde- og Målerdata";PC5001589;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1928P7;Aktiv
+07/10/20 09:18;N1M122;Ryland Schmidt;"AFS DiGIT, IT-Service";PC5001590;Windows 10;LENOVO;20LHS0GQ00;ThinkPad X380 Yoga;MP1MDRG2;Aktiv
+07/10/20 03:59;N1M123;Leticia Chandler;"AFS DiGIT, IT-Service";PC5001594;Windows 10;LENOVO;11AES08D00;ThinkCentre M90n-1;PF1ZP84L;Aktiv
+07/10/20 08:44;N1M124;Jaqueline Soto;"AFS Økonomi, Finans";PC5001595;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PF1KAE68;Aktiv
+07/10/20 07:38;N1M125;Melina Best;AFS DiGIT;PC5001596;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBY;Aktiv
+07/10/20 07:32;N1M126;Jose Atkinson;AFS Eksterne brugere;PC5001597;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1BBS8Z;Aktiv
+07/10/20 09:02;N1M127;Madison Brewer;"AFS Økonomi, Business Controlling";PC5001598;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2L;Aktiv
+07/10/20 07:53;N1M128;Cassidy Shannon;"AFS DiGIT, Projekter";PC5001599;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2N;Aktiv
+07/10/20 10:25;N1M129;Monserrat Burns;AFS Eksterne brugere;PC5001600;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1CSGQN;Aktiv
+07/10/20 08:11;N1M130;Cara Waller;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001601;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CVZTC;Aktiv
+07/10/20 10:29;N1M131;Enrique Weeks;"AFS Kundeservice, Fakt. og Opkrævning";PC5001602;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0EE;Aktiv
+07/10/20 07:34;N1M132;Edwin Fox;"AFS DiGIT, Projekter";PC5001603;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0EF;Aktiv
+07/10/20 07:54;N1M133;Dario Bonilla;"AFS Kundeservice, Fakt. og Opkrævning";PC5001605;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0ED;Aktiv
+07/10/20 06:25;N1M134;Kareem Sosa;"AFS Kundeservice, Fakt. og Opkrævning";PC5001606;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW2YH;Aktiv
+07/10/20 09:09;N1M135;Dominique Sellers;"AFS Økonomi, Business Controlling";PC5001607;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1D272G;Aktiv
+04/09/20 10:11;N1M464;Carlee Downs;AFE Projekter;PC5001608;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC17MY31;Aktiv
+07/10/20 07:53;N1M136;Norah Castillo;"AFS DiGIT, IT-Service";PC5001611;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90WPPGM;Aktiv
+07/10/20 07:39;N1M137;Andre Mitchell;"AFS DiGIT, Projekter";PC5001613;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90WPPGK;Aktiv
+07/10/20 07:37;N1M138;Mark Bruce;"AFS DiGIT, DAD-Konsulenter";PC5001614;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1BZCJL;Aktiv
+07/10/20 08:29;N1M139;Aleena Hayes;MP JordMiljø;PC5001615;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CSLDC;Aktiv
+07/10/20 09:48;N1M140;Elliott Patel;AFV Vandsamarbejde Aalborg;PC5001616;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D2AQT;Aktiv
+07/10/20 08:07;N1M141;Mckenna Spence;"AFS Direktion, Sekretariat og Strategi";PC5001623;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CSEA9;Aktiv
+07/10/20 07:24;N1M142;Shannon Cain;"AFS Direktion, Jura";PC5001624;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D2640;Aktiv
+07/10/20 07:37;N1M143;Sam Stokes;"AFS Kundeservice, Kommunikation/Design";PC5001625;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D25FX;Aktiv
+07/10/20 09:52;N1M144;Braydon Hodge;"AFS Økonomi, Business Controlling";PC5001627;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CWJD8;Aktiv
+07/10/20 10:45;N1M045;Maia Cabrera;"AFS DiGIT, IT-Service";PC5001628;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D2ART;Aktiv
+07/10/20 07:25;N1M145;Colten Mayer;"AFS DiGIT, Projekter";PC5001629;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0WG8;Aktiv
+06/10/20 11:31;N1M146;Amy Elliott;;PC5001630;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1E8CBK;Aktiv
+07/10/20 07:45;N1M147;Dawson Fuller;"AFS DiGIT, IT-Service";PC5001631;Windows 10;LENOVO;20N3S6NK00;ThinkPad T490;PF1W5QFQ;Aktiv
+02/10/20 07:59;N1M002;Carlo Carey;Miljø- og Energiforvaltningen;PC5001632;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E849C;Aktiv
+05/10/20 12:55;N1M148;Eve Horne;"AFS DiGIT, DAD";PC5001633;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E873D;Aktiv
+06/10/20 16:57;N1M149;Patricia Crosby;"AFS DiGIT, DAD";PC5001635;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E8C7H;Aktiv
+07/09/20 10:06;#I/T;#I/T;"AFS Direktion, Sekretariat og Jura";PC5001636;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1CPR9J;Aktiv
+06/10/20 07:15;N1M150;Asia Henderson;"AFS Kundeservice, Kunde- og Målerdata";PC5001637;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E88LT;Aktiv
+07/10/20 07:59;N1M151;Kenya Chaney;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001638;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E8CS4;Aktiv
+07/10/20 09:31;N1M152;Deandre Mata;AFS Eksterne brugere;PC5001640;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CVZTD;Aktiv
+07/10/20 08:10;N1M153;Elias Barr;"AFS DiGIT, IT-Service";PC5001641;Windows 10;LENOVO;20N3S76100;ThinkPad T490;PF1W2N4E;Aktiv
+07/10/20 08:10;N1M154;Rory Nguyen;"AFS Kundeservice, Kommunikation/Design";PC5001642;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CVZTE;Aktiv
+07/10/20 08:58;N1M155;Evangeline Arias;"AFS DiGIT, DAD";PC5001643;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF25NYBM;Aktiv
+07/10/20 04:23;N1M059;Ibrahim Stein;"AFS DiGIT, DAD-Drift";PC5001644;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF25PG0Y;Aktiv
+07/10/20 03:33;N1M010;Kobe Parsons;"AFS DiGIT, DAD";PC5001645;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF25PG1N;Aktiv
+07/10/20 10:13;N1M157;Kimberly Mitchell;"AFS Økonomi, Finans";PC5001646;Windows 10;LENOVO;11AES08D00;ThinkCentre M90n-1;PF280758;Aktiv
+07/10/20 08:08;N1M158;Eden Cruz;AFE Net Drift;PC5001647;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1D298H;Aktiv
+07/10/20 08:32;N1M159;Mareli Holder;"AFS Direktion, Sekretariat og Jura";PC5001648;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1FBHEC;Aktiv
+07/10/20 08:24;N1M065;Hailie Tyler;"AFS DiGIT, IT-Service";PC5001649;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90XJ70Y;Aktiv
+02/10/20 14:03;N1M160;Marisol Lowery;"AFS Direktion, Sekretariat og Jura";PC5001650;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1F1RQV;Aktiv
+06/10/20 07:19;N1M161;Serenity Mcneil;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001651;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1EYJZG;Aktiv
+17/09/20 08:30;N1M162;Braelyn Eaton;"IT-Support, AFS";PC5001652;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1ETX53;Aktiv
+07/10/20 07:50;N1M156;Demarion Haley;"AFS DiGIT, Projekter";PC5001654;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1K3AJR;Aktiv
+07/10/20 09:16;N1M163;Aarav Flowers;MP Administration;PC5001655;Windows 10;LENOVO;20N3S6NK00;ThinkPad T490;PF2BKYJG;Aktiv
+07/10/20 06:34;N1M164;Karen Monroe;"AFS Økonomi, Finans";PC5001656;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CVZTB;Aktiv
+07/10/20 10:18;N1M165;Tara Glenn;"AFS Økonomi, Finans";PC5001657;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1ES9T0;Aktiv
+07/10/20 08:25;N1M166;Eliza Lloyd;"AFS Kundeservice, Fakt. og Opkrævning";PC5001658;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF2DCJNW;Aktiv
+07/10/20 08:24;N1M167;Tabitha Todd;AFV Innovation og Videndeling;PC5001659;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF2DCH2C;Aktiv
+07/10/20 07:58;N1M168;Chanel Dennis;"AFS Direktion, Sekretariat og Strategi";PC5001660;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF222QHV;Aktiv
+07/10/20 07:41;N1M169;Ross Maxwell;"AFS Kundeservice, Kommunikation/Design";PC5001661;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF2231AG;Aktiv
+15/09/20 08:54;N1M170;Finley Rice;"AFS Kundeservice, Kunde- og Målerdata";PC5001662;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF222TVX;Aktiv
+07/10/20 08:31;N1M171;Nicolas Lee;"AFS Økonomi, Finans";PC5001664;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF223DLW;Aktiv
+07/10/20 06:49;N1M172;Chasity Reynolds;"AFS Økonomi, Kantine Nefovej";PC5001665;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF222V19;Aktiv
+07/10/20 05:30;N1M173;Tia Macias;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001666;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF223BJQ;Aktiv
+06/10/20 10:58;N1M174;Harmony Page;Aalborg Byråd;PC5001667;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF2231C0;Aktiv
+07/10/20 09:37;N1M175;Olivia Conrad;"AFS Kundeservice, Udbudsjura og Indkøb";PC5001668;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1EV0QR;Aktiv
+07/10/20 07:45;N1M176;Adrianna Stout;"AFS Kundeservice, Fakt. og Opkrævning";PC5001669;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KEN3C;Aktiv
+07/10/20 07:57;N1M177;Daphne Nixon;AFS Direktionssekretariat;PC5001670;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1LAHCD;Aktiv
+07/10/20 07:20;N1M178;Jovanni Barton;AFR Sekretariat;PC5001671;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1LAFER;Aktiv
+07/10/20 07:07;N1M179;Jonathon Hogan;"AFS DiGIT, DAD-Opmåling";PC5001672;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KMCDG;Aktiv
+07/10/20 07:51;N1M180;Wade Thompson;"AFS Økonomi, Finans";PC5001673;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KHDBS;Aktiv
+06/10/20 19:58;N1M181;Averie Gibson;"AFS Økonomi, Finans";PC5001674;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1HYPEY;Aktiv
+07/10/20 07:50;N1M182;Gael Espinoza;"AFS Kundeservice, Kunde- og Målerdata";PC5001675;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF222X1B;Aktiv
+07/10/20 07:46;N1M183;Sylvia Pruitt;"AFS Kundeservice, Kunde- og Målerdata";PC5001676;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF222NWE;Aktiv
+07/10/20 06:47;N1M184;Dakota Cain;Aalborg Service A/S;PC5001677;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1E8BSW;Aktiv
+07/10/20 06:50;N1M185;Saniyah Everett;MP Grundvand;PC5001678;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15ZBNM;Aktiv
+17/09/20 10:08;N1M146;Amy Elliott;;PC5001679;Windows 10;Dell Inc.;Latitude 7280;;6R819H2;Aktiv
+07/10/20 08:11;N1M094;Odin Haley;"AFS Direk., HR,Personale og Arbejdsmiljø";PC5001680;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF22358L;Aktiv
+06/10/20 12:40;N1M271;Charlotte Reilly;;PC5001681;Windows 10;LENOVO;20T1S1DB00;ThinkPad T14s Gen 1;PC1M15F7;Aktiv
+07/10/20 09:27;N1M187;Tate Hickman;AFV Projektering og Tilsyn;PC5002116;Windows 7;Dell Inc.;OptiPlex 9020;00;JRW3842;Aktiv
+07/10/20 07:31;#I/T;#I/T;AFV Projektering og Tilsyn;PC5002117;Windows 7;Dell Inc.;OptiPlex 9020;;95X3842;Aktiv
+07/10/20 07:48;N1M189;Cletus Haverty;AFV Planlægning;PC5002128;Windows 10;American Megatrends Inc.;Surface Pro 3;1;018672451553;Aktiv
+06/10/20 15:36;N1M190;Kenyon Wyatt;AFV Spildevand og Udledninger;PC5002146;Windows 10;Dell Inc.;Latitude E7270;;J3XGJ72;Aktiv
+02/10/20 15:15;N1M191;Bethany Schaefer;AFV Projektering og Tilsyn;PC5002147;Windows 10;Dell Inc.;Latitude E7470;;8L2BR72;Aktiv
+07/10/20 07:38;N1M192;Ramon Lyons;AFV Byggestyring og Koordinering;PC5002159;Windows 10;Dell Inc.;Latitude E7470;;31PXWF2;Aktiv
+17/09/20 09:58;N1M193;Brendan Delacruz;AFV Spildevand og Udledninger;PC5002162;Windows 10;Dell Inc.;Latitude 7280;;5VTX6H2;Aktiv
+07/10/20 07:40;N1M194;Raven Harrison;AFV Grundvand og Vandkvalitet;PC5002163;Windows 10;Dell Inc.;Latitude 7280;;FD0L7H2;Aktiv
+07/10/20 08:04;N1M195;Harmony Joseph;AFV Byggestyring og Koordinering;PC5002164;Windows 10;Dell Inc.;Latitude 7480;;5WJC9H2;Aktiv
+07/10/20 07:51;N1M196;Jazmine Russo;AFV Regninger og Fakturaer;PC5002167;Windows 10;Dell Inc.;Latitude 7480;;2LZNFH2;Aktiv
+07/10/20 07:04;N1M197;Sabrina Boyd;AFV Innovation og Videndeling;PC5002170;Windows 10;Dell Inc.;Latitude 7480;;3VVXLH2;Aktiv
+06/10/20 16:14;N1M198;Clark Wade;AFV Byggestyring og Koordinering;PC5002171;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0SDCHC;Aktiv
+07/10/20 08:22;N1M199;Devin Cooke;AFV Innovation og Videndeling;PC5002172;Windows 10;Dell Inc.;Latitude 7480;;C5BXLH2;Aktiv
+07/10/20 07:29;#I/T;#I/T;AFV Projektering og Tilsyn;PC5002174;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0SMDQY;Aktiv
+07/10/20 08:01;N1M200;Catalina Barajas;AFV Projektering og Tilsyn;PC5002176;Windows 10;Dell Inc.;Latitude 7480;;BQ9M0N2;Aktiv
+07/10/20 07:39;N1M201;Christina Callahan;AFV Projektering og Tilsyn;PC5002177;Windows 10;LENOVO;20EQS6B200;ThinkPad P50;PC0TX9MR;Aktiv
+06/10/20 16:11;N1M202;Allisson Rosario;AFV Vandsamarbejde Aalborg;PC5002181;Windows 10;Dell Inc.;Latitude 7490;;776JTN2;Aktiv
+07/10/20 07:32;N1M203;Georgia Ballard;AFV Projektering og Tilsyn;PC5002182;Windows 10;LENOVO;20LAS0XW00;ThinkPad T580;R90QYNU3;Aktiv
+24/09/20 14:14;N1M204;German Roy;AFV Projektering og Tilsyn;PC5002183;Windows 10;LENOVO;20LAS0XW00;ThinkPad T580;R90QXF0W;Aktiv
+07/10/20 07:52;N1M205;Cassie Briggs;AFV Innovation og Videndeling;PC5002184;Windows 10;Dell Inc.;Latitude 7490;;H56JTN2;Aktiv
+07/10/20 07:46;N1M206;Willie Norton;AFV Grundvand og Vandkvalitet;PC5002185;Windows 10;Dell Inc.;Latitude 7490;;8WCJTN2;Aktiv
+07/10/20 08:06;N1M207;Valeria Singh;AFV Projektering og Tilsyn;PC5002186;Windows 10;Dell Inc.;Latitude 7490;;B36JTN2;Aktiv
+07/10/20 07:27;N1M208;Santiago Pineda;AFV Byggestyring og Koordinering;PC5002188;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1HFAX0;Aktiv
+07/10/20 09:08;N1M209;Rylan Wagner;BU Netværk for Bæredygtig Erhvervsudv.;PC5002189;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC122PV9;Aktiv
+07/10/20 08:40;N1M210;Kade Estrada;AFV Byggestyring og Koordinering;PC5002190;Windows 10;LENOVO;20LAS4VH00;ThinkPad T580;R90VP0G0;Aktiv
+06/10/20 09:31;N1M211;Kyra Santiago;AFV Projektering og Tilsyn;PC5002191;Windows 10;LENOVO;20NYS1JC00;ThinkPad T490s;PF1GGT6T;Aktiv
+07/10/20 08:22;N1M015;Kamren Pineda;AFV Innovation og Videndeling;PC5002192;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1K0QHP;Aktiv
+07/10/20 07:49;N1M212;Dean Barry;AFV Grundvand og Vandkvalitet;PC5002193;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0WG9;Aktiv
+07/10/20 08:19;N1M213;Leah Meadows;"AFR Drift, Genbrug og Sortering";PC5003209;Windows 10;Dell Inc.;Latitude E6540;01;9VW5VZ1;Aktiv
+22/09/20 15:59;N1M220;Rhys Robertson;AFR Sekretariat;PC5003230;Windows 10;Dell Inc.;Latitude E7250;;3C79362;Aktiv
+05/10/20 07:53;#I/T;#I/T;AFR Sekretariat;PC5003232;Windows 10;Dell Inc.;Latitude E7250;;8V2WC72;Aktiv
+30/09/20 07:10;N1M215;Bryan Gillespie;"AFR Drift, Transport";PC5003233;Windows 10;Dell Inc.;Latitude E7250;;8S6HF72;Aktiv
+05/10/20 19:59;N1M216;Jordyn Bautista;"AFR Drift, Genbrug og Sortering";PC5003234;Windows 10;Dell Inc.;Latitude E7250;;CX6HF72;Aktiv
+07/10/20 08:13;N1M217;Gloria Navarro;AFR Sekretariat;PC5003235;Windows 10;Dell Inc.;Latitude E7250;;5NCGF72;Aktiv
+07/10/20 03:53;N1M218;Konnor Hoover;"Aalborg Forsyning, Renovation";PC5003237;Windows 10;Dell Inc.;Latitude E7250;;30R7F72;Aktiv
+07/10/20 07:15;N1M219;Lee Moon;AFR Drift;PC5003238;Windows 10;Dell Inc.;Latitude E7250;;1VBMN72;Aktiv
+23/09/20 10:04;N1M220;Rhys Robertson;AFR Sekretariat;PC5003242;Windows 10;Dell Inc.;Latitude E5570;;71FVJC2;Aktiv
+07/10/20 08:20;N1M221;Kallie May;AFR Projekt og Udvikling;PC5003243;Windows 10;Dell Inc.;Latitude E7270;;869PFC2;Aktiv
+22/09/20 15:33;N1M220;Rhys Robertson;AFR Sekretariat;PC5003244;Windows 10;Dell Inc.;Latitude E7270;;FB21NC2;Aktiv
+28/09/20 07:50;N1M222;Luca Bentley;AFR Sekretariat;PC5003245;Windows 10;Dell Inc.;Latitude E7270;;G8N9QC2;Aktiv
+07/10/20 08:28;N1M223;Livia Craig;AFR Sekretariat;PC5003247;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0FCYLW;Aktiv
+07/10/20 06:52;N1M224;Brendan Shannon;AFR Sekretariat;PC5003248;Windows 10;Dell Inc.;Latitude E7270;;13VVNC2;Aktiv
+02/10/20 08:17;N1M220;Rhys Robertson;AFR Sekretariat;PC5003249;Windows 10;Dell Inc.;OptiPlex 7010;01;1F4Y7Z1;Aktiv
+07/10/20 09:17;N1M225;Melvin Atkinson;AFR Projekt og Udvikling;PC5003255;Windows 10;Dell Inc.;Latitude E5270;;7SLMWF2;Aktiv
+07/10/20 07:57;N1M226;Zayne Mullen;AFR Sekretariat;PC5003256;Windows 10;Dell Inc.;Latitude E5270;;8YLRXF2;Aktiv
+07/10/20 08:46;N1M227;Bruce Patton;AFR Sekretariat;PC5003258;Windows 10;Dell Inc.;Latitude E7270;;23811G2;Aktiv
+07/10/20 08:23;N1M228;Jaiden Mccormick;Aalborg Renovation;PC5003260;Windows 10;LENOVO;80XE;MIIX 510-12IKB;YD02NDZW;Aktiv
+07/10/20 08:10;N1M229;Imani Grimes;AFR Sekretariat;PC5003261;Windows 10;Dell Inc.;Latitude E7270;;HCBDRF2;Aktiv
+06/10/20 08:03;N1M230;Brenda Hartman;AFR Sekretariat;PC5003262;Windows 10;Dell Inc.;Latitude 7280;;85WTLH2;Aktiv
+07/10/20 08:06;N1M231;London Weber;AFR Sekretariat;PC5003263;Windows 10;Dell Inc.;Latitude 7480;;B4R4MH2;Aktiv
+07/10/20 07:54;N1M232;Kendrick Silva;AFR Projekt og Udvikling;PC5003264;Windows 10;Dell Inc.;Latitude 7480;;37DSLH2;Aktiv
+09/09/20 05:59;N1M241;Noah Cowan;AFR Drift;PC5003267;Windows 10;Dell Inc.;Latitude 7480;;FLRSLH2;Aktiv
+02/10/20 10:15;N1M215;Bryan Gillespie;"AFR Drift, Transport";PC5003268;Windows 10;Dell Inc.;Latitude 7280;;DQ4SMH2;Aktiv
+07/10/20 08:20;N1M234;June Ramirez;AFV Byggestyring og Koordinering;PC5003269;Windows 10;Dell Inc.;Latitude 7480;;7GFXJM2;Aktiv
+01/10/20 11:54;N1M235;Jamari Lawrence;AFR Sekretariat;PC5003270;Windows 10;Dell Inc.;Latitude 7480;;8X3LZM2;Aktiv
+07/10/20 09:03;N1M236;Areli Anthony;AFR Drift;PC5003271;Windows 10;Dell Inc.;Latitude 7480;;CRKSLH2;Aktiv
+07/10/20 07:38;N1M237;Jaylan Mora;AFR Projekt og Udvikling;PC5003272;Windows 10;Dell Inc.;Latitude 7480;;63HLZM2;Aktiv
+07/10/20 08:30;N1M238;Martha Smith;AFR Sekretariat;PC5003273;Windows 10;Dell Inc.;Latitude 5580;;4Y6N0N2;Aktiv
+23/09/20 17:05;N1M146;Amy Elliott;;PC5003274;Windows 10;Dell Inc.;Latitude 7480;;FBRSLH2;Aktiv
+07/10/20 07:04;N1M239;Tiara Horne;AFR Sekretariat;PC5003275;Windows 10;Dell Inc.;Latitude E7250;;6LJV562;Aktiv
+07/10/20 08:00;N1M240;Eden Wilkinson;;PC5003276;Windows 10;Dell Inc.;Latitude E7250;;6VH8M72;Aktiv
+07/10/20 07:01;N1M241;Noah Cowan;AFR Drift;PC5003279;Windows 10;Dell Inc.;Latitude E7250;;J7QPN72;Aktiv
+06/10/20 08:00;N1M242;Madalyn Manning;AFR Projekt og Udvikling;PC5003281;Windows 10;Dell Inc.;Latitude 7490;;1DS7NN2;Aktiv
+06/10/20 20:25;N1M243;Armani Mcdowell;AFR Projekt og Udvikling;PC5003282;Windows 10;Dell Inc.;Latitude 7490;;CR4MNN2;Aktiv
+07/10/20 07:28;N1M244;Carleigh Williams;AFR Sekretariat;PC5003283;Windows 10;Dell Inc.;Latitude 7490;;19ZJQN2;Aktiv
+07/10/20 08:31;N1M245;Livia Meyer;AFR Sekretariat;PC5003285;Windows 10;Dell Inc.;Latitude 7490;;68ZJQN2;Aktiv
+07/10/20 08:08;N1M246;Paloma Drake;AFR Sekretariat;PC5003286;Windows 10;Dell Inc.;Latitude 7490;;3R4KQN2;Aktiv
+07/10/20 06:14;N1M247;Warren Riley;AFR Drift;PC5003287;Windows 10;Dell Inc.;Latitude 7490;;CZ1XQN2;Aktiv
+06/10/20 11:31;N1M248;Teagan Abbott;"AFR Drift, Transport";PC5003288;Windows 10;Dell Inc.;Latitude 7480;;9KRSLH2;Aktiv
+23/09/20 08:18;N1M249;Andreas House;AFR Drift;PC5003289;Windows 10;Dell Inc.;Latitude 7490;;4KL54Q2;Aktiv
+07/10/20 07:10;N1M250;Denise Vargas;AFR Sekretariat;PC5003290;Windows 10;Dell Inc.;Latitude 7490;;7TR54Q2;Aktiv
+07/10/20 09:04;N1M251;Quincy Olsen;AFR Sekretariat;PC5003292;Windows 10;Dell Inc.;Latitude 7490;;9TPMQQ2;Aktiv
+07/10/20 08:14;N1M252;Mason Wong;AFR Drift;PC5003294;Windows 10;Dell Inc.;Latitude E7270;;CCWRSC2;Aktiv
+07/10/20 03:19;N1M253;Arely Khan;"AFR Drift, Genbrug og Sortering";PC5003296;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1H6420;Aktiv
+07/10/20 08:10;N1M254;Yoselin Johnson;AFR Projekt og Udvikling;PC5003298;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1H641E;Aktiv
+07/10/20 09:24;N1M255;Cassandra Rosario;AFR Drift;PC5003299;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC13F26A;Aktiv
+07/10/20 04:53;N1M233;Giovanna Crane;AFR Drift;PC5003300;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC14TSWM;Aktiv
+07/10/20 08:16;N1M256;Jewel Ashley;AFR Sekretariat;PC5003301;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC14RYYB;Aktiv
+07/10/20 07:54;N1M257;Fisher Fowler;AFR Projekt og Udvikling;PC5003302;Windows 10;LENOVO;20KES8D400;ThinkPad X280;PC16QDF9;Aktiv
+25/09/20 15:39;N1M228;Jaiden Mccormick;Aalborg Renovation;PC5003303;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1G3WL4;Aktiv
+07/10/20 07:42;N1M258;Tori Carson;AFR Sekretariat;PC5003304;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1470H6;Aktiv
+07/10/20 06:51;N1M259;Jaslene Wang;AFR Drift;PC5003305;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2P;Aktiv
+01/10/20 09:21;N1M220;Rhys Robertson;AFR Sekretariat;PC5003306;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2R;Aktiv
+23/09/20 09:16;N1M220;Rhys Robertson;AFR Sekretariat;PC5003307;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D2B02;Aktiv
+07/10/20 02:48;N1M260;Corbin Montes;"AFR Drift, Genbrug og Sortering";PC5003308;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2S;Aktiv
+07/10/20 09:06;#I/T;#I/T;"AFR Drift, Genbrug og Sortering";PC5003309;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2Q;Aktiv
+07/10/20 10:17;#I/T;#I/T;"AFR Drift, Genbrug og Sortering";PC5003310;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0V2M;Aktiv
+06/10/20 19:12;N1M263;Braylen Cherry;"AFR Drift, Genbrug og Sortering";PC5003311;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D25VZ;Aktiv
+06/10/20 19:00;N1M264;Kadin Booth;AFR Drift;PC5003312;Windows 10;LENOVO;20N3S75V00;ThinkPad T490;PF21ZB9K;Aktiv
+06/10/20 17:12;N1M265;Rowan Aguirre;"AFR Drift, Genbrug og Sortering";PC5003313;Windows 10;LENOVO;20N3S75V00;ThinkPad T490;PF21ZBC8;Aktiv
+06/10/20 10:25;N1M266;Kimora Pittman;AFR Projekt og Udvikling;PC5003315;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1K8SPG;Aktiv
+07/10/20 07:42;N1M267;Trace Brooks;AFR Sekretariat;PC5003316;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KHCJE;Aktiv
+11/09/20 15:56;N1M146;Amy Elliott;;PC5003317;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KHCJH;Aktiv
+06/10/20 08:15;N1M268;Ernesto Garrett;AFR Sekretariat;PC5003318;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1L3TPG;Aktiv
+06/10/20 07:01;N1M269;Kiersten Duffy;AFR Drift;PC5003319;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1JJAPG;Aktiv
+23/09/20 15:30;N1M220;Rhys Robertson;AFR Sekretariat;PC5003320;Windows 10;Dell Inc.;Latitude E5570;;4Q2VQC2;Aktiv
+05/10/20 09:01;N1M270;Immanuel Pratt;Aalborg Renovation;PC5003321;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KHCJG;Aktiv
+07/10/20 07:31;N1M272;Autumn Mcguire;AFE Salg og Service;PC5004003;Windows 10;Dell Inc.;Latitude 7480;;98WXLH2;Aktiv
+07/09/20 07:29;N1M273;Stacy Myers;AFE Eksterne brugere;PC5004006;Windows 10;Dell Inc.;Latitude 7480;;C5P0NH2;Aktiv
+07/10/20 06:56;N1M274;Brennan Blackburn;AFE Salg og Service;PC5004007;Windows 10;Dell Inc.;Latitude 7480;;B0DSLH2;Aktiv
+07/10/20 06:45;N1M275;Brenda Gray;AFE Net Drift;PC5004009;Windows 10;Dell Inc.;Latitude 7480;;1R4V3M2;Aktiv
+07/10/20 04:42;N1M276;Samson Cohen;AFE Net Drift;PC5004011;Windows 10;Dell Inc.;Latitude 7480;;510Z3M2;Aktiv
+07/10/20 06:30;N1M277;Alexa Hooper;AFE Mekanisk Vedligehold og Driftvagt;PC5004012;Windows 10;Dell Inc.;Latitude 5580;;121V5M2;Aktiv
+05/10/20 09:06;N1M278;Alan Nixon;AFE Net Drift;PC5004013;Windows 10;Dell Inc.;Latitude 7480;;H1ZWLH2;Aktiv
+06/10/20 11:41;N1M279;Nick Costa;AFE Håndværkere;PC5004014;Windows 10;Dell Inc.;Latitude 7480;;HBPXLH2;Aktiv
+07/10/20 06:30;N1M280;Yael Huang;AFE Håndværkere;PC5004015;Windows 10;Dell Inc.;Latitude 7480;;18R4MH2;Aktiv
+07/10/20 08:41;N1M281;Gabriel Porter;AFE Håndværkere;PC5004016;Windows 10;Dell Inc.;Latitude 7480;;DYVXLH2;Aktiv
+07/10/20 03:35;N1M282;Nia Burnett;AFE Håndværkere;PC5004017;Windows 10;Dell Inc.;Latitude 7480;;8XYWLH2;Aktiv
+07/10/20 10:06;N1M283;Destiney Ali;AFE Håndværkere;PC5004018;Windows 10;Dell Inc.;Latitude 7480;;F4R4MH2;Aktiv
+07/10/20 09:26;N1M284;Georgia Oconnor;AFE Håndværkere;PC5004019;Windows 10;Dell Inc.;Latitude 7480;;2G4XLH2;Aktiv
+06/10/20 11:01;N1M285;Stephanie Gallagher;AFE Håndværkere;PC5004020;Windows 10;Dell Inc.;Latitude 7480;;3YKSLH2;Aktiv
+05/10/20 14:30;N1M286;Santiago Wheeler;AFE Eksterne brugere;PC5004021;Windows 10;Dell Inc.;Latitude 7490;;9ZRYPN2;Aktiv
+07/10/20 10:45;N1M287;Sierra Miller;AFE Mekanisk Vedligehold og Driftvagt;PC5004022;Windows 10;Dell Inc.;Latitude 7490;;H24ZPN2;Aktiv
+06/10/20 17:48;N1M288;Cole Hampton;AFE Net Drift;PC5004023;Windows 10;Dell Inc.;Latitude 7490;;C6LYPN2;Aktiv
+07/10/20 08:54;N1M289;Hillary Andrews;AFE Net Drift;PC5004024;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF17PG8L;Aktiv
+07/10/20 08:15;N1M290;Chance Walker;AFE Projekter;PC5004027;Windows 10;LENOVO;20LAS1XE00;ThinkPad T580;R90QW9W1;Aktiv
+06/10/20 14:07;N1M291;Kasey Webb;AFE Net Drift;PC5004029;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1HPXKJ;Aktiv
+07/10/20 05:56;N1M292;Phoebe Riley;AFE Eksterne brugere;PC5004031;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10X14N;Aktiv
+07/10/20 07:32;N1M293;Brett Case;AFE Ledningsafsnit;PC5004032;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10X14R;Aktiv
+07/10/20 08:15;N1M294;Alana Gutierrez;AFE Forretningsudvikling;PC5004033;Windows 10;LENOVO;20M3;MIIX 520-12IKB;YD06HZ7G;Aktiv
+07/10/20 09:55;N1M295;Jovanni Leach;AFE Net Drift;PC5004034;Windows 10;HP;HP ZBook 17 G5; ;5CD91366YK;Aktiv
+07/10/20 08:59;N1M296;Moses Villegas;AFE Ledningsafsnit;PC5004035;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1NEZD0;Aktiv
+06/10/20 17:03;N1M297;Fatima Steele;AFE Ledningsafsnit;PC5004036;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1NEZBR;Aktiv
+07/10/20 06:40;N1M298;Jazlynn Myers;AFE Salg og Service;PC5004037;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1PM8ZR;Aktiv
+07/10/20 09:16;N1M278;Alan Nixon;AFE Net Drift;PC5004038;Windows 10 LTSB;HP;HP Z2 SFF G4 Workstation; ;CZC91888SK;Aktiv
+29/09/20 04:08;N1M533;Amya Garrett;AFE Net Drift;PC5004039;Windows 10 LTSB;HP;HP Z2 SFF G4 Workstation; ;CZC91888SJ;Aktiv
+29/09/20 03:54;#I/T;#I/T;"DIGIT, AFS";PC5004040;Windows 10 LTSB;HP;HP Z2 SFF G4 Workstation; ;CZC91888SH;Aktiv
+24/09/20 12:24;#I/T;#I/T;"DIGIT, AFS";PC5004041;Windows 10 LTSB;HP;HP Z2 SFF G4 Workstation; ;CZC91888SG;Aktiv
+29/09/20 03:38;#I/T;#I/T;"DIGIT, AFS";PC5004042;Windows 10 LTSB;HP;HP Z2 SFF G4 Workstation; ;CZC91888SF;Aktiv
+06/10/20 03:47;N1M301;Davin Woodard;AFE Net Drift;PC5004045;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBQ;Aktiv
+30/09/20 11:45;N1M054;Adrian Fields;"AFS DiGIT, DAD-Drift";PC5004879-VM;Windows 10;Phoenix Technologies LTD;VMware Virtual Platform;None;VMware-56 4d 87 e2 e4 b2 4f 20-f6 98 7d 65 8d 40 ;Aktiv
+06/10/20 17:30;N1M302;Alvaro Armstrong;AFE Net Drift;PC5004895;Windows 10;Hewlett-Packard;HP ZBook 17;A3009DC10303;CND5042X4J;Aktiv
+07/10/20 06:27;N1M303;Raegan Wagner;AFE Decentrale Værker;PC5004903;Windows 10;Hewlett-Packard;HP ZBook 17;A3009DD10303;CND5050L4N;Aktiv
+06/10/20 08:54;N1M304;Milton Castillo;AFE Decentrale Værker;PC5004907;Windows 10;Hewlett-Packard;HP ZBook 17;A3009DC10303;CND4500F8N;Aktiv
+05/09/20 09:45;N1M456;Uriel Hill;AFE Projekter;PC5004918;Windows 10;American Megatrends Inc.;Surface Pro 3;1;033880650753;Deaktiveret
+07/10/20 07:14;N1M305;Jamison Maxwell;AFE Ledningsafsnit;PC5004942;Windows 10;Dell Inc.;Latitude E7250;;H814462;Aktiv
+05/10/20 10:30;N1M306;Travis Berger;AFE Decentrale Værker;PC5004948;Windows 10;American Megatrends Inc.;Surface Pro 3;1;012094551853;Aktiv
+07/09/20 06:30;N1M510;Donald Hodge;AFE Net Drift;PC5004957;Windows 10;American Megatrends Inc.;Surface Pro 3;1;027703252453;Aktiv
+07/10/20 06:15;N1M307;Elsa Krause;AFE Ledningsafsnit;PC5004958;Windows 10;Dell Inc.;Latitude E7250;;3N4TC72;Aktiv
+07/10/20 06:33;N1M308;Lila Rivers;AFE Projekter;PC5004971;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0D7D9P;Aktiv
+07/10/20 07:28;N1M309;Libby Meza;AFE Ledningsafsnit;PC5004976;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0FGJ3U;Aktiv
+07/10/20 08:06;N1M310;Kaylee Rose;AFE Ledningsafsnit;PC5004977;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0FGJ3T;Aktiv
+18/09/20 07:56;N1M294;Alana Gutierrez;AFE Forretningsudvikling;PC5004978;Windows 10;Dell Inc.;Latitude E5570;;5P80QC2;Aktiv
+07/10/20 09:22;N1M311;Derek Hatfield;AFE Ledningsafsnit;PC5004981;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0GWKU6;Aktiv
+07/10/20 07:52;N1M312;Madden Cline;AFE Ledningsafsnit;PC5004982;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0GWKU8;Aktiv
+07/10/20 07:55;N1M313;Lia Howell;AFE Ledningsafsnit;PC5004983;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0GWKU7;Aktiv
+07/10/20 08:07;N1M314;Quentin Wilkerson;AFE Ledningsafsnit;PC5004985;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0GCCBN;Aktiv
+07/10/20 07:57;N1M315;Ruth Williamson;AFE Ledningsafsnit;PC5004986;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0GCCBP;Aktiv
+07/10/20 06:47;N1M316;Karissa Wise;AFE Ledningsafsnit;PC5004987;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0GWLHZ;Aktiv
+30/09/20 14:27;N1M317;Renee Brown;AFE Ledningsafsnit;PC5004990;Windows 10;Dell Inc.;Latitude E5270;;6QLMWF2;Aktiv
+07/10/20 06:54;N1M318;Allan Mercado;AFE Salg og Service;PC5004992;Windows 10;Dell Inc.;Latitude E7270;;8M35YF2;Aktiv
+07/10/20 07:33;N1M319;Elian May;AFE Økonomi og Administration;PC5004994;Windows 10;Dell Inc.;Latitude E7470;;8MF61G2;Aktiv
+06/10/20 08:25;N1M320;Kayleigh Whitney;AFE Håndværkere;PC5004995;Windows 10;Dell Inc.;Latitude E5570;;4JBB2G2;Aktiv
+23/09/20 08:47;N1M321;Lucia Fritz;AFE Gas Drift;PC5006064;Windows 10;Dell Inc.;Latitude E7240;00;CG3WG12;Aktiv
+06/10/20 07:44;N1M322;Neil Ochoa;AFE Gas Drift;PC5006068;Windows 10;Dell Inc.;Latitude E5470;;96MHWF2;Aktiv
+07/10/20 07:12;N1M323;Ezequiel Gordon;AFE Salg og Service;PC5006071;Windows 10;Dell Inc.;Latitude 7280;;HTR5MH2;Aktiv
+06/10/20 15:32;N1M324;Cheyenne Freeman;AFE Salg og Service;PC5006072;Windows 10;Dell Inc.;Latitude 7280;;BYR5MH2;Aktiv
+06/10/20 09:22;N1M325;Kayleigh Rowe;AFE Gas;PC5006073;Windows 10;Dell Inc.;Latitude 7480;;3MKSLH2;Aktiv
+07/10/20 07:34;N1M326;Yamilet Weeks;AFE Gas Drift;PC5006074;Windows 10;Dell Inc.;Latitude 7480;;5LHXLH2;Aktiv
+29/09/20 12:31;N1M327;Rubi Mitchell;AFE Gas Drift;PC5006075;Windows 10;Dell Inc.;Latitude 7480;;45PXLH2;Aktiv
+07/10/20 06:43;N1M328;Adam Watson;AFE Gas;PC5006076;Windows 10;Dell Inc.;Latitude 7490;;DRRYPN2;Aktiv
+07/10/20 09:29;N1M329;Logan Schroeder;AFE Gas Drift;PC5006078;Windows 10;Dell Inc.;Latitude 7480;;D6KK7H2;Aktiv
+06/10/20 11:23;N1M330;Porter Merritt;AFE Håndværkere;PC5006079;Windows 10;Dell Inc.;Latitude 7490;;2LYYPN2;Aktiv
+07/10/20 06:49;N1M321;Lucia Fritz;AFE Gas Drift;PC5006080;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90TQL5P;Aktiv
+02/10/20 11:22;N1M331;Chaim Elliott;AFV Teknisk kundekontakt;PC5007205;Windows 10;Dell Inc.;Latitude E7450;;FHW7662;Aktiv
+07/10/20 07:45;N1M332;Livia Moore;AFV Grundvand og Vandkvalitet;PC5007212;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0D89U3;Aktiv
+07/10/20 06:26;N1M333;Benjamin Alvarez;AFV Drift og Vedligehold;PC5007214;Windows 10;Dell Inc.;Latitude E7270;;JXVJHC2;Aktiv
+07/10/20 07:08;N1M334;Alexus Garrett;AFV Proces og styring;PC5007215;Windows 10;Dell Inc.;Latitude E7270;;GYVJHC2;Aktiv
+07/10/20 06:58;N1M335;Elijah Douglas;"AFV Rørlægning, Vand";PC5007216;Windows 10;LENOVO;20EQS1YQ00;ThinkPad P50;PC0F8TS7;Aktiv
+07/10/20 08:10;N1M336;Jaslene Cisneros;AFV Anlæg og Processer;PC5007218;Windows 10;Dell Inc.;Latitude E7470;;97LFHC2;Aktiv
+07/10/20 08:27;N1M337;Jason Cordova;"AFV Sekretariat, Vand";PC5007220;Windows 10;Dell Inc.;Latitude 7480;;37KK7H2;Aktiv
+07/10/20 07:41;N1M338;Olive Williams;AFV Regninger og Fakturaer;PC5007223;Windows 10;Dell Inc.;Latitude 7480;;BRHNMH2;Aktiv
+23/09/20 08:48;N1M339;Conner Pace;"AFV Rørlægning, Vand";PC5007224;Windows 10;Dell Inc.;Latitude 7480;;1LVTLH2;Aktiv
+07/10/20 06:07;N1M340;Kyler Reilly;AFV Teknisk kundekontakt;PC5007226;Windows 10;Dell Inc.;Latitude 7480;;8V7YLH2;Aktiv
+07/10/20 08:49;N1M373;Fernando Lopez;AFV Drift og Vedligehold;PC5007228;Windows 10;Dell Inc.;OptiPlex 7010;01;C1H2ZX1;Aktiv
+06/10/20 12:30;N1M342;Charlize Peck;AFV Proces og styring;PC5007231;Windows 10;Dell Inc.;Latitude 7480;;C1DSLH2;Aktiv
+07/10/20 07:38;N1M343;Jaliyah Villegas;Aalborg Vand Holding A/S;PC5007232;Windows 10;Dell Inc.;Latitude 7480;;3GRSLH2;Aktiv
+07/10/20 07:03;N1M344;Adriel Coleman;AFV Proces og styring;PC5007234;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0T0JCR;Aktiv
+07/10/20 09:01;#I/T;#I/T;AFV Proces og styring;PC5007235;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0T0JCS;Aktiv
+07/10/20 08:26;N1M346;Bruce Mccann;AFV Regninger og Fakturaer;PC5007236;Windows 10;Dell Inc.;Latitude 7480;;HJFXJM2;Aktiv
+04/10/20 10:53;N1M347;Memphis Gilmore;AFV Drift og Vedligehold;PC5007237;Windows 10;Dell Inc.;Latitude 7480;;G7PXLH2;Aktiv
+07/09/20 08:16;N1M635;Niesha Mcguinness  ;MP Grundvand;PC5007245;Windows 10;Dell Inc.;Latitude E7470;;5WDQKC2;Aktiv
+07/10/20 08:25;N1M348;Martin Lowe;AFV Anlæg og Processer;PC5007247;Windows 10;Dell Inc.;Latitude 7480;;B4470N2;Aktiv
+26/08/20 10:18;#I/T;#I/T;AFV Regninger og Fakturaer;PC5007248;Windows 10;Dell Inc.;Latitude 7480;;G5MXJM2;Aktiv
+07/10/20 08:27;N1M349;Jovany Malone;AFV Forretningsudv. og Digitalisering;PC5007249;Windows 10;LENOVO;10MQS2U600;ThinkCentre M710q;S4GT9097;Aktiv
+07/10/20 03:46;N1M343;Jaliyah Villegas;Aalborg Vand Holding A/S;PC5007250;Windows 10;Dell Inc.;Latitude E7250;;4LJV562;Deaktiveret
+07/10/20 06:58;N1M341;Rodolfo Hardin;AFV Proces og styring;PC5007251;Windows 10;Dell Inc.;Latitude 7490;;FCFKSQ2;Aktiv
+07/10/20 07:30;N1M350;Arely Mosley;AFV Forretningsudv. og Digitalisering;PC5007252;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90S2GD2;Aktiv
+07/10/20 06:29;N1M709;Simona Plaisted  ;Renseanlæg VEST;PC5007253;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1HTFUH;Aktiv
+07/10/20 09:43;N1M352;Noelle Blackwell;AFV Anlæg og Processer;PC5007254;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1HPWVR;Aktiv
+07/10/20 04:52;N1M353;Theodore Shea;AFV Vandsamarbejde Aalborg;PC5007255;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10BWSM;Aktiv
+05/10/20 10:25;N1M354;Aspen Washington;AFV Spildevand og Udledninger;PC5007256;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1HTHR9;Aktiv
+07/10/20 07:42;N1M355;Elsie Ramos;AFV Spildevand og Udledninger;PC5007257;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1FXWMF;Aktiv
+29/09/20 10:27;N1M356;Darian Vazquez;AFV Drift og Vedligehold;PC5007258;Windows 10;Dell Inc.;Latitude 5590;;976WRQ2;Aktiv
+07/10/20 08:32;N1M193;Brendan Delacruz;AFV Spildevand og Udledninger;PC5007259;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC10YFY6;Aktiv
+07/10/20 07:43;N1M357;Bailey Berquist  ;AFV Vedtægter og Regulativer;PC5007260;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1GDE3K;Aktiv
+07/10/20 09:11;N1M358;Bailey Mcdaniel;AFV Produktion;PC5007263;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC10YFXT;Aktiv
+29/09/20 11:20;N1M146;Amy Elliott;;PC5007265;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90T8QG0;Aktiv
+07/10/20 08:07;N1M359;Muhammad Barajas;AFV Eksterne brugere;PC5007266;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90T8QG1;Aktiv
+07/10/20 08:37;#I/T;#I/T;AFV Eksterne brugere;PC5007267;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90T8QG5;Aktiv
+07/10/20 08:10;N1M361;Valentin Adkins;AFV Anlæg og Processer;PC5007268;Windows 10;LENOVO;20L6SB2500;ThinkPad T480;PF1LCTXH;Aktiv
+01/10/20 13:06;N1M362;Zoey Matthews;AFV Forretningsudv. og Digitalisering;PC5007269;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90T8QG3;Aktiv
+07/10/20 07:46;N1M363;Derick French;AFV Forretningsudv. og Digitalisering;PC5007270;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90T8QG2;Aktiv
+07/10/20 09:54;#I/T;#I/T;AFV Drift og Vedligehold;PC5007272;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC11JAGP;Aktiv
+07/10/20 09:55;N1M365;Jovany Franklin;AFV Drift og Vedligehold;PC5007273;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC11JAH8;Aktiv
+07/10/20 09:10;#I/T;#I/T;AFV Drift og Vedligehold;PC5007274;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC11JAHB;Aktiv
+07/10/20 09:35;#I/T;#I/T;AFV Drift og Vedligehold;PC5007275;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC11JAGT;Aktiv
+07/10/20 09:29;N1M368;Camron Dunlap;AFV Drift og Vedligehold;PC5007276;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC11JAH5;Aktiv
+07/10/20 06:35;N1M369;Grady Coleman;"AFV Rørlægning, Vand";PC5007277;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC122S07;Aktiv
+07/10/20 04:58;N1M349;Jovany Malone;AFV Forretningsudv. og Digitalisering;PC5007278;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC14FDN6;Aktiv
+07/10/20 06:53;N1M370;Ronald Sharp;AFV Proces og styring;PC5007279;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90SVCV0;Aktiv
+07/10/20 09:47;N1M371;Davion Leonard;AFV Teknik og Håndværk;PC5007280;Windows 10;LENOVO;20KES8D400;ThinkPad X280;PC152ZKV;Aktiv
+06/10/20 19:06;N1M372;Parker Moon;AFV Anlæg og Processer;PC5007282;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBW;Aktiv
+02/10/20 10:44;N1M345;Bradyn Guerra;AFV Drift og Vedligehold;PC5007283;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90W1TGW;Deaktiveret
+07/10/20 08:47;N1M374;Alijah Acosta;AFV Byggestyring og Koordinering;PC5007284;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90WA2E7;Aktiv
+07/10/20 07:39;N1M375;Kaylin Ferguson;Renseanlæg VEST;PC5007285;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PF1KAJ02;Aktiv
+07/10/20 08:01;N1M376;Kaylynn Kaiser;AFV Anlæg og Processer;PC5007286;Windows 10;LENOVO;20N5S2XP00;ThinkPad T590;PF1D2LFZ;Aktiv
+06/10/20 10:16;N1M377;Adolfo Day;AFV Anlæg og Processer;PC5007287;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1BBS90;Aktiv
+07/10/20 07:40;N1M204;German Roy;AFV Projektering og Tilsyn;PC5007288;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1BPUUW;Aktiv
+07/10/20 07:53;N1M378;Caiden Burgess;AFV Vedtægter og Regulativer;PC5007289;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CVZNC;Aktiv
+02/10/20 13:32;N1M331;Chaim Elliott;AFV Teknisk kundekontakt;PC5007290;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CVZND;Aktiv
+07/10/20 07:36;N1M379;Ariel Stephens;AFV Grundvand og Vandkvalitet;PC5007291;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CX1V3;Aktiv
+07/10/20 07:05;N1M380;Jaqueline Livingston;AFV Drift og Vedligehold;PC5007292;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CTA73;Aktiv
+07/10/20 08:01;N1M381;Makena Hancock;AFV Vedtægter og Regulativer;PC5007293;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CSH6K;Aktiv
+07/10/20 07:59;N1M382;Sydney Mckee;AFV Teknisk kundekontakt;PC5007294;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CSF20;Aktiv
+07/10/20 06:58;N1M383;Logan Blevins;AFV Drift og Vedligehold;PC5007295;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1CPR9H;Aktiv
+07/10/20 10:40;N1M384;Jaslene Goodman;AFV Innovation og Videndeling;PC5007296;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CSEA8;Aktiv
+07/10/20 07:03;N1M385;Elisha Mcdowell;AFV Drift og Vedligehold;PC5007298;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E87CS;Aktiv
+07/10/20 08:00;N1M386;Laci Carlson;BU Netværk for Bæredygtig Erhvervsudv.;PC5007299;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYE2W;Aktiv
+07/10/20 08:35;N1M387;Hamza Gomez;AFV Distribution;PC5007301;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1JLLJY;Aktiv
+07/10/20 06:48;N1M388;Augustus Wiley;AFV Vedtægter og Regulativer;PC5007302;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1ESBTF;Aktiv
+07/10/20 07:08;N1M362;Zoey Matthews;AFV Forretningsudv. og Digitalisering;PC5007303;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KENAS;Aktiv
+07/10/20 08:28;N1M354;Aspen Washington;AFV Spildevand og Udledninger;PC5007304;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0WGA;Aktiv
+07/10/20 08:49;N1M389;Aryanna Schroeder;AFV Anlæg og Processer;PC5007305;Windows 10;LENOVO;20N3S69600;ThinkPad T490;PF2237E4;Aktiv
+06/10/20 09:01;N1M146;Amy Elliott;;PC5007306;Windows 10;LENOVO;20S7S0PB00;ThinkPad T15 Gen 1;PF2E08PC;Aktiv
+06/10/20 11:28;N1M146;Amy Elliott;;PC5007307;Windows 10;LENOVO;20S7S3EE00;ThinkPad T15 Gen 1;PF22Z1L1;Aktiv
+01/10/20 14:37;N1M390;Sasha Fox;AFE Vagthold;PC5008005;Windows 10;Dell Inc.;Latitude E7250;;GDR4662;Aktiv
+07/10/20 05:02;N1M391;Melissa Casey;AFE Team M&E;PC5008007;Windows 10;Dell Inc.;Latitude E7250;;9HG5662;Aktiv
+04/09/20 09:51;N1M552;Joanna Levine;AFE Vedligeholdelse;PC5008008;Windows 10;Dell Inc.;Latitude E7250;;JSH5662;Aktiv
+02/10/20 02:03;N1M392;Shiloh Hendrix;AFE Vagthold;PC5008009;Windows 10;Dell Inc.;Latitude E7250;;G811662;Aktiv
+31/08/20 16:10;N1M549;Kenzie Roberson;AFE Vagthold;PC5008011;Windows 10;Dell Inc.;Latitude E7250;;7TG5662;Aktiv
+06/10/20 07:25;N1M393;Kaila Parker;AFE Team E&M;PC5008012;Windows 10;Dell Inc.;Latitude E7250;;35H5662;Aktiv
+07/10/20 04:19;N1M394;Hayden Dudley;AFE Vagthold;PC5008014;Windows 10;Dell Inc.;Latitude E7250;;16L5662;Aktiv
+27/08/20 17:31;N1M550;Jayvon Stephenson;AFE Vagthold;PC5008016;Windows 10;Dell Inc.;Latitude E7250;;DMG5662;Aktiv
+02/10/20 07:00;N1M395;Hana Petty;AFE Team M&E;PC5008017;Windows 10;Dell Inc.;Latitude E7250;;J0J5662;Aktiv
+04/10/20 09:57;N1M396;Raegan Conley;AFE Sikring og driftsoptimering;PC5008018;Windows 10;Dell Inc.;Latitude E7250;;2ZL5662;Aktiv
+17/09/20 06:53;N1M397;Abel Neal;AFE Vagthold;PC5008024;Windows 10;Dell Inc.;Latitude E7250;;GSB5662;Aktiv
+07/10/20 10:13;N1M398;Guadalupe Duran;AFE Vagthold;PC5008026;Windows 10;Dell Inc.;Latitude E7250;;DTD5662;Aktiv
+31/08/20 13:34;N1M521;Branson Atkinson;AFE Vagthold;PC5008027;Windows 10;Dell Inc.;Latitude E7250;;81F5662;Aktiv
+07/10/20 07:54;N1M399;Ali Farrell;AFE Team E&M;PC5008029;Windows 10;Dell Inc.;Latitude E7250;;6KG5662;Aktiv
+10/09/20 15:10;N1M556;Jaylene Oneill;AFE Vagthold;PC5008032;Windows 10;Dell Inc.;Latitude E7250;;7T33662;Aktiv
+03/10/20 11:51;N1M400;Ashley Giles;AFE Mineralprodukter;PC5008037;Windows 10;Dell Inc.;Latitude E7250;;CKV0662;Aktiv
+03/10/20 15:56;N1M401;Anabel Price;AFE Vagthold;PC5008039;Windows 10;Dell Inc.;Latitude E7250;;3JG5662;Aktiv
+07/10/20 10:07;N1M402;Kasey Meyers;AFE Mineralprodukter;PC5008043;Windows 10;Dell Inc.;Latitude E7250;;JYB4662;Aktiv
+06/10/20 15:20;N1M403;Erik Valenzuela;AFE Vagthold;PC5008053;Windows 10;Dell Inc.;Latitude E7250;;H6B5662;Aktiv
+07/10/20 05:42;N1M413;Samara Mcpherson;AFE Team E&M;PC5008055;Windows 10;Dell Inc.;Latitude E7250;;6WB5662;Aktiv
+07/10/20 07:26;N1M404;Davon Peck;AFE Team E&M;PC5008060;Windows 10;Dell Inc.;Latitude E7250;;JB54662;Aktiv
+16/09/20 14:56;N1M405;Finnegan Webster;AFE Drift;PC5008062;Windows 10;Dell Inc.;Latitude E7250;;1P52662;Aktiv
+27/08/20 16:10;N1M553;Brynlee Vaughn;AFE Økonomi og Administration;PC5008063;Windows 10;Dell Inc.;Latitude E7250;;1T61662;Aktiv
+27/09/20 12:55;N1M406;Javion Beltran;AFE Vagthold;PC5008067;Windows 10;Dell Inc.;Latitude E7250;;FQH5662;Aktiv
+02/09/20 05:20;N1M541;Bentley Medina;AFE Team E&M;PC5008070;Windows 10;Dell Inc.;Latitude E7250;;84G6662;Aktiv
+07/10/20 06:51;N1M407;Princess Carney;AFE Laboratorie;PC5008071;Windows 10;Dell Inc.;Latitude E7250;;H0J5662;Aktiv
+07/10/20 08:04;N1M408;Eddie Farrell;AFE Laboratorie;PC5008072;Windows 10;Dell Inc.;Latitude E7250;;2Z33662;Aktiv
+07/10/20 08:16;N1M409;Rolando Bruce;AFE Sikring og driftsoptimering;PC5008073;Windows 10;Dell Inc.;Latitude E7250;;6G11662;Aktiv
+01/10/20 06:45;N1M410;Alan Lozano;AFE Vagthold;PC5008075;Windows 10;Dell Inc.;Latitude E7250;;DVD5662;Aktiv
+07/10/20 08:05;N1M411;Willie Diaz;AFE Energihandel;PC5008078;Windows 10;Dell Inc.;Latitude E7250;;CJJ5662;Aktiv
+10/09/20 12:47;N1M538;Areli Sanchez;AFE Team M&E;PC5008079;Windows 10;Dell Inc.;Latitude E7250;;61C4662;Aktiv
+07/10/20 06:59;N1M412;Shane Davenport;AFE Team E&M;PC5008081;Windows 10;Dell Inc.;Latitude E7250;;CSD5662;Aktiv
+07/10/20 07:02;N1M413;Samara Mcpherson;AFE Team E&M;PC5008089;Windows 10;Dell Inc.;Latitude E7250;;BZ33662;Aktiv
+11/09/20 14:25;N1M300;Jesus Mckenzie;AFE Net Drift;PC5008097;Windows 10;Dell Inc.;Latitude E7250;;9B11662;Aktiv
+16/09/20 11:51;N1M415;Erica Berg;AFE Vedligeholdelse;PC5008106;Windows 10;Dell Inc.;Latitude E7250;;JC04662;Aktiv
+07/10/20 03:33;N1M416;Jasiah Boone;"IT-Afsnit, Forsyningsvirksomhederne";PC5008116;Windows 10;Dell Inc.;Latitude E7250;;4JD5662;Aktiv
+07/10/20 10:32;N1M417;Jamari Sampson;Nordjyllandsværket A/S;PC5008117;Windows 10;Dell Inc.;OptiPlex 9020;00;31PVTB2;Aktiv
+07/10/20 08:25;N1M418;Juliana Harrington;AFE Eksterne brugere;PC5008121;Windows 10;Dell Inc.;Latitude E7250;;69B8M72;Aktiv
+07/10/20 05:04;N1M419;Jonas Hansen;Administration og Service - Brugerfinansieret;PC5008123;Windows 10;Dell Inc.;OptiPlex 7040;;HNWQM62;Aktiv
+07/10/20 09:20;N1M404;Davon Peck;AFE Team E&M;PC5008125;Windows 10;Dell Inc.;Latitude E7270;;4NNXFC2;Aktiv
+07/10/20 07:34;N1M420;Xiomara Villegas;AFE Ledningsafsnit;PC5008126;Windows 10;Dell Inc.;Latitude E7270;;63SYFC2;Aktiv
+07/10/20 09:23;N1M421;Myla Myers;AFE Forretningsudvikling;PC5008127;Windows 10;Dell Inc.;Latitude E7270;;5QNXFC2;Aktiv
+23/09/20 10:17;N1M422;Keira Blackburn;AFV Eksterne brugere;PC5008128;Windows 10;Dell Inc.;Latitude E7270;;3MVXFC2;Aktiv
+06/10/20 07:27;N1M423;Alyvia Sherman;AFE Vedligeholdelse;PC5008129;Windows 10;Dell Inc.;Latitude E7270;;56HXFC2;Aktiv
+05/10/20 10:27;N1M424;Elisa Thornton;AFE Drift;PC5008130;Windows 10;Dell Inc.;Latitude E7270;;F682S72;Aktiv
+07/10/20 08:05;N1M411;Willie Diaz;AFE Energihandel;PC5008131;Windows 10;Dell Inc.;Latitude E7450;;BL9WN72;Aktiv
+07/10/20 05:11;N1M425;Marcel Black;AFE Vagthold;PC5008134;Windows 10;Dell Inc.;Latitude E7270;;8F8NP72;Aktiv
+07/10/20 09:27;N1M419;Jonas Hansen;Administration og Service - Brugerfinansieret;PC5008139;Windows 10;Dell Inc.;OptiPlex 7040;;64RP7J2;Aktiv
+26/08/20 10:19;N1M545;Aiden Rowe;AFE Vedligeholdelse;PC5008140;Windows 10;LENOVO;20EQS1PN00;ThinkPad P50;PC0LEURJ;Aktiv
+07/10/20 08:48;N1M426;Gunner Blankenship;AFE Vedligeholdelse;PC5008141;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0M02N5;Aktiv
+06/10/20 15:44;N1M427;Leon Briggs;AFE Projekter;PC5008143;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0MM8TT;Aktiv
+07/10/20 10:29;N1M428;Nikolai Bruce;Nordjyllandsværket A/S;PC5008144;Windows 10;Dell Inc.;Latitude E7270;;FBWRSC2;Aktiv
+07/10/20 08:38;N1M429;Maritza Vargas;AFE Ledningsafsnit;PC5008145;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0M02N6;Aktiv
+07/10/20 08:40;N1M430;Jaylon Wade;AFE Ledningsafsnit;PC5008146;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0N56BY;Aktiv
+28/09/20 12:08;N1M431;Jovanni Beard;AFE Projekter;PC5008147;Windows 10;LENOVO;80XE;MIIX 510-12IKB;YD02LJEA;Aktiv
+07/10/20 07:32;N1M427;Leon Briggs;AFE Projekter;PC5008148;Windows 10;Hewlett-Packard;HP Z440 Workstation;;CZC5232TT3;Aktiv
+07/10/20 08:42;N1M432;Breanna Whitney;AFE Projekter;PC5008149;Windows 10;Dell Inc.;Latitude 7480;;DH3CFH2;Aktiv
+07/10/20 07:12;N1M433;Adolfo Bates;AFE Økonomi og Administration;PC5008154;Windows 10;Dell Inc.;Latitude 7480;;8X0CNH2;Aktiv
+07/10/20 08:11;N1M434;Grayson Padilla;AFE Net Drift;PC5008155;Windows 10;Dell Inc.;Latitude 7480;;CWKSLH2;Aktiv
+06/10/20 11:01;N1M435;Oliver Clay;AFE Håndværkere;PC5008156;Windows 10;Dell Inc.;Latitude 7480;;3K4XLH2;Aktiv
+02/10/20 07:31;N1M407;Princess Carney;AFE Laboratorie;PC5008158;Windows 10;Dell Inc.;OptiPlex 7050;;6165MM2;Aktiv
+07/10/20 08:27;N1M436;Azul Diaz;Aalborg Energi Holding A/S;PC5008160;Windows 10;Dell Inc.;Latitude 7480;;304CQH2;Aktiv
+07/10/20 08:14;N1M437;Owen Gonzales;AFE Salg og Service;PC5008161;Windows 10;Dell Inc.;Latitude 7480;;891VLH2;Aktiv
+07/10/20 08:17;N1M438;Tony Shepherd;AFE Økonomi og Administration;PC5008162;Windows 10;Dell Inc.;Latitude 7480;;BVWM5M2;Aktiv
+17/09/20 08:04;N1M439;Giovanni Yates;AFE Eksterne brugere;PC5008163;Windows 10;LENOVO;20EQS6VG00;ThinkPad P50;PC0QXEKX;Aktiv
+21/09/20 12:56;N1M440;Johnny Ortega;AFE Energicenter;PC5008164;Windows 10;Dell Inc.;Latitude 7480;;G92N5M2;Aktiv
+06/10/20 07:39;N1M441;Milo Salas;AFE Vagthold;PC5008165;Windows 10;Dell Inc.;Latitude 7480;;9KVTLH2;Aktiv
+06/10/20 11:00;N1M300;Jesus Mckenzie;AFE Net Drift;PC5008169;Windows 10;Dell Inc.;Latitude 7480;;67GQJM2;Aktiv
+06/10/20 07:40;N1M442;Lilian Ayers;AFE Net Drift;PC5008170;Windows 10;Dell Inc.;Latitude 7480;;27GQJM2;Aktiv
+07/10/20 10:35;N1M443;Jayce Barnett;AFE Net Drift;PC5008171;Windows 10;Dell Inc.;Latitude 7480;;GNZHJM2;Aktiv
+07/10/20 08:53;N1M444;Kylee Boyle;AFE Energihandel;PC5008172;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF13V2LN;Aktiv
+07/10/20 09:38;N1M445;Destinee Hutchinson;AFE Energicenter;PC5008173;Windows 10;Dell Inc.;Latitude 5580;;6KWCZM2;Aktiv
+07/10/20 08:34;N1M446;Madilynn Huff;AFE Energicenter;PC5008174;Windows 10;Dell Inc.;Latitude 5580;;4Y1DZM2;Aktiv
+07/10/20 06:44;N1M447;David Mccarty;AFE Energicenter;PC5008175;Windows 10;Dell Inc.;Latitude 7480;;3XJCZM2;Aktiv
+20/09/20 18:31;N1M448;Jaeden Bird;AFE Net Drift;PC5008176;Windows 10;Dell Inc.;Latitude 7480;;188CZM2;Aktiv
+07/10/20 06:29;N1M449;Allie Ortiz;AFE Decentrale Værker;PC5008177;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF13V2KQ;Aktiv
+07/10/20 08:01;N1M450;Anabelle Franco;AFE Ledningsafsnit;PC5008178;Windows 10;LENOVO;20EQS6B200;ThinkPad P50;PC0SEF56;Aktiv
+07/10/20 05:35;N1M451;Lyric Lozano;AFE Salg og Service;PC5008179;Windows 10;Dell Inc.;Latitude 5580;;F79L0N2;Aktiv
+07/10/20 08:25;N1M424;Elisa Thornton;AFE Drift;PC5008181;Windows 10;LENOVO;80XE;MIIX 510-12IKB;YD03Y999;Aktiv
+07/10/20 08:29;N1M452;Kadence Bentley;AFE Net Drift;PC5008182;Windows 10;Dell Inc.;Latitude 7480;;G6P0NH2;Aktiv
+07/10/20 06:43;N1M453;Everett Jimenez;AFE Team M&E;PC5008183;Windows 10;Dell Inc.;Latitude 7480;;D6R4MH2;Aktiv
+07/10/20 09:37;N1M454;Jazmyn Lawson;AFE Økonomi og Administration;PC5008184;Windows 10;Dell Inc.;Latitude 7480;;65KK7H2;Aktiv
+25/09/20 08:54;N1M306;Travis Berger;AFE Decentrale Værker;PC5008186;Windows 10;Dell Inc.;Latitude 7480;;DTWM5M2;Aktiv
+24/09/20 11:18;N1M455;Lyric Bean;AFE Projekter;PC5008188;Windows 10;LENOVO;20EQS6B100;ThinkPad P50;PC0TYWQA;Aktiv
+06/10/20 08:21;N1M456;Uriel Hill;AFE Projekter;PC5008189;Windows 10;Dell Inc.;Latitude 7490;;1WRYPN2;Aktiv
+07/10/20 10:04;N1M457;Jonah Cummings;;PC5008190;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FU6518;Aktiv
+07/10/20 08:43;N1M457;Jonah Cummings;;PC5008191;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FU6516;Aktiv
+07/10/20 10:29;N1M457;Jonah Cummings;;PC5008192;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FU6522;Aktiv
+07/10/20 08:42;N1M457;Jonah Cummings;;PC5008193;Windows 10;LENOVO;10MNS04X00;ThinkCentre M910t;S4FU6525;Aktiv
+07/10/20 07:26;N1M458;Kayley Hunter;AFE Økonomi og Administration;PC5008197;Windows 10;LENOVO;20HGS3JB00;ThinkPad T470s;PC0TDRWX;Aktiv
+07/10/20 06:47;N1M459;Cale Rowe;AFE Salg og Service;PC5008199;Windows 10;Dell Inc.;Latitude 7490;;GR8BVP2;Aktiv
+02/09/20 09:18;N1M544;Lee Roth;AFE Salg og Service;PC5008200;Windows 10;Dell Inc.;Latitude 7490;;FP8BVP2;Aktiv
+14/09/20 08:16;N1M480;Uriel Poole;AFE Ledningsafsnit;PC5008201;Windows 10;LENOVO;20HES5K200;ThinkPad T470;PF19Z50L;Aktiv
+07/10/20 06:59;N1M460;Paisley Bauer;AFE Økonomi og Administration;PC5008202;Windows 10;Dell Inc.;Latitude 5590;;1J22PQ2;Aktiv
+07/10/20 10:41;N1M461;Coby Padilla;AFE Ledningsafsnit;PC5008204;Windows 10;LENOVO;20EQS6B100;ThinkPad P50;PC0TYXDZ;Aktiv
+07/10/20 08:19;N1M462;Jerome Pennington;AFE Decentrale Værker;PC5008205;Windows 10;Dell Inc.;Latitude 7490;;97S7NN2;Aktiv
+05/10/20 05:25;N1M463;Sabrina Schroeder;AFE Energihandel;PC5008207;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF16ZJRC;Aktiv
+07/10/20 07:55;N1M464;Carlee Downs;AFE Projekter;PC5008208;Windows 10;LENOVO;20HLS1JT00;ThinkPad P71;PF18NLJZ;Aktiv
+28/09/20 12:42;N1M399;Ali Farrell;AFE Team E&M;PC5008209;Windows 10;Dell Inc.;Latitude 7490;;9GL54Q2;Aktiv
+07/10/20 07:51;N1M466;Timothy Peters;Aalborg Energi Holding A/S;PC5008210;Windows 10;Dell Inc.;Latitude 7480;;J72N5M2;Aktiv
+30/09/20 09:58;N1M467;Trenton Stephenson;AFE Projekter;PC5008214;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90SEBKG;Aktiv
+04/10/20 09:34;N1M468;Elianna Hebert;AFE Net Drift;PC5008215;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90SHQZT;Aktiv
+10/09/20 06:58;N1M158;Eden Cruz;AFE Net Drift;PC5008217;Windows 10;Dell Inc.;Latitude 7280;;1JRL4M2;Aktiv
+06/10/20 20:17;N1M172;Chasity Reynolds;"AFS Økonomi, Kantine Nefovej";PC5008218;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1GTXXG;Aktiv
+07/10/20 06:50;N1M469;Ali Mullen;AFE Energicenter;PC5008219;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10X14Q;Aktiv
+07/10/20 08:37;N1M470;Kristopher Ramos;AFE Energihandel;PC5008220;Windows 10;LENOVO;20L6SB2900;ThinkPad T480;PF1K8WQ1;Aktiv
+07/10/20 08:40;N1M471;Bryant Carlson;AFE Net Drift;PC5008221;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90SLXE5;Aktiv
+07/10/20 05:51;N1M472;Stephany Lozano;AFE Forsyning;PC5008222;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC10YFYC;Aktiv
+17/09/20 08:04;N1M444;Kylee Boyle;AFE Energihandel;PC5008223;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10X14P;Aktiv
+06/10/20 08:02;N1M473;Hazel Wright;AFE Energicenter;PC5008225;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10BWHH;Aktiv
+07/10/20 09:19;N1M474;Adrianna Middleton;AFE Ledningsafsnit;PC5008226;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10X14S;Aktiv
+06/10/20 07:40;N1M475;Zion Lawrence;AFE Net Drift;PC5008227;Windows 10;LENOVO;20EQS6B100;ThinkPad P50;PC0TZHPM;Aktiv
+07/10/20 07:18;N1M476;Jaylen Fleming;AFE Salg og Service;PC5008228;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11LGH4;Aktiv
+01/10/20 12:42;N1M463;Sabrina Schroeder;AFE Energihandel;PC5008229;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11LGH7;Aktiv
+18/09/20 12:03;N1M158;Eden Cruz;AFE Net Drift;PC5008230;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC10YFXY;Aktiv
+07/10/20 06:54;N1M477;Irene Daniels;AFE Vagthold;PC5008231;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90T2NAH;Aktiv
+02/10/20 12:18;N1M478;Perla Newman;AFE Net Drift;PC5008232;Windows 10;LENOVO;20LAS4VM00;ThinkPad T580;R90T21TN;Aktiv
+07/10/20 10:34;N1M479;Isabela Keith;AFE Net Drift;PC5008233;Windows 10;LENOVO;20LAS4VM00;ThinkPad T580;R90T21TM;Aktiv
+07/10/20 08:02;N1M480;Uriel Poole;AFE Ledningsafsnit;PC5008234;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1L710R;Aktiv
+07/10/20 07:06;N1M481;Zachary Oconnell;AFE Produktion;PC5008235;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11PZ7T;Aktiv
+07/10/20 07:48;N1M482;Hadley Underwood;AFE Projekter;PC5008236;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC11EXFM;Aktiv
+07/10/20 08:03;N1M483;Reina Roman;AFE Net Drift;PC5008237;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90SS7AV;Aktiv
+07/10/20 07:03;N1M496;Brianna Galloway;AFE Mineralprodukter;PC5008239;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC127YA8;Aktiv
+07/10/20 07:18;N1M485;Liliana Walter;AFE Mineralprodukter;PC5008240;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC127YA9;Aktiv
+07/10/20 09:32;N1M396;Raegan Conley;AFE Sikring og driftsoptimering;PC5008241;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90T2NAG;Aktiv
+06/10/20 23:43;N1M486;Helen Dalton;AFE Projekter;PC5008242;Windows 10;LENOVO;20KES8D200;ThinkPad X280;PC11JAGD;Aktiv
+07/10/20 09:33;N1M487;Cayden Vang;AFE Produktion;PC5008243;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC1286VT;Aktiv
+07/10/20 10:24;N1M488;Trenton Strong;AFE Projekter;PC5008244;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC13F26B;Aktiv
+07/10/20 06:46;N1M489;Brandon Sparks;AFE Vedligeholdelse;PC5008245;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90TQ1TA;Aktiv
+07/10/20 04:09;N1M490;Armani Contreras;AFE Energihandel;PC5008247;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1NEZCG;Aktiv
+07/10/20 07:57;N1M491;Melanie Mccarty;AFE Økonomi og Administration;PC5008248;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC1427AW;Aktiv
+07/10/20 07:52;N1M492;Mya Choi;AFE Vedligeholdelse;PC5008249;Windows 10;LENOVO;20L8S9N300;ThinkPad T480S;PC144WKA;Aktiv
+07/10/20 09:05;N1M393;Kaila Parker;AFE Team E&M;PC5008250;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90TYQBS;Aktiv
+29/09/20 07:51;N1M493;Nikolai Madden;AFE Energihandel;PC5008251;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90SS7AS;Aktiv
+07/10/20 10:46;N1M494;Rosemary Olson;AFE Ledningsafsnit;PC5008252;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1RHMJW;Aktiv
+07/10/20 08:04;N1M495;Adrian Velazquez;AFE Projekter;PC5008253;Windows 10;LENOVO;20KES9QJ00;ThinkPad X280;PC155LKG;Aktiv
+07/10/20 06:38;#I/T;#I/T;AFE Mineralprodukter;PC5008255;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC13TFC0;Aktiv
+07/10/20 07:48;N1M496;Brianna Galloway;AFE Mineralprodukter;PC5008256;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15M0F8;Aktiv
+06/10/20 07:05;N1M497;Jazlyn Hudson;AFE Laboratorie;PC5008258;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC154GP3;Aktiv
+07/10/20 06:46;N1M498;Reyna Navarro;AFE Projekter;PC5008259;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90SS7AT;Aktiv
+07/10/20 04:55;N1M018;Hadassah Tucker;"DIGIT, AFS";PC5008260;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VEZXQ;Aktiv
+31/08/20 11:15;N1M488;Trenton Strong;AFE Projekter;PC5008261;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90V72AE;Aktiv
+07/10/20 07:14;N1M499;Diya Page;AFE Økonomi og Administration;PC5008262;Windows 10;Dell Inc.;Latitude 7480;;H9KQYM2;Aktiv
+07/10/20 07:31;N1M500;Joanna Barr;AFE Forretningsudvikling;PC5008263;Windows 10;LENOVO;20KF001GMX;ThinkPad X280;PC12KY4W;Aktiv
+07/10/20 06:44;N1M501;Mateo Case;AFE Salg og Service;PC5008264;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBT;Aktiv
+07/10/20 06:58;N1M502;Xzavier Mullins;AFE Laboratorie;PC5008265;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBL;Aktiv
+07/10/20 09:44;N1M503;Kael Waters;AFE Decentrale Værker;PC5008269;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90W1TGH;Aktiv
+06/10/20 15:40;N1M504;Preston Dodson;AFE Drift;PC5008270;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC19KA89;Aktiv
+07/10/20 08:33;N1M505;Rose Wilson;AFE Økonomi og Administration;PC5008271;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VLVRY;Aktiv
+07/10/20 07:58;N1M506;Walter Chandler;AFE Produktion;PC5008272;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC17ZKC1;Aktiv
+05/10/20 15:42;N1M507;Bethany Clements;AFE Team M&E;PC5008273;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC18RV2K;Aktiv
+07/10/20 09:13;N1M508;Talan Riddle;"AFS DiGIT, DAD-Konsulenter";PC5008275;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90WA2E8;Aktiv
+04/10/20 06:59;N1M509;Jovan Shepard;AFE Vagthold;PC5008276;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1AZY7T;Aktiv
+05/10/20 06:45;N1M510;Donald Hodge;AFE Net Drift;PC5008277;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1ZVGSE;Aktiv
+28/09/20 13:56;N1M511;Uriel Mckee;"Drift og Anlæg, Varme";PC5008278;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VLVRX;Aktiv
+06/10/20 08:08;N1M512;Gaven Osborn;AFE Salg og Service;PC5008279;Windows 10;LENOVO;20Q1S4UG00;ThinkPad X390;PC1B3W7M;Aktiv
+07/10/20 07:42;N1M513;Teagan Finley;AFE Laboratorie;PC5008280;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90W1TGV;Aktiv
+07/10/20 08:20;N1M431;Jovanni Beard;AFE Projekter;PC5008281;Windows 10;LENOVO;20KES8D300;ThinkPad X280;PC16PGXN;Aktiv
+24/08/20 08:51;N1M300;Jesus Mckenzie;AFE Net Drift;PC5008284;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28VY;Aktiv
+07/10/20 07:09;N1M514;Annika Contreras;AFE Projekter;PC5008285;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W5;Aktiv
+07/10/20 07:06;N1M515;Kendall Shaffer;AFE Sikring og driftsoptimering;PC5008287;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WB;Aktiv
+04/10/20 20:57;N1M516;Sabrina Meadows;AFE Sikring og driftsoptimering;PC5008288;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W1;Aktiv
+06/10/20 09:41;N1M146;Amy Elliott;;PC5008289;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W4;Aktiv
+07/10/20 05:14;N1M517;Emanuel Floyd;AFE Produktion;PC5008292;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1V3XM7;Aktiv
+07/10/20 09:45;N1M465;Cedric Frye;AFE Team M&E;PC5008293;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYZSW;Aktiv
+07/10/20 07:45;N1M518;Bridget Dennis;AFE Energihandel;PC5008294;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WQ;Aktiv
+07/10/20 09:41;N1M519;Precious Pennington;AFE Produktion;PC5008295;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WD;Aktiv
+25/09/20 07:30;N1M409;Rolando Bruce;AFE Sikring og driftsoptimering;PC5008296;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28VX;Aktiv
+30/09/20 14:53;N1M441;Milo Salas;AFE Vagthold;PC5008297;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W9;Aktiv
+01/10/20 14:16;N1M403;Erik Valenzuela;AFE Vagthold;PC5008298;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WC;Aktiv
+06/10/20 23:43;N1M520;Adalyn Cabrera;AFE Vagthold;PC5008299;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WR;Aktiv
+07/10/20 07:04;N1M521;Branson Atkinson;AFE Vagthold;PC5008300;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WA;Aktiv
+06/10/20 15:03;N1M410;Alan Lozano;AFE Vagthold;PC5008301;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28VZ;Aktiv
+07/10/20 06:09;N1M522;Nyla Allison;AFE Vedligeholdelse;PC5008302;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WN;Aktiv
+06/10/20 23:35;N1M401;Anabel Price;AFE Vagthold;PC5008303;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WJ;Aktiv
+23/09/20 11:23;N1M416;Jasiah Boone;"IT-Afsnit, Forsyningsvirksomhederne";PC5008304;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WS;Aktiv
+02/10/20 12:16;N1M303;Raegan Wagner;AFE Decentrale Værker;PC5008305;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WH;Aktiv
+07/10/20 09:58;N1M523;Zion Ruiz;AFE Forretningsudvikling;PC5008306;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W0;Aktiv
+07/10/20 09:03;N1M524;Aleena Vargas;AFE Økonomi og Administration;PC5008308;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W2;Aktiv
+06/10/20 10:51;N1M146;Amy Elliott;;PC5008309;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28VW;Aktiv
+05/10/20 08:09;N1M525;Jakob Atkins;AFE Energihandel;PC5008310;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CT9CX;Aktiv
+07/10/20 07:23;N1M526;Mason Harmon;AFE Laboratorie;PC5008311;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288L;Aktiv
+06/10/20 08:03;N1M146;Amy Elliott;;PC5008312;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288V;Aktiv
+07/10/20 08:15;N1M527;Grady Woods;AFE Energihandel;PC5008314;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBU;Aktiv
+07/10/20 07:17;N1M528;Abbigail Price;AFE Mineralprodukter;PC5008315;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288M;Aktiv
+07/10/20 06:45;N1M529;Amya Owens;AFE Mineralprodukter;PC5008316;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288N;Aktiv
+07/10/20 06:46;N1M399;Ali Farrell;AFE Team E&M;PC5008317;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288Q;Aktiv
+07/10/20 06:58;N1M530;Tabitha Robinson;AFE Team E&M;PC5008318;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288P;Aktiv
+07/10/20 06:25;N1M531;Valentino Hernandez;AFE Team E&M;PC5008319;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288A;Aktiv
+07/10/20 06:41;N1M532;Lacey Delacruz;AFE Team E&M;PC5008320;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PF1KAHZ0;Aktiv
+08/09/20 08:25;N1M569;Livia Weeks;AFE Energicenter;PC5008321;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E88MM;Aktiv
+07/10/20 06:51;N1M533;Amya Garrett;AFE Net Drift;PC5008322;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E88ML;Aktiv
+07/10/20 07:52;N1M534;Clarence Grimes;AFE Projekter;PC5008323;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1WSX2H;Aktiv
+07/10/20 08:03;N1M070;Braxton Knox;"AFS DiGIT, IT-Service";PC5008324;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VXEYB;Aktiv
+07/10/20 09:53;N1M535;Lorelei Mathews;AFE Salg og Service;PC5008325;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288F;Aktiv
+07/10/20 07:21;N1M536;Cruz Higgins;AFE Projekter;PC5008326;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D2889;Aktiv
+07/10/20 10:21;N1M537;Landen Lynn;AFE Gas;PC5008327;Windows 10;LENOVO;20Q1S4UQ00;ThinkPad X390;PC1F26H9;Aktiv
+07/10/20 05:14;N1M538;Areli Sanchez;AFE Team M&E;PC5008329;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WL;Aktiv
+07/10/20 07:00;N1M539;Reuben Oneal;AFE Team M&E;PC5008330;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WM;Aktiv
+07/10/20 06:53;N1M540;Alice Parrish;AFE Team M&E;PC5008331;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WF;Aktiv
+07/10/20 06:20;N1M541;Bentley Medina;AFE Team E&M;PC5008332;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W3;Aktiv
+07/10/20 09:51;N1M307;Elsa Krause;AFE Ledningsafsnit;PC5008333;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1WK7RH;Aktiv
+07/10/20 07:07;N1M542;Jessie Hunter;AFE Net Drift;PC5008334;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1FB8Z8;Aktiv
+28/09/20 07:09;N1M533;Amya Garrett;AFE Net Drift;PC5008335;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1WJ1FY;Aktiv
+07/10/20 06:48;N1M543;Reginald Watson;AFE Team E&M;PC5008336;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1FBAX2;Aktiv
+07/10/20 08:01;N1M544;Lee Roth;AFE Salg og Service;PC5008337;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1JLFZ9;Aktiv
+07/10/20 07:07;N1M545;Aiden Rowe;AFE Vedligeholdelse;PC5008338;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF2CWF6E;Aktiv
+06/10/20 15:28;N1M411;Willie Diaz;AFE Energihandel;PC5008339;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1K8SP9;Aktiv
+07/10/20 06:58;N1M546;Caden Davis;AFE Team M&E;PC5008340;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBG;Aktiv
+05/10/20 06:59;N1M302;Alvaro Armstrong;AFE Net Drift;PC5008341;Windows 10;LENOVO;20N3S70X00;ThinkPad T490;PF2BB043;Aktiv
+06/10/20 10:26;N1M547;Oswaldo Blackwell;AFE Net Drift;PC5008342;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF1CUYX4;Aktiv
+07/10/20 06:38;N1M394;Hayden Dudley;AFE Vagthold;PC5008343;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288D;Aktiv
+06/10/20 07:56;N1M070;Braxton Knox;"AFS DiGIT, IT-Service";PC5008344;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288T;Aktiv
+07/10/20 06:34;N1M548;Angeline Wise;AFE Team M&E;PC5008345;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288G;Aktiv
+05/10/20 08:15;N1M549;Kenzie Roberson;AFE Vagthold;PC5008346;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288S;Aktiv
+03/10/20 07:52;N1M405;Finnegan Webster;AFE Drift;PC5008347;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYZTF;Aktiv
+04/10/20 06:58;N1M550;Jayvon Stephenson;AFE Vagthold;PC5008348;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28WE;Aktiv
+06/10/20 15:05;N1M406;Javion Beltran;AFE Vagthold;PC5008349;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288K;Aktiv
+06/10/20 06:48;N1M551;Isabela Castaneda;AFE Vagthold;PC5008350;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288E;Aktiv
+06/10/20 06:59;N1M392;Shiloh Hendrix;AFE Vagthold;PC5008351;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288B;Aktiv
+05/10/20 18:43;N1M397;Abel Neal;AFE Vagthold;PC5008352;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288R;Aktiv
+06/10/20 14:56;N1M552;Joanna Levine;AFE Drift;PC5008353;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288J;Aktiv
+06/10/20 08:00;N1M553;Brynlee Vaughn;AFE Økonomi og Administration;PC5008354;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D288C;Aktiv
+07/10/20 06:53;N1M554;Toby Stephenson;AFE Økonomi og Administration;PC5008355;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BZ443;Aktiv
+07/10/20 07:04;N1M555;Kiara Horn;AFE Vedligeholdelse;PC5008357;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BZ42B;Aktiv
+07/10/20 06:52;N1M415;Erica Berg;AFE Vedligeholdelse;PC5008358;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BZ43N;Aktiv
+07/10/20 08:03;N1M391;Melissa Casey;AFE Team M&E;PC5008359;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYZTG;Aktiv
+06/10/20 07:56;N1M070;Braxton Knox;"AFS DiGIT, IT-Service";PC5008360;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W7;Aktiv
+06/10/20 22:55;N1M556;Jaylene Oneill;AFE Vagthold;PC5008361;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28W8;Aktiv
+07/10/20 07:34;N1M412;Shane Davenport;AFE Team E&M;PC5008362;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYXP5;Aktiv
+06/10/20 14:48;N1M557;Kaley Bryant;AFE Team M&E;PC5008364;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYXNJ;Aktiv
+06/10/20 12:39;N1M068;Hailey Horn;AFE Vedligeholdelse;PC5008365;Windows 10;LENOVO;20N3S70X00;ThinkPad T490;PF2BB03K;Aktiv
+07/10/20 07:31;N1M558;Riley Cowan;AFE Økonomi og Administration;PC5008366;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1K8SQS;Aktiv
+16/09/20 08:53;N1M275;Brenda Gray;AFE Net Drift;PC5008367;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PF1FLH91;Aktiv
+07/10/20 08:24;N1M487;Cayden Vang;AFE Produktion;PC5008368;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1KJN19;Aktiv
+07/10/20 06:58;N1M559;Cassius Scott;AFE Vedligeholdelse;PC5008369;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBP;Aktiv
+05/10/20 08:43;N1M113;Yasmin Oconnell;"AFS DiGIT, IT-Service";PC5008370;Windows 10;LENOVO;20T1S1DB00;ThinkPad T14s Gen 1;PC1MB5N9;Aktiv
+07/10/20 06:02;N1M400;Ashley Giles;AFE Mineralprodukter;PC5008371;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBK;Aktiv
+07/10/20 00:27;N1M448;Jaeden Bird;AFE Net Drift;PC5008372;Windows 10;LENOVO;20S7S3EE00;ThinkPad T15 Gen 1;PF22YRXJ;Aktiv
+06/10/20 13:56;N1M146;Amy Elliott;;PC5008373;Windows 10;LENOVO;20S7S3EE00;ThinkPad T15 Gen 1;PF2321L9;Aktiv
+07/10/20 06:55;N1M560;Clay Dixon;AFE Vedligeholdelse;PC5008421;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBX;Aktiv
+09/09/20 10:38;#I/T;#I/T;AK Indkøb;PC5009097;Windows 10;American Megatrends Inc.;Surface Pro 3;1;014367751253;Aktiv
+07/10/20 09:54;N1M561;Erik Aguilar;"AFS Kundeservice, Lager og Logistik";PC5009104;Windows 10;Dell Inc.;Latitude 7480;;552XJM2;Aktiv
+07/10/20 07:05;N1M562;Hayden Keller;"AFS Kundeservice, Lager og Logistik";PC5009105;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0T0JCQ;Aktiv
+07/10/20 07:03;N1M563;Rhianna Gordon;"AFS Kundeservice, Lager og Logistik";PC5009106;Windows 10;Dell Inc.;Latitude 7480;;782XJM2;Aktiv
+07/10/20 06:36;N1M564;Willow Rubio;"AFS Kundeservice, Lager og Logistik";PC5009110;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC13BH6R;Aktiv
+07/10/20 08:23;N1M565;Breanna Garrison;"AFS Kundeservice, Udbudsjura og Indkøb";PC5009111;Windows 10;LENOVO;20N5S2XP00;ThinkPad T590;PF1Y3DDV;Aktiv
+07/10/20 09:50;N1M566;Daniela Poole;"AFS Kundeservice, Lager og Logistik";PC5009112;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0EC;Aktiv
+07/10/20 07:09;N1M567;Adelaide Rivera;"AFS Kundeservice, Lager og Logistik";PC5009113;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0EG;Aktiv
+07/10/20 07:04;N1M568;Kristopher Swanson;AFE Gas;PC5010104;Windows 10;Dell Inc.;Latitude 7490;;FKYYPN2;Aktiv
+07/10/20 07:14;N1M440;Johnny Ortega;AFE Energicenter;PC5010105;Windows 10;Dell Inc.;Latitude E7270;;3GZ4YF2;Aktiv
+07/10/20 09:01;N1M569;Livia Weeks;AFE Energicenter;PC5010106;Windows 10;Dell Inc.;Latitude E7270;;4V25YF2;Aktiv
+22/09/20 13:54;N1M570;Tristan Meza;AFE Energicenter;PC5010107;Windows 10;Dell Inc.;Latitude E5570;;7079YF2;Aktiv
+07/10/20 07:31;N1M570;Tristan Meza;AFE Energicenter;PC5010109;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1CMH2B;Aktiv
+08/09/20 11:27;N1M569;Livia Weeks;AFE Energicenter;PC5010110;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1FN33Z;Aktiv
+01/09/20 11:29;N1M681;Aracely Anton  ;MP Vandløb;PC5011095;Windows 10;Dell Inc.;Latitude E7240;00;GZ4WG12;Aktiv
+07/10/20 05:53;N1M029;Nilsa Goodsell  ;MP BorgerMiljø;PC5011097;Windows 10;Dell Inc.;Latitude E5450;01;7RXLN32;Aktiv
+14/09/20 11:20;N1M571;John Mccarthy;MP VirksomhedsMiljø;PC5011105;Windows 10;Dell Inc.;Latitude E7250;;BFYF662;Aktiv
+27/08/20 08:55;N1M669;Winona Viger  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011107;Windows 10;Dell Inc.;Latitude E7250;;739QN72;Aktiv
+07/10/20 07:34;N1M572;Cleopatra Ricciardi;MP VirksomhedsMiljø;PC5011108;Windows 10;Dell Inc.;Latitude E7270;;DC7ZP72;Aktiv
+07/10/20 10:20;N1M573;Margart Broeckel  ;MP LandMiljø;PC5011109;Windows 10;Dell Inc.;Latitude E7270;;7YWCS72;Aktiv
+07/10/20 06:58;N1M574;Danilo Enright;MP JordMiljø;PC5011112;Windows 10;Dell Inc.;Latitude E7270;;8QFVDC2;Aktiv
+06/10/20 12:09;N1M004;Agripina Groleau;MP VandMiljø;PC5011113;Windows 10;Dell Inc.;Latitude E7270;;HSC7HC2;Aktiv
+07/10/20 07:49;N1M575;Noella Bellini  ;MP Spildevand;PC5011115;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0FGK6C;Aktiv
+02/10/20 13:54;N1M576;Keneth Woodyard;BU Limfjordssekretariatet;PC5011116;Windows 10;LENOVO;20EQS1W800;ThinkPad P50;PC0EP713;Aktiv
+07/10/20 08:41;N1M577;Merrilee Dooling  ;BU Center for Grøn Omstilling;PC5011117;Windows 10;LENOVO;20EQS1W800;ThinkPad P50;PC0FCXTN;Aktiv
+07/10/20 07:57;N1M578;Stacey Rolling;BU Limfjordssekretariatet;PC5011118;Windows 10;LENOVO;20EQS1W800;ThinkPad P50;PC0EP714;Aktiv
+07/10/20 08:50;N1M579;Madison Bowling;MP VirksomhedsMiljø;PC5011121;Windows 10;Dell Inc.;Latitude E7270;;2RC0QC2;Aktiv
+07/10/20 08:21;N1M580;Kena Krasner;MP VirksomhedsMiljø;PC5011122;Windows 10;Dell Inc.;Latitude E7270;;8QC0QC2;Aktiv
+07/10/20 07:49;N1M581;Terrell Rea;MP VirksomhedsMiljø;PC5011123;Windows 10;Dell Inc.;Latitude E7270;;8NC0QC2;Aktiv
+07/10/20 08:32;N1M582;Norbert Bowdoin;BU Netværk for Bæredygtig Erhvervsudv.;PC5011125;Windows 10;Dell Inc.;Latitude E7270;;F28SQC2;Aktiv
+07/10/20 08:52;N1M583;Molly Heston;BU Netværk for Bæredygtig Erhvervsudv.;PC5011126;Windows 10;Dell Inc.;Latitude E7270;;CNR3CG2;Aktiv
+07/10/20 09:42;N1M584;Maudie Moretz;MP BorgerMiljø;PC5011134;Windows 10;Dell Inc.;Latitude E7470;;9JPRXF2;Aktiv
+07/10/20 08:38;N1M585;Ja Marietta;BU Netværk for Bæredygtig Erhvervsudv.;PC5011135;Windows 10;Dell Inc.;Latitude E7470;;CZMM0G2;Aktiv
+07/10/20 10:48;N1M586;Veta Farwell;MP Vandløb;PC5011138;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0M02N7;Aktiv
+05/10/20 10:20;N1M587;Carri Vogel;MP BorgerMiljø;PC5011141;Windows 10;Dell Inc.;Latitude 7480;;3RHL7H2;Aktiv
+26/09/20 10:53;N1M588;Fermin Mclelland;MP Vandløb;PC5011143;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0M3244;Aktiv
+27/08/20 13:24;N1M669;Winona Viger  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011146;Windows 10;Dell Inc.;Latitude 7280;;48G19H2;Aktiv
+07/10/20 07:33;N1M589;Joannie Raynor;BU Center for Grøn Omstilling;PC5011147;Windows 10;Dell Inc.;Latitude 7280;;4NB09H2;Aktiv
+07/10/20 07:46;N1M590;Robby Frisch;MP JordMiljø;PC5011148;Windows 10;Dell Inc.;Latitude 7480;;2RQK7H2;Aktiv
+07/10/20 07:57;N1M591;Marica Bravo;BU Netværk for Bæredygtig Erhvervsudv.;PC5011151;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0P9F16;Aktiv
+07/10/20 06:56;N1M592;Dan Blocker;MP Spildevand;PC5011153;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0PPC5H;Aktiv
+07/10/20 07:14;N1M593;Julissa Smithers;MP Vandløb;PC5011154;Windows 10;LENOVO;20EQS22100;ThinkPad P50;PC0PE72N;Aktiv
+07/10/20 06:25;N1M594;Kerry Zamora  ;MP Administration;PC5011156;Windows 10;Dell Inc.;Latitude 7480;;7CRSLH2;Aktiv
+07/10/20 07:59;N1M595;Tamatha Zuniga;BU Bæredygtig Borger og Erhverv;PC5011157;Windows 10;Dell Inc.;Latitude 7480;;8TKSLH2;Aktiv
+07/10/20 07:27;N1M596;Alexander Lehrman  ;MP BorgerMiljø;PC5011158;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0QGJ8E;Aktiv
+07/10/20 08:07;N1M597;Young Lemire;MP VirksomhedsMiljø;PC5011160;Windows 10;Dell Inc.;Latitude 7480;;DGRSLH2;Aktiv
+07/10/20 08:12;N1M598;Son Mickelson;BU Center for Grøn Omstilling;PC5011161;Windows 10;Dell Inc.;Latitude 7480;;B6PXLH2;Aktiv
+07/10/20 08:23;N1M599;Mimi Baptiste;MP Vandløb;PC5011165;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0R69XE;Aktiv
+06/10/20 08:34;N1M600;Suzanna Moskowitz;BU Netværk for Bæredygtig Erhvervsudv.;PC5011167;Windows 10;Dell Inc.;Latitude 7480;;HZBN4M2;Aktiv
+07/10/20 07:24;N1M187;Tate Hickman;AFV Projektering og Tilsyn;PC5011168;Windows 10;LENOVO;20EQS1YQ00;ThinkPad P50;PC0SRSGT;Aktiv
+07/10/20 07:43;N1M601;Izetta Heatherly;MP PlanStab;PC5011170;Windows 10;Dell Inc.;Latitude 7480;;B5PXLH2;Aktiv
+07/10/20 07:54;N1M602;Ezra Templeman;MP Grundvand;PC5011171;Windows 10;Dell Inc.;Latitude 7480;;5LRSLH2;Aktiv
+05/10/20 09:00;N1M603;Lynda Yanez;MP VirksomhedsMiljø;PC5011172;Windows 10;Dell Inc.;Latitude 7480;;JGRSLH2;Aktiv
+07/10/20 08:47;N1M604;Adan Kintzel;MP Vandløb;PC5011173;Windows 10;Dell Inc.;Latitude 7480;;GC4XLH2;Aktiv
+07/10/20 08:40;N1M605;Horace Macintosh;MP BorgerMiljø;PC5011174;Windows 10;Dell Inc.;Latitude 7480;;GLHXLH2;Aktiv
+07/10/20 08:06;N1M606;Lucinda Sirmons;MP BorgerMiljø;PC5011175;Windows 10;Dell Inc.;Latitude 7480;;GTLHZM2;Aktiv
+07/10/20 08:47;N1M607;Shellie Dart;MP Grundvand;PC5011176;Windows 10;Dell Inc.;Latitude 7480;;CCMXJM2;Aktiv
+07/10/20 08:45;N1M078;Carmen Blanchard;BU Center for Grøn Omstilling;PC5011177;Windows 10;Dell Inc.;Latitude 7480;;F1MXJM2;Aktiv
+07/10/20 07:49;N1M608;Trang Eakle;Miljø og Plan;PC5011179;Windows 10;Dell Inc.;Latitude 7480;;872XJM2;Aktiv
+07/10/20 08:31;N1M609;Armida Calder;BU Netværk for Bæredygtig Erhvervsudv.;PC5011180;Windows 10;Dell Inc.;Latitude 7480;;2R7XJM2;Aktiv
+07/10/20 07:58;N1M610;Kali Auston;MP Spildevand;PC5011181;Windows 10;Dell Inc.;Latitude E7270;;GQHTQC2;Aktiv
+07/10/20 07:46;N1M611;Melany Drysdale;BU Center for Grøn Omstilling;PC5011182;Windows 10;Dell Inc.;Latitude 7480;;2MKSLH2;Aktiv
+07/10/20 08:32;N1M612;Rosalie Pauly;BU Limfjordssekretariatet;PC5011184;Windows 10;Dell Inc.;Latitude E7270;;FF5KFC2;Aktiv
+07/10/20 07:39;N1M613;Jessenia Uvalle;MP Spildevand;PC5011187;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TYFRK;Aktiv
+07/10/20 07:02;N1M614;Madalene Burford;MP Spildevand;PC5011188;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TXJ4L;Aktiv
+07/10/20 08:42;N1M615;Orval Melendez;MP BorgerMiljø;PC5011189;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TXJ4G;Aktiv
+07/10/20 08:34;N1M616;Pasquale Ryckman;MP Vandløb;PC5011190;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TXJ4H;Aktiv
+07/10/20 07:42;N1M617;Derrick Bergevin;MP Vandløb;PC5011191;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TXJ4K;Aktiv
+07/10/20 07:38;N1M618;Sam Lamb;MP Vandløb;PC5011192;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TXRQA;Aktiv
+07/10/20 07:18;N1M619;Gonzalo Summa;BU Limfjordssekretariatet;PC5011193;Windows 10;LENOVO;20EQS1PM00;ThinkPad P50;PC0TXJ4M;Aktiv
+07/10/20 07:16;N1M620;Harriet Carpentier;MP VirksomhedsMiljø;PC5011196;Windows 10;Dell Inc.;Latitude 7480;;20CN4M2;Aktiv
+07/10/20 07:06;N1M621;Cira Oxendine;MP JordMiljø;PC5011197;Windows 10;Dell Inc.;Latitude 7490;;D19WPN2;Aktiv
+07/10/20 07:45;N1M622;Arnita Baumeister;MP JordMiljø;PC5011198;Windows 10;Dell Inc.;Latitude 7480;;80BS0N2;Aktiv
+07/10/20 07:25;N1M623;Joslyn Gans  ;MP LandMiljø;PC5011200;Windows 10;Dell Inc.;Latitude 7480;;4XKSLH2;Aktiv
+07/10/20 08:03;N1M624;Marine Valenzula  ;BU Limfjordssekretariatet;PC5011201;Windows 10;LENOVO;20EQS6B200;ThinkPad P50;PC0TX9MS;Aktiv
+14/09/20 08:38;N1M625;Shanon Burner  ;MP LandMiljø;PC5011202;Windows 10;Dell Inc.;Latitude 7490;;35W9RN2;Deaktiveret
+07/10/20 08:06;N1M626;Anitra Marra  ;MP VirksomhedsMiljø;PC5011203;Windows 10;Dell Inc.;Latitude 7480;;CM5QLH2;Aktiv
+07/10/20 04:03;N1M627;Gita Kisner  ;MP VirksomhedsMiljø;PC5011204;Windows 10;Dell Inc.;Latitude 7480;;DPV60N2;Aktiv
+07/10/20 08:54;N1M628;Luetta Scotto  ;MP LandMiljø;PC5011206;Windows 10;Dell Inc.;Latitude 7480;;62MXJM2;Aktiv
+07/10/20 07:25;N1M629;Gillian Waye  ;MP LandMiljø;PC5011207;Windows 10;Dell Inc.;Latitude 7480;;40DSLH2;Aktiv
+07/10/20 07:04;N1M630;Jacqui Helms  ;MP LandMiljø;PC5011208;Windows 10;Dell Inc.;Latitude 7480;;JWVTLH2;Aktiv
+07/10/20 07:13;N1M631;Kiley Loud  ;BU Bæredygtig Borger og Erhverv;PC5011210;Windows 10;Dell Inc.;Latitude 7490;;CMTBVP2;Aktiv
+07/10/20 06:12;N1M632;Clement Sturtevant  ;MP Spildevand;PC5011211;Windows 10;Dell Inc.;Latitude 7490;;B9ZJQN2;Aktiv
+07/10/20 07:58;N1M633;Harris Manier  ;MP Spildevand;PC5011213;Windows 10;Dell Inc.;Latitude 7490;;G2DJTN2;Aktiv
+07/10/20 08:02;N1M634;Cristie Milbrandt  ;MP Vandløb;PC5011214;Windows 10;Dell Inc.;Latitude 7490;;113MSN2;Aktiv
+07/10/20 08:13;N1M635;Niesha Mcguinness  ;MP Grundvand;PC5011215;Windows 10;Dell Inc.;Latitude 7490;;28JMQQ2;Aktiv
+07/10/20 08:18;N1M636;Dimple Stallings  ;BU Center for Grøn Omstilling;PC5011216;Windows 10;Dell Inc.;Latitude 7490;;JM10SQ2;Aktiv
+07/10/20 07:58;N1M637;Kandice Yagi  ;MP Grundvand;PC5011218;Windows 10;Dell Inc.;Latitude E7270;;4LWRSC2;Aktiv
+07/10/20 08:43;N1M638;Jordon Pon  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011220;Windows 10;Dell Inc.;Latitude 7490;;60DPTN2;Aktiv
+07/10/20 08:18;N1M639;Kristofer Klee  ;MP BorgerMiljø;PC5011221;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1GTXX3;Aktiv
+07/10/20 07:38;N1M587;Carri Vogel;MP BorgerMiljø;PC5011222;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC10X14T;Aktiv
+07/10/20 08:13;N1M640;Dirk Gamez  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011225;Windows 10;Dell Inc.;Latitude E7470;;JVGKKC2;Aktiv
+06/10/20 19:05;N1M641;Luise Frankum  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011226;Windows 10;Dell Inc.;Latitude E7470;;6YG8WF2;Aktiv
+24/09/20 09:21;N1M642;Sachiko Ulm  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011227;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC1537R3;Aktiv
+07/10/20 10:23;N1M643;Lakeisha Legrande  ;BU Center for Grøn Omstilling;PC5011228;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC14QYFK;Aktiv
+06/10/20 07:34;N1M644;Bernardo Cordray  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011229;Windows 10;LENOVO;20L6SB2900;ThinkPad T480;PF1Q5LA7;Aktiv
+07/10/20 08:41;N1M645;Maryrose Wages  ;MP Spildevand;PC5011230;Windows 10;LENOVO;20LAS4VR00;ThinkPad T580;R90VEZZT;Aktiv
+07/10/20 08:19;N1M646;Carylon Emerson  ;BU Limfjordssekretariatet;PC5011231;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VK2NJ;Aktiv
+07/10/20 07:20;N1M647;Alesia Lewandowski  ;BU Limfjordssekretariatet;PC5011232;Windows 10;LENOVO;20LAS4VE00;ThinkPad T580;R90VK2NL;Aktiv
+05/10/20 10:44;N1M648;Raymond Rusek  ;"AFS Direktion, Sekretariat og Jura";PC5011233;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90TYQBT;Aktiv
+06/10/20 09:12;N1M649;Lia Klem  ;BU Bæredygtig Borger og Erhverv;PC5011235;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90VMJXE;Aktiv
+07/10/20 08:17;N1M650;Guadalupe Jacks  ;MP VirksomhedsMiljø;PC5011238;Windows 10;LENOVO;20LAS4VU00;ThinkPad T580;R90TPQ0Y;Aktiv
+07/10/20 08:30;N1M651;Star Harkleroad  ;BU Limfjordssekretariatet;PC5011239;Windows 10;LENOVO;20N5S32K00;ThinkPad T590;PF1XJB8F;Aktiv
+07/10/20 07:47;N1M053;Fletcher Lewis;MP By- og LandMiljø;PC5011240;Windows 10;LENOVO;20L6SAS100;ThinkPad T480;PF1470L4;Aktiv
+07/10/20 07:57;N1M652;Laurine Benefield  ;MP Spildevand;PC5011241;Windows 10;LENOVO;20L6SB2900;ThinkPad T480;PF14ESHR;Aktiv
+07/09/20 08:31;N1M653;Flo Tengan  ;MP Grundvand;PC5011242;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW26T;Aktiv
+07/10/20 07:49;N1M654;Flora Moorehead  ;BU Center for Grøn Omstilling;PC5011243;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28XH;Aktiv
+07/10/20 08:50;N1M655;Shenita Hegna  ;BU Limfjordssekretariatet;PC5011244;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28XG;Aktiv
+07/10/20 08:34;N1M656;Yuk Bodenhamer  ;BU Limfjordssekretariatet;PC5011245;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28XJ;Aktiv
+07/10/20 08:16;N1M642;Sachiko Ulm  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011246;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D28XK;Aktiv
+07/10/20 07:37;N1M657;Wilton Klepper  ;MP Grundvand;PC5011247;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L4;Aktiv
+07/10/20 06:50;N1M658;Dominique Bratt  ;MP PlanStab;PC5011248;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L7;Aktiv
+30/09/20 08:08;N1M659;Mckinley Maloof  ;MP Administration;PC5011249;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KY;Aktiv
+15/09/20 00:49;N1M660;Lakita Suter  ;MP VirksomhedsMiljø;PC5011250;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KZ;Aktiv
+07/10/20 07:59;N1M661;Jesusa Trueblood  ;MP Grundvand;PC5011251;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KT;Aktiv
+07/10/20 09:25;N1M662;Leena Cranford  ;MP Grundvand;PC5011252;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KS;Aktiv
+07/10/20 08:09;N1M663;Larry Colquitt  ;MP Vandløb;PC5011253;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KQ;Aktiv
+06/10/20 20:10;N1M664;Sterling Deibel  ;MP Spildevand;PC5011254;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L6;Aktiv
+07/10/20 07:53;N1M665;Jimmie Pospisil  ;MP Grundvand;PC5011255;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L5;Aktiv
+07/10/20 08:13;N1M571;John Mccarthy;MP VirksomhedsMiljø;PC5011256;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L0;Aktiv
+07/10/20 07:51;N1M666;Magaly Bondi  ;MP VirksomhedsMiljø;PC5011257;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KW;Aktiv
+07/10/20 07:52;N1M667;Edelmira Weatherly  ;BU Center for Grøn Omstilling;PC5011258;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L3;Aktiv
+07/10/20 08:21;N1M668;Emogene Hartshorn  ;MP Vandløb;PC5011259;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L1;Aktiv
+07/10/20 08:15;N1M669;Winona Viger  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011260;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0L2;Aktiv
+06/10/20 16:12;N1M670;Dian Meisel  ;MP JordMiljø;PC5011261;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW26V;Aktiv
+07/10/20 07:46;N1M671;Jacqulyn Konopka  ;MP Grundvand;PC5011263;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KX;Aktiv
+07/10/20 07:42;N1M672;Corrin Frasure  ;MP LandMiljø;PC5011264;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC17ZKC0;Aktiv
+07/10/20 10:31;N1M673;Felica Arizmendi  ;BU Limfjordssekretariatet;PC5011266;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1F23LS;Aktiv
+07/10/20 08:05;N1M674;Wynona Hoard  ;BU Limfjordssekretariatet;PC5011267;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1E8CDN;Aktiv
+07/10/20 08:17;N1M675;Shandra Bigham  ;MP Vandløb;PC5011268;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1F07NZ;Aktiv
+07/10/20 08:39;N1M676;Whitney Welden  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011269;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1FBA25;Aktiv
+07/10/20 09:02;N1M677;Gertrud Mood  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011271;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1CW0KR;Aktiv
+14/09/20 08:15;N1M660;Lakita Suter  ;MP VirksomhedsMiljø;PC5011272;Windows 10;LENOVO;20N5S32J00;ThinkPad T590;PF2CXQKE;Aktiv
+07/10/20 06:17;N1M678;Veola Sumrell  ;MP BorgerMiljø;PC5011274;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1F1WBW;Aktiv
+07/10/20 08:33;N1M679;Johnette Whisnant  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011275;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1F1WBV;Aktiv
+01/10/20 13:25;N1M680;Lorelei Simoes  ;BU Netværk for Bæredygtig Erhvervsudv.;PC5011276;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1JJAJD;Aktiv
+07/10/20 08:02;N1M681;Aracely Anton  ;MP Vandløb;PC5011277;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1JJAPJ;Aktiv
+07/10/20 08:23;N1M588;Fermin Mclelland;MP Vandløb;PC5011278;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1JJAPH;Aktiv
+07/10/20 08:58;N1M682;Michiko Lederman  ;MP VirksomhedsMiljø;PC5011280;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1JJAPE;Aktiv
+05/10/20 13:23;N1M683;Maurita Gullett  ;AFV Drift og Vedligehold;PC5013039;Windows 10;LENOVO;20HAS16U00;ThinkPad T570;R90NP9J0;Aktiv
+07/10/20 07:27;N1M684;Vida Hydrick  ;AFV Drift og Vedligehold;PC5013045;Windows 10;Dell Inc.;Latitude 7490;;3QP0SQ2;Aktiv
+02/10/20 09:54;N1M685;Wm Lopinto  ;AFV Drift og Vedligehold;PC5013047;Windows 10;Dell Inc.;Latitude 5590;;466WRQ2;Aktiv
+07/10/20 07:40;N1M686;Shayla Noles  ;AFV Drift og Vedligehold;PC5013048;Windows 10;Dell Inc.;Latitude 5590;;7JCWRQ2;Aktiv
+16/09/20 16:42;N1M683;Maurita Gullett  ;AFV Drift og Vedligehold;PC5013049;Windows 10;Dell Inc.;Latitude 5590;;4RCWRQ2;Aktiv
+07/10/20 06:58;N1M688;Magaret Ramerez  ;AFV Proces og styring;PC5013050;Windows 10;LENOVO;20LAS4VG00;ThinkPad T580;R90S83BA;Aktiv
+02/10/20 07:14;N1M689;India Desch  ;AFV Teknisk kundekontakt;PC5013051;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1HRSSZ;Aktiv
+07/10/20 07:08;N1M690;Pearlene Maloney  ;AFV Teknisk kundekontakt;PC5013052;Windows 10;LENOVO;20L6SB2C00;ThinkPad T480;PF1HRSSA;Aktiv
+07/10/20 07:01;N1M691;Assunta Mainor  ;AFV Proces og styring;PC5013055;Windows 10;LENOVO;20LAS4VG00;ThinkPad T580;R90V0M1V;Aktiv
+07/10/20 08:19;N1M687;Adrian Berning  ;AFV Teknisk kundekontakt;PC5013056;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYXRM;Aktiv
+07/10/20 09:21;N1M692;Anamaria Hollars  ;AFV Teknisk kundekontakt;PC5013057;Windows 10;LENOVO;20N5S39U00;ThinkPad T590;PF1BYXPQ;Aktiv
+02/09/20 08:45;#I/T;#I/T;"AFR Drift, Genbrug og Sortering";PC5021010;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PF1GGVBJ;Aktiv
+07/10/20 05:49;N1M694;Maryln Schroeder  ;"Aalborg Forsyning, Renovation";PC5021011;Windows 10;LENOVO;10SKS0S600;ThinkCentre M920s;S4LT6837;Aktiv
+07/10/20 03:11;N1M693;Lucio Arend  ;"AFR Drift, Genbrug og Sortering";PC5021012;Windows 10;LENOVO;20NYS1JA00;ThinkPad T490s;PC1D0W8G;Aktiv
+07/10/20 06:55;N1M695;Sherice Waddy  ;;PC5021013;Windows 10;American Megatrends Inc.;AEC-6638;To be filled by O.E.M.;P19B08779;Aktiv
+07/10/20 04:23;N1M695;Sherice Waddy  ;;PC5021014;Windows 10;American Megatrends Inc.;AEC-6638;To be filled by O.E.M.;P1990435;Aktiv
+07/10/20 06:42;N1M696;Chantay Rudman  ;Renseanlæg VEST;PC5023010;Windows 10;Dell Inc.;OptiPlex 7010;01;6XVRF5J;Aktiv
+05/10/20 00:00;N1M700;Julienne Kiernan  ;Renseanlæg VEST;PC5023018;Windows 10;Dell Inc.;Latitude E7270;;1M00NC2;Aktiv
+07/10/20 07:12;N1M697;Kate Lomanto  ;Renseanlæg VEST;PC5023019;Windows 10;Dell Inc.;Latitude 7280;;JQ819H2;Aktiv
+07/10/20 01:06;N1M709;Simona Plaisted  ;Renseanlæg VEST;PC5023022;Windows 10;Dell Inc.;Latitude 7480;;3GTM4M2;Aktiv
+07/10/20 07:43;N1M698;Isabell Vazques  ;AFV Innovation og Videndeling;PC5023024;Windows 10;Dell Inc.;Latitude E7470;;3KY03G2;Aktiv
+07/10/20 06:49;N1M699;Latrice Stlouis  ;Renseanlæg VEST;PC5023025;Windows 10;LENOVO;20KES0S200;ThinkPad X280;PC0XGRV7;Aktiv
+07/10/20 07:42;N1M700;Julienne Kiernan  ;Renseanlæg VEST;PC5023026;Windows 10;LENOVO;20N3S6NK00;ThinkPad T490;PF2E03SC;Aktiv
+06/09/20 11:15;#I/T;#I/T;Renseanlæg ØST;PC5024012;Windows 10;Dell Inc.;Latitude E5430 vPro;01;3QJXSY1;Aktiv
+07/10/20 02:56;N1M701;Nakita Montag  ;Renseanlæg ØST;PC5024016;Windows 10;Dell Inc.;OptiPlex 9020M;00;9DC58C2;Aktiv
+29/09/20 09:24;N1M702;Erlinda Igo  ;Renseanlæg ØST;PC5024017;Windows 10;American Megatrends Inc.;Surface Pro 3;1;027029153253;Aktiv
+01/10/20 10:26;N1M707;Etha Brunk  ;Renseanlæg ØST;PC5024018;Windows 10;American Megatrends Inc.;Surface Pro 3;1;016951651553;Aktiv
+07/10/20 02:57;N1M701;Nakita Montag  ;Renseanlæg ØST;PC5024019;Windows 10;Dell Inc.;OptiPlex 7010;01;JZVRF5J;Aktiv
+10/09/20 08:33;N1M045;Maia Cabrera;"AFS DiGIT, IT-Service";PC5024020;Windows 10;LENOVO;10MQS2U600;ThinkCentre M710q;S4FS5239;Aktiv
+07/10/20 06:34;N1M704;Hilton Lowenthal  ;AFV Renseanlæg og Ressourcer;PC5024022;Windows 10;Dell Inc.;Latitude 7490;;7571SQ2;Aktiv
+07/10/20 09:25;N1M697;Kate Lomanto  ;Renseanlæg VEST;PC5024023;Windows 10;Dell Inc.;Latitude 7480;;DMVTLH2;Aktiv
+07/10/20 06:45;N1M705;Ezekiel Cella  ;Renseanlæg ØST;PC5024024;Windows 10;Dell Inc.;Latitude 7490;;29LYPN2;Aktiv
+06/10/20 20:47;N1M707;Etha Brunk  ;Renseanlæg ØST;PC5024025;Windows 10;LENOVO;20L8S8TU00;ThinkPad T480s;PC134MFV;Aktiv
+07/10/20 06:48;N1M703;Mendy Bertrand  ;Renseanlæg ØST;PC5024026;Windows 10;LENOVO;20L8S9N300;ThinkPad T480s;PC15XDE5;Aktiv
+02/10/20 07:23;N1M706;Caroll Doucet ;Renseanlæg ØST;PC5024027;Windows 10;LENOVO;20NYS0WX00;ThinkPad T490s;PC1CSF22;Aktiv
+07/10/20 07:46;N1M707;Etha Brunk  ;Renseanlæg ØST;PC5024028;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1JVMAC;Aktiv
+07/10/20 10:20;#I/T;#I/T;Renseanlæg ØST;PC5024029;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1JVMGC;Aktiv
+07/10/20 07:44;N1M708;Marlin Boatner  ;Renseanlæg ØST;PC5024030;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90YP6L7;Aktiv
+28/08/20 09:02;N1M146;Amy Elliott;;PC5024031;Windows 10;LENOVO;11AES08D00;ThinkCentre M90n-1;PF29PYE1;Aktiv
+07/10/20 09:48;#I/T;#I/T;Renseanlæg VEST;PC5024032;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1LAH7W;Aktiv
+06/10/20 10:27;N1M703;Mendy Bertrand  ;Renseanlæg ØST;PC5024033;Windows 10;LENOVO;20Q1S4UJ00;ThinkPad X390;PC1LAH7V;Aktiv
+06/10/20 07:58;N1M696;Chantay Rudman  ;Renseanlæg VEST;PC5024034;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90Z2DZH;Aktiv
+07/09/20 08:03;N1M146;Amy Elliott;;PC5024035;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90Z2DZK;Aktiv
+07/09/20 08:02;N1M146;Amy Elliott;;PC5024036;Windows 10;LENOVO;20NQS2L600;ThinkPad X390 Yoga;R90Z2DZJ;Aktiv
+07/10/20 07:31;N1M710;Lynda Holbert  ;AFV Eksterne brugere;PC5508013;Windows 10;LENOVO;20L6SB2900;ThinkPad T480;PF1HRS8Y;Aktiv
